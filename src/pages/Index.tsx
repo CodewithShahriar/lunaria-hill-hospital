@@ -396,7 +396,7 @@ const Index = () => {
           >
             
             {item.icon}
-            <h4 className="text-sm font-semibold text-gray-800 mb-1">{item.title}</h4>
+            <h4 className="text-md-15 font-semibold text-gray-800 mb-1">{item.title}</h4>
             <p className="text-xs text-gray-600">{item.desc}</p>
           </div>
         ))}
