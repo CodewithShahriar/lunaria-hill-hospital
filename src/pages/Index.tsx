@@ -27,62 +27,63 @@ const Index = () => {
       
       {/* 2. Quick Info Cards */}
       <section className="py-8 bg-white relative z-10">
-        <div className="container mx-auto px-4 -mt-24 relative z-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-blue-500">
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-500 text-white p-3 rounded-lg">
-                  <Clock className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Opening Hours</h3>
-                  <p className="text-gray-600 text-sm">Mon-Fri: 8:00-20:00</p>
-                  <p className="text-gray-600 text-sm">Sat-Sun: 9:00-18:00</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-blue-500">
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-500 text-white p-3 rounded-lg">
-                  <Phone className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Contact Info</h3>
-                  <p className="text-gray-600 text-sm">Call: (123) 456-7890</p>
-                  <p className="text-gray-600 text-sm">info@lunariahill.com</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-blue-500">
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-500 text-white p-3 rounded-lg">
-                  <Calendar className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Appointments</h3>
-                  <p className="text-gray-600 text-sm">Book Online or Call</p>
-                  <p className="text-gray-600 text-sm">24/7 Support Available</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-t-4 border-blue-500">
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-500 text-white p-3 rounded-lg">
-                  <Heart className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Emergency Care</h3>
-                  <p className="text-gray-600 text-sm">24/7 Emergency Service</p>
-                  <p className="text-gray-600 text-sm">Qualified Specialists</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="container mx-auto px-4 -mt-24 relative z-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      {/* Working Time */}
+      <div className="bg-[#169fe6] text-white p-6 lg:p-8">
+        <h3 className="text-lg font-semibold mb-4">Working Time</h3>
+        <ul className="space-y-2 text-sm">
+          <li className="flex justify-between border-b border-white/20 pb-1">
+            <span>Mon – Wed</span> <span className="font-bold">9:00 AM - 7:00 PM</span>
+          </li>
+          <li className="flex justify-between border-b border-white/20 pb-1">
+            <span>Thursday</span> <span className="font-bold">9:00 AM - 6:30 PM</span>
+          </li>
+          <li className="flex justify-between border-b border-white/20 pb-1">
+            <span>Friday</span> <span className="font-bold">9:00 AM - 6:00 PM</span>
+          </li>
+          <li className="flex justify-between">
+            <span>Sun - Sun</span> <span className="font-bold">CLOSED</span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Doctors Timetable */}
+      <div className="bg-[#0c8fd3] text-white p-6 lg:p-8">
+        <h3 className="text-lg font-semibold mb-4">Doctors Timetable</h3>
+        <p className="text-sm mb-4 leading-relaxed">
+          An magnis nulla dolor at sapien augue erat iaculis purus tempor magna ipsum and vitae a purus primis ipsum magna ipsum
+        </p>
+        <button className="bg-white text-[#0c8fd3] font-medium text-sm px-4 py-2 rounded hover:bg-gray-100 transition">
+          View Timetable
+        </button>
+      </div>
+
+      {/* Appointments */}
+      <div className="bg-[#0c7cc6] text-white p-6 lg:p-8">
+        <h3 className="text-lg font-semibold mb-4">Appointments</h3>
+        <p className="text-sm mb-4 leading-relaxed">
+          An magnis nulla dolor at sapien augue erat iaculis purus tempor magna ipsum and vitae a purus primis ipsum magna ipsum
+        </p>
+        <button className="bg-white text-[#0c7cc6] font-medium text-sm px-4 py-2 rounded hover:bg-gray-100 transition">
+          Make an Appointment
+        </button>
+      </div>
+
+      {/* Emergency Cases */}
+      <div className="bg-[#0c69b5] text-white p-6 lg:p-8">
+        <h3 className="text-lg font-semibold mb-4">Emergency Cases</h3>
+        <p className="text-2xl font-bold mb-2 flex items-center gap-2">
+          <span>📞</span> 1-800-123-4560
+        </p>
+        <p className="text-sm leading-relaxed">
+          An magnis nulla dolor sapien augue erat iaculis purus tempor magna ipsum and vitae a purus primis ipsum magna ipsum
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
       
       {/* 3. About Section - Complete Medical Solutions in One Place */}
       <section className="py-20 bg-white">
