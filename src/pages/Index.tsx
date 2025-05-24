@@ -341,7 +341,7 @@ const Index = () => {
 
           
       
-      {/* 7. Qualified Doctors Section */}
+      {/* 7. Total Health Care Solutions Section */}
      <section className="py-20 bg-gray-50 px-4">
   <div className="max-w-7xl mx-auto">
     {/* Section Heading */}
