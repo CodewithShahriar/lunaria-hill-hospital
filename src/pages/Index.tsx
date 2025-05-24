@@ -697,7 +697,7 @@ const Index = () => {
       <Footer />
       
       {/* Live Chat Widget */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-12 right-6 z-50">
         <Button 
           size="lg" 
           className="bg-blue-600 hover:bg-blue-700 rounded-full shadow-lg animate-pulse-soft"
