@@ -332,7 +332,130 @@ const Index = () => {
   </div>
 </section>
 
+
+
+          
       
+      {/* 7. Qualified Doctors Section */}
+     <section className="py-20 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold text-gray-800">Total Health Care Solutions</h2>
+      <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus, blandit posuere ligula varius congue cursus porta feugiat
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {/* Left: Services Cards */}
+      <div className="md:col-span-2 grid sm:grid-cols-2 gap-6">
+        {[
+          {
+            title: "Top Level Doctors",
+            description: "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor",
+            icon: (
+              <svg className="w-10 h-10 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
+            )
+          },
+          {
+            title: "Modern Equipment",
+            description: "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor",
+            icon: (
+              <svg className="w-10 h-10 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M9 2v6h6V2H9zm10 10v10H5V12h14zm0-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V12a2 2 0 00-2-2z" />
+              </svg>
+            )
+          },
+          {
+            title: "Qualified Facilities",
+            description: "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor",
+            icon: (
+              <svg className="w-10 h-10 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M18 8h-1V6a5 5 0 00-10 0v2H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V10a2 2 0 00-2-2zM9 6a3 3 0 016 0v2H9V6z" />
+              </svg>
+            )
+          },
+          {
+            title: "Professional Services",
+            description: "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor",
+            icon: (
+              <svg className="w-10 h-10 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M8 17l4 4 4-4m-4-5v9" />
+              </svg>
+            )
+          },
+          {
+            title: "Medical Counseling",
+            description: "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor",
+            icon: (
+              <svg className="w-10 h-10 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 13h-.01M12 7h.01" />
+              </svg>
+            )
+          },
+          {
+            title: "Emergency Help",
+            description: "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor",
+            icon: (
+              <svg className="w-10 h-10 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M4 13h16M4 17h16M4 9h16M4 5h16" />
+              </svg>
+            )
+          }
+        ].map((item, index) => (
+          <div key={index} className="bg-white p-6 rounded-lg shadow hover:shadow-md transition flex space-x-4 items-start">
+            <div>{item.icon}</div>
+            <div>
+              <h3 className="text-base font-bold text-gray-800 mb-1">{item.title}</h3>
+              <p className="text-gray-600 text-sm">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Right: Opening Hours */}
+      <div className="bg-cyan-600 text-white p-8 rounded-lg shadow-md">
+        <h3 className="text-lg font-bold mb-4">Opening Hours:</h3>
+        <p className="text-sm mb-6 leading-relaxed">
+          Porta semper lacus cursus and feugiat primis ultrice ligula risus auctor tempus feugiat and dolor lacinia cursus
+        </p>
+        <ul className="text-sm border-t border-white/30 pt-4 space-y-3">
+          <li className="flex justify-between">
+            <span>Mon – Wed</span>
+            <span className="font-semibold">9:00 AM - 7:00 PM</span>
+          </li>
+          <li className="flex justify-between">
+            <span>Thursday</span>
+            <span className="font-semibold">9:00 AM - 6:30 PM</span>
+          </li>
+          <li className="flex justify-between">
+            <span>Friday</span>
+            <span className="font-semibold">9:00 AM - 6:00 PM</span>
+          </li>
+          <li className="flex justify-between">
+            <span>Sun - Sun</span>
+            <span className="font-semibold">Closed</span>
+          </li>
+        </ul>
+        <div className="mt-6 border-t border-white/30 pt-4">
+          <h4 className="font-semibold mb-2">Need a personal health plan?</h4>
+          <p className="text-sm">
+            Porta semper lacus cursus, and feugiat primis ultrice ligula at risus auctor
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      
+      {/* 8. Testimonials Section */}
+      <TestimonialsSection />
+      
+      {/* 9. Medical Specialists Section - Duplicating doctor section with different title to match reference */}
       {/* 7. Qualified Doctors Section */}
       <section className="py-20 bg-white">
   <div className="container mx-auto px-4">
@@ -340,9 +463,9 @@ const Index = () => {
       <div className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
         Qualified Doctors
       </div>
-      <h2 className="text-4xl font-bold text-gray-800 mb-4">Group of Certified and Experienced Doctors</h2>
+      <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Medical Specialists</h2>
       <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-        Our skilled medical professionals bring years of specialized experience to provide you with exceptional care
+        Meet our team of experienced healthcare professionals dedicated to your wellbeing
       </p>
     </div>
 
@@ -403,71 +526,6 @@ const Index = () => {
     </div>
   </div>
 </section>
-
-      
-      {/* 8. Testimonials Section */}
-      <TestimonialsSection />
-      
-      {/* 9. Medical Specialists Section - Duplicating doctor section with different title to match reference */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
-              Our Team
-            </div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Medical Specialists</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet our team of experienced healthcare professionals dedicated to your wellbeing
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                name: "Dr. Lisa Martinez",
-                specialty: "Chief Surgeon",
-                image: "https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              },
-              {
-                name: "Dr. Robert Taylor",
-                specialty: "Dermatologist",
-                image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              },
-              {
-                name: "Dr. Jennifer Adams",
-                specialty: "Oncologist",
-                image: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              },
-              {
-                name: "Dr. Daniel Wright",
-                specialty: "Radiologist",
-                image: "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              }
-            ].map((doctor, idx) => (
-              <div key={idx} className="group">
-                <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={doctor.image} 
-                      alt={doctor.name} 
-                      className="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
-                      <Button variant="outline" size="sm" className="bg-white/20 text-white border-white hover:bg-white/40">
-                        View Profile
-                      </Button>
-                    </div>
-                  </div>
-                  <div className="p-6 text-center">
-                    <h3 className="text-lg font-bold text-gray-800 mb-1">{doctor.name}</h3>
-                    <p className="text-blue-600 font-medium">{doctor.specialty}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
       
       {/* 10. Modern Medicine Section */}
       <section className="py-20 bg-gray-50">
