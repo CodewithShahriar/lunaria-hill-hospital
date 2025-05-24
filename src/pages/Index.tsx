@@ -335,132 +335,75 @@ const Index = () => {
       
       {/* 7. Qualified Doctors Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
-              Qualified Doctors
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12">
+      <div className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+        Qualified Doctors
+      </div>
+      <h2 className="text-4xl font-bold text-gray-800 mb-4">Group of Certified and Experienced Doctors</h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        Our skilled medical professionals bring years of specialized experience to provide you with exceptional care
+      </p>
+    </div>
+
+    {/* Doctor Grid */}
+    <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-8">
+      {[
+        {
+          name: "Dr. Sarah Johnson",
+          specialty: "Cardiologist",
+          image: "https://jthemes.net/themes/html/medservices/files/images/doctor-1.jpg"
+        },
+        {
+          name: "Dr. Michael Chen",
+          specialty: "Neurologist",
+          image: "https://jthemes.net/themes/html/medservices/files/images/doctor-3.jpg"
+        },
+        {
+          name: "Dr. Emily Davis",
+          specialty: "Pediatrician",
+          image: "https://jthemes.net/themes/html/medservices/files/images/doctor-4.jpg"
+        },
+        {
+          name: "Dr. James Wilson",
+          specialty: "Orthopedic Surgeon",
+          image: "https://jthemes.net/themes/html/medservices/files/images/doctor-2.jpg"
+        }
+      ].map((doctor, idx) => (
+        <div key={idx} className="group">
+          <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+            <div className="relative overflow-hidden">
+              <img
+                src={doctor.image}
+                alt={doctor.name}
+                className="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
+                <Button variant="outline" size="sm" className="bg-white/20 text-white border-white hover:bg-white/40">
+                  View Profile
+                </Button>
+              </div>
             </div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Group of Certified and Experienced Doctors</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our skilled medical professionals bring years of specialized experience to provide you with exceptional care
-            </p>
-          </div>
-          
-          <Tabs defaultValue="all" className="w-full mb-10">
-            <TabsList className="w-full max-w-md mx-auto flex justify-center mb-6">
-              <TabsTrigger value="all" className="flex-1">All Doctors</TabsTrigger>
-              <TabsTrigger value="cardio" className="flex-1">Cardiologists</TabsTrigger>
-              <TabsTrigger value="neuro" className="flex-1">Neurologists</TabsTrigger>
-              <TabsTrigger value="pedia" className="flex-1">Pediatricians</TabsTrigger>
-            </TabsList>
-            
-            <TabsContent value="all" className="grid md:grid-cols-4 gap-8 mt-8">
-              {[
-                {
-                  name: "Dr. Sarah Johnson",
-                  specialty: "Cardiologist",
-                  image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                },
-                {
-                  name: "Dr. Michael Chen",
-                  specialty: "Neurologist",
-                  image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                },
-                {
-                  name: "Dr. Emily Davis",
-                  specialty: "Pediatrician",
-                  image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                },
-                {
-                  name: "Dr. James Wilson",
-                  specialty: "Orthopedic Surgeon",
-                  image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                }
-              ].map((doctor, idx) => (
-                <div key={idx} className="group">
-                  <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <div className="relative overflow-hidden">
-                      <img 
-                        src={doctor.image} 
-                        alt={doctor.name} 
-                        className="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
-                        <Button variant="outline" size="sm" className="bg-white/20 text-white border-white hover:bg-white/40">
-                          View Profile
-                        </Button>
-                      </div>
-                    </div>
-                    <div className="p-6 text-center">
-                      <h3 className="text-lg font-bold text-gray-800 mb-1">{doctor.name}</h3>
-                      <p className="text-blue-600 font-medium">{doctor.specialty}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </TabsContent>
-            
-            <TabsContent value="cardio" className="grid md:grid-cols-4 gap-8 mt-8">
-              {/* Content for cardiologists tab */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3" 
-                    alt="Dr. Sarah Johnson" 
-                    className="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-lg font-bold text-gray-800 mb-1">Dr. Sarah Johnson</h3>
-                  <p className="text-blue-600 font-medium">Cardiologist</p>
-                </div>
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="neuro" className="grid md:grid-cols-4 gap-8 mt-8">
-              {/* Content for neurologists tab */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3" 
-                    alt="Dr. Michael Chen" 
-                    className="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-lg font-bold text-gray-800 mb-1">Dr. Michael Chen</h3>
-                  <p className="text-blue-600 font-medium">Neurologist</p>
-                </div>
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="pedia" className="grid md:grid-cols-4 gap-8 mt-8">
-              {/* Content for pediatricians tab */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3" 
-                    alt="Dr. Emily Davis" 
-                    className="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-lg font-bold text-gray-800 mb-1">Dr. Emily Davis</h3>
-                  <p className="text-blue-600 font-medium">Pediatrician</p>
-                </div>
-              </div>
-            </TabsContent>
-          </Tabs>
-          
-          <div className="text-center">
-            <Link to="/doctors">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 rounded-lg">
-                View All Doctors
-              </Button>
-            </Link>
+            <div className="p-6 text-center">
+              <h3 className="text-lg font-bold text-gray-800 mb-1">{doctor.name}</h3>
+              <p className="text-blue-600 font-medium">{doctor.specialty}</p>
+            </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+
+    {/* CTA Button */}
+    <div className="text-center mt-12">
+      <Link to="/doctors">
+        <Button size="lg" className="bg-blue-600 hover:bg-blue-700 rounded-lg">
+          View All Doctors
+        </Button>
+      </Link>
+    </div>
+  </div>
+</section>
+
       
       {/* 8. Testimonials Section */}
       <TestimonialsSection />
