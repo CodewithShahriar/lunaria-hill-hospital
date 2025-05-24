@@ -141,7 +141,7 @@ const Footer = () => {
                 Terms of Service
               </Link>
               <div className="flex items-center gap-1 text-sm text-gray-400">
-                Made with <Heart className="h-4 w-4 text-red-500" /> for better health
+                Developed by - Abid Shahriar
               </div>
             </div>
           </div>
