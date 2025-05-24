@@ -52,7 +52,7 @@ const Index = () => {
               <div className="bg-[#0c8fd3] text-white p-6 lg:p-8">
                 <h3 className="text-lg font-semibold mb-4">Doctors Timetable</h3>
                 <p className="text-sm mb-4 leading-relaxed">
-                  An magnis nulla dolor at sapien augue erat iaculis purus tempor magna ipsum and vitae a purus primis ipsum magna ipsum
+                  Our doctors are available throughout the week at scheduled times. Check the timetable to find the best time for your visit and avoid long wait times.
                 </p>
                 <button className="bg-white text-[#0c8fd3] font-medium text-sm px-4 py-2 rounded hover:bg-gray-100 transition">
                   View Timetable
@@ -63,7 +63,7 @@ const Index = () => {
               <div className="bg-[#0c7cc6] text-white p-6 lg:p-8">
                 <h3 className="text-lg font-semibold mb-4">Appointments</h3>
                 <p className="text-sm mb-4 leading-relaxed">
-                  An magnis nulla dolor at sapien augue erat iaculis purus tempor magna ipsum and vitae a purus primis ipsum magna ipsum
+                  Book your appointment online or by phone. We ensure fast and easy scheduling with flexible hours to fit your needs.
                 </p>
                 <button className="bg-white text-[#0c7cc6] font-medium text-sm px-4 py-2 rounded hover:bg-gray-100 transition">
                   Make an Appointment
