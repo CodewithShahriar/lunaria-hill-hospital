@@ -321,8 +321,10 @@ const Index = () => {
             className="w-full h-auto"
           />
 
-          {/* Floating card over the image */}
-          <div className="absolute bottom-4 left-2 bg-white rounded-xl p-4 shadow-xl w-64 z-10">
+          
+      </div>
+      {/* Floating card over the image */}
+          <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl w-64 z-10">
             <div className="flex items-center gap-3 mb-2">
               <div className="bg-blue-100 p-2 rounded-full">
                 <Users className="h-6 w-6 text-blue-600" />
@@ -332,7 +334,6 @@ const Index = () => {
             <p className="text-gray-600 text-sm leading-snug">Patients helped annually with innovative treatments</p>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </section>
