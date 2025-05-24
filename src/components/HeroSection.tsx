@@ -1,117 +1,130 @@
 
-import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Calendar, Phone, ArrowLeft, ArrowRight } from 'lucide-react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Calendar, Phone, Award, Users, Heart, Clock } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const HeroSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  
-  const slides = [
-    {
-      title: "We Provide Total Healthcare Solutions",
-      subtitle: "Your Most Trusted Health Partner",
-      description: "Our skilled doctors and staff provide comprehensive care with the latest medical technologies for your healthiest life.",
-      image: "https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
-      color: "primary"
-    },
-    {
-      title: "Advanced Diagnostics For Accurate Results",
-      subtitle: "Cutting-Edge Medical Technology",
-      description: "Our state-of-the-art diagnostic equipment ensures precise test results for effective treatment planning.",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
-      color: "blue"
-    },
-    {
-      title: "Expert Care From Specialized Doctors",
-      subtitle: "Experienced Medical Professionals",
-      description: "Our team of specialists delivers exceptional care with compassion and expertise for all your health needs.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80",
-      color: "sky"
-    }
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
+  const { toast } = useToast();
 
   return (
-    <section className="relative bg-white overflow-hidden">
-      <Carousel className="w-full">
-        <CarouselContent>
-          {slides.map((slide, index) => (
-            <CarouselItem key={index} className="w-full">
-              <div className="relative h-[650px] md:h-[750px] w-full">
-                {/* Background Image with Overlay */}
-                <div className="absolute inset-0 overflow-hidden">
-                  <div 
-                    className="w-full h-full bg-cover bg-center transition-transform duration-1000"
-                    style={{ 
-                      backgroundImage: `url(${slide.image})`,
-                      transform: `scale(${currentSlide === index ? '1.05' : '1'})` 
-                    }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent backdrop-blur-[2px]"></div>
-                  </div>
-                </div>
-                
-                {/* Content */}
-                <div className="container mx-auto px-4 h-full flex items-center relative z-10">
-                  <div className="max-w-2xl text-white animate-fade-in">
-                    <div className="mb-6 inline-block px-5 py-2 bg-blue-500 rounded-md text-white font-medium uppercase tracking-wider text-sm">
-                      Lunaria Hill Hospital
-                    </div>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                      {slide.title}
-                    </h1>
-                    <p className="text-xl md:text-2xl mb-4 text-white/90 font-medium">
-                      {slide.subtitle}
-                    </p>
-                    <p className="text-base md:text-lg mb-10 text-white/80 max-w-xl">
-                      {slide.description}
-                    </p>
-                    <div className="flex flex-wrap gap-4">
-                      <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg transition-all">
-                        <Calendar className="mr-2 h-5 w-5" />
-                        Book Appointment
-                      </Button>
-                      <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white/20 px-8 py-6 text-lg rounded-lg transition-all">
-                        <Phone className="mr-2 h-5 w-5" />
-                        Contact Us
-                      </Button>
-                    </div>
-                  </div>
+    <section className="relative min-h-screen bg-gradient-to-br from-primary-50 via-primary-100 to-sky-50 overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-24 h-24 bg-primary-200 rounded-full opacity-20 animate-float"></div>
+        <div className="absolute top-40 right-20 w-28 h-28 bg-sky-300 rounded-full opacity-30 animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-primary-300 rounded-full opacity-25 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-60 left-1/3 w-16 h-16 bg-blue-100 rounded-full opacity-20 animate-float" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute bottom-40 right-1/4 w-24 h-24 bg-sky-200 rounded-full opacity-20 animate-float" style={{ animationDelay: '2.5s' }}></div>
+      </div>
+
+      <div className="container mx-auto px-4 py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+          {/* Content */}
+          <div className="animate-fade-in">
+            <span className="inline-block py-1 px-3 rounded-full bg-primary-100 text-primary-700 text-sm font-medium mb-6 animate-pulse-soft">
+              24/7 Emergency Care Available
+            </span>
+            
+            <h1 className="text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+              Advanced Healthcare for a
+              <span className="text-primary-500 block mt-2">Healthier Tomorrow</span>
+            </h1>
+            
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
+              Experience world-class medical care with cutting-edge technology and compassionate service. 
+              Your health is our priority, available 24/7.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Button 
+                size="lg" 
+                className="bg-primary-500 hover:bg-primary-600 text-lg px-8 py-6 h-auto shadow-lg"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                <Calendar className="mr-2 h-5 w-5" />
+                Book Appointment
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-primary-500 text-primary-500 hover:bg-primary-50 text-lg px-8 py-6 h-auto"
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                Emergency: 911
+              </Button>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-primary-500">
+                  <Users className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-800">50+</div>
+                  <div className="text-sm text-gray-600">Expert Doctors</div>
                 </div>
               </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        
-        <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-3 z-20">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-4 h-4 rounded-full transition-all ${
-                currentSlide === index ? 'bg-blue-500 scale-125' : 'bg-white/50'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+              <div className="text-center">
+                <div className="bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-primary-500">
+                  <Heart className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-800">10K+</div>
+                  <div className="text-sm text-gray-600">Happy Patients</div>
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-primary-500">
+                  <Award className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-800">15+</div>
+                  <div className="text-sm text-gray-600">Years Experience</div>
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-primary-500">
+                  <Clock className="h-8 w-8 text-primary-500 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-800">24/7</div>
+                  <div className="text-sm text-gray-600">Emergency Care</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Hero Image */}
+          <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Modern Hospital"
+                className="rounded-2xl w-full h-[500px] object-cover transform hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-900/40 to-transparent rounded-2xl"></div>
+            </div>
+            
+            {/* Floating Cards */}
+            <div className="absolute -top-6 -left-6 bg-white rounded-xl p-4 shadow-xl animate-float">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <Heart className="h-6 w-6 text-green-600" />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-800">24/7 Care</div>
+                  <div className="text-sm text-gray-600">Always Available</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="absolute -bottom-6 -right-6 bg-white rounded-xl p-4 shadow-xl animate-float" style={{ animationDelay: '1s' }}>
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                  <Award className="h-6 w-6 text-primary-600" />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-800">Certified</div>
+                  <div className="text-sm text-gray-600">Excellence</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <CarouselPrevious className="absolute top-1/2 left-6 z-20 bg-white/20 backdrop-blur-sm hover:bg-white/40 rounded-full h-12 w-12 flex items-center justify-center" />
-        <CarouselNext className="absolute top-1/2 right-6 z-20 bg-white/20 backdrop-blur-sm hover:bg-white/40 rounded-full h-12 w-12 flex items-center justify-center" />
-      </Carousel>
+      </div>
     </section>
   );
 };
