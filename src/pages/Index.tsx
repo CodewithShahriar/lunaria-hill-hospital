@@ -337,118 +337,132 @@ const Index = () => {
           
       
       {/* 7. Qualified Doctors Section */}
-     <section className="py-20 bg-gray-50">
-  <div className="container mx-auto px-4">
-    <div className="text-center mb-12">
-      <h2 className="text-4xl font-bold text-gray-800">Total Health Care Solutions</h2>
-      <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-        Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus, blandit posuere ligula varius congue cursus porta feugiat
-      </p>
-    </div>
+     import {
+  Stethoscope,
+  Microscope,
+  Hospital,
+  Syringe,
+  MessageCircleHeart,
+  Ambulance
+} from "lucide-react";
 
-    <div className="grid md:grid-cols-3 gap-8">
-      {/* Left: Services Cards */}
-      <div className="md:col-span-2 grid sm:grid-cols-2 gap-6">
-        {[
-          {
-            title: "Top Level Doctors",
-            description: "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor",
-            icon: (
-              <svg className="w-10 h-10 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-              </svg>
-            )
-          },
-          {
-            title: "Modern Equipment",
-            description: "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor",
-            icon: (
-              <svg className="w-10 h-10 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M9 2v6h6V2H9zm10 10v10H5V12h14zm0-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V12a2 2 0 00-2-2z" />
-              </svg>
-            )
-          },
-          {
-            title: "Qualified Facilities",
-            description: "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor",
-            icon: (
-              <svg className="w-10 h-10 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M18 8h-1V6a5 5 0 00-10 0v2H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V10a2 2 0 00-2-2zM9 6a3 3 0 016 0v2H9V6z" />
-              </svg>
-            )
-          },
-          {
-            title: "Professional Services",
-            description: "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor",
-            icon: (
-              <svg className="w-10 h-10 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M8 17l4 4 4-4m-4-5v9" />
-              </svg>
-            )
-          },
-          {
-            title: "Medical Counseling",
-            description: "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor",
-            icon: (
-              <svg className="w-10 h-10 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 13h-.01M12 7h.01" />
-              </svg>
-            )
-          },
-          {
-            title: "Emergency Help",
-            description: "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor",
-            icon: (
-              <svg className="w-10 h-10 text-cyan-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M4 13h16M4 17h16M4 9h16M4 5h16" />
-              </svg>
-            )
-          }
-        ].map((item, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow hover:shadow-md transition flex space-x-4 items-start">
-            <div>{item.icon}</div>
-            <div>
-              <h3 className="text-base font-bold text-gray-800 mb-1">{item.title}</h3>
-              <p className="text-gray-600 text-sm">{item.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+export default function HealthcareSection() {
+  const features = [
+    {
+      icon: <Stethoscope className="text-cyan-600 w-8 h-8" />,
+      title: "Top Level Doctors",
+      desc:
+        "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor"
+    },
+    {
+      icon: <Microscope className="text-cyan-600 w-8 h-8" />,
+      title: "Modern Equipment",
+      desc:
+        "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor"
+    },
+    {
+      icon: <Hospital className="text-cyan-600 w-8 h-8" />,
+      title: "Qualified Facilities",
+      desc:
+        "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor"
+    },
+    {
+      icon: <Syringe className="text-cyan-600 w-8 h-8" />,
+      title: "Professional Services",
+      desc:
+        "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor"
+    },
+    {
+      icon: <MessageCircleHeart className="text-cyan-600 w-8 h-8" />,
+      title: "Medical Counseling",
+      desc:
+        "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor"
+    },
+    {
+      icon: <Ambulance className="text-cyan-600 w-8 h-8" />,
+      title: "Emergency Help",
+      desc:
+        "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor"
+    }
+  ];
 
-      {/* Right: Opening Hours */}
-      <div className="bg-cyan-600 text-white p-8 rounded-lg shadow-md">
-        <h3 className="text-lg font-bold mb-4">Opening Hours:</h3>
-        <p className="text-sm mb-6 leading-relaxed">
-          Porta semper lacus cursus and feugiat primis ultrice ligula risus auctor tempus feugiat and dolor lacinia cursus
-        </p>
-        <ul className="text-sm border-t border-white/30 pt-4 space-y-3">
-          <li className="flex justify-between">
-            <span>Mon – Wed</span>
-            <span className="font-semibold">9:00 AM - 7:00 PM</span>
-          </li>
-          <li className="flex justify-between">
-            <span>Thursday</span>
-            <span className="font-semibold">9:00 AM - 6:30 PM</span>
-          </li>
-          <li className="flex justify-between">
-            <span>Friday</span>
-            <span className="font-semibold">9:00 AM - 6:00 PM</span>
-          </li>
-          <li className="flex justify-between">
-            <span>Sun - Sun</span>
-            <span className="font-semibold">Closed</span>
-          </li>
-        </ul>
-        <div className="mt-6 border-t border-white/30 pt-4">
-          <h4 className="font-semibold mb-2">Need a personal health plan?</h4>
-          <p className="text-sm">
-            Porta semper lacus cursus, and feugiat primis ultrice ligula at risus auctor
+  return (
+    <section className="py-20 bg-gray-50 px-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-800">
+            Total Health Care Solutions
+          </h2>
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Aliquam a augue suscipit, luctus neque purus ipsum neque dolor
+            primis libero at tempus, blandit posuere ligula varius congue cursus
+            porta feugiat
           </p>
         </div>
+
+        {/* Grid Layout */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Left: Service Cards */}
+          <div className="md:col-span-2 grid sm:grid-cols-2 gap-6">
+            {features.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex items-start space-x-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition"
+              >
+                {item.icon}
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-800 mb-1">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm text-gray-600">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right: Opening Hours */}
+          <div className="bg-cyan-600 text-white p-8 rounded-lg shadow-md flex flex-col justify-between">
+            <div>
+              <h3 className="text-lg font-bold mb-3">Opening Hours:</h3>
+              <p className="text-sm mb-6 leading-relaxed">
+                Porta semper lacus cursus and feugiat primis ultrice ligula risus
+                auctor tempus feugiat and dolor lacinia cursus
+              </p>
+              <ul className="text-sm border-t border-white/30 pt-4 space-y-3">
+                <li className="flex justify-between">
+                  <span>Mon – Wed</span>
+                  <span className="font-semibold">9:00 AM - 7:00 PM</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Thursday</span>
+                  <span className="font-semibold">9:00 AM - 6:30 PM</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Friday</span>
+                  <span className="font-semibold">9:00 AM - 6:00 PM</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Sun - Sun</span>
+                  <span className="font-semibold">Closed</span>
+                </li>
+              </ul>
+            </div>
+            <div className="mt-6 border-t border-white/30 pt-4">
+              <h4 className="font-semibold mb-2">
+                Need a personal health plan?
+              </h4>
+              <p className="text-sm">
+                Porta semper lacus cursus, and feugiat primis ultrice ligula at
+                risus auctor
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+  );
+}
 
 
       
