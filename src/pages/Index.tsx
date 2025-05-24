@@ -393,6 +393,7 @@ const Index = () => {
             key={index}
             className="bg-white border border-gray-300 px-4 py-5 rounded-lg min-h-[120px] flex flex-col items-center text-center hover:bg-blue-100 transition"
           >
+            
             {item.icon}
             <h4 className="text-sm font-semibold text-gray-800 mb-1">{item.title}</h4>
             <p className="text-xs text-gray-600">{item.desc}</p>
@@ -445,7 +446,7 @@ const Index = () => {
       <TestimonialsSection />
       
       {/* 9. Medical Specialists Section - Duplicating doctor section with different title to match reference */}
-      {/* 7. Qualified Doctors Section */}
+      {/* 10. Qualified Doctors Section */}
       <section className="py-20 bg-white">
   <div className="container mx-auto px-4">
     <div className="text-center mb-12">
