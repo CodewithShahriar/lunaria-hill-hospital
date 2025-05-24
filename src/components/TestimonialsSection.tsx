@@ -12,7 +12,7 @@ const TestimonialsSection = () => {
       role: 'Patient',
       content: 'The care I received at Lunaria Hill Hospital was exceptional. The staff was compassionate and the facilities are world-class.',
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b647?w=150&h=150&fit=crop&crop=face'
+      image: 'https://jthemes.net/themes/html/medservices/files/images/review-author-5.jpg'
     },
     {
       name: 'Michael Chen',
