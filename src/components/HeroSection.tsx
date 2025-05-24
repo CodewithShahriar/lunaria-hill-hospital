@@ -38,7 +38,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button 
                 size="lg" 
-                className="bg-primary-500 hover:bg-primary-600 text-lg px-8 py-6 h-auto shadow-lg"
+                className="bg-primary-600 hover:bg-primary-500 text-lg px-8 py-6 h-auto shadow-lg"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               >
                 <Calendar className="mr-2 h-5 w-5" />
@@ -47,7 +47,7 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-primary-500 text-primary-500 hover:bg-primary-50 text-lg px-8 py-6 h-auto"
+                className="border-primary-500 text-primary-600 hover:bg-primary-50 text-lg px-8 py-6 h-auto"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Emergency: 911
