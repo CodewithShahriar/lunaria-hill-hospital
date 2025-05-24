@@ -6,7 +6,7 @@ import HeroSection from '@/components/HeroSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { MessageCircle, Award, Shield, Clock, Calendar, Heart, Stethoscope, Phone, ArrowRight, CheckCircle, Users, Clipboard, PlusCircle, Zap, Brain, Thermometer, Baby, Eye, Bone } from 'lucide-react';
+import { MessageCircle, Award, Shield, Clock, Calendar, Heart, Stethoscope, Phone, ArrowRight, CheckCircle, Users, Clipboard, PlusCircle, Zap, Brain, Thermometer, Baby, Eye, Bone, UtensilsCrossed, Microscope } from 'lucide-react';
 import { AppointmentForm } from '@/components/AppointmentForm';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -174,41 +174,51 @@ const Index = () => {
       </section>
       
       {/* 4. Department Cards - Choose Department */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
-              Our Departments
-            </div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Choose Department</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Specialized departments to address all your healthcare needs with expert care
-            </p>
+     <section className="py-16 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12">
+      <div className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+        Our Departments
+      </div>
+      <h2 className="text-4xl font-bold text-gray-800 mb-4">Choose Department</h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        Specialized departments to address all your healthcare needs with expert care
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      {[
+        { name: "Medicine", icon: Stethoscope, desc: "General care" },
+        { name: "Cardiology", icon: Heart, desc: "Heart care" },
+        { name: "Neurology", icon: Brain, desc: "Brain & nerve care" },
+        { name: "Gastroenterology", icon: Microscope, desc: "Digestive care" },
+        { name: "Pediatrics", icon: Baby, desc: "Child healthcare" },
+        { name: "Orthopedics", icon: Bone, desc: "Bone & joint care" },
+      ].map((dept, idx) => (
+        <div
+          key={idx}
+          className="bg-blue-100 rounded-lg shadow-md hover:shadow-xl transition-all p-6 text-center group"
+        >
+          <div className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors">
+            <dept.icon className="h-8 w-8 text-white" />
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {[
-              { name: "Cardiology", icon: Heart, desc: "Heart care" },
-              { name: "Neurology", icon: Brain, desc: "Brain & nerve care" },
-              { name: "Pulmonology", icon: Thermometer, desc: "Respiratory care" },
-              { name: "Pediatrics", icon: Baby, desc: "Child healthcare" },
-              { name: "Ophthalmology", icon: Eye, desc: "Eye care" },
-              { name: "Orthopedics", icon: Bone, desc: "Bone & joint care" },
-            ].map((dept, idx) => (
-              <div key={idx} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all p-6 text-center group">
-                <div className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors">
-                  <dept.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="font-bold text-lg mb-1">{dept.name}</h3>
-                <p className="text-gray-500 text-sm mb-4">{dept.desc}</p>
-                <Button variant="link" className="text-blue-500 p-0 hover:text-blue-700">
-                  Learn More
-                </Button>
-              </div>
-            ))}
-          </div>
+          <h3 className="font-bold text-lg mb-1">{dept.name}</h3>
+          <p className="text-gray-600 text-sm mb-4">{dept.desc}</p>
+          <Button variant="link" className="text-blue-500 p-0 hover:text-blue-700">
+            Learn More
+          </Button>
         </div>
-      </section>
+      ))}
+    </div>
+
+    <div className="mt-10 text-center">
+      <Button className="bg-blue-600 text-white hover:bg-blue-700">
+        See All Departments
+      </Button>
+    </div>
+  </div>
+</section>
+
       
       {/* 5. Highest Quality Care Section */}
       <section className="py-20 bg-white">
