@@ -259,14 +259,14 @@ const Index = () => {
             </div>
             
             <div className="md:col-span-3">
-  <div className="rounded-xl overflow-hidden">
-    <img
-      src="https://immigrantinvest.com/_next/image/?url=https%3A%2F%2F9zkkfwp3kz3ung7j.public.blob.vercel-storage.com%2FCI5-S2K-8ZX-FLN%2Fstoryblok.jpeg&w=3840&q=75"
-      alt="Clinic Overview"
-      className="w-full h-96 object-cover"
-    />
-  </div>
-</div>
+              <div className="rounded-xl overflow-hidden">
+                <img
+                  src="https://immigrantinvest.com/_next/image/?url=https%3A%2F%2F9zkkfwp3kz3ung7j.public.blob.vercel-storage.com%2FCI5-S2K-8ZX-FLN%2Fstoryblok.jpeg&w=3840&q=75"
+                  alt="Clinic Overview"
+                  className="w-full h-96 object-cover"
+                />
+              </div>
+            </div>
 
           </div>
         </div>
