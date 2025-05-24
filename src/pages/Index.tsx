@@ -274,61 +274,64 @@ const Index = () => {
       
       {/* 6. Best Practices Section */}
       <section className="py-20 bg-blue-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block px-4 py-1 bg-white text-blue-600 rounded-full text-sm font-medium mb-4">
-                Best Practices
-              </div>
-              <h2 className="text-4xl font-bold mb-6">Clinic with Innovative Approach to Treatment</h2>
-              <p className="text-white/90 text-lg mb-8">
-                We combine traditional medical excellence with cutting-edge innovations to provide treatments that are both effective and forward-thinking, delivering exceptional outcomes for our patients.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                    <Shield className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Evidence-Based Care</h3>
-                  <p className="text-white/80">All our treatments are backed by rigorous research and clinical evidence</p>
-                </div>
-                
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-4">
-                    <Zap className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Advanced Technology</h3>
-                  <p className="text-white/80">State-of-the-art equipment for accurate diagnosis and treatment</p>
-                </div>
-              </div>
-              
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/20">
-                Discover Our Approach
-              </Button>
+  <div className="container mx-auto px-4">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <div className="inline-block px-4 py-1 bg-white text-blue-600 rounded-full text-sm font-medium mb-4">
+          Best Practices
+        </div>
+        <h2 className="text-4xl font-bold mb-6">Clinic with Innovative Approach to Treatment</h2>
+        <p className="text-white/90 text-lg mb-8">
+          We combine traditional medical excellence with cutting-edge innovations to provide treatments that are both effective and forward-thinking, delivering exceptional outcomes for our patients.
+        </p>
+
+        <div className="grid grid-cols-2 gap-6 mb-8">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+            <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+              <Shield className="h-6 w-6" />
             </div>
-            
-            <div className="relative hidden md:block">
-              <div className="relative z-10 rounded-xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-4.0.3" 
-                  alt="Innovative Medical Technology" 
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="absolute top-1/2 -left-10 transform -translate-y-1/2 bg-white rounded-xl p-6 shadow-xl w-60">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="bg-blue-100 p-2 rounded-full">
-                    <Users className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <p className="font-bold text-gray-800">8,500+</p>
-                </div>
-                <p className="text-gray-600">Patients helped annually with innovative treatments</p>
-              </div>
+            <h3 className="text-xl font-semibold mb-2">Evidence-Based Care</h3>
+            <p className="text-white/80">All our treatments are backed by rigorous research and clinical evidence</p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+            <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+              <Zap className="h-6 w-6" />
             </div>
+            <h3 className="text-xl font-semibold mb-2">Advanced Technology</h3>
+            <p className="text-white/80">State-of-the-art equipment for accurate diagnosis and treatment</p>
           </div>
         </div>
-      </section>
+
+        <Button variant="outline" size="lg" className="border-white text-blue-800 hover:bg-white/80 hover:text-blue-800">
+          Discover Our Approach
+        </Button>
+      </div>
+
+      <div className="relative hidden md:block">
+        <div className="relative rounded-xl overflow-hidden shadow-2xl">
+          <img 
+            src="https://media.assettype.com/newindianexpress%2F2024-07%2F6cf84595-4d0d-42c3-b6ef-23d97ac0c3b1%2FHealthcare.jpg" 
+            alt="Innovative Medical Technology" 
+            className="w-full h-auto"
+          />
+
+          {/* Floating card over the image */}
+          <div className="absolute bottom-4 left-2 bg-white rounded-xl p-4 shadow-xl w-64 z-10">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="bg-blue-100 p-2 rounded-full">
+                <Users className="h-6 w-6 text-blue-600" />
+              </div>
+              <p className="font-bold text-gray-800">8,500+</p>
+            </div>
+            <p className="text-gray-600 text-sm leading-snug">Patients helped annually with innovative treatments</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
       
       {/* 7. Qualified Doctors Section */}
       <section className="py-20 bg-white">
