@@ -348,7 +348,7 @@ const Index = () => {
     <div className="text-center mb-12 px-2">
       <h2 className="text-4xl font-bold text-gray-800">Total Health Care Solutions</h2>
       <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-        Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus, blandit posuere ligula varius congue cursus porta feugiat
+        We provide trusted, personalized care to support your well-being every step of the way. Our expert team is dedicated to delivering effective and compassionate health services tailored to your needs.
       </p>
     </div>
 
@@ -391,7 +391,7 @@ const Index = () => {
         ].map((item, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-300 px-4 py-5 rounded-lg min-h-[120px] flex flex-col items-center text-center hover:border-gray-500 transition"
+            className="bg-white border border-gray-300 px-4 py-5 rounded-lg min-h-[120px] flex flex-col items-center text-center hover:bg-blue-100 transition"
           >
             {item.icon}
             <h4 className="text-sm font-semibold text-gray-800 mb-1">{item.title}</h4>
@@ -405,7 +405,7 @@ const Index = () => {
         <div>
           <h3 className="text-lg font-bold mb-3">Opening Hours:</h3>
           <p className="text-sm mb-6 leading-relaxed">
-            Porta semper lacus cursus and feugiat primis ultrice ligula risus auctor tempus feugiat and dolor lacinia cursus
+            We Are Committed to Serving You with the Utmost Care and Dedication—Your Health Is Our Priority.
           </p>
           <ul className="text-sm border-t border-white/30 pt-4 space-y-3">
             <li className="flex justify-between">
@@ -429,7 +429,7 @@ const Index = () => {
         <div className="mt-6 border-t border-white/30 pt-4">
           <h4 className="font-semibold mb-2">Need a personal health plan?</h4>
           <p className="text-sm">
-            Porta semper lacus cursus, and feugiat primis ultrice ligula at risus auctor
+            Get a customized health plan tailored to your needs. Our experts are ready to help you achieve your wellness goals.
           </p>
         </div>
       </div>
