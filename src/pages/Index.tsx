@@ -52,7 +52,7 @@ const Index = () => {
               <div className="bg-[#0c8fd3] text-white p-6 lg:p-8">
                 <h3 className="text-lg font-semibold mb-4">Doctors Timetable</h3>
                 <p className="text-sm mb-4 leading-relaxed">
-                  Our doctors are available throughout the week at scheduled times. Check the timetable to find the best time for your visit and avoid long wait times.
+                  Check our weekly timetable to see when each doctor is available. Planning ahead helps you avoid long waits and ensures you meet the right specialist at the right time for your medical needs.
                 </p>
                 <button className="bg-white text-[#0c8fd3] font-medium text-sm px-4 py-2 rounded hover:bg-gray-100 transition">
                   View Timetable
@@ -63,7 +63,7 @@ const Index = () => {
               <div className="bg-[#0c7cc6] text-white p-6 lg:p-8">
                 <h3 className="text-lg font-semibold mb-4">Appointments</h3>
                 <p className="text-sm mb-4 leading-relaxed">
-                  Book your appointment online or by phone. We ensure fast and easy scheduling with flexible hours to fit your needs.
+                  Book your appointment online or by phone at your convenience. We offer flexible scheduling options to fit your routine and reduce waiting times. Secure your spot early for faster, more efficient care.
                 </p>
                 <button className="bg-white text-[#0c7cc6] font-medium text-sm px-4 py-2 rounded hover:bg-gray-100 transition">
                   Make an Appointment
