@@ -77,7 +77,7 @@ const Index = () => {
                   <span>📞</span> 1-800-123-4560
                 </p>
                 <p className="text-sm leading-relaxed">
-                  An magnis nulla dolor sapien augue erat iaculis purus tempor magna ipsum and vitae a purus primis ipsum magna ipsum
+                  For urgent medical assistance, contact our 24/7 emergency line. Our experienced team is ready to help at any time.
                 </p>
               </div>
             </div>
