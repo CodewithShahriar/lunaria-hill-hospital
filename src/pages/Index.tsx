@@ -342,73 +342,62 @@ const Index = () => {
           
       
       {/* 7. Qualified Doctors Section */}
-     <section className="py-20 bg-gray-50 px-6">
+     <section className="py-20 bg-gray-50 px-4">
   <div className="max-w-7xl mx-auto">
     {/* Section Heading */}
-    <div className="text-center mb-12">
+    <div className="text-center mb-12 px-2">
       <h2 className="text-4xl font-bold text-gray-800">Total Health Care Solutions</h2>
       <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-        Providing comprehensive medical services to ensure your health and well-being — anytime, anywhere.
+        Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus, blandit posuere ligula varius congue cursus porta feugiat
       </p>
     </div>
 
     {/* Grid Layout */}
-    <div className="grid md:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-3 gap-2">
+      
       {/* Left: Feature Cards */}
-      <div className="md:col-span-2 grid sm:grid-cols-2 gap-2">
-        {/* Card 1 */}
-        <div className="bg-white border border-gray-300 p-6 rounded-lg min-h-[220px] flex flex-col items-center text-center hover:shadow-md transition">
-          <Stethoscope className="text-cyan-600 w-12 h-12 mb-4" />
-          <h4 className="text-base font-semibold text-gray-800 mb-2">Top Level Doctors</h4>
-          <p className="text-sm text-gray-600">
-            Access to experienced specialists for primary and advanced medical care.
-          </p>
-        </div>
-
-        {/* Card 2 */}
-        <div className="bg-white border border-gray-200 p-6 rounded-lg min-h-[220px] flex flex-col items-center text-center hover:shadow-md transition">
-          <Microscope className="text-cyan-600 w-12 h-12 mb-4" />
-          <h4 className="text-base font-semibold text-gray-800 mb-2">Modern Equipment</h4>
-          <p className="text-sm text-gray-600">
-            Equipped with state-of-the-art diagnostic and treatment technologies.
-          </p>
-        </div>
-
-        {/* Card 3 */}
-        <div className="bg-white border border-gray-200 p-6 rounded-lg min-h-[220px] flex flex-col items-center text-center hover:shadow-md transition">
-          <Hospital className="text-cyan-600 w-12 h-12 mb-4" />
-          <h4 className="text-base font-semibold text-gray-800 mb-2">Qualified Facilities</h4>
-          <p className="text-sm text-gray-600">
-            Fully accredited clinics and hospitals meeting international standards.
-          </p>
-        </div>
-
-        {/* Card 4 */}
-        <div className="bg-white border border-gray-200 p-6 rounded-lg min-h-[220px] flex flex-col items-center text-center hover:shadow-md transition">
-          <Syringe className="text-cyan-600 w-12 h-12 mb-4" />
-          <h4 className="text-base font-semibold text-gray-800 mb-2">Professional Services</h4>
-          <p className="text-sm text-gray-600">
-            From general checkups to surgical procedures, delivered with care.
-          </p>
-        </div>
-
-        {/* Card 5 */}
-        <div className="bg-white border border-gray-200 p-6 rounded-lg min-h-[220px] flex flex-col items-center text-center hover:shadow-md transition">
-          <MessageCircleHeart className="text-cyan-600 w-12 h-12 mb-4" />
-          <h4 className="text-base font-semibold text-gray-800 mb-2">Medical Counseling</h4>
-          <p className="text-sm text-gray-600">
-            Mental health and wellness support from certified counselors.
-          </p>
-        </div>
-
-        {/* Card 6 */}
-        <div className="bg-white border border-gray-200 p-6 rounded-lg min-h-[220px] flex flex-col items-center text-center hover:shadow-md transition">
-          <Ambulance className="text-cyan-600 w-12 h-12 mb-4" />
-          <h4 className="text-base font-semibold text-gray-800 mb-2">Emergency Help</h4>
-          <p className="text-sm text-gray-600">
-            24/7 emergency services and ambulance support at your doorstep.
-          </p>
-        </div>
+      <div className="md:col-span-2 grid sm:grid-cols-2 gap-0 ">
+        {[
+          {
+            icon: <Stethoscope className="text-cyan-600 w-10 h-10 mb-3" />,
+            title: "Top Level Doctors",
+            desc: "Expert physicians offering specialized and primary care."
+          },
+          {
+            icon: <Microscope className="text-cyan-600 w-10 h-10 mb-3" />,
+            title: "Modern Equipment",
+            desc: "Advanced diagnostic tools for accurate treatment."
+          },
+          {
+            icon: <Hospital className="text-cyan-600 w-10 h-10 mb-3" />,
+            title: "Qualified Facilities",
+            desc: "State-of-the-art infrastructure and hygiene."
+          },
+          {
+            icon: <Syringe className="text-cyan-600 w-10 h-10 mb-3" />,
+            title: "Professional Services",
+            desc: "Routine and specialized treatments delivered with care."
+          },
+          {
+            icon: <MessageCircleHeart className="text-cyan-600 w-10 h-10 mb-3" />,
+            title: "Medical Counseling",
+            desc: "Personalized mental and physical wellness support."
+          },
+          {
+            icon: <Ambulance className="text-cyan-600 w-10 h-10 mb-3" />,
+            title: "Emergency Help",
+            desc: "24/7 medical emergency and ambulance assistance."
+          }
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="bg-white border border-gray-300 px-4 py-5 rounded-lg min-h-[120px] flex flex-col items-center text-center hover:border-gray-500 transition"
+          >
+            {item.icon}
+            <h4 className="text-sm font-semibold text-gray-800 mb-1">{item.title}</h4>
+            <p className="text-xs text-gray-600">{item.desc}</p>
+          </div>
+        ))}
       </div>
 
       {/* Right: Opening Hours Box */}
@@ -416,7 +405,7 @@ const Index = () => {
         <div>
           <h3 className="text-lg font-bold mb-3">Opening Hours:</h3>
           <p className="text-sm mb-6 leading-relaxed">
-            Our clinics operate throughout the week to serve you better.
+            Porta semper lacus cursus and feugiat primis ultrice ligula risus auctor tempus feugiat and dolor lacinia cursus
           </p>
           <ul className="text-sm border-t border-white/30 pt-4 space-y-3">
             <li className="flex justify-between">
@@ -432,7 +421,7 @@ const Index = () => {
               <span className="font-semibold">9:00 AM - 6:00 PM</span>
             </li>
             <li className="flex justify-between">
-              <span>Sat - Sun</span>
+              <span>Sun - Sun</span>
               <span className="font-semibold">Closed</span>
             </li>
           </ul>
@@ -440,13 +429,14 @@ const Index = () => {
         <div className="mt-6 border-t border-white/30 pt-4">
           <h4 className="font-semibold mb-2">Need a personal health plan?</h4>
           <p className="text-sm">
-            Contact our care team to design a plan that suits your needs.
+            Porta semper lacus cursus, and feugiat primis ultrice ligula at risus auctor
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
 
