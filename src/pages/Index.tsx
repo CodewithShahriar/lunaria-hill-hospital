@@ -355,10 +355,10 @@ const Index = () => {
     {/* Grid Layout */}
     <div className="grid md:grid-cols-3 gap-8">
       {/* Left: Feature Cards */}
-      <div className="md:col-span-2 grid sm:grid-cols-2 gap-6">
+      <div className="md:col-span-2 grid sm:grid-cols-2 gap-1">
         <div className="flex items-start space-x-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition">
           {/* Replace below with your imported icon */}
-          <Stethoscope className="text-cyan-600 w-8 h-8" />
+          <Stethoscope className="text-cyan-600 w-20 h-20" />
           <div>
             <h4 className="text-sm font-semibold text-gray-800 mb-1">Top Level Doctors</h4>
             <p className="text-sm text-gray-600">
