@@ -572,7 +572,7 @@ const Index = () => {
             <div>
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1583911860205-72f8ac8ddcbe?ixlib=rb-4.0.3" 
+                  src="https://almadinadiagnostic.com/assets/img/department/Pathology-Lab-Management-Software.jpg" 
                   alt="Modern Medical Technology" 
                   className="w-full rounded-xl shadow-lg"
                 />
