@@ -91,7 +91,7 @@ const HeroSection = () => {
           <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                src="https://img.freepik.com/premium-photo/doctors-nurses-arms-crossed-portrait-diversity-hospital-about-us-leadership-people-trust-community-support-smile-happy-confident-healthcare-workers-teamwork-collaboration_590464-143114.jpg?semt=ais_hybrid&w=740"
                 alt="Modern Hospital"
                 className="rounded-2xl w-full h-[500px] object-cover transform hover:scale-105 transition-transform duration-700"
               />
@@ -130,3 +130,8 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+
+
+
+// https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80
