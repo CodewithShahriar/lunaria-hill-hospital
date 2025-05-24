@@ -55,7 +55,7 @@ const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="bg-white rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-primary-500">
                   <Users className="h-8 w-8 text-primary-500 mx-auto mb-2" />
@@ -84,7 +84,7 @@ const HeroSection = () => {
                   <div className="text-sm text-gray-600">Emergency Care</div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Hero Image */}
