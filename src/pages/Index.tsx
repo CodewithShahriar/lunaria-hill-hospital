@@ -348,7 +348,7 @@ const Index = () => {
     <div className="text-center mb-12 px-2">
       <h2 className="text-4xl font-bold text-gray-800">Total Health Care Solutions</h2>
       <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-        We provide trusted, personalized care to support your well-being every step of the way. Our expert team is dedicated to delivering effective and compassionate health services tailored to your needs.
+        Offering personalized and reliable care to support your health and wellness every day.
       </p>
     </div>
 
