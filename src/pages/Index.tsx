@@ -149,15 +149,15 @@ const Index = () => {
               </ul>
               
               {/* Signature of Head of Hospital */}
-              <div className="mb-8">
+              {/* <div className="mb-6">
                 <img 
-                  src="https://i.ibb.co/7KnCHX4/signature.png" 
+                  src="https://cdn-ildceij.nitrocdn.com/DRnNUxiqxHnxDRbzoFypjebKFRSlJIyA/assets/images/optimized/rev-2118018/www.wisestamp.com/wp-content/uploads/2024/04/Michael-Jordan-personal-autograph.webp" 
                   alt="Director's Signature" 
                   className="h-16 mb-2"
                 />
                 <p className="font-medium">Dr. Michael Roberts</p>
                 <p className="text-gray-600 text-sm">Chief Medical Director</p>
-              </div>
+              </div> */}
               
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 rounded-lg">
