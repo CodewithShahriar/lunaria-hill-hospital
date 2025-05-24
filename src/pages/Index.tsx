@@ -6,7 +6,12 @@ import HeroSection from '@/components/HeroSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { MessageCircle, Award, Shield, Clock, Calendar, Heart, Stethoscope, Phone, ArrowRight, CheckCircle, Users, Clipboard, PlusCircle, Zap, Brain, Thermometer, Baby, Eye, Bone, UtensilsCrossed, Microscope } from 'lucide-react';
+import { MessageCircle, Award, Shield, Clock, Calendar, Heart, Stethoscope, Phone, ArrowRight, CheckCircle, Users, Clipboard, PlusCircle, Zap, Brain, Thermometer, Baby, Eye, Bone, UtensilsCrossed,
+  Microscope,
+  Hospital,
+  Syringe,
+  MessageCircleHeart,
+  Ambulance } from 'lucide-react';
 import { AppointmentForm } from '@/components/AppointmentForm';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -337,132 +342,118 @@ const Index = () => {
           
       
       {/* 7. Qualified Doctors Section */}
-     import {
-  Stethoscope,
-  Microscope,
-  Hospital,
-  Syringe,
-  MessageCircleHeart,
-  Ambulance
-} from "lucide-react";
+     <section className="py-20 bg-gray-50 px-6">
+  <div className="max-w-7xl mx-auto">
+    {/* Section Heading */}
+    <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold text-gray-800">Total Health Care Solutions</h2>
+      <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus, blandit posuere ligula varius congue cursus porta feugiat
+      </p>
+    </div>
 
-export default function HealthcareSection() {
-  const features = [
-    {
-      icon: <Stethoscope className="text-cyan-600 w-8 h-8" />,
-      title: "Top Level Doctors",
-      desc:
-        "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor"
-    },
-    {
-      icon: <Microscope className="text-cyan-600 w-8 h-8" />,
-      title: "Modern Equipment",
-      desc:
-        "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor"
-    },
-    {
-      icon: <Hospital className="text-cyan-600 w-8 h-8" />,
-      title: "Qualified Facilities",
-      desc:
-        "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor"
-    },
-    {
-      icon: <Syringe className="text-cyan-600 w-8 h-8" />,
-      title: "Professional Services",
-      desc:
-        "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor"
-    },
-    {
-      icon: <MessageCircleHeart className="text-cyan-600 w-8 h-8" />,
-      title: "Medical Counseling",
-      desc:
-        "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor"
-    },
-    {
-      icon: <Ambulance className="text-cyan-600 w-8 h-8" />,
-      title: "Emergency Help",
-      desc:
-        "Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor"
-    }
-  ];
-
-  return (
-    <section className="py-20 bg-gray-50 px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800">
-            Total Health Care Solutions
-          </h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Aliquam a augue suscipit, luctus neque purus ipsum neque dolor
-            primis libero at tempus, blandit posuere ligula varius congue cursus
-            porta feugiat
-          </p>
+    {/* Grid Layout */}
+    <div className="grid md:grid-cols-3 gap-8">
+      {/* Left: Feature Cards */}
+      <div className="md:col-span-2 grid sm:grid-cols-2 gap-6">
+        <div className="flex items-start space-x-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition">
+          {/* Replace below with your imported icon */}
+          <Stethoscope className="text-cyan-600 w-8 h-8" />
+          <div>
+            <h4 className="text-sm font-semibold text-gray-800 mb-1">Top Level Doctors</h4>
+            <p className="text-sm text-gray-600">
+              Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor
+            </p>
+          </div>
         </div>
 
-        {/* Grid Layout */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Left: Service Cards */}
-          <div className="md:col-span-2 grid sm:grid-cols-2 gap-6">
-            {features.map((item, idx) => (
-              <div
-                key={idx}
-                className="flex items-start space-x-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition"
-              >
-                {item.icon}
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-800 mb-1">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm text-gray-600">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+        <div className="flex items-start space-x-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition">
+          <Microscope className="text-cyan-600 w-8 h-8" />
+          <div>
+            <h4 className="text-sm font-semibold text-gray-800 mb-1">Modern Equipment</h4>
+            <p className="text-sm text-gray-600">
+              Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor
+            </p>
           </div>
+        </div>
 
-          {/* Right: Opening Hours */}
-          <div className="bg-cyan-600 text-white p-8 rounded-lg shadow-md flex flex-col justify-between">
-            <div>
-              <h3 className="text-lg font-bold mb-3">Opening Hours:</h3>
-              <p className="text-sm mb-6 leading-relaxed">
-                Porta semper lacus cursus and feugiat primis ultrice ligula risus
-                auctor tempus feugiat and dolor lacinia cursus
-              </p>
-              <ul className="text-sm border-t border-white/30 pt-4 space-y-3">
-                <li className="flex justify-between">
-                  <span>Mon – Wed</span>
-                  <span className="font-semibold">9:00 AM - 7:00 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Thursday</span>
-                  <span className="font-semibold">9:00 AM - 6:30 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Friday</span>
-                  <span className="font-semibold">9:00 AM - 6:00 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Sun - Sun</span>
-                  <span className="font-semibold">Closed</span>
-                </li>
-              </ul>
-            </div>
-            <div className="mt-6 border-t border-white/30 pt-4">
-              <h4 className="font-semibold mb-2">
-                Need a personal health plan?
-              </h4>
-              <p className="text-sm">
-                Porta semper lacus cursus, and feugiat primis ultrice ligula at
-                risus auctor
-              </p>
-            </div>
+        <div className="flex items-start space-x-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition">
+          <Hospital className="text-cyan-600 w-8 h-8" />
+          <div>
+            <h4 className="text-sm font-semibold text-gray-800 mb-1">Qualified Facilities</h4>
+            <p className="text-sm text-gray-600">
+              Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start space-x-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition">
+          <Syringe className="text-cyan-600 w-8 h-8" />
+          <div>
+            <h4 className="text-sm font-semibold text-gray-800 mb-1">Professional Services</h4>
+            <p className="text-sm text-gray-600">
+              Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start space-x-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition">
+          <MessageCircleHeart className="text-cyan-600 w-8 h-8" />
+          <div>
+            <h4 className="text-sm font-semibold text-gray-800 mb-1">Medical Counseling</h4>
+            <p className="text-sm text-gray-600">
+              Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start space-x-4 bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition">
+          <Ambulance className="text-cyan-600 w-8 h-8" />
+          <div>
+            <h4 className="text-sm font-semibold text-gray-800 mb-1">Emergency Help</h4>
+            <p className="text-sm text-gray-600">
+              Porta semper lacus at cursus primis ultrice in ligula risus an auctor tempus feugiat dolor
+            </p>
           </div>
         </div>
       </div>
-    </section>
-  );
-}
+
+      {/* Right: Opening Hours Box */}
+      <div className="bg-cyan-600 text-white p-8 rounded-lg shadow-md flex flex-col justify-between">
+        <div>
+          <h3 className="text-lg font-bold mb-3">Opening Hours:</h3>
+          <p className="text-sm mb-6 leading-relaxed">
+            Porta semper lacus cursus and feugiat primis ultrice ligula risus auctor tempus feugiat and dolor lacinia cursus
+          </p>
+          <ul className="text-sm border-t border-white/30 pt-4 space-y-3">
+            <li className="flex justify-between">
+              <span>Mon – Wed</span>
+              <span className="font-semibold">9:00 AM - 7:00 PM</span>
+            </li>
+            <li className="flex justify-between">
+              <span>Thursday</span>
+              <span className="font-semibold">9:00 AM - 6:30 PM</span>
+            </li>
+            <li className="flex justify-between">
+              <span>Friday</span>
+              <span className="font-semibold">9:00 AM - 6:00 PM</span>
+            </li>
+            <li className="flex justify-between">
+              <span>Sun - Sun</span>
+              <span className="font-semibold">Closed</span>
+            </li>
+          </ul>
+        </div>
+        <div className="mt-6 border-t border-white/30 pt-4">
+          <h4 className="font-semibold mb-2">Need a personal health plan?</h4>
+          <p className="text-sm">
+            Porta semper lacus cursus, and feugiat primis ultrice ligula at risus auctor
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
       
