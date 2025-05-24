@@ -616,13 +616,13 @@ const Index = () => {
                 title: "Advances in Pediatric Care at Lunaria Hill",
                 excerpt: "Discover our new pediatric wing and specialized treatments available for young patients.",
                 date: "June 02, 2023",
-                image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                image: "https://healthier.stanfordchildrens.org/wp-content/uploads/2022/06/21_1299711083_iStock-scaled.jpg"
               },
               {
                 title: "Mental Health Awareness: Seeking Help Early",
                 excerpt: "Understanding the importance of mental health and when to consult with healthcare professionals.",
                 date: "June 24, 2023",
-                image: "https://images.unsplash.com/photo-1493894473891-10fc1e5dbd22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                image: "https://media.istockphoto.com/id/1470219517/photo/doctor-surgeon-and-neurologist-use-robotic-and-medical-technology-diagnose-and-examine.jpg?s=612x612&w=0&k=20&c=zPmI9WvScFbiM_jzHq3W3uSQD02dnWf2GDs84u1dl7s="
               }
             ].map((article, idx) => (
               <Card key={idx} className="overflow-hidden hover:shadow-lg transition-shadow">
