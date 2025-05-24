@@ -360,32 +360,32 @@ const Index = () => {
       <div className="md:col-span-2 grid sm:grid-cols-2 gap-0 ">
         {[
           {
-            icon: <Stethoscope className="text-cyan-600 w-10 h-10 mb-3" />,
+            icon: <Stethoscope className="text-blue-600 w-10 h-10 mb-3" />,
             title: "Top Level Doctors",
             desc: "Expert physicians offering specialized and primary care."
           },
           {
-            icon: <Microscope className="text-cyan-600 w-10 h-10 mb-3" />,
+            icon: <Microscope className="text-blue-600 w-10 h-10 mb-3" />,
             title: "Modern Equipment",
             desc: "Advanced diagnostic tools for accurate treatment."
           },
           {
-            icon: <Hospital className="text-cyan-600 w-10 h-10 mb-3" />,
+            icon: <Hospital className="text-blue-600 w-10 h-10 mb-3" />,
             title: "Qualified Facilities",
             desc: "State-of-the-art infrastructure and hygiene."
           },
           {
-            icon: <Syringe className="text-cyan-600 w-10 h-10 mb-3" />,
+            icon: <Syringe className="text-blue-600 w-10 h-10 mb-3" />,
             title: "Professional Services",
             desc: "Routine and specialized treatments delivered with care."
           },
           {
-            icon: <MessageCircleHeart className="text-cyan-600 w-10 h-10 mb-3" />,
+            icon: <MessageCircleHeart className="text-blue-600 w-10 h-10 mb-3" />,
             title: "Medical Counseling",
             desc: "Personalized mental and physical wellness support."
           },
           {
-            icon: <Ambulance className="text-cyan-600 w-10 h-10 mb-3" />,
+            icon: <Ambulance className="text-blue-600 w-10 h-10 mb-3" />,
             title: "Emergency Help",
             desc: "24/7 medical emergency and ambulance assistance."
           }
@@ -403,7 +403,7 @@ const Index = () => {
       </div>
 
       {/* Right: Opening Hours Box */}
-      <div className="bg-cyan-600 text-white p-8 rounded-lg shadow-md flex flex-col justify-between">
+      <div className="bg-blue-600 text-white p-8 rounded-lg shadow-md flex flex-col justify-between">
         <div>
           <h3 className="text-lg font-bold mb-3">Opening Hours:</h3>
           <p className="text-sm mb-6 leading-relaxed">
