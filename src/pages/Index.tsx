@@ -659,36 +659,39 @@ const Index = () => {
       </section>
       
       {/* 12. CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-4">Take the First Step to Help</h2>
-              <p className="text-xl text-white/90 mb-6">
-                Don't wait to address your health concerns. Contact us today to schedule an appointment with our expert medical team.
-              </p>
-              <div className="flex items-center gap-4">
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Book Appointment
-                </Button>
-                <div className="flex flex-col">
-                  <p className="text-sm">Call Lunaria Hill Hospital Now</p>
-                  <p className="text-2xl font-bold">(123) 456-7890</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative hidden md:block">
-              <img 
-                src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?ixlib=rb-4.0.3" 
-                alt="Doctor with Patient" 
-                className="w-full rounded-xl shadow-lg"
-              />
-            </div>
-          </div>
+<section className="relative py-20 bg-blue-800 text-white">
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{
+      backgroundImage: "url('https://media.istockphoto.com/id/593305618/photo/putting-their-skills-to-good-use.jpg?s=612x612&w=0&k=20&c=_5_-dWH79KXUt0GXHgnzswN_rYQoNM425Ru4fPtE5OE=')",
+    }}
+  >
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-blue-900/70"></div>
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 container mx-auto px-4">
+    <div className="max-w-3xl">
+      <h2 className="text-4xl font-bold mb-4">Take the First Step to Help</h2>
+      <p className="text-xl text-white/90 mb-6">
+        Your health is your most valuable asset—don’t put it on hold. Whether you're dealing with a specific concern or just need a routine check-up, our experienced medical professionals are here to provide expert guidance and compassionate care. Contact us today to schedule your appointment and take the first step toward a healthier, more confident you.
+      </p>
+      <div className="flex flex-wrap items-center gap-6">
+        <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+          <Calendar className="mr-2 h-5 w-5" />
+          Book Appointment
+        </Button>
+        <div className="flex flex-col">
+          <p className="text-sm">Call Lunaria Hill Hospital Now</p>
+          <p className="text-2xl font-bold">(123) 456-7890</p>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
       
       {/* 13. Footer */}
       <Footer />
