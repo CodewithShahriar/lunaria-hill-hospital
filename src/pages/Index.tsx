@@ -43,7 +43,7 @@ const Index = () => {
                     <span>Friday</span> <span className="font-bold">9:00 AM - 6:00 PM</span>
                   </li>
                   <li className="flex justify-between">
-                    <span>Sun - Sun</span> <span className="font-bold">CLOSED</span>
+                    <span>Sunday</span> <span className="font-bold">CLOSED</span>
                   </li>
                 </ul>
               </div>
