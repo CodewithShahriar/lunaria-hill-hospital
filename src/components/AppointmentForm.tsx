@@ -147,7 +147,7 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
       });
       form.reset();
       onOpenChange(false);
-    }, 2500);
+    }, 3500);
   };
 
   return (
