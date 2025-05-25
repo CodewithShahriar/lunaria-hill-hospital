@@ -176,7 +176,7 @@ With each passing year, we have evolved—expanding our departments, recruiting 
                 className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className=" w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <value.icon className="h-8 w-8 text-primary-500" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">{value.title}</h3>

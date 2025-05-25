@@ -14,76 +14,78 @@ import {
   Pill,
   Stethoscope,
   Zap,
-  Shield
+  Shield,
+  Syringe,
 } from 'lucide-react';
 
 const Departments = () => {
   const departments = [
-    {
-      icon: Heart,
-      name: 'Cardiology',
-      description: 'Advanced heart care with state-of-the-art cardiac interventions and treatments',
-      services: ['Cardiac Surgery', 'Angioplasty', 'Pacemaker Implantation', 'Heart Transplant'],
-      doctors: 8,
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      icon: Brain,
-      name: 'Neurology',
-      description: 'Comprehensive neurological care for brain and nervous system disorders',
-      services: ['Brain Surgery', 'Stroke Treatment', 'Epilepsy Care', 'Neuroimaging'],
-      doctors: 6,
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      icon: Baby,
-      name: 'Pediatrics',
-      description: 'Specialized medical care for infants, children, and adolescents',
-      services: ['Newborn Care', 'Vaccination', 'Child Development', 'Pediatric Surgery'],
-      doctors: 10,
-      image: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      icon: Users,
-      name: 'Gynaecology',
-      description: "Women's health services including reproductive and maternal care",
-      services: ['Maternity Care', 'Gynecological Surgery', 'Fertility Treatment', 'Prenatal Care'],
-      doctors: 7,
-      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      icon: Bone,
-      name: 'Orthopedics',
-      description: 'Expert care for bone, joint, and musculoskeletal conditions',
-      services: ['Joint Replacement', 'Sports Medicine', 'Spine Surgery', 'Fracture Care'],
-      doctors: 9,
-      image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      icon: Activity,
-      name: 'Surgery',
-      description: 'Advanced surgical procedures with minimally invasive techniques',
-      services: ['General Surgery', 'Laparoscopic Surgery', 'Emergency Surgery', 'Day Surgery'],
-      doctors: 12,
-      image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      icon: TestTube,
-      name: 'Diagnostics',
-      description: 'Comprehensive diagnostic services with advanced imaging and laboratory',
-      services: ['MRI & CT Scan', 'Blood Tests', 'Pathology', 'Digital X-Ray'],
-      doctors: 5,
-      image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    },
-    {
-      icon: Eye,
-      name: 'Ophthalmology',
-      description: 'Complete eye care services from routine exams to complex surgeries',
-      services: ['Cataract Surgery', 'Retina Treatment', 'Glaucoma Care', 'LASIK Surgery'],
-      doctors: 4,
-      image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
-    }
-  ];
+  {
+    icon: Stethoscope, // Add this icon
+    name: 'Medicine',
+    description: 'Comprehensive internal medicine for acute and chronic illnesses',
+    services: ['Diabetes Management', 'Hypertension Treatment', 'Infectious Diseases', 'Preventive Care'],
+    doctors: 11,
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGEnKy-PhWWIHskO7yt-4m6Siq_p_qJ0vUlnRkbRYM0kFcx_vx95-KtUVAP-A1OPGP2BY&usqp=CAU'
+  },
+  {
+    icon: Heart,
+    name: 'Cardiology',
+    description: 'Advanced heart care with state-of-the-art cardiac interventions and treatments',
+    services: ['Cardiac Surgery', 'Angioplasty', 'Pacemaker Implantation', 'Heart Transplant'],
+    doctors: 8,
+    image: 'https://smclife.in/wp-content/uploads/2024/03/cardiology1.jpg'
+  },
+  {
+    icon: Brain,
+    name: 'Neurology',
+    description: 'Comprehensive neurological care for brain and nervous system disorders',
+    services: ['Brain Surgery', 'Stroke Treatment', 'Epilepsy Care', 'Neuroimaging'],
+    doctors: 6,
+    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+  },
+  {
+    icon:  Syringe, // Add this icon to represent Gastroenterology (as an endoscopic tool alternative)
+    name: 'Gastroenterology',
+    description: 'Expert care for digestive system disorders and liver-related diseases',
+    services: ['Endoscopy', 'Liver Disease Treatment', 'IBD Care', 'Colonoscopy'],
+    doctors: 7,
+    image: 'https://images.unsplash.com/photo-1588776814546-ec7e8d69b2a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+  },
+  {
+    icon: Baby,
+    name: 'Pediatrics',
+    description: 'Specialized medical care for infants, children, and adolescents',
+    services: ['Newborn Care', 'Vaccination', 'Child Development', 'Pediatric Surgery'],
+    doctors: 10,
+    image: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+  },
+  {
+    icon: Bone,
+    name: 'Orthopedics',
+    description: 'Expert care for bone, joint, and musculoskeletal conditions',
+    services: ['Joint Replacement', 'Sports Medicine', 'Spine Surgery', 'Fracture Care'],
+    doctors: 9,
+    image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+  },
+  {
+    icon: Activity,
+    name: 'Surgery',
+    description: 'Advanced surgical procedures with minimally invasive techniques',
+    services: ['General Surgery', 'Laparoscopic Surgery', 'Emergency Surgery', 'Day Surgery'],
+    doctors: 12,
+    image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+  },
+  {
+    icon: Users,
+    name: 'Gynaecology',
+    description: "Women's health services including reproductive and maternal care",
+    services: ['Maternity Care', 'Gynecological Surgery', 'Fertility Treatment', 'Prenatal Care'],
+    doctors: 7,
+    image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+  }
+];
+
 
   return (
     <div className="min-h-screen bg-white">
