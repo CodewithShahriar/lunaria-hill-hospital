@@ -134,23 +134,50 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
     return format(arrival, "hh:mm a");
   };
 
-  const onSubmit = async (data: FormValues) => {
-    setIsSubmitting(true);
+const onSubmit = async (data: FormValues) => {
+  setIsSubmitting(true);
 
-    const serial = generateSerial();
-    const arrivalTime = generateArrivalTime();
+  const serial = generateSerial();
+  const arrivalTime = generateArrivalTime();
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Appointment Confirmed!",
-        description: `You have an appointment with ${data.doctor} on ${format(data.date, "PPP")}.\n\nSerial No: ${serial}\nArrival Time: ${arrivalTime}`,
-        className: "border border-blue-500 shadow-lg",
-      });
-      form.reset();
-      onOpenChange(false);
-    }, 3500);
+  // email content
+  const templateParams = {
+    to_name: data.name,
+    to_email: data.email,
+    doctor: data.doctor,
+    date: format(data.date, "PPP"),
+    serial,
+    arrivalTime,
+    message: data.message || "N/A",
   };
+
+  try {
+    await emailjs.send(
+      "service_qxumrdr",      // replace with your EmailJS service ID
+      "template_83lzuwa",     // replace with your EmailJS template ID
+      templateParams,
+      "1TraX6MWkaM9_aQn-"          // replace with your public key
+    );
+
+    toast({
+      title: "Appointment Confirmed!",
+      description: `A confirmation has been sent to ${data.email}.`,
+      className: "border border-blue-500 shadow-lg",
+    });
+
+    form.reset();
+    onOpenChange(false);
+  } catch (error) {
+    toast({
+      title: "Failed to send email",
+      description: "Please try again later.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
