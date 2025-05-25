@@ -150,7 +150,7 @@ const Departments = () => {
                         {dept.doctors} Expert Doctors
                       </div>
                       <Button size="sm" className="bg-primary-500 hover:bg-primary-600">
-                        Learn More
+                        Find Doctors
                       </Button>
                     </div>
                   </div>
