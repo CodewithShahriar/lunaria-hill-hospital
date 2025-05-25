@@ -146,14 +146,14 @@ const doctorsData = [
 
 const specialties = [
   "All Specialties",
+  "Medicine",
   "Cardiology", 
   "Neurology", 
   "Pediatrics", 
+  "Gastroenterology",
+  "Surgery",
   "Orthopedics", 
-  "Gynecology", 
-  "Dermatology", 
-  "Ophthalmology", 
-  "ENT"
+  "Gynecology"
 ];
 
 const DoctorCard = ({ doctor, onBookAppointment }: { doctor: any, onBookAppointment: () => void }) => (
@@ -237,7 +237,7 @@ const Doctors = () => {
       <section className="py-10 bg-white shadow-md">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
-            <div className="relative w-full md:w-1/3">
+            <div className="relative w-full md:w-1/5">
               <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
               <Input
                 placeholder="Search doctor by name..."
