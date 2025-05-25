@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -8,13 +7,13 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { AppointmentForm } from '@/components/AppointmentForm';
 import { Search, Calendar, Star } from 'lucide-react';
 
-// Mock doctor data
+// Doctor data
 const doctorsData = [
   {
     id: 1,
     name: "Dr. John Smith",
     specialty: "Medicine",
-    image: "https://img.freepik.com/premium-photo/smiling-doctor_13339-567.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
+    image: "https://img.freepik.com/premium-photo/smiling-doctor_13339-567.jpg?w=740",
     rating: 4.9,
     reviews: 124,
     degrees: ["MBBS", "MD (Cardiology)", "FACC"],
@@ -25,10 +24,10 @@ const doctorsData = [
     id: 2,
     name: "Dr. Emily Johnson",
     specialty: "Cardiology",
-    image: "https://img.freepik.com/free-photo/female-doctor-hospital-with-stethoscope_23-2148827776.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
+    image: "https://img.freepik.com/free-photo/female-doctor-hospital-with-stethoscope_23-2148827776.jpg?w=740",
     rating: 4.8,
     reviews: 98,
-    education: "Johns Hopkins University",
+    degrees: ["MBBS", "MD"],
     experience: "12+ years",
     schedule: "Tue, Thu, Sat"
   },
@@ -39,7 +38,7 @@ const doctorsData = [
     image: "https://img.freepik.com/premium-photo/tell-me-about-your-habits-mature-male-doctor-making-notes-clipboard-looking-camera-with-smile-while-standing-against-grey-background_425904-20099.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.7,
     reviews: 156,
-    education: "Stanford Medical School",
+    degrees: ["MBBS", "MD (Neurology)", "DM (Neuroscience)"],
     experience: "10+ years",
     schedule: "Mon, Tue, Thu"
   },
@@ -50,7 +49,7 @@ const doctorsData = [
     image: "https://img.freepik.com/premium-photo/portrait-smiling-female-doctor-standing-with-arms-crossed_107420-77645.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 210,
-    education: "Yale School of Medicine",
+    degrees: ["MBBS", "MD (General Medicine)"],
     experience: "14+ years",
     schedule: "Tue, Wed, Fri"
   },
@@ -61,7 +60,7 @@ const doctorsData = [
     image: "https://img.freepik.com/free-photo/portrait-candid-male-doctor_329181-611.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.6,
     reviews: 89,
-    education: "Columbia University",
+    degrees: ["MBBS", "MD (Internal Medicine)"],
     experience: "11+ years",
     schedule: "Mon, Thu, Sat"
   },
@@ -72,7 +71,7 @@ const doctorsData = [
     image: "https://img.freepik.com/free-photo/i-trying-be-best-doctor_329181-2188.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.8,
     reviews: 132,
-    education: "Duke University",
+    degrees: ["MBBS", "MD (Medicine)", "DM (Cardiology)"],
     experience: "9+ years",
     schedule: "Wed, Thu, Fri"
   },
@@ -83,7 +82,7 @@ const doctorsData = [
     image: "https://img.freepik.com/free-photo/portrait-candid-female-doctor_329181-2305.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.7,
     reviews: 104,
-    education: "University of Pennsylvania",
+    degrees: ["MBBS", "MD (Medicine)", "DM (Gastroenterology)"],
     experience: "13+ years",
     schedule: "Mon, Tue, Sat"
   },
@@ -94,7 +93,7 @@ const doctorsData = [
     image: "https://img.freepik.com/free-photo/close-up-health-worker_23-2149112510.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 187,
-    education: "University of California",
+    degrees: ["MBBS", "MD (Neurology)"],
     experience: "16+ years",
     schedule: "Tue, Fri, Sat"
   },
@@ -105,7 +104,7 @@ const doctorsData = [
     image: "https://img.freepik.com/free-photo/doctor-with-lolly-pop-white-background_1368-5865.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 187,
-    education: "University of California",
+    degrees: ["MBBS", "MD (Pediatrics)"],
     experience: "16+ years",
     schedule: "Tue, Fri, Sat"
   },
@@ -116,7 +115,7 @@ const doctorsData = [
     image: "https://img.freepik.com/premium-photo/doctor-with-arms-crossed-smiling-camera_13339-122828.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 187,
-    education: "University of California",
+    degrees: ["MBBS", "MS (Orthopedics)"],
     experience: "16+ years",
     schedule: "Tue, Fri, Sat"
   },
@@ -127,7 +126,7 @@ const doctorsData = [
     image: "https://img.freepik.com/free-photo/doctor-isolated-white-wall_1157-43224.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 187,
-    education: "University of California",
+    degrees: ["MBBS", "MD (Obstetrics & Gynecology)"],
     experience: "16+ years",
     schedule: "Tue, Fri, Sat"
   },
@@ -138,10 +137,11 @@ const doctorsData = [
     image: "https://img.freepik.com/premium-photo/young-handsome-man-doctor-wearing-eyeglasses-gray_251136-39212.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 187,
-    education: "University of California",
+    degrees: ["MBBS", "MD (Neurology)", "DM (Neurosciences)"],
     experience: "16+ years",
     schedule: "Tue, Fri, Sat"
   }
+
 ];
 
 const specialties = [
@@ -156,18 +156,24 @@ const specialties = [
   "Gynecology"
 ];
 
+const ScheduleTag = ({ day }: { day: string }) => (
+  <span className="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-1 px-2 py-0.5 rounded">
+    {day}
+  </span>
+);
+
 const DoctorCard = ({ doctor, onBookAppointment }: { doctor: any, onBookAppointment: () => void }) => (
-  <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+  <Card className="overflow-hidden hover:shadow-md transition-shadow rounded-2xl">
     <div className="h-80 overflow-hidden">
       <img 
         src={doctor.image} 
         alt={doctor.name}
-        className="w-full h-90 object-cover transition-transform hover:scale-105 duration-500"
+        className="w-full h-68 object-cover transition-transform hover:scale-105 duration-500"
       />
     </div>
     <CardHeader className="pb-2">
       <div className="flex justify-between items-center">
-        <CardTitle>{doctor.name}</CardTitle>
+        <CardTitle className="text-base">{doctor.name}</CardTitle>
         <div className="flex items-center text-yellow-500">
           <Star className="fill-yellow-500 h-4 w-4" />
           <span className="ml-1 text-sm">{doctor.rating}</span>
@@ -179,17 +185,24 @@ const DoctorCard = ({ doctor, onBookAppointment }: { doctor: any, onBookAppointm
       </CardDescription>
     </CardHeader>
     <CardContent className="text-sm space-y-2 pb-4">
-      <div className="flex justify-between">
-        <span className="text-gray-500">Education:</span>
-        <span className="font-medium">{doctor.education}</span>
+      <div>
+        {/* <span className="text-gray-500">Degrees:</span> */}
+        <div className="font-medium mt-1 flex flex-wrap gap-1">
+          {doctor.degrees.map((deg: string, index: number) => (
+            <span key={index} className="bg-gray-100 px-2 py-0.5 rounded text-xs text-gray-800">
+              {deg}
+            </span>
+          ))}
+        </div>
       </div>
-      <div className="flex justify-between">
-        <span className="text-gray-500">Experience:</span>
-        <span className="font-medium">{doctor.experience}</span>
-      </div>
-      <div className="flex justify-between">
+      
+      <div>
         <span className="text-gray-500">Schedule:</span>
-        <span className="font-medium">{doctor.schedule}</span>
+        <div className="mt-1">
+          {doctor.schedule.split(', ').map((day: string, i: number) => (
+            <ScheduleTag key={i} day={day} />
+          ))}
+        </div>
       </div>
     </CardContent>
     <CardFooter>
@@ -222,19 +235,19 @@ const Doctors = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation onAppointmentClick={handleBookAppointment} />
-      
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-500 to-blue-600 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Our Medical Experts</h1>
-          <p className="text-lg max-w-2xl mx-auto opacity-90 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Medical Experts</h1>
+          <p className="text-lg max-w-2xl mx-auto">
             Meet our team of experienced specialists dedicated to providing you with the best healthcare services.
           </p>
         </div>
       </section>
-      
+
       {/* Search and Filter */}
-      <section className="py-10 bg-white shadow-md">
+      <section className="py-10 bg-white shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
             <div className="relative w-full md:w-1/5">
@@ -246,13 +259,12 @@ const Doctors = () => {
                 className="pl-10"
               />
             </div>
-            
             <div className="flex flex-wrap gap-2 justify-center">
               {specialties.map(specialty => (
                 <Button
                   key={specialty}
                   variant={selectedSpecialty === specialty ? "default" : "outline"}
-                  className={selectedSpecialty === specialty ? "bg-primary-500" : ""}
+                  className={selectedSpecialty === specialty ? "bg-primary-500 text-white" : ""}
                   onClick={() => setSelectedSpecialty(specialty)}
                 >
                   {specialty}
@@ -284,9 +296,9 @@ const Doctors = () => {
           )}
         </div>
       </section>
-      
+
       <Footer />
-      
+
       {/* Appointment Dialog */}
       <AppointmentForm 
         open={appointmentDialogOpen} 

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -63,7 +62,6 @@ const departments = [
   { id: "ent", name: "ENT" },
 ];
 
-// Mock doctor data
 const doctors = {
   cardiology: [
     { id: "dr-smith", name: "Dr. John Smith" },
@@ -123,8 +121,7 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    
-    // Simulate API call
+
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
