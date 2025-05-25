@@ -96,18 +96,17 @@ const About = () => {
               <h3 className="text-2xl font-bold text-gray-800 mb-6">Established in 2000</h3>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Lunaria Hill Hospital was founded with a vision to provide world-class healthcare 
-                  services to our community. Starting as a small medical center, we have grown into 
-                  a comprehensive healthcare facility.
+                  Nestled in the heart of Lunaria Hill, our hospital was founded with a bold vision: to bring world-class healthcare to the very doorstep of our community. What began as a modest neighborhood clinic has now grown into one of the region’s most advanced and trusted multi-specialty medical centers. <br />
+
+With each passing year, we have evolved—expanding our departments, recruiting highly skilled medical professionals, and embracing cutting-edge technologies. From diagnostic excellence to compassionate patient care, Lunaria Hill Hospital has become a symbol of trust, hope, and healing for thousands.
+
+
                 </p>
                 <p>
-                  Over the years, we have continuously expanded our services, upgraded our facilities, 
-                  and invested in the latest medical technology. Today, we stand as a beacon of hope 
-                  and healing for thousands of patients.
+                  We are proud to have achieved numerous milestones, from national accreditations to patient satisfaction awards. Our dedicated staff works around the clock to uphold the highest standards of medical care while nurturing a welcoming, patient-first environment.
                 </p>
                 <p>
-                  Our journey has been marked by numerous milestones, awards, and recognition for 
-                  excellence in healthcare delivery, patient satisfaction, and community service.
+                  Whether you're here for a routine check-up or life-saving treatment, Lunaria Hill Hospital is committed to walking every step of your healthcare journey—with expertise, empathy, and integrity.
                 </p>
               </div>
             </div>
@@ -187,6 +186,57 @@ const About = () => {
           </div>
         </div>
       </section>
+
+
+      {/* Awards & Recognition Section */}
+<section style={{ padding: '2rem 0', textAlign: 'center' }}>
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold text-gray-800 mb-4">Awards & Recognition</h2>
+      <p className="text-lg text-gray-600">
+        Honored for our dedication to excellence, innovation, and patient-centered care.
+      </p>
+    </div>
+    </div>
+  <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', alignItems: 'center' }}>
+    <img
+      src="https://www.casacolina.org/images/CMMS-logo_2305_v3_cmyk_6-inch-Height_300dpi.jpg"
+      alt="Casa Colina Logo"
+      style={{ maxHeight: '80px', maxWidth: '150px', objectFit: 'contain' }}
+    />
+    <img
+      src="https://d11mkob3ld6ys.cloudfront.net/images/logos/SCH-016_5star-Overall-Quality-Badge_Navy.png"
+      alt="5 Star Quality Badge"
+      style={{ maxHeight: '90px', maxWidth: '150px', objectFit: 'contain' }}
+    />
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLYokV7w7M_hRanF5giERDsqSehPOImQmLTQ&s"
+      alt="Dignity Health Awards"
+      style={{ maxHeight: '80px', maxWidth: '150px', objectFit: 'contain' }}
+    />
+    <img
+      src="https://newsroom.spectrumhealth.org/wp-content/uploads/2018/02/HG_Americas_50_Best_Award_Image_2015-2018.jpg"
+      alt="HG Americas 50 Best Award"
+      style={{ maxHeight: '80px', maxWidth: '150px', objectFit: 'contain' }}
+    />
+    <img
+      src="https://www.kauveryhospital.com/wp-content/uploads/2023/07/Newsweek-small.jpg"
+      alt="Additional Logo"
+      style={{ maxHeight: '80px', maxWidth: '150px', objectFit: 'contain' }}
+    />
+    <img
+      src="https://www.stegh.on.ca/wp-content/uploads/2023/03/YHS-badge-png.png.pagespeed.ce.dSWT4x0Q3s.png"
+      alt="Additional Logo"
+      style={{ maxHeight: '90px', maxWidth: '150px', objectFit: 'contain' }}
+    />
+    <img
+      src="https://ihf-fih.org/wp-content/uploads/2024/01/IHF-Awards-2024-logo-web.jpg"
+      alt="Additional Logo"
+      style={{ maxHeight: '96px', maxWidth: '150px', objectFit: 'contain' }}
+    />
+  </div>
+</section>
+
 
       <Footer />
     </div>
