@@ -153,10 +153,10 @@ const onSubmit = async (data: FormValues) => {
 
   try {
     await emailjs.send(
-      "service_qxumrdr",      // replace with your EmailJS service ID
-      "template_83lzuwa",     // replace with your EmailJS template ID
+      "service_qxumrdr",
+      "template_8184c6o",
       templateParams,
-      "1TraX6MWkaM9_aQn-"          // replace with your public key
+      "1TraX6MWkaM9_aQn-"
     );
 
     toast({
@@ -166,17 +166,21 @@ const onSubmit = async (data: FormValues) => {
     });
 
     form.reset();
+    setIsSubmitting(false); // ✅ Reset here before closing modal
     onOpenChange(false);
-  } catch (error) {
+  } catch (error: any) {
+    console.error("EmailJS error:", error);
+
     toast({
       title: "Failed to send email",
-      description: "Please try again later.",
+      description: error?.text || "Please try again later.",
       variant: "destructive",
     });
-  } finally {
-    setIsSubmitting(false);
+
+    setIsSubmitting(false); // ✅ Reset here on error as well
   }
 };
+
 
 
   return (
