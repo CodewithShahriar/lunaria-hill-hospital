@@ -13,7 +13,7 @@ const doctorsData = [
   {
     id: 1,
     name: "Dr. John Smith",
-    specialty: "Cardiology",
+    specialty: "Medicine",
     image: "https://img.freepik.com/premium-photo/smiling-doctor_13339-567.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 124,
@@ -24,7 +24,7 @@ const doctorsData = [
   {
     id: 2,
     name: "Dr. Emily Johnson",
-    specialty: "Neurology",
+    specialty: "Cardiology",
     image: "https://img.freepik.com/free-photo/female-doctor-hospital-with-stethoscope_23-2148827776.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.8,
     reviews: 98,
@@ -35,7 +35,7 @@ const doctorsData = [
   {
     id: 3,
     name: "Dr. Michael Brown",
-    specialty: "Pediatrics",
+    specialty: "Neurology",
     image: "https://img.freepik.com/premium-photo/tell-me-about-your-habits-mature-male-doctor-making-notes-clipboard-looking-camera-with-smile-while-standing-against-grey-background_425904-20099.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.7,
     reviews: 156,
@@ -46,7 +46,7 @@ const doctorsData = [
   {
     id: 4,
     name: "Dr. Sarah Davis",
-    specialty: "Orthopedics",
+    specialty: "Medicine",
     image: "https://img.freepik.com/premium-photo/portrait-smiling-female-doctor-standing-with-arms-crossed_107420-77645.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 210,
@@ -57,7 +57,7 @@ const doctorsData = [
   {
     id: 5,
     name: "Dr. Robert Wilson",
-    specialty: "Gynecology",
+    specialty: "Medicine",
     image: "https://img.freepik.com/free-photo/portrait-candid-male-doctor_329181-611.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.6,
     reviews: 89,
@@ -68,7 +68,7 @@ const doctorsData = [
   {
     id: 6,
     name: "Dr. Jennifer Taylor",
-    specialty: "Dermatology",
+    specialty: "Cardiology",
     image: "https://img.freepik.com/free-photo/i-trying-be-best-doctor_329181-2188.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.8,
     reviews: 132,
@@ -79,7 +79,7 @@ const doctorsData = [
   {
     id: 7,
     name: "Dr. David Anderson",
-    specialty: "Ophthalmology",
+    specialty: "Gastroenterology",
     image: "https://img.freepik.com/free-photo/portrait-candid-female-doctor_329181-2305.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.7,
     reviews: 104,
@@ -90,7 +90,7 @@ const doctorsData = [
   {
     id: 8,
     name: "Dr. Lisa Thomas",
-    specialty: "ENT",
+    specialty: "Neurology",
     image: "https://img.freepik.com/free-photo/close-up-health-worker_23-2149112510.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 187,
@@ -101,7 +101,7 @@ const doctorsData = [
   {
     id: 9,
     name: "Dr. Lisa Thomas",
-    specialty: "ENT",
+    specialty: "Pediatrics",
     image: "https://img.freepik.com/free-photo/doctor-with-lolly-pop-white-background_1368-5865.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 187,
@@ -112,7 +112,7 @@ const doctorsData = [
   {
     id: 10,
     name: "Dr. Lisa Thomas",
-    specialty: "ENT",
+    specialty: "Orthopedics",
     image: "https://img.freepik.com/premium-photo/doctor-with-arms-crossed-smiling-camera_13339-122828.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 187,
@@ -123,7 +123,7 @@ const doctorsData = [
   {
     id: 11,
     name: "Dr. Lisa Thomas",
-    specialty: "ENT",
+    specialty: "Gynecology",
     image: "https://img.freepik.com/free-photo/doctor-isolated-white-wall_1157-43224.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 187,
@@ -134,7 +134,7 @@ const doctorsData = [
   {
     id: 12,
     name: "Dr. Lisa Thomas",
-    specialty: "ENT",
+    specialty: "Neurology",
     image: "https://img.freepik.com/premium-photo/young-handsome-man-doctor-wearing-eyeglasses-gray_251136-39212.jpg?ga=GA1.1.653135042.1746913730&semt=ais_hybrid&w=740",
     rating: 4.9,
     reviews: 187,
