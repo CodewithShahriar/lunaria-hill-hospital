@@ -15,6 +15,7 @@ import {
   Stethoscope,
   Zap,
   Shield,
+  AlarmCheck,
   Syringe,
 } from 'lucide-react';
 
@@ -161,40 +162,44 @@ const Departments = () => {
         </div>
       </section>
 
-      {/* Emergency Services */}
-      <section className="py-20 bg-red-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white rounded-2xl shadow-xl p-8 animate-fade-in">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Zap className="h-8 w-8 text-red-500" />
-              </div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Emergency Department</h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Our 24/7 Emergency Department is staffed with board-certified emergency physicians and 
-                trauma specialists, equipped with state-of-the-art life-saving equipment.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-red-500">24/7</div>
-                  <div className="text-gray-600">Emergency Care</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-red-500">&lt;15</div>
-                  <div className="text-gray-600">Minutes Response</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-red-500">100%</div>
-                  <div className="text-gray-600">Ready Always</div>
-                </div>
-              </div>
-              <Button size="lg" className="bg-red-500 hover:bg-red-600">
-                Emergency Contact: 911
-              </Button>
-            </div>
-          </div>
+     
+
+{/* Emergency Services */}
+<section className="py-20 bg-red-700">
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto text-center">
+      <div className="bg-white rounded-2xl shadow-xl p-8 animate-fade-in">
+        {/* Emergency Icon */}
+        <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <AlarmCheck className="h-8 w-8 text-red-500" />
         </div>
-      </section>
+        <h2 className="text-3xl font-bold text-gray-800 mb-4">Emergency Department</h2>
+        <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+          Our 24/7 Emergency Department is staffed with board-certified emergency physicians and 
+          trauma specialists, equipped with state-of-the-art life-saving equipment.
+        </p>
+        {/* <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="text-center">
+            <div className="text-2xl font-bold text-red-500">24/7</div>
+            <div className="text-gray-600">Emergency Care</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-red-500">10</div>
+            <div className="text-gray-600">Triage in Minutes</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-red-500">100%</div>
+            <div className="text-gray-600">Always Ready</div>
+          </div>
+        </div> */}
+        <Button size="lg" className="bg-red-500 hover:bg-red-600 animate-pulse-slow">
+          Emergency Contact: 911
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <Footer />
     </div>
