@@ -115,41 +115,50 @@ const About = () => {
         </div>
       </section>
 
-      {/* Director's Message */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12 animate-fade-in">
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">Director's Message</h2>
+ {/* Director's Message */}
+<section className="py-20">
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto">
+      <div className="text-center mb-12 animate-fade-in">
+        <h2 className="text-4xl font-bold text-gray-800 mb-4">Director's Message</h2>
+      </div>
+
+      <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        <div className="flex flex-col lg:flex-row gap-8 items-center">
+          <img
+            src="https://st2.depositphotos.com/1054848/7169/i/950/depositphotos_71691653-stock-photo-smiling-doctor-on-white-background.jpg"
+            alt="Medical Director"
+            className="w-72 h-72 rounded-full object-cover shadow-lg"
+          />
+
+          <div className="flex-1 text-center lg:text-left">
+            <blockquote className="text-lg text-gray-700 italic leading-relaxed mb-6">
+              "At Lunaria Hill Hospital, we believe that healthcare is not just about treating 
+              illness, but about caring for the whole person. Our commitment to excellence, 
+              innovation, and compassionate care drives everything we do. We are here to serve 
+              our community with dedication and integrity."
+            </blockquote>
+
+            <div className="mb-2">
+              <img
+                src="https://signature.freefire-name.com/img.php?f=2&t=Anderson"
+                alt="Signature of Dr. Michael Anderson"
+                className="w-60 h-20 mb-0 mx-auto lg:mx-0"
+              />
             </div>
-            
-            <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="flex flex-col lg:flex-row gap-8 items-center">
-                <img
-                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-                  alt="Medical Director"
-                  className="w-48 h-48 rounded-full object-cover shadow-lg"
-                />
-                
-                <div className="flex-1">
-                  <blockquote className="text-lg text-gray-700 italic leading-relaxed mb-6">
-                    "At Lunaria Hill Hospital, we believe that healthcare is not just about treating 
-                    illness, but about caring for the whole person. Our commitment to excellence, 
-                    innovation, and compassionate care drives everything we do. We are here to serve 
-                    our community with dedication and integrity."
-                  </blockquote>
-                  
-                  <div>
-                    <div className="font-bold text-xl text-gray-800">Dr. Michael Anderson</div>
-                    <div className="text-primary-500 font-semibold">Medical Director & CEO</div>
-                    <div className="text-gray-600">MD, FACS - 25+ years of experience</div>
-                  </div>
-                </div>
-              </div>
+            <div>
+              <div className="font-bold text-xl text-gray-800">Dr. Michael Anderson</div>
+              <div className="text-primary-500 font-semibold">Medical Director & CEO</div>
+              <div className="text-gray-600">MD, FACS – 25+ years of experience</div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* Core Values */}
       <section className="py-20 bg-primary-50">
