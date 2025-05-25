@@ -1,9 +1,8 @@
-
 import { useState } from 'react';
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { format } from "date-fns";
+import { format, addMinutes } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -63,8 +62,7 @@ const departments = [
   { id: "gynecology", name: "Gynecology" },
 ];
 
-
-// Mock doctor data  
+// Mock doctor data
 const doctors = {
   medicine: [
     { id: "dr-davis", name: "Dr. Sarah Davis" },
@@ -100,7 +98,6 @@ const doctors = {
   ],
 };
 
-
 interface AppointmentFormProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -123,19 +120,32 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
     },
   });
 
+  const generateSerial = () => {
+    return Math.floor(100000 + Math.random() * 900000).toString(); // 6-digit serial
+  };
+
+  const generateArrivalTime = () => {
+    const baseHour = 9; // 9:00 AM
+    const randomMinutes = Math.floor(Math.random() * 180); // Up to 3 hours
+    const arrival = addMinutes(new Date().setHours(baseHour, 0, 0, 0), randomMinutes);
+    return format(arrival, "hh:mm a");
+  };
+
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    
-    // Simulate API call
+
+    const serial = generateSerial();
+    const arrivalTime = generateArrivalTime();
+
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
-        title: "Appointment Booked Successfully!",
-        description: `Your appointment with ${data.doctor} on ${format(data.date, "PPP")} has been confirmed.`,
+        title: "Appointment Confirmed!",
+        description: `You have an appointment with ${data.doctor} on ${format(data.date, "PPP")}.\n\nSerial No: ${serial}\nArrival Time: ${arrivalTime}`,
       });
       form.reset();
       onOpenChange(false);
-    }, 1500);
+    }, 2500);
   };
 
   return (
@@ -163,7 +173,6 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
                   </FormItem>
                 )}
               />
-
               <FormField
                 control={form.control}
                 name="email"
@@ -177,7 +186,6 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
                   </FormItem>
                 )}
               />
-
               <FormField
                 control={form.control}
                 name="phone"
@@ -191,14 +199,13 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
                   </FormItem>
                 )}
               />
-
               <FormField
                 control={form.control}
                 name="department"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Department</FormLabel>
-                    <Select 
+                    <Select
                       onValueChange={(value) => {
                         field.onChange(value);
                         setSelectedDepartment(value);
@@ -223,7 +230,6 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
                   </FormItem>
                 )}
               />
-
               <FormField
                 control={form.control}
                 name="doctor"
@@ -253,7 +259,6 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
                   </FormItem>
                 )}
               />
-
               <FormField
                 control={form.control}
                 name="date"
@@ -284,8 +289,8 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
                           mode="single"
                           selected={field.value}
                           onSelect={field.onChange}
-                          disabled={(date) => 
-                            date < new Date() || 
+                          disabled={(date) =>
+                            date < new Date() ||
                             date > new Date(new Date().setMonth(new Date().getMonth() + 3))
                           }
                           initialFocus
@@ -298,7 +303,6 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
                 )}
               />
             </div>
-
             <FormField
               control={form.control}
               name="message"
@@ -312,10 +316,9 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
                 </FormItem>
               )}
             />
-
             <DialogFooter>
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="w-full md:w-auto bg-primary-500 hover:bg-primary-600"
                 disabled={isSubmitting}
               >
