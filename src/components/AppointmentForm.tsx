@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { format, addMinutes } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
+import emailjs from 'emailjs-com';
+
 
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
