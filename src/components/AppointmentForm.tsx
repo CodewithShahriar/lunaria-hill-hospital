@@ -143,6 +143,7 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
       toast({
         title: "Appointment Confirmed!",
         description: `You have an appointment with ${data.doctor} on ${format(data.date, "PPP")}.\n\nSerial No: ${serial}\nArrival Time: ${arrivalTime}`,
+        className: "border border-blue-500 shadow-lg",
       });
       form.reset();
       onOpenChange(false);
