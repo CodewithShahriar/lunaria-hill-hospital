@@ -42,7 +42,7 @@ const Departments = () => {
     description: 'Comprehensive neurological care for brain and nervous system disorders',
     services: ['Brain Surgery', 'Stroke Treatment', 'Epilepsy Care', 'Neuroimaging'],
     doctors: 6,
-    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+    image: 'https://www.amnhealthcare.com/siteassets/candidate-blog/physician/perm/neurologist-salary-report-2024.jpg'
   },
   {
     icon:  Syringe, // Add this icon to represent Gastroenterology (as an endoscopic tool alternative)
@@ -50,7 +50,7 @@ const Departments = () => {
     description: 'Expert care for digestive system disorders and liver-related diseases',
     services: ['Endoscopy', 'Liver Disease Treatment', 'IBD Care', 'Colonoscopy'],
     doctors: 7,
-    image: 'https://images.unsplash.com/photo-1588776814546-ec7e8d69b2a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+    image: 'https://bighospitals.in/assets/img/service/medical-gastroenterology-img.jpg'
   },
   {
     icon: Baby,
