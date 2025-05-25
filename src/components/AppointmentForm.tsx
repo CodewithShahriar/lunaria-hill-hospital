@@ -64,41 +64,42 @@ const departments = [
 ];
 
 
-// Mock doctor data
+// Mock doctor data  
 const doctors = {
+  medicine: [
+    { id: "dr-davis", name: "Dr. Sarah Davis" },
+    { id: "dr-wilson", name: "Dr. Robert Wilson" },
+  ],
   cardiology: [
     { id: "dr-smith", name: "Dr. John Smith" },
-    { id: "dr-johnson", name: "Dr. Emily Johnson" },
+    { id: "dr-taylor", name: "Dr. Jennifer Taylor" },
   ],
   neurology: [
     { id: "dr-brown", name: "Dr. Michael Brown" },
-    { id: "dr-davis", name: "Dr. Sarah Davis" },
-  ],
-  pediatrics: [
-    { id: "dr-wilson", name: "Dr. Robert Wilson" },
-    { id: "dr-taylor", name: "Dr. Jennifer Taylor" },
-  ],
-  orthopedics: [
-    { id: "dr-anderson", name: "Dr. David Anderson" },
     { id: "dr-thomas", name: "Dr. Lisa Thomas" },
   ],
-  gynecology: [
+  pediatrics: [
     { id: "dr-martinez", name: "Dr. Maria Martinez" },
     { id: "dr-harris", name: "Dr. James Harris" },
   ],
-  dermatology: [
+  gastroenterology: [
+    { id: "dr-anderson", name: "Dr. David Anderson" },
     { id: "dr-clark", name: "Dr. Patricia Clark" },
+  ],
+  surgery: [
     { id: "dr-lewis", name: "Dr. Richard Lewis" },
-  ],
-  ophthalmology: [
     { id: "dr-lee", name: "Dr. William Lee" },
-    { id: "dr-walker", name: "Dr. Elizabeth Walker" },
   ],
-  ent: [
+  orthopedics: [
+    { id: "dr-walker", name: "Dr. Elizabeth Walker" },
     { id: "dr-hall", name: "Dr. Thomas Hall" },
+  ],
+  gynecology: [
     { id: "dr-allen", name: "Dr. Nancy Allen" },
+    { id: "dr-johnson", name: "Dr. Emily Johnson" },
   ],
 };
+
 
 interface AppointmentFormProps {
   open: boolean;
