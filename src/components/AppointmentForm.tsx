@@ -120,9 +120,10 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
     },
   });
 
-  const generateSerial = () => {
-    return Math.floor(100000 + Math.random() * 900000).toString(); // 6-digit serial
-  };
+ const generateSerial = () => {
+  return Math.floor(10 + Math.random() * 90).toString(); // 2-digit serial
+};
+
 
   const generateArrivalTime = () => {
     const baseHour = 9; // 9:00 AM
