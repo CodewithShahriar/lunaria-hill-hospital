@@ -58,7 +58,7 @@ const Departments = () => {
     description: 'Specialized medical care for infants, children, and adolescents',
     services: ['Newborn Care', 'Vaccination', 'Child Development', 'Pediatric Surgery'],
     doctors: 10,
-    image: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+    image: 'https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/cimgpeds.com/wp-content/uploads/2022/09/pediatrician-pediatric-clinic.jpg'
   },
   {
     icon: Bone,
@@ -66,7 +66,7 @@ const Departments = () => {
     description: 'Expert care for bone, joint, and musculoskeletal conditions',
     services: ['Joint Replacement', 'Sports Medicine', 'Spine Surgery', 'Fracture Care'],
     doctors: 9,
-    image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Hl-F8mK8gmlFuPRwKWQW_ATrVJKIzlBcgw&s'
   },
   {
     icon: Activity,
@@ -82,7 +82,7 @@ const Departments = () => {
     description: "Women's health services including reproductive and maternal care",
     services: ['Maternity Care', 'Gynecological Surgery', 'Fertility Treatment', 'Prenatal Care'],
     doctors: 7,
-    image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+    image: 'https://www.renaimedicity.org/wp-content/uploads/2021/03/obstetrics-gynaecology-inn.jpg'
   }
 ];
 
