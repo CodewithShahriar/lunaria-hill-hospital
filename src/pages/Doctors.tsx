@@ -27,7 +27,7 @@ const doctorsData = [
     image: "https://img.freepik.com/free-photo/female-doctor-hospital-with-stethoscope_23-2148827776.jpg?w=740",
     rating: 4.8,
     reviews: 98,
-    degrees: ["MBBS", "MD"],
+    degrees: ["MBBS", "MD", "DM (Cardiology)"],
     experience: "12+ years",
     schedule: "Tue, Thu, Sat"
   },
@@ -189,7 +189,7 @@ const DoctorCard = ({ doctor, onBookAppointment }: { doctor: any, onBookAppointm
         {/* <span className="text-gray-500">Degrees:</span> */}
         <div className="font-medium mt-1 flex flex-wrap gap-1">
           {doctor.degrees.map((deg: string, index: number) => (
-            <span key={index} className="bg-gray-100 px-2 py-0.5 rounded text-xs text-gray-800">
+            <span key={index} className="bg-gray-100 px-1 py-0.5 rounded text-xs text-gray-800">
               {deg}
             </span>
           ))}
