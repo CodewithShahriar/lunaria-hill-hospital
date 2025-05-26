@@ -21,7 +21,7 @@ const LoginForm = ({ onLogin, onSwitchToRegister }: LoginFormProps) => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate API call
+    // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     onLogin(email, password);
@@ -38,7 +38,13 @@ const LoginForm = ({ onLogin, onSwitchToRegister }: LoginFormProps) => {
             </div>
           </div>
           <CardTitle className="text-2xl font-bold text-gray-800">Welcome Back</CardTitle>
-          <CardDescription>Sign in to access your patient dashboard</CardDescription>
+          <CardDescription>
+            Sign in to access your patient dashboard
+            <br />
+            <span className="text-xs mt-2 block text-blue-600">
+              Demo: demo@hospital.com / demo123
+            </span>
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
