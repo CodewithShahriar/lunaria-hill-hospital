@@ -9,14 +9,12 @@ import {
   Twitter, LogIn 
 } from 'lucide-react';
 
-
 interface NavigationProps {
   onAppointmentClick?: () => void;
 }
 
 const Navigation = ({ onAppointmentClick }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
- 
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -40,12 +38,11 @@ const Navigation = ({ onAppointmentClick }: NavigationProps) => {
     setIsOpen(false);
   };
 
-    const handleLoginClick = () => {
-   navigate('/login');
+  const handleLoginClick = () => {
+    navigate('/login');
     setIsOpen(false);
   };
 
- 
   return (
     <>
       {/* Top Bar - Blue background with white text */}
@@ -89,11 +86,11 @@ const Navigation = ({ onAppointmentClick }: NavigationProps) => {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
               <div className="bg-blue-600 p-2 rounded-full">
-                <Stethoscope className="h-8 w-8 text-white" />
+                <Stethoscope className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-800">Lunaria Hill</h1>
-                <p className="text-sm text-gray-600">Hospital</p>
+                <h1 className="text-xl sm:text-2xl font-bold text-gray-800">Lunaria Hill</h1>
+                <p className="text-xs sm:text-sm text-gray-600">Hospital</p>
               </div>
             </Link>
 
@@ -114,7 +111,6 @@ const Navigation = ({ onAppointmentClick }: NavigationProps) => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-
               <Button 
                 variant="outline"
                 className="border-blue-600 text-blue-600 hover:bg-blue-50 gap-2"
@@ -134,7 +130,7 @@ const Navigation = ({ onAppointmentClick }: NavigationProps) => {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden"
+              className="lg:hidden p-2"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -148,7 +144,7 @@ const Navigation = ({ onAppointmentClick }: NavigationProps) => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`block py-2 text-gray-700 hover:text-blue-600 ${
+                  className={`block py-3 text-gray-700 hover:text-blue-600 border-b border-gray-100 ${
                     isActive(item.path) ? 'text-blue-600 font-semibold' : ''
                   }`}
                   onClick={() => setIsOpen(false)}
@@ -156,19 +152,20 @@ const Navigation = ({ onAppointmentClick }: NavigationProps) => {
                   {item.label}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-2 mt-4">
-
+              <div className="flex flex-col space-y-3 mt-4 pt-4 border-t border-gray-200">
                 <Button 
                   variant="outline"
-                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-50"
+                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 gap-2"
                   onClick={handleLoginClick}
                 >
+                  <LogIn className="h-4 w-4" />
                   Log In
                 </Button>
                 <Button 
-                  className="w-full bg-blue-600 hover:bg-blue-700"
+                  className="w-full bg-blue-600 hover:bg-blue-700 gap-2"
                   onClick={handleAppointmentClick}
                 >
+                  <Calendar className="h-4 w-4" />
                   Book Appointment
                 </Button>
               </div>
