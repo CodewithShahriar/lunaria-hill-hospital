@@ -53,7 +53,7 @@ const LoginForm = ({ onLogin, onSwitchToRegister }: LoginFormProps) => {
               <Input
                 id="email"
                 type="email"
-                placeholder="Enter your email"
+                placeholder="demo@hospital.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -65,7 +65,7 @@ const LoginForm = ({ onLogin, onSwitchToRegister }: LoginFormProps) => {
                 <Input
                   id="password"
                   type={showPassword ? 'text' : 'password'}
-                  placeholder="Enter your password"
+                  placeholder="demo123"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
