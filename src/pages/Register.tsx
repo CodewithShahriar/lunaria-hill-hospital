@@ -11,7 +11,17 @@ const Register = () => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleRegister = (userData: any) => {
-    // Show success message instead of auto-login
+    // Save user data to localStorage
+    const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
+    const newUser = {
+      id: Date.now().toString(),
+      ...userData,
+      createdAt: new Date().toISOString()
+    };
+    registeredUsers.push(newUser);
+    localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+    
+    // Show success message
     setShowSuccess(true);
   };
 
