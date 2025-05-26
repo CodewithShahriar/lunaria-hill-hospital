@@ -10,7 +10,8 @@ import {
   Activity,
   HeartPulse,
   Thermometer,
-  Weight
+  Weight,
+  FileText
 } from 'lucide-react';
 
 interface DashboardHomeProps {
