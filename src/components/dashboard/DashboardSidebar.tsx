@@ -11,47 +11,41 @@ import {
   Menu,
   X
 } from 'lucide-react';
-import { useState } from 'react';
 
 interface DashboardSidebarProps {
   currentPage: string;
   onPageChange: (page: string) => void;
   onLogout: () => void;
   patientData: any;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-const DashboardSidebar = ({ currentPage, onPageChange, onLogout, patientData }: DashboardSidebarProps) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+const DashboardSidebar = ({ currentPage, onPageChange, onLogout, patientData, isOpen, onClose }: DashboardSidebarProps) => {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard Home', icon: Home },
     { id: 'profile', label: 'My Profile', icon: User },
     { id: 'appointments', label: 'Appointment History', icon: Calendar },
     { id: 'prescriptions', label: 'Prescriptions', icon: FileText },
     { id: 'billing', label: 'Billing & Payment', icon: CreditCard },
+    { id: 'logout', label: 'Logout', icon: LogOut, action: 'logout' },
   ];
 
   const handleMenuClick = (pageId: string) => {
-    onPageChange(pageId);
-    setIsMobileMenuOpen(false);
+    if (pageId === 'logout') {
+      onLogout();
+    } else {
+      onPageChange(pageId);
+    }
+    onClose();
   };
 
   return (
     <>
-      {/* Mobile Menu Button */}
-      <Button
-        variant="ghost"
-        size="icon"
-        className="lg:hidden fixed top-4 left-4 z-50"
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-      >
-        {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-      </Button>
-
       {/* Sidebar */}
       <div className={`
         fixed lg:static inset-y-0 left-0 z-40 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out
-        ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+        ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         <div className="flex flex-col h-full">
           {/* Logo */}
@@ -88,19 +82,25 @@ const DashboardSidebar = ({ currentPage, onPageChange, onLogout, patientData }: 
               {menuItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = currentPage === item.id;
+                const isLogout = item.id === 'logout';
                 return (
                   <li key={item.id}>
                     <button
                       onClick={() => handleMenuClick(item.id)}
                       className={`
                         w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-colors
-                        ${isActive 
+                        ${isActive && !isLogout
                           ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700' 
+                          : isLogout
+                          ? 'text-red-600 hover:bg-red-50 hover:text-red-700'
                           : 'text-gray-600 hover:bg-gray-50 hover:text-gray-800'
                         }
                       `}
                     >
-                      <Icon className={`h-5 w-5 ${isActive ? 'text-blue-700' : 'text-gray-400'}`} />
+                      <Icon className={`h-5 w-5 ${
+                        isActive && !isLogout ? 'text-blue-700' : 
+                        isLogout ? 'text-red-600' : 'text-gray-400'
+                      }`} />
                       <span className="font-medium">{item.label}</span>
                     </button>
                   </li>
@@ -108,28 +108,8 @@ const DashboardSidebar = ({ currentPage, onPageChange, onLogout, patientData }: 
               })}
             </ul>
           </nav>
-
-          {/* Logout Button */}
-          <div className="p-4 border-t">
-            <Button
-              onClick={onLogout}
-              variant="ghost"
-              className="w-full flex items-center space-x-3 px-3 py-2 text-red-600 hover:bg-red-50 hover:text-red-700"
-            >
-              <LogOut className="h-5 w-5" />
-              <span>Logout</span>
-            </Button>
-          </div>
         </div>
       </div>
-
-      {/* Mobile Overlay */}
-      {isMobileMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
     </>
   );
 };
