@@ -8,7 +8,7 @@ import Prescriptions from './dashboard/Prescriptions';
 import BillingPayment from './dashboard/BillingPayment';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Bell, LogOut } from 'lucide-react';
+import { Bell, LogOut, Menu } from 'lucide-react';
 
 interface PatientDashboardProps {
   patientData: any;
@@ -17,6 +17,7 @@ interface PatientDashboardProps {
 
 const PatientDashboard = ({ patientData, onLogout }: PatientDashboardProps) => {
   const [currentPage, setCurrentPage] = useState('dashboard');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleUpdateProfile = (updatedData: any) => {
     // Handle profile update
@@ -43,21 +44,44 @@ const PatientDashboard = ({ patientData, onLogout }: PatientDashboardProps) => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
+      {/* Mobile Sidebar Overlay */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
       <DashboardSidebar
         currentPage={currentPage}
-        onPageChange={setCurrentPage}
+        onPageChange={(page) => {
+          setCurrentPage(page);
+          setSidebarOpen(false);
+        }}
         onLogout={onLogout}
         patientData={patientData}
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
       />
       
       {/* Main Content */}
-      <div className="flex-1 lg:ml-64">
+      <div className="flex-1 lg:ml-0">
         {/* Top Bar */}
         <header className="bg-white shadow-sm border-b sticky top-0 z-30">
           <div className="flex items-center justify-between px-4 lg:px-6 py-4">
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="lg:hidden"
+              onClick={() => setSidebarOpen(true)}
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+            
             <div className="flex-1" />
             
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               {/* Notifications */}
               <Button variant="ghost" size="icon" className="relative">
                 <Bell className="h-5 w-5" />
@@ -67,14 +91,14 @@ const PatientDashboard = ({ patientData, onLogout }: PatientDashboardProps) => {
               </Button>
 
               {/* User Profile */}
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-2 sm:space-x-3">
                 <Avatar className="h-8 w-8">
                   <AvatarImage src={patientData?.photo} />
                   <AvatarFallback className="bg-blue-100 text-blue-600">
                     {patientData?.firstName?.[0]}{patientData?.lastName?.[0]}
                   </AvatarFallback>
                 </Avatar>
-                <div className="hidden md:block">
+                <div className="hidden sm:block">
                   <p className="text-sm font-medium text-gray-800">
                     {patientData?.firstName} {patientData?.lastName}
                   </p>
