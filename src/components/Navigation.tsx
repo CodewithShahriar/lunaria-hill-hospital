@@ -6,11 +6,9 @@ import {
   Menu, X, Phone, Calendar, 
   Stethoscope, Mail, MapPin, 
   Clock, Facebook, Instagram, 
-  Twitter, ArrowRight, LogIn 
+  Twitter, LogIn 
 } from 'lucide-react';
-import LoginForm from './auth/LoginForm';
-import RegisterForm from './auth/RegisterForm';
-import PatientDashboard from './PatientDashboard';
+
 
 interface NavigationProps {
   onAppointmentClick?: () => void;
@@ -18,11 +16,9 @@ interface NavigationProps {
 
 const Navigation = ({ onAppointmentClick }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showAuth, setShowAuth] = useState(false);
-  const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [patientData, setPatientData] = useState(null);
+ 
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
     { path: '/', label: 'Home' },
@@ -45,62 +41,11 @@ const Navigation = ({ onAppointmentClick }: NavigationProps) => {
   };
 
     const handleLoginClick = () => {
-    setAuthMode('login');
-    setShowAuth(true);
+   navigate('/login');
     setIsOpen(false);
   };
 
-  const handleLogin = (email: string, password: string) => {
-    // Simulate successful login
-    const mockPatientData = {
-      firstName: 'John',
-      lastName: 'Doe',
-      email: email,
-      phone: '+1 (555) 123-4567',
-      dateOfBirth: '1990-05-15',
-      gender: 'male',
-      id: 'P12345',
-      photo: null
-    };
-    
-    setPatientData(mockPatientData);
-    setIsLoggedIn(true);
-    setShowAuth(false);
-  };
-
-  const handleRegister = (userData: any) => {
-    // Simulate successful registration
-    setPatientData(userData);
-    setIsLoggedIn(true);
-    setShowAuth(false);
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setPatientData(null);
-  };
-
-  const switchToRegister = () => {
-    setAuthMode('register');
-  };
-
-  const switchToLogin = () => {
-    setAuthMode('login');
-  };
-
-  // If logged in, show dashboard
-  if (isLoggedIn && patientData) {
-    return <PatientDashboard patientData={patientData} onLogout={handleLogout} />;
-  }
-
-  // If showing auth forms
-  if (showAuth) {
-    if (authMode === 'login') {
-      return <LoginForm onLogin={handleLogin} onSwitchToRegister={switchToRegister} />;
-    } else {
-      return <RegisterForm onRegister={handleRegister} onSwitchToLogin={switchToLogin} />;
-    }
-  }
+ 
   return (
     <>
       {/* Top Bar - Blue background with white text */}
