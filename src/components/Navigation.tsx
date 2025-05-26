@@ -6,8 +6,11 @@ import {
   Menu, X, Phone, Calendar, 
   Stethoscope, Mail, MapPin, 
   Clock, Facebook, Instagram, 
-  Twitter, ArrowRight 
+  Twitter, ArrowRight, LogIn 
 } from 'lucide-react';
+import LoginForm from './auth/LoginForm';
+import RegisterForm from './auth/RegisterForm';
+import PatientDashboard from './PatientDashboard';
 
 interface NavigationProps {
   onAppointmentClick?: () => void;
@@ -15,6 +18,10 @@ interface NavigationProps {
 
 const Navigation = ({ onAppointmentClick }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showAuth, setShowAuth] = useState(false);
+  const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [patientData, setPatientData] = useState(null);
   const location = useLocation();
 
   const navItems = [
@@ -37,6 +44,63 @@ const Navigation = ({ onAppointmentClick }: NavigationProps) => {
     setIsOpen(false);
   };
 
+    const handleLoginClick = () => {
+    setAuthMode('login');
+    setShowAuth(true);
+    setIsOpen(false);
+  };
+
+  const handleLogin = (email: string, password: string) => {
+    // Simulate successful login
+    const mockPatientData = {
+      firstName: 'John',
+      lastName: 'Doe',
+      email: email,
+      phone: '+1 (555) 123-4567',
+      dateOfBirth: '1990-05-15',
+      gender: 'male',
+      id: 'P12345',
+      photo: null
+    };
+    
+    setPatientData(mockPatientData);
+    setIsLoggedIn(true);
+    setShowAuth(false);
+  };
+
+  const handleRegister = (userData: any) => {
+    // Simulate successful registration
+    setPatientData(userData);
+    setIsLoggedIn(true);
+    setShowAuth(false);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setPatientData(null);
+  };
+
+  const switchToRegister = () => {
+    setAuthMode('register');
+  };
+
+  const switchToLogin = () => {
+    setAuthMode('login');
+  };
+
+  // If logged in, show dashboard
+  if (isLoggedIn && patientData) {
+    return <PatientDashboard patientData={patientData} onLogout={handleLogout} />;
+  }
+
+  // If showing auth forms
+  if (showAuth) {
+    if (authMode === 'login') {
+      return <LoginForm onLogin={handleLogin} onSwitchToRegister={switchToRegister} />;
+    } else {
+      return <RegisterForm onRegister={handleRegister} onSwitchToLogin={switchToLogin} />;
+    }
+  }
   return (
     <>
       {/* Top Bar - Blue background with white text */}
@@ -105,6 +169,15 @@ const Navigation = ({ onAppointmentClick }: NavigationProps) => {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
+
+              <Button 
+                variant="outline"
+                className="border-blue-600 text-blue-600 hover:bg-blue-50 gap-2"
+                onClick={handleLoginClick}
+              >
+                <LogIn className="h-4 w-4" />
+                Log In
+              </Button>
               <Button 
                 className="bg-blue-600 hover:bg-blue-700 text-white gap-2 rounded-lg px-5 py-6"
                 onClick={handleAppointmentClick}
@@ -139,6 +212,14 @@ const Navigation = ({ onAppointmentClick }: NavigationProps) => {
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 mt-4">
+
+                <Button 
+                  variant="outline"
+                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-50"
+                  onClick={handleLoginClick}
+                >
+                  Log In
+                </Button>
                 <Button 
                   className="w-full bg-blue-600 hover:bg-blue-700"
                   onClick={handleAppointmentClick}
