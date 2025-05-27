@@ -19,9 +19,9 @@ const Prescriptions = () => {
       degree: 'MD, FACC, Fellowship in Interventional Cardiology',
       lastConsultation: '2024-01-10',
       prescriptionId: 'RX-2024-001',
-      dosage: '1 tablet daily',
-      duration: '30 days',
-      refills: 2,
+      patientId: 'P12345',
+      nextCheckupDays: 30,
+      nextCheckupDate: '2024-02-10',
       status: 'Active',
       instructions: 'Take with food. Monitor blood pressure regularly.',
       type: 'PDF'
