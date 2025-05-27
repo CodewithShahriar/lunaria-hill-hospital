@@ -138,7 +138,7 @@ const Prescriptions = () => {
       </Card>
 
       {/* Active Prescriptions Summary */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4">
+      {/* <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4">
   <Card>
     <CardContent className="p-4">
       <div className="flex items-center space-x-3">
@@ -182,7 +182,7 @@ const Prescriptions = () => {
       </div>
     </CardContent>
   </Card>
-</div>
+</div> */}
 
 
       {/* Prescription List */}
