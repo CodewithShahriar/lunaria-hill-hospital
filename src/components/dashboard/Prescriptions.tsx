@@ -3,7 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { FileText, Download, Search, Calendar, User, Pill } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { FileText, Download, Search, Calendar, User, Pill, Eye } from 'lucide-react';
 import { useState } from 'react';
 
 const Prescriptions = () => {
@@ -186,7 +187,7 @@ const Prescriptions = () => {
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-4 lg:space-y-0">
                 <div className="flex items-start space-x-4 flex-1">
                   <div className="bg-blue-100 p-3 rounded-full">
-                    <Pill className="h-6 w-6 text-blue-600" />
+                    <User className="h-6 w-6 text-blue-600" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center space-x-3 mb-2">
