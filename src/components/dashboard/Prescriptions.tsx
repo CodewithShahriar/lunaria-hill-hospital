@@ -235,13 +235,14 @@ const Prescriptions = () => {
                   <Badge variant="outline" className="self-start">
                     {prescription.type}
                   </Badge>
+
                   <Button 
                     onClick={() => handleDownload(prescription)}
                     className="flex items-center space-x-2"
                     size="sm"
                   >
                     <Download className="h-4 w-4" />
-                    <span>Download</span>
+                    <span>Download PDF</span>
                   </Button>
                   {prescription.status === 'Active' && prescription.refills > 0 && (
                     <Button variant="outline" size="sm" className="flex items-center space-x-2">
