@@ -57,7 +57,7 @@ const blogPosts = [
     title: "Managing Chronic Pain: Modern Approaches",
     excerpt: "An overview of contemporary methods for managing chronic pain, from medication to alternative therapies.",
     category: "Pain Management",
-    image: "https://images.unsplash.com/photo-1600443299762-7a613b811df4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+    image: "https://www.nystromcounseling.com/wp-content/uploads/Long-Term-Effects-of-Chronic-Pain-Medical-Issues-scaled.jpg",
     author: "Dr. Robert Wilson",
     date: "March 5, 2023",
     readTime: "6 min read"
@@ -67,7 +67,7 @@ const blogPosts = [
     title: "Skin Care Essentials for Every Age",
     excerpt: "Tailored skin care advice for different age groups to maintain healthy, glowing skin throughout your life.",
     category: "Dermatology",
-    image: "https://images.unsplash.com/photo-1505944357431-27579db47f79?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+    image: "https://www.theskinclinic.org.in/wp-content/uploads/2017/09/all-ages.jpg",
     author: "Dr. Jennifer Taylor",
     date: "February 19, 2023",
     readTime: "5 min read"
@@ -77,7 +77,7 @@ const blogPosts = [
     title: "Eye Health in the Digital Age",
     excerpt: "How to protect your vision and maintain eye health while spending long hours on digital devices.",
     category: "Ophthalmology",
-    image: "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+    image: "https://www.visionspecialists.com/wp-content/uploads/2020/02/Vision-Specialists-Your-Eye-Care-and-the-Digital-Age-copy.jpg",
     author: "Dr. David Anderson",
     date: "February 3, 2023",
     readTime: "7 min read"
