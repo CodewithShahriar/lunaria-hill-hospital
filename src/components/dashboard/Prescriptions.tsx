@@ -138,51 +138,52 @@ const Prescriptions = () => {
       </Card>
 
       {/* Active Prescriptions Summary */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="bg-green-100 p-2 rounded-lg">
-                <Pill className="h-5 w-5 text-green-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Active Prescriptions</p>
-                <p className="text-2xl font-bold text-green-600">
-                  {prescriptions.filter(p => p.status === 'Active').length}
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="bg-red-100 p-2 rounded-lg">
-                <FileText className="h-5 w-5 text-red-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Expired</p>
-                <p className="text-2xl font-bold text-red-600">
-                  {prescriptions.filter(p => p.status === 'Expired').length}
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="bg-blue-100 p-2 rounded-lg">
-                <Download className="h-5 w-5 text-blue-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Total Prescriptions</p>
-                <p className="text-2xl font-bold text-blue-600">{prescriptions.length}</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4">
+  <Card>
+    <CardContent className="p-4">
+      <div className="flex items-center space-x-3">
+        <div className="bg-green-100 p-2 rounded-lg">
+          <Pill className="h-5 w-5 text-green-600" />
+        </div>
+        <div>
+          <p className="text-sm text-gray-600">Active Prescriptions</p>
+          <p className="text-2xl font-bold text-green-600">
+            {prescriptions.filter(p => p.status === 'Active').length}
+          </p>
+        </div>
       </div>
+    </CardContent>
+  </Card>
+  <Card>
+    <CardContent className="p-4">
+      <div className="flex items-center space-x-3">
+        <div className="bg-red-100 p-2 rounded-lg">
+          <FileText className="h-5 w-5 text-red-600" />
+        </div>
+        <div>
+          <p className="text-sm text-gray-600">Expired</p>
+          <p className="text-2xl font-bold text-red-600">
+            {prescriptions.filter(p => p.status === 'Expired').length}
+          </p>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+  <Card>
+    <CardContent className="p-4">
+      <div className="flex items-center space-x-3">
+        <div className="bg-blue-100 p-2 rounded-lg">
+          <Download className="h-5 w-5 text-blue-600" />
+        </div>
+        <div>
+          <p className="text-sm text-gray-600">Total Prescriptions</p>
+          <p className="text-2xl font-bold text-blue-600">{prescriptions.length}</p>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+</div>
+
 
       {/* Prescription List */}
       <div className="space-y-4">
@@ -247,7 +248,7 @@ const Prescriptions = () => {
                   
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button variant="outline" size="sm" className="flex items-center space-x-2">
+                      <Button variant="outline" size="sm" className="flex items-center space-x-2 border-black">
                         <Eye className="h-4 w-4" />
                         <span>View Full Prescription</span>
                       </Button>
@@ -268,7 +269,7 @@ const Prescriptions = () => {
 
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button variant="outline" size="sm" className="flex items-center space-x-2">
+                      <Button variant="outline" size="sm" className="flex items-center space-x-2 border-black">
                         <FileText className="h-4 w-4" />
                         <span>View Test Report</span>
                       </Button>
