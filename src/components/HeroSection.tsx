@@ -38,7 +38,7 @@ const HeroSection = () => {
             </span>
 
             <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-800 mb-4 sm:mb-6 leading-tight">
-              Advanced Healthcare for a
+              Advanced Healthcare for
               <span className="text-primary-500 block mt-2">Healthier Tomorrow</span>
             </h1>
 
@@ -79,7 +79,7 @@ const HeroSection = () => {
             </div>
 
             {/* Floating Cards */}
-            <div className="absolute -top-6 -left-6 bg-white rounded-xl p-4 shadow-xl animate-float">
+            <div className="absolute -top-6 -left-6 bg-white rounded-xl p-4 shadow-xl animate-float hidden lg:block ">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                   <Heart className="h-6 w-6 text-green-600" />
@@ -92,11 +92,11 @@ const HeroSection = () => {
             </div>
 
             <div
-              className="absolute -bottom-6 -right-6 bg-white rounded-xl p-4 shadow-xl animate-float"
+              className="absolute -bottom-6 -right-6 bg-white rounded-xl p-4 shadow-xl animate-float  hidden lg:block"
               style={{ animationDelay: '1s' }}
             >
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+              <div className="flex items-center gap-3 ">
+                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center ">
                   <Award className="h-6 w-6 text-primary-600" />
                 </div>
                 <div>
