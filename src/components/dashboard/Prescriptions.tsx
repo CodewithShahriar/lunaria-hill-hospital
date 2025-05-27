@@ -231,7 +231,7 @@ const Prescriptions = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col space-y-2 lg:ml-4">
+                <div className="flex flex-col space-y-2 lg:ml-4 min-w-fit">
                   <Badge variant="outline" className="self-start">
                     {prescription.type}
                   </Badge>
