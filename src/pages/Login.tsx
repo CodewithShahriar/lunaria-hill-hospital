@@ -52,7 +52,7 @@ const Login = () => {
       
       navigate('/dashboard');
     } else {
-      alert('Invalid credentials. Please check your email and password or use demo credentials:\nEmail: demo@hospital.com\nPassword: demo123');
+      alert('Invalid credentials. Please check your email and password');
     }
   };
 
