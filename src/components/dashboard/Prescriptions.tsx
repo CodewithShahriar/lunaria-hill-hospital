@@ -234,13 +234,13 @@ const Prescriptions = () => {
 
                 <div className="flex flex-col space-y-2 lg:ml-4 min-w-fit">
                   <Badge variant="outline" className="self-start">
-                    {prescription.type}
+                    
                   </Badge>
 
                   <Button 
-                    onClick={() => handleDownload(prescription)}
-                    className="flex items-center space-x-2"
-                    size="sm"
+                    // onClick={() => handleDownload(prescription)}
+                    // className="flex items-center space-x-2"
+                    // size="sm"
                   >
                     <Download className="h-4 w-4" />
                     <span>Download PDF</span>
