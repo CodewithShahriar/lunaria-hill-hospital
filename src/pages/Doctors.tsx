@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Input } from "@/components/ui/input";
@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { AppointmentForm } from '@/components/AppointmentForm';
 import { Search, Calendar, Star } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 
 // Doctor data
 const doctorsData = [
@@ -186,7 +187,6 @@ const DoctorCard = ({ doctor, onBookAppointment }: { doctor: any, onBookAppointm
     </CardHeader>
     <CardContent className="text-sm space-y-2 pb-4">
       <div>
-        {/* <span className="text-gray-500">Degrees:</span> */}
         <div className="font-medium mt-1 flex flex-wrap gap-1">
           {doctor.degrees.map((deg: string, index: number) => (
             <span key={index} className="bg-gray-100 px-1 py-0.5 rounded text-xs text-gray-800">
@@ -218,9 +218,18 @@ const DoctorCard = ({ doctor, onBookAppointment }: { doctor: any, onBookAppointm
 );
 
 const Doctors = () => {
+  const [searchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedSpecialty, setSelectedSpecialty] = useState('All Specialties');
   const [appointmentDialogOpen, setAppointmentDialogOpen] = useState(false);
+
+  // Get department from URL parameters and set initial filter
+  useEffect(() => {
+    const department = searchParams.get('department');
+    if (department && specialties.includes(department)) {
+      setSelectedSpecialty(department);
+    }
+  }, [searchParams]);
 
   const handleBookAppointment = () => {
     setAppointmentDialogOpen(true);
@@ -243,6 +252,9 @@ const Doctors = () => {
           <p className="text-lg max-w-2xl mx-auto">
             Meet our team of experienced specialists dedicated to providing you with the best healthcare services.
           </p>
+          {selectedSpecialty !== 'All Specialties' && (
+            <p className="text-blue-200 mt-2">Showing doctors from {selectedSpecialty} department</p>
+          )}
         </div>
       </section>
 
