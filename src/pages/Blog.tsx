@@ -234,10 +234,10 @@ const Blog = () => {
       )}
       
       {/* Search and Filters Section */}
-      <section className="py-8 bg-white border-t border-b border-gray-200">
+      <section className="py-6 sm:py-8 bg-white border-t border-b border-gray-200">
         <div className="container mx-auto px-10">
           <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
-            <div className="relative w-full md:w-1/5">
+            <div className="relative w-full md:w-1/6">
               <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
               <Input
                 placeholder="Search articles..."
@@ -247,12 +247,13 @@ const Blog = () => {
               />
             </div>
             
-            <div className="flex flex-wrap gap-2 justify-center">
+            {/* Category Filter Buttons */}
+            <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
               {categories.map(category => (
                 <Button
                   key={category}
                   variant={selectedCategory === category ? "default" : "outline"}
-                  className={selectedCategory === category ? "bg-primary-500" : ""}
+                  className={`text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 ${selectedCategory === category ? "bg-primary-500" : ""}`}
                   size="sm"
                   onClick={() => setSelectedCategory(category)}
                 >
