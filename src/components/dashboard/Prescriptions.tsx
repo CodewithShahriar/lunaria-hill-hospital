@@ -196,37 +196,31 @@ const Prescriptions = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center space-x-3 mb-2">
-                      <h3 className="text-lg font-semibold text-gray-800">{prescription.medication}</h3>
+                      <h3 className="text-lg font-semibold text-gray-800 flex items-center">
+                        <User className="h-4 w-4 mr-2" />
+                        {prescription.doctor}
+                      </h3>
                       <Badge className={getStatusColor(prescription.status)}>
                         {prescription.status}
                       </Badge>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
-                      <div className="space-y-1">
-                        <p className="text-sm text-gray-600 flex items-center">
-                          <User className="h-4 w-4 mr-1" />
-                          {prescription.doctor} - {prescription.specialty}
-                        </p>
-                        <p className="text-sm text-gray-600 flex items-center">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          Prescribed: {prescription.date}
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          <strong>Prescription ID:</strong> {prescription.prescriptionId}
-                        </p>
-                      </div>
-                      <div className="space-y-1">
-                        <p className="text-sm text-gray-600">
-                          <strong>Dosage:</strong> {prescription.dosage}
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          <strong>Duration:</strong> {prescription.duration}
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          <strong>Refills Remaining:</strong> {prescription.refills}
-                        </p>
-                      </div>
+                     <div className="space-y-2 mb-3">
+                      <p className="text-sm text-gray-600">{prescription.specialty}</p>
+                      <p className="text-xs text-gray-500">{prescription.degree}</p>
+                      <p className="text-sm text-gray-600 flex items-center">
+                        <span className="font-medium text-blue-600 mr-1">Prescribed:</span>
+                        {prescription.lastConsultation}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        <strong>Prescription ID:</strong> {prescription.prescriptionId}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        <strong>Patient ID:</strong> {prescription.patientId}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        <strong>Next Check-up:</strong> After {prescription.nextCheckupDays} days ({prescription.nextCheckupDate})
+                      </p>
                     </div>
 
                     <div className="bg-blue-50 p-3 rounded-lg">
