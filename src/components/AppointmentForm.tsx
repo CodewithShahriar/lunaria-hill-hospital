@@ -187,14 +187,14 @@ const onSubmit = async (data: FormValues) => {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[600px] w-[95vw] max-h-[90vh] overflow-y-auto p-4 sm:p-6">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-primary-700">Book an Appointment</DialogTitle>
-          <DialogDescription>
+           <DialogTitle className="text-xl sm:text-2xl font-bold text-primary-700">Book an Appointment</DialogTitle>
+          <DialogDescription className="text-sm sm:text-base">
             Fill out the form below to schedule your appointment with our specialists.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <FormField
                 control={form.control}
                 name="name"
