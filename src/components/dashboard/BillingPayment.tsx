@@ -297,10 +297,10 @@ const BillingPayment = () => {
                     variant="outline" 
                     size="sm" 
                     onClick={() => handleDownloadInvoice(record)}
-                    className="flex items-center space-x-2"
+                    className="flex items-center space-x-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:bg-gray-50"
                   >
                     <Download className="h-4 w-4" />
-                    <span>Download</span>
+                    <span>Download Invoice</span>
                   </Button>
                   
                   {(record.status === 'Unpaid' || record.status === 'Pending') && (
