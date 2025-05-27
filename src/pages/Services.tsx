@@ -176,14 +176,14 @@ const ServiceCard = ({ service, onBookAppointment }: { service: any, onBookAppoi
             </div>
           ))}
         </div>
-        <Button 
-          onClick={onBookAppointment}
-          className={`w-full bg-${service.color}-500 hover:bg-${service.color}-600`}
-          style={{ backgroundColor: `var(--primary-${service.color === 'blue' ? '500' : '500'})` }}
-        >
-          <Calendar className="mr-2 h-4 w-4" />
-          Schedule Now
-        </Button>
+        <Button
+  // onClick={onBookAppointment}
+  className="w-full text-gray-800 bg-white hover:bg-blue-200 border border-gray-200 outline-none "
+>
+  <Calendar className="mr-2 h-4 w-4" />
+  View More Details
+</Button>
+
       </CardContent>
     </Card>
   );
