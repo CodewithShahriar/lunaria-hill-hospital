@@ -153,7 +153,7 @@ const ServiceCard = ({ service, onBookAppointment }: { service: any, onBookAppoi
   const IconComponent = service.icon;
   
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-gray-200">
+    <Card className="overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-gray-300">
       <CardHeader className="pb-3">
         <div className="flex items-center gap-4">
           <div className={`${colors.bg} p-3 rounded-lg`}>
@@ -178,7 +178,7 @@ const ServiceCard = ({ service, onBookAppointment }: { service: any, onBookAppoi
         </div>
         <Button
   // onClick={onBookAppointment}
-  className="w-full text-gray-800 bg-white hover:bg-blue-200 border border-gray-200 outline-none "
+  className="w-full text-gray-800 bg-white hover:bg-blue-100 border border-gray-200 outline-none "
 >
   <Calendar className="mr-2 h-4 w-4" />
   View More Details
@@ -242,7 +242,7 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 ">
             {servicesList.map(service => (
               <ServiceCard 
                 key={service.id} 
