@@ -335,22 +335,23 @@ const Careers = () => {
       
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-500 to-blue-600 text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Join Our Healthcare Team</h1>
-            <p className="text-lg opacity-90 mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              Discover rewarding career opportunities at Lunaria Hill Hospital, where we're dedicated to advancing healthcare and improving lives.
-            </p>
-            <Button 
-              size="lg" 
-              className="bg-white text-primary-700 hover:bg-gray-100 animate-fade-in" 
-              style={{ animationDelay: '0.4s' }}
-            >
-              View All Positions
-            </Button>
-          </div>
-        </div>
-      </section>
+  <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center ">
+    <div className="max-w-3xl">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Join Our Healthcare Team</h1>
+      <p className="text-lg opacity-90 mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        Discover rewarding career opportunities at Lunaria Hill Hospital, where we're dedicated to advancing healthcare and improving lives.
+      </p>
+      <Button
+        size="lg"
+        className="bg-white text-primary-700 hover:bg-gray-100 animate-fade-in"
+        style={{ animationDelay: '0.4s' }}
+      >
+        View All Positions
+      </Button>
+    </div>
+  </div>
+</section>
+
 
       {/* Why Join Us Section */}
       <section className="py-16 bg-white">
