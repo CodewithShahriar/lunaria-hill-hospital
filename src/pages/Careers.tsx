@@ -197,7 +197,7 @@ const JobCard = ({ job, onApply }: JobCardProps) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow border border-gray-200">
+    <Card className="overflow-hidden hover:shadow-lg transition-shadow border border-gray-300">
       <CardHeader className="pb-3">
         <div className="flex justify-between items-start">
           <div>
@@ -221,10 +221,10 @@ const JobCard = ({ job, onApply }: JobCardProps) => {
             <Briefcase className="h-4 w-4 mr-2 text-gray-500" />
             <span>{job.type}</span>
           </div>
-          <div className="flex items-center">
+          {/* <div className="flex items-center">
             <MapPin className="h-4 w-4 mr-2 text-gray-500" />
             <span>{job.location}</span>
-          </div>
+          </div> */}
           <div className="flex items-center">
             <Clock className="h-4 w-4 mr-2 text-gray-500" />
             <span>{job.experience}</span>
