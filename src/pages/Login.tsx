@@ -10,8 +10,8 @@ const Login = () => {
   const handleLogin = (email: string, password: string) => {
     // Check demo credentials first
     const validCredentials = {
-      email: 'demo@hospital.com',
-      password: 'demo123'
+      email: 'admin@lunariahill.com',
+      password: 'testuser123'
     };
 
     if (email === validCredentials.email && password === validCredentials.password) {

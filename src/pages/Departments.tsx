@@ -2,6 +2,7 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 import { 
   Heart, 
   Brain, 
@@ -20,9 +21,11 @@ import {
 } from 'lucide-react';
 
 const Departments = () => {
+  const navigate = useNavigate();
+
   const departments = [
   {
-    icon: Stethoscope, // Add this icon
+    icon: Stethoscope,
     name: 'Medicine',
     description: 'Comprehensive internal medicine for acute and chronic illnesses',
     services: ['Diabetes Management', 'Hypertension Treatment', 'Infectious Diseases', 'Preventive Care'],
@@ -46,7 +49,7 @@ const Departments = () => {
     image: 'https://www.amnhealthcare.com/siteassets/candidate-blog/physician/perm/neurologist-salary-report-2024.jpg'
   },
   {
-    icon:  Syringe, // Add this icon to represent Gastroenterology (as an endoscopic tool alternative)
+    icon:  Syringe, 
     name: 'Gastroenterology',
     description: 'Expert care for digestive system disorders and liver-related diseases',
     services: ['Endoscopy', 'Liver Disease Treatment', 'IBD Care', 'Colonoscopy'],
@@ -87,6 +90,16 @@ const Departments = () => {
   }
 ];
 
+  const handleFindDoctors = (departmentName: string) => {
+    // Map department names to match the specialty names in doctors data
+    const specialtyMap: { [key: string]: string } = {
+      'Gynaecology': 'Gynecology',
+      // Add other mappings if needed
+    };
+    
+    const specialty = specialtyMap[departmentName] || departmentName;
+    navigate(`/doctors?department=${encodeURIComponent(specialty)}`);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -150,7 +163,11 @@ const Departments = () => {
                         <Stethoscope className="h-4 w-4 inline mr-1" />
                         {dept.doctors} Expert Doctors
                       </div>
-                      <Button size="sm" className="bg-primary-500 hover:bg-primary-600">
+                      <Button 
+                        size="sm" 
+                        className="bg-primary-500 hover:bg-primary-600"
+                        onClick={() => handleFindDoctors(dept.name)}
+                      >
                         Find Doctors
                       </Button>
                     </div>
@@ -161,8 +178,6 @@ const Departments = () => {
           </div>
         </div>
       </section>
-
-     
 
 {/* Emergency Services */}
 <section className="py-20 bg-red-700">
@@ -178,20 +193,6 @@ const Departments = () => {
           Our 24/7 Emergency Department is staffed with board-certified emergency physicians and 
           trauma specialists, equipped with state-of-the-art life-saving equipment.
         </p>
-        {/* <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-red-500">24/7</div>
-            <div className="text-gray-600">Emergency Care</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-red-500">10</div>
-            <div className="text-gray-600">Triage in Minutes</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-red-500">100%</div>
-            <div className="text-gray-600">Always Ready</div>
-          </div>
-        </div> */}
         <Button size="lg" className="bg-red-500 hover:bg-red-600 animate-pulse-slow">
           Emergency Contact: 911
         </Button>
@@ -199,7 +200,6 @@ const Departments = () => {
     </div>
   </div>
 </section>
-
 
       <Footer />
     </div>
