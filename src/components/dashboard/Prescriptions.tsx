@@ -10,7 +10,7 @@ import { useState } from 'react';
 const Prescriptions = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const prescriptions = [
+ const prescriptions = [
     {
       id: 1,
       medication: 'Lisinopril 10mg',
@@ -31,11 +31,12 @@ const Prescriptions = () => {
       medication: 'Metformin 500mg',
       doctor: 'Dr. Michael Chen',
       specialty: 'Endocrinologist',
-      date: '2024-01-05',
+      degree: 'MD, PhD, Board Certified in Endocrinology',
+      lastConsultation: '2024-01-05',
       prescriptionId: 'RX-2024-002',
-      dosage: '2 tablets twice daily',
-      duration: '90 days',
-      refills: 5,
+      patientId: 'P12345',
+      nextCheckupDays: 90,
+      nextCheckupDate: '2024-04-05',
       status: 'Active',
       instructions: 'Take with meals. Check blood sugar levels as directed.',
       type: 'PDF'
@@ -45,11 +46,12 @@ const Prescriptions = () => {
       medication: 'Ibuprofen 400mg',
       doctor: 'Dr. Emily Davis',
       specialty: 'General Medicine',
-      date: '2023-12-20',
+      degree: 'MD, MBBS, Fellowship in Family Medicine',
+      lastConsultation: '2023-12-20',
       prescriptionId: 'RX-2023-045',
-      dosage: '1 tablet as needed',
-      duration: '14 days',
-      refills: 0,
+      patientId: 'P12345',
+      nextCheckupDays: 14,
+      nextCheckupDate: '2024-01-03',
       status: 'Expired',
       instructions: 'Take for pain relief. Do not exceed 3 tablets per day.',
       type: 'Image'
@@ -59,11 +61,12 @@ const Prescriptions = () => {
       medication: 'Omeprazole 20mg',
       doctor: 'Dr. Robert Wilson',
       specialty: 'Gastroenterologist',
-      date: '2023-12-15',
+      degree: 'MD, MS, Board Certified in Gastroenterology',
+      lastConsultation: '2023-12-15',
       prescriptionId: 'RX-2023-040',
-      dosage: '1 capsule daily',
-      duration: '60 days',
-      refills: 3,
+      patientId: 'P12345',
+      nextCheckupDays: 60,
+      nextCheckupDate: '2024-02-15',
       status: 'Active',
       instructions: 'Take before breakfast on empty stomach.',
       type: 'PDF'
@@ -73,11 +76,12 @@ const Prescriptions = () => {
       medication: 'Vitamin D3 1000IU',
       doctor: 'Dr. Lisa Anderson',
       specialty: 'Family Medicine',
-      date: '2023-11-28',
+      degree: 'MD, MPH, Board Certified in Family Medicine',
+      lastConsultation: '2023-11-28',
       prescriptionId: 'RX-2023-035',
-      dosage: '1 tablet daily',
-      duration: '90 days',
-      refills: 6,
+      patientId: 'P12345',
+      nextCheckupDays: 90,
+      nextCheckupDate: '2024-02-28',
       status: 'Active',
       instructions: 'Take with a meal for better absorption.',
       type: 'PDF'
