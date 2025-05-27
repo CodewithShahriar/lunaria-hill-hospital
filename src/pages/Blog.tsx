@@ -15,7 +15,7 @@ const blogPosts = [
     title: "Understanding Heart Health: Tips for a Stronger Heart",
     excerpt: "Learn about the essential practices to maintain optimal heart health and prevent cardiovascular diseases.",
     category: "Cardiology",
-    image: "https://images.unsplash.com/photo-1618939304347-e91fc5d9f4d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+    image: "https://famurgentcare.com/wp-content/uploads/2022/12/2286836-min-1.jpg",
     author: "Dr. John Smith",
     date: "May 15, 2023",
     readTime: "5 min read",
@@ -47,7 +47,7 @@ const blogPosts = [
     title: "Childhood Vaccinations: What Parents Need to Know",
     excerpt: "Essential information about childhood vaccines, their importance, schedule, and common misconceptions.",
     category: "Pediatrics",
-    image: "https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqy0M_iDuPnu3v9tquyVSBTFk4GXW0yAhgxw&s",
     author: "Dr. Sarah Davis",
     date: "March 22, 2023",
     readTime: "8 min read"
@@ -235,9 +235,9 @@ const Blog = () => {
       
       {/* Search and Filters Section */}
       <section className="py-8 bg-white border-t border-b border-gray-200">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-10">
           <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
-            <div className="relative w-full md:w-1/3">
+            <div className="relative w-full md:w-1/5">
               <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
               <Input
                 placeholder="Search articles..."
