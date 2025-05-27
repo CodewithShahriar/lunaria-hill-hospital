@@ -221,10 +221,13 @@ const Services = () => {
                 <p className="text-white/90">Our emergency line is open 24/7</p>
               </div>
             </div>
-            <Button variant="outline" className="text-white border-white hover:bg-white/20 hover:text-white">
-              <Phone className="mr-2 h-4 w-4" />
-              911
-            </Button>
+           <a href="tel:1234567890">
+                <Button variant="outline" className="text-red-700 border-white hover:bg-white/20 hover:text-white">
+                  <Phone className="mr-2 h-4 w-4" />
+                  Click here to call
+                </Button>
+              </a>
+
           </div>
         </div>
       </section>
