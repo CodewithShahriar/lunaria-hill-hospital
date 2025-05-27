@@ -41,9 +41,9 @@ const LoginForm = ({ onLogin, onSwitchToRegister }: LoginFormProps) => {
           <CardDescription>
             Sign in to access your patient dashboard
             <br />
-            <span className="text-xs mt-2 block text-blue-600">
+            {/* <span className="text-xs mt-2 block text-blue-600">
               Demo: demo@hospital.com / demo123
-            </span>
+            </span> */}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -53,7 +53,7 @@ const LoginForm = ({ onLogin, onSwitchToRegister }: LoginFormProps) => {
               <Input
                 id="email"
                 type="email"
-                placeholder="demo@hospital.com"
+                placeholder="admin@lunariahill.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -65,7 +65,7 @@ const LoginForm = ({ onLogin, onSwitchToRegister }: LoginFormProps) => {
                 <Input
                   id="password"
                   type={showPassword ? 'text' : 'password'}
-                  placeholder="demo123"
+                  placeholder="testuser123"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
