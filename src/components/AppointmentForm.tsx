@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -5,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { format, addMinutes } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 import emailjs from 'emailjs-com';
-
 
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -126,7 +126,6 @@ export function AppointmentForm({ open, onOpenChange }: AppointmentFormProps) {
   return Math.floor(10 + Math.random() * 90).toString(); // 2-digit serial
 };
 
-
   const generateArrivalTime = () => {
     const baseHour = 9; // 9:00 AM
     const randomMinutes = Math.floor(Math.random() * 180); // Up to 3 hours
@@ -181,13 +180,11 @@ const onSubmit = async (data: FormValues) => {
   }
 };
 
-
-
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px] w-[95vw] max-h-[90vh] overflow-y-auto p-4 sm:p-6">
+      <DialogContent className="sm:max-w-[600px] w-[95vw] max-w-[95vw] sm:w-full max-h-[90vh] overflow-y-auto p-4 sm:p-6">
         <DialogHeader>
-           <DialogTitle className="text-xl sm:text-2xl font-bold text-primary-700">Book an Appointment</DialogTitle>
+          <DialogTitle className="text-xl sm:text-2xl font-bold text-primary-700">Book an Appointment</DialogTitle>
           <DialogDescription className="text-sm sm:text-base">
             Fill out the form below to schedule your appointment with our specialists.
           </DialogDescription>
@@ -200,9 +197,9 @@ const onSubmit = async (data: FormValues) => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Patient Full Name</FormLabel>
+                    <FormLabel className="text-sm">Patient Full Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="John Doe" {...field} />
+                      <Input placeholder="John Doe" {...field} className="text-sm" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -213,9 +210,9 @@ const onSubmit = async (data: FormValues) => {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel className="text-sm">Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="email@example.com" {...field} />
+                      <Input placeholder="email@example.com" {...field} className="text-sm" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -226,9 +223,9 @@ const onSubmit = async (data: FormValues) => {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone Number</FormLabel>
+                    <FormLabel className="text-sm">Phone Number</FormLabel>
                     <FormControl>
-                      <Input placeholder="(123) 456-7890" {...field} />
+                      <Input placeholder="(123) 456-7890" {...field} className="text-sm" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -239,7 +236,7 @@ const onSubmit = async (data: FormValues) => {
                 name="department"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Department</FormLabel>
+                    <FormLabel className="text-sm">Department</FormLabel>
                     <Select
                       onValueChange={(value) => {
                         field.onChange(value);
@@ -249,7 +246,7 @@ const onSubmit = async (data: FormValues) => {
                       value={field.value}
                     >
                       <FormControl>
-                        <SelectTrigger>
+                        <SelectTrigger className="text-sm">
                           <SelectValue placeholder="Select department" />
                         </SelectTrigger>
                       </FormControl>
@@ -270,14 +267,14 @@ const onSubmit = async (data: FormValues) => {
                 name="doctor"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Doctor</FormLabel>
+                    <FormLabel className="text-sm">Doctor</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       value={field.value}
                       disabled={!selectedDepartment}
                     >
                       <FormControl>
-                        <SelectTrigger>
+                        <SelectTrigger className="text-sm">
                           <SelectValue placeholder="Select doctor" />
                         </SelectTrigger>
                       </FormControl>
@@ -299,14 +296,14 @@ const onSubmit = async (data: FormValues) => {
                 name="date"
                 render={({ field }) => (
                   <FormItem className="flex flex-col">
-                    <FormLabel>Appointment Date</FormLabel>
+                    <FormLabel className="text-sm">Appointment Date</FormLabel>
                     <Popover>
                       <PopoverTrigger asChild>
                         <FormControl>
                           <Button
                             variant={"outline"}
                             className={cn(
-                              "w-full pl-3 text-left font-normal",
+                              "w-full pl-3 text-left font-normal text-sm",
                               !field.value && "text-muted-foreground"
                             )}
                           >
@@ -343,18 +340,18 @@ const onSubmit = async (data: FormValues) => {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Additional Information</FormLabel>
+                  <FormLabel className="text-sm">Additional Information</FormLabel>
                   <FormControl>
-                    <Input placeholder="Any specific concerns or requirements?" {...field} />
+                    <Input placeholder="Any specific concerns or requirements?" {...field} className="text-sm" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <DialogFooter>
+            <DialogFooter className="pt-3 sm:pt-4">
               <Button
                 type="submit"
-                className="w-full md:w-auto bg-primary-500 hover:bg-primary-600"
+                className="w-full bg-primary-500 hover:bg-primary-600 text-sm"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Booking..." : "Book Appointment"}
