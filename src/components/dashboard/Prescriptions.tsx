@@ -244,12 +244,48 @@ const Prescriptions = () => {
                     <Download className="h-4 w-4" />
                     <span>Download PDF</span>
                   </Button>
-                  {prescription.status === 'Active' && prescription.refills > 0 && (
-                    <Button variant="outline" size="sm" className="flex items-center space-x-2">
-                      <Pill className="h-4 w-4" />
-                      <span>Refill</span>
-                    </Button>
-                  )}
+                  
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline" size="sm" className="flex items-center space-x-2">
+                        <Eye className="h-4 w-4" />
+                        <span>View Full Prescription</span>
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl max-h-[90vh] overflow-auto">
+                      <DialogHeader>
+                        <DialogTitle>Full Prescription - {prescription.prescriptionId}</DialogTitle>
+                      </DialogHeader>
+                      <div className="mt-4">
+                        <img 
+                          src="https://i.postimg.cc/5t0Pwkz9/Whats-App-Image-2025-05-27-at-12-25-56-11c2e744.jpg" 
+                          alt="Prescription" 
+                          className="w-full h-auto rounded-lg shadow-lg"
+                        />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline" size="sm" className="flex items-center space-x-2">
+                        <FileText className="h-4 w-4" />
+                        <span>View Test Report</span>
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl max-h-[90vh] overflow-auto">
+                      <DialogHeader>
+                        <DialogTitle>Test Report - {prescription.prescriptionId}</DialogTitle>
+                      </DialogHeader>
+                      <div className="mt-4">
+                        <img 
+                          src="https://i.postimg.cc/XvzsxcKf/Whats-App-Image-2025-05-27-at-12-25-57-94f0471a.jpg" 
+                          alt="Test Report" 
+                          className="w-full h-auto rounded-lg shadow-lg"
+                        />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </div>
             </CardContent>
