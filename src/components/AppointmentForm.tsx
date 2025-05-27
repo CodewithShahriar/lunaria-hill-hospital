@@ -185,7 +185,7 @@ const onSubmit = async (data: FormValues) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px]">
+      <DialogContent className="sm:max-w-[600px] w-[95vw] max-h-[90vh] overflow-y-auto p-4 sm:p-6">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-primary-700">Book an Appointment</DialogTitle>
           <DialogDescription>

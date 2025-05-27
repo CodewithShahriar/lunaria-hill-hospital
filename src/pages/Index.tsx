@@ -59,7 +59,8 @@ const Index = () => {
                 <p className="text-sm mb-4 leading-relaxed">
                   Check our weekly timetable to see when each doctor is available. Planning ahead helps you avoid long waits and ensures you meet the right specialist at the right time for your medical needs.
                 </p>
-                <button className="bg-white text-[#0c8fd3] font-medium text-sm px-4 py-2 rounded hover:bg-gray-100 transition">
+                <button className="bg-white text-[#0c8fd3] font-medium text-sm px-4 py-2 rounded hover:bg-gray-100 transition" >
+                  
                   View Timetable
                 </button>
               </div>
