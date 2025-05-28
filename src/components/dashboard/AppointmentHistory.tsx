@@ -100,26 +100,27 @@ const AppointmentHistory = () => {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-gray-800">Appointment History</h1>
-        <Button className="flex items-center space-x-2">
+    <div className="space-y-4 sm:space-y-6 p-2 sm:p-0">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-800">Appointment History</h1>
+        <Button className="flex items-center space-x-2 text-sm">
           <Download className="h-4 w-4" />
-          <span>Export History</span>
+          <span className="hidden sm:inline">Export History</span>
+          <span className="sm:hidden">Export</span>
         </Button>
       </div>
 
       {/* Search and Filter */}
       <Card>
-        <CardContent className="p-4">
-          <div className="flex flex-col md:flex-row gap-4">
+        <CardContent className="p-3 sm:p-4">
+          <div className="space-y-3 sm:space-y-0 sm:flex sm:gap-4">
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
               <Input
                 placeholder="Search by doctor or specialty..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
+                className="pl-10 text-sm"
               />
             </div>
             <div className="flex items-center space-x-2">
@@ -127,7 +128,7 @@ const AppointmentHistory = () => {
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm"
+                className="flex h-9 sm:h-10 rounded-md border border-input bg-background px-3 py-1 sm:py-2 text-sm w-full sm:w-auto"
               >
                 <option value="all">All Status</option>
                 <option value="completed">Completed</option>
@@ -140,51 +141,58 @@ const AppointmentHistory = () => {
       </Card>
 
       {/* Appointment List */}
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {filteredAppointments.map((appointment) => (
           <Card key={appointment.id} className="hover:shadow-md transition-shadow">
-            <CardContent className="p-6">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 p-3 rounded-full">
-                    <User className="h-6 w-6 text-blue-600" />
+            <CardContent className="p-4 sm:p-6">
+              <div className="space-y-4">
+                {/* Header with doctor info and status */}
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-blue-100 p-2 sm:p-3 rounded-full">
+                      <User className="h-4 w-4 sm:h-6 sm:w-6 text-blue-600" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
+                        <h3 className="text-base sm:text-lg font-semibold text-gray-800 truncate">{appointment.doctor}</h3>
+                        <Badge variant="outline" className="text-xs w-fit">{appointment.specialty}</Badge>
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600">
+                        <span className="flex items-center">
+                          <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+                          {appointment.date}
+                        </span>
+                        <span className="flex items-center">
+                          <Clock className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+                          {appointment.time}
+                        </span>
+                        <span className="font-medium">Serial: {appointment.serial}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <h3 className="text-lg font-semibold text-gray-800">{appointment.doctor}</h3>
-                      <Badge variant="outline">{appointment.specialty}</Badge>
-                    </div>
-                    <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-2">
-                      <span className="flex items-center">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        {appointment.date}
-                      </span>
-                      <span className="flex items-center">
-                        <Clock className="h-4 w-4 mr-1" />
-                        {appointment.time}
-                      </span>
-                      <span className="font-medium">Serial: {appointment.serial}</span>
-                    </div>
-                    {appointment.notes && (
-                      <p className="text-sm text-gray-600 bg-gray-50 p-2 rounded mt-2">
-                        <strong>Notes:</strong> {appointment.notes}
-                      </p>
+                  
+                  {/* Status and action buttons */}
+                  <div className="flex flex-row sm:flex-col items-center sm:items-end gap-2">
+                    <Badge className={`${getStatusColor(appointment.status)} text-xs`}>
+                      {appointment.status}
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      {appointment.type}
+                    </Badge>
+                    {appointment.status === 'Completed' && (
+                      <Button variant="outline" size="sm" className="text-xs px-2 py-1 sm:mt-2">
+                        View Report
+                      </Button>
                     )}
                   </div>
                 </div>
-                <div className="flex flex-col items-end space-y-2">
-                  <Badge className={getStatusColor(appointment.status)}>
-                    {appointment.status}
-                  </Badge>
-                  <Badge variant="outline" className="text-xs">
-                    {appointment.type}
-                  </Badge>
-                  {appointment.status === 'Completed' && (
-                    <Button variant="outline" size="sm" className="mt-2">
-                      View Report
-                    </Button>
-                  )}
-                </div>
+
+                {/* Notes section */}
+                {appointment.notes && (
+                  <div className="bg-gray-50 p-3 rounded text-xs sm:text-sm text-gray-600">
+                    <strong>Notes:</strong> {appointment.notes}
+                  </div>
+                )}
               </div>
             </CardContent>
           </Card>
@@ -193,38 +201,38 @@ const AppointmentHistory = () => {
 
       {filteredAppointments.length === 0 && (
         <Card>
-          <CardContent className="p-8 text-center">
-            <Calendar className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-gray-800 mb-2">No appointments found</h3>
-            <p className="text-gray-600">Try adjusting your search or filter criteria.</p>
+          <CardContent className="p-6 sm:p-8 text-center">
+            <Calendar className="h-8 w-8 sm:h-12 sm:w-12 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-base sm:text-lg font-medium text-gray-800 mb-2">No appointments found</h3>
+            <p className="text-sm sm:text-base text-gray-600">Try adjusting your search or filter criteria.</p>
           </CardContent>
         </Card>
       )}
 
       {/* Summary Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-6 sm:mt-8">
         <Card>
-          <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-green-600">
+          <CardContent className="p-3 sm:p-4 text-center">
+            <div className="text-xl sm:text-2xl font-bold text-green-600">
               {appointments.filter(a => a.status === 'Completed').length}
             </div>
-            <p className="text-sm text-gray-600">Completed Appointments</p>
+            <p className="text-xs sm:text-sm text-gray-600">Completed Appointments</p>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-red-600">
+          <CardContent className="p-3 sm:p-4 text-center">
+            <div className="text-xl sm:text-2xl font-bold text-red-600">
               {appointments.filter(a => a.status === 'Cancelled').length}
             </div>
-            <p className="text-sm text-gray-600">Cancelled Appointments</p>
+            <p className="text-xs sm:text-sm text-gray-600">Cancelled Appointments</p>
           </CardContent>
         </Card>
         <Card>
-          <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-blue-600">
+          <CardContent className="p-3 sm:p-4 text-center">
+            <div className="text-xl sm:text-2xl font-bold text-blue-600">
               {appointments.length}
             </div>
-            <p className="text-sm text-gray-600">Total Appointments</p>
+            <p className="text-xs sm:text-sm text-gray-600">Total Appointments</p>
           </CardContent>
         </Card>
       </div>
