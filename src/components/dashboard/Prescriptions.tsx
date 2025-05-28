@@ -192,13 +192,13 @@ const Prescriptions = () => {
             <CardContent className="p-6">
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-4 lg:space-y-0">
                 <div className="flex items-start space-x-4 flex-1">
-                  <div className="bg-blue-100 p-3 rounded-full">
-                    <User className="h-6 w-6 text-blue-600" />
+                  <div className="bg-blue-100 p-1 rounded-full">
+                    <User className="h-6 w-6 text-blue-600 hidden lg:block" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center space-x-3 mb-2">
                       <h3 className="text-lg font-semibold text-gray-800 flex items-center">
-                        <User className="h-4 w-4 mr-2" />
+                        {/* <User className="h-4 w-4 mr-2" /> */}
                         {prescription.doctor}
                       </h3>
                       <Badge className={getStatusColor(prescription.status)}>
