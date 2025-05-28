@@ -160,52 +160,59 @@ const BillingPayment = () => {
       </div>
 
       {/* Payment Summary */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="bg-red-100 p-2 rounded-lg">
-                <AlertCircle className="h-5 w-5 text-red-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Outstanding Balance</p>
-                <p className="text-2xl font-bold text-red-600">${totalUnpaid.toFixed(2)}</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="bg-yellow-100 p-2 rounded-lg">
-                <AlertCircle className="h-5 w-5 text-yellow-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Pending Payments</p>
-                <p className="text-2xl font-bold text-yellow-600">${totalPending.toFixed(2)}</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="bg-green-100 p-2 rounded-lg">
-                <CheckCircle className="h-5 w-5 text-green-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Paid This Year</p>
-                <p className="text-2xl font-bold text-green-600">
-                  ${billingRecords
-                    .filter(r => r.status === 'Paid')
-                    .reduce((sum, r) => sum + r.patientResponsibility, 0)
-                    .toFixed(2)}
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">
+  <Card className="w-full">
+    <CardContent className="p-4">
+      <div className="flex items-center space-x-3">
+        <div className="bg-red-100 p-2 rounded-lg">
+          <AlertCircle className="h-5 w-5 text-red-600" />
+        </div>
+        <div>
+          <p className="text-sm text-gray-600">Outstanding Balance</p>
+          <p className="text-2xl font-bold text-red-600">
+            ${totalUnpaid.toFixed(2)}
+          </p>
+        </div>
       </div>
+    </CardContent>
+  </Card>
+
+  <Card className="w-full">
+    <CardContent className="p-4">
+      <div className="flex items-center space-x-3">
+        <div className="bg-yellow-100 p-2 rounded-lg">
+          <AlertCircle className="h-5 w-5 text-yellow-600" />
+        </div>
+        <div>
+          <p className="text-sm text-gray-600">Pending Payments</p>
+          <p className="text-2xl font-bold text-yellow-600">
+            ${totalPending.toFixed(2)}
+          </p>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+
+  <Card className="w-full">
+    <CardContent className="p-4">
+      <div className="flex items-center space-x-3">
+        <div className="bg-green-100 p-2 rounded-lg">
+          <CheckCircle className="h-5 w-5 text-green-600" />
+        </div>
+        <div>
+          <p className="text-sm text-gray-600">Paid This Year</p>
+          <p className="text-2xl font-bold text-green-600">
+            ${billingRecords
+              .filter(r => r.status === 'Paid')
+              .reduce((sum, r) => sum + r.patientResponsibility, 0)
+              .toFixed(2)}
+          </p>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+</div>
+
 
       {/* Search and Filter */}
       <Card>
