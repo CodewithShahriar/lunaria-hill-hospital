@@ -509,7 +509,7 @@ const Index = () => {
 
     {/* CTA Button */}
     <div className="text-center mt-12">
-      <Link to="/doctors">
+      <Link to="./doctors">
         <Button size="lg" className="bg-blue-600 hover:bg-blue-700 rounded-lg">
           View All Doctors
         </Button>
