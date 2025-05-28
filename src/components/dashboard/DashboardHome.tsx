@@ -81,60 +81,64 @@ const DashboardHome = ({ patientData }: DashboardHomeProps) => {
       </div>
 
       {/* Quick Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="bg-blue-100 p-2 rounded-lg">
-                <Calendar className="h-5 w-5 text-blue-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Next Appointment</p>
-                <p className="font-semibold">Jan 15, 2024</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="bg-green-100 p-2 rounded-lg">
-                <FileText className="h-5 w-5 text-green-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Active Prescriptions</p>
-                <p className="font-semibold">3</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="bg-orange-100 p-2 rounded-lg">
-                <Bell className="h-5 w-5 text-orange-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Notifications</p>
-                <p className="font-semibold">5</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <div className="bg-purple-100 p-2 rounded-lg">
-                <Activity className="h-5 w-5 text-purple-600" />
-              </div>
-              <div>
-                <p className="text-sm text-gray-600">Health Score</p>
-                <p className="font-semibold">85/100</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
+  <Card className="w-full">
+    <CardContent className="p-4">
+      <div className="flex items-center space-x-3">
+        <div className="bg-blue-100 p-2 rounded-lg">
+          <Calendar className="h-5 w-5 text-blue-600" />
+        </div>
+        <div>
+          <p className="text-sm text-gray-600">Next Appointment</p>
+          <p className="font-semibold">Jan 15, 2024</p>
+        </div>
       </div>
+    </CardContent>
+  </Card>
+
+  <Card className="w-full">
+    <CardContent className="p-4">
+      <div className="flex items-center space-x-3">
+        <div className="bg-green-100 p-2 rounded-lg">
+          <FileText className="h-5 w-5 text-green-600" />
+        </div>
+        <div>
+          <p className="text-sm text-gray-600">Active Prescriptions</p>
+          <p className="font-semibold">3</p>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+
+  <Card className="w-full">
+    <CardContent className="p-4">
+      <div className="flex items-center space-x-3">
+        <div className="bg-orange-100 p-2 rounded-lg">
+          <Bell className="h-5 w-5 text-orange-600" />
+        </div>
+        <div>
+          <p className="text-sm text-gray-600">Notifications</p>
+          <p className="font-semibold">5</p>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+
+  <Card className="w-full">
+    <CardContent className="p-4">
+      <div className="flex items-center space-x-3">
+        <div className="bg-purple-100 p-2 rounded-lg">
+          <Activity className="h-5 w-5 text-purple-600" />
+        </div>
+        <div>
+          <p className="text-sm text-gray-600">Health Score</p>
+          <p className="font-semibold">85/100</p>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+</div>
+
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Upcoming Appointments */}
