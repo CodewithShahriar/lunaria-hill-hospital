@@ -281,15 +281,15 @@ const Index = () => {
      <section className="py-10 md:py-20 bg-blue-600 text-white">
   <div className="container mx-auto px-4">
     <div className="grid md:grid-cols-2 gap-12 items-center">
-      <div className="md:order-2 lg:block"> {/* Reversed order for mobile */}
-        <div className="relative rounded-xl overflow-hidden shadow-2xl mb-6 md:mb-0 hidden ">
+      <div className="md:order-2 "> {/* Reversed order for mobile */}
+        <div className="relative rounded-xl  shadow-2xl mb-6 md:mb-0 hidden lg:block ">
           <img 
             src="https://media.assettype.com/newindianexpress%2F2024-07%2F6cf84595-4d0d-42c3-b6ef-23d97ac0c3b1%2FHealthcare.jpg" 
             alt="Innovative Medical Technology" 
             className="w-full h-auto"
           />
           {/* Floating card over the image */}
-          <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl w-64 z-10 hidden lg:block">
+          <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl w-64 z-10  ">
             <div className="flex items-center gap-3 mb-2">
               <div className="bg-blue-100 p-2 rounded-full">
                 <Users className="h-6 w-6 text-blue-600" />
