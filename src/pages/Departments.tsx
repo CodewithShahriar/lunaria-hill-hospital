@@ -180,20 +180,20 @@ const Departments = () => {
       </section>
 
 {/* Emergency Services */}
-<section className="py-20 bg-red-700">
+<section className="py-20">
   <div className="container mx-auto px-4">
     <div className="max-w-4xl mx-auto text-center">
-      <div className="bg-white rounded-2xl shadow-xl p-8 animate-fade-in">
+      <div className="bg-red-600 rounded-2xl shadow-xl p-8 animate-fade-in border-gray-500">
         {/* Emergency Icon */}
         <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <AlarmCheck className="h-8 w-8 text-red-500" />
         </div>
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Emergency Department</h2>
-        <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+        <h2 className="text-3xl font-bold text-white mb-4">Emergency Department</h2>
+        <p className="text-lg text-white mb-6 leading-relaxed">
           Our 24/7 Emergency Department is staffed with board-certified emergency physicians and 
           trauma specialists, equipped with state-of-the-art life-saving equipment.
         </p>
-        <Button size="lg" className="bg-red-500 hover:bg-red-600 animate-pulse-slow">
+        <Button size="lg" className="bg-red-800 hover:bg-red-400 animate-pulse-slow">
           Emergency Contact: 911
         </Button>
       </div>
