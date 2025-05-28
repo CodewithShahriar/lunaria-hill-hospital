@@ -47,79 +47,88 @@ const TestimonialsSection = () => {
 
   return (
     <section className="py-20 bg-primary-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">What Our Patients Say</h2>
-          <p className="text-xl text-gray-600">Real stories from real people who trust us with their health</p>
-        </div>
+  <div className="container mx-auto px-4">
+    {/* Heading */}
+    <div className="text-center mb-12 md:mb-16 animate-fade-in">
+      <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-4">
+        What Our Patients Say
+      </h2>
+      <p className="text-base md:text-xl text-gray-600">
+        Real stories from real people who trust us with their health
+      </p>
+    </div>
 
-        <div className="max-w-4xl mx-auto relative">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 animate-fade-in">
-            <div className="text-center">
-              {/* Stars */}
-              <div className="flex justify-center mb-6">
-                {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                  <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
-                ))}
-              </div>
-
-              {/* Content */}
-              <blockquote className="text-2xl text-gray-700 italic mb-8 leading-relaxed">
-                "{testimonials[currentTestimonial].content}"
-              </blockquote>
-
-              {/* Author */}
-              <div className="flex items-center justify-center gap-4">
-                <img
-                  src={testimonials[currentTestimonial].image}
-                  alt={testimonials[currentTestimonial].name}
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-                <div className="text-left">
-                  <div className="font-semibold text-gray-800 text-lg">
-                    {testimonials[currentTestimonial].name}
-                  </div>
-                  <div className="text-gray-600">{testimonials[currentTestimonial].role}</div>
-                </div>
-              </div>
-            </div>
+    {/* Testimonial Card */}
+    <div className="max-w-4xl mx-auto relative">
+      <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-8 md:p-12 animate-fade-in">
+        <div className="text-center">
+          {/* Stars */}
+          <div className="flex justify-center mb-4 md:mb-6">
+            {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+              <Star key={i} className="h-5 w-5 md:h-6 md:w-6 text-yellow-400 fill-current" />
+            ))}
           </div>
 
-          {/* Navigation */}
-          <div className="flex justify-center items-center gap-4 mt-8">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={prevTestimonial}
-              className="rounded-full w-10 h-10 p-0"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
+          {/* Content */}
+          <blockquote className="text-base md:text-2xl text-gray-700 italic mb-6 md:mb-8 leading-relaxed">
+            "{testimonials[currentTestimonial].content}"
+          </blockquote>
 
-            <div className="flex gap-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentTestimonial ? 'bg-primary-500' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
+          {/* Author */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <img
+              src={testimonials[currentTestimonial].image}
+              alt={testimonials[currentTestimonial].name}
+              className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover"
+            />
+            <div className="text-center sm:text-left">
+              <div className="font-semibold text-gray-800 text-base md:text-lg">
+                {testimonials[currentTestimonial].name}
+              </div>
+              <div className="text-gray-600 text-sm md:text-base">
+                {testimonials[currentTestimonial].role}
+              </div>
             </div>
-
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={nextTestimonial}
-              className="rounded-full w-10 h-10 p-0"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Navigation */}
+      <div className="flex flex-wrap justify-center items-center gap-4 mt-6 md:mt-8">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={prevTestimonial}
+          className="rounded-full w-9 h-9 md:w-10 md:h-10 p-0"
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </Button>
+
+        <div className="flex gap-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentTestimonial(index)}
+              className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all ${
+                index === currentTestimonial ? 'bg-primary-500' : 'bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
+
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={nextTestimonial}
+          className="rounded-full w-9 h-9 md:w-10 md:h-10 p-0"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
   );
 };
 
