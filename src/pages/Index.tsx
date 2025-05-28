@@ -278,20 +278,39 @@ const Index = () => {
         </div>
       </section>
       
-      {/* 6. Best Practices Section */}
-      <section className="py-20 bg-blue-600 text-white">
+     <section className="py-10 md:py-20 bg-blue-600 text-white">
   <div className="container mx-auto px-4">
     <div className="grid md:grid-cols-2 gap-12 items-center">
-      <div>
+      <div className="md:order-2 lg:block"> {/* Reversed order for mobile */}
+        <div className="relative rounded-xl overflow-hidden shadow-2xl mb-6 md:mb-0 hidden ">
+          <img 
+            src="https://media.assettype.com/newindianexpress%2F2024-07%2F6cf84595-4d0d-42c3-b6ef-23d97ac0c3b1%2FHealthcare.jpg" 
+            alt="Innovative Medical Technology" 
+            className="w-full h-auto"
+          />
+          {/* Floating card over the image */}
+          <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl w-64 z-10 hidden lg:block">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="bg-blue-100 p-2 rounded-full">
+                <Users className="h-6 w-6 text-blue-600" />
+              </div>
+              <p className="font-bold text-gray-800">8,500+</p>
+            </div>
+            <p className="text-gray-600 text-sm leading-snug">Patients helped annually with innovative treatments</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="md:order-1"> {/* Reversed order for mobile */}
         <div className="inline-block px-4 py-1 bg-white text-blue-600 rounded-full text-sm font-medium mb-4">
           Best Practices
         </div>
-        <h2 className="text-4xl font-bold mb-6">Clinic with Innovative Approach to Treatment</h2>
-        <p className="text-white/90 text-lg mb-8">
+        <h2 className="text-2xl md:text-4xl font-bold mb-6">Clinic with Innovative Approach to Treatment</h2>
+        <p className="text-white/90 text-lg md:text-xl mb-8">
           We combine traditional medical excellence with cutting-edge innovations to provide treatments that are both effective and forward-thinking, delivering exceptional outcomes for our patients.
         </p>
 
-        <div className="grid grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
             <div className="bg-white/20 rounded-full w-12 h-12 flex items-center justify-center mb-4">
               <Shield className="h-6 w-6" />
@@ -313,31 +332,10 @@ const Index = () => {
           Discover Our Approach
         </Button>
       </div>
-
-      <div className="relative hidden md:block">
-        <div className="relative rounded-xl overflow-hidden shadow-2xl">
-          <img 
-            src="https://media.assettype.com/newindianexpress%2F2024-07%2F6cf84595-4d0d-42c3-b6ef-23d97ac0c3b1%2FHealthcare.jpg" 
-            alt="Innovative Medical Technology" 
-            className="w-full h-auto"
-          />
-
-          
-      </div>
-      {/* Floating card over the image */}
-          <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl w-64 z-10">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="bg-blue-100 p-2 rounded-full">
-                <Users className="h-6 w-6 text-blue-600" />
-              </div>
-              <p className="font-bold text-gray-800">8,500+</p>
-            </div>
-            <p className="text-gray-600 text-sm leading-snug">Patients helped annually with innovative treatments</p>
-          </div>
-        </div>
     </div>
   </div>
 </section>
+
 
 
 
