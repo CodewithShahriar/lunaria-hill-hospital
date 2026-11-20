@@ -239,4 +239,30 @@
   .animate-heartbeat {
     animation: heartBeat 2.2s ease-in-out infinite;
   }
+
+  /* Smooth Word by Word Reveal from Left (Zero Jitter, Deliberate & Elegant) */
+  @keyframes wordRevealLeft {
+    from {
+      opacity: 0;
+      transform: translate3d(-14px, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .animate-word-reveal {
+    display: inline-block;
+    opacity: 0;
+    will-change: transform, opacity;
+    animation: wordRevealLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-sub-word {
+    display: inline-block;
+    opacity: 0;
+    will-change: transform, opacity;
+    animation: wordRevealLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
 }
