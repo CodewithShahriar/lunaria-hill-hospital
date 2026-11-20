@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { 
   Calendar, Phone, Heart, ShieldCheck, ArrowRight, 
   Sparkles, Activity, Stethoscope, CheckCircle2, 
-  Zap, Clock, FileText, UserCheck, Plus 
+  Zap, Clock, FileText, UserCheck 
 } from 'lucide-react';
 import { AppointmentForm } from '@/components/AppointmentForm';
 
@@ -11,17 +11,17 @@ const HeroSection = () => {
   const [appointmentDialogOpen, setAppointmentDialogOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-sky-100/70 via-blue-50/60 to-cyan-50/80 py-16 lg:py-24 border-b border-sky-150/50">
+    <section className="relative overflow-hidden bg-gradient-to-br from-sky-100/75 via-blue-50/60 to-cyan-50/70 py-16 lg:py-24 border-b border-sky-150/40">
       
-      {/* Visual Medical Background Elements (Not Plain White) */}
+      {/* Visual Medical Background Elements with Smooth Subtle Animations */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
         
-        {/* 1. Vibrant Soft Ambient Glowing Mesh Blobs */}
-        <div className="absolute -top-24 -right-16 w-[550px] h-[550px] bg-gradient-to-br from-sky-300/40 to-blue-400/30 rounded-full blur-[110px]" />
-        <div className="absolute top-1/3 -left-24 w-[480px] h-[480px] bg-gradient-to-tr from-cyan-300/35 to-sky-200/50 rounded-full blur-[100px]" />
-        <div className="absolute -bottom-20 right-1/3 w-[450px] h-[450px] bg-indigo-200/35 rounded-full blur-[90px]" />
+        {/* 1. Organic Breathing Ambient Glowing Blobs */}
+        <div className="absolute -top-24 -right-16 w-[560px] h-[560px] bg-gradient-to-br from-sky-300/40 to-blue-400/30 rounded-full blur-[110px] animate-blob-slow" />
+        <div className="absolute top-1/3 -left-28 w-[490px] h-[490px] bg-gradient-to-tr from-cyan-300/35 to-sky-200/50 rounded-full blur-[105px] animate-blob-slow-delay" />
+        <div className="absolute -bottom-24 right-1/3 w-[440px] h-[440px] bg-indigo-200/30 rounded-full blur-[90px] animate-blob-slow" />
 
-        {/* 2. Medical Plus Signs (+) Subtle Pattern */}
+        {/* 2. Medical Plus Signs (+) Clean Grid */}
         <div 
           className="absolute inset-0 opacity-[0.08]"
           style={{
@@ -30,25 +30,25 @@ const HeroSection = () => {
           }}
         />
 
-        {/* 3. Dynamic ECG Heartbeat Pulse Wave Graphic Running Across Background */}
-        <div className="absolute bottom-6 left-0 right-0 opacity-20 hidden md:block">
+        {/* 3. Live Animated ECG Heartbeat Pulse Wave */}
+        <div className="absolute bottom-4 left-0 right-0 opacity-25 hidden md:block">
           <svg 
-            viewBox="0 0 1200 120" 
+            viewBox="0 0 1400 120" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-24 stroke-sky-600"
+            className="w-full h-24 stroke-sky-600 animate-ecg"
           >
             <path 
-              d="M0 60 H300 L320 20 L335 100 L350 40 L365 75 L380 60 H700 L720 15 L735 105 L750 35 L765 75 L780 60 H1200" 
-              strokeWidth="3" 
+              d="M0 60 H280 L300 20 L315 100 L330 38 L345 75 L360 60 H660 L680 16 L695 106 L710 34 L725 76 L740 60 H1040 L1060 20 L1075 100 L1090 38 L1105 75 L1120 60 H1400" 
+              strokeWidth="2.5" 
               strokeLinecap="round" 
               strokeLinejoin="round"
             />
           </svg>
         </div>
 
-        {/* 4. Concentric Modern Medical Rings */}
-        <div className="absolute -top-10 right-1/4 w-96 h-96 border border-sky-300/30 rounded-full pointer-events-none hidden lg:block" />
+        {/* 4. Concentric Modern Geometric Rings */}
+        <div className="absolute -top-10 right-1/4 w-96 h-96 border border-sky-300/30 rounded-full pointer-events-none hidden lg:block animate-pulse-soft" />
         <div className="absolute -top-20 right-1/4 w-[460px] h-[460px] border border-sky-200/40 rounded-full pointer-events-none hidden lg:block" />
       </div>
 
@@ -58,7 +58,7 @@ const HeroSection = () => {
           {/* Left Content Column */}
           <div className="lg:col-span-7 flex flex-col justify-center animate-fade-in">
             
-            {/* Smart Hospital Live Badge */}
+            {/* Live Smart Hospital Badge */}
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/95 border border-sky-300 shadow-md shadow-sky-500/10 text-sky-900 text-xs sm:text-sm font-semibold mb-6 w-fit backdrop-blur-md">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -66,9 +66,9 @@ const HeroSection = () => {
               </span>
               <span className="text-slate-900 font-bold">Smart Digital Healthcare</span>
               <span className="text-slate-300">•</span>
-              <span className="text-sky-700 font-semibold flex items-center gap-1">
-                <Zap className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                AI Triage & Virtual OPD
+              <span className="text-sky-700 font-semibold flex items-center gap-1.5">
+                <Activity className="w-3.5 h-3.5 text-sky-600 animate-pulse" />
+                Live OPD & Tele-Triage Active
               </span>
             </div>
 
@@ -95,7 +95,7 @@ const HeroSection = () => {
               >
                 <Calendar className="h-5 w-5" />
                 <span>Book Instant Consultation</span>
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1.5 transition-transform duration-300" />
               </Button>
               
               <a 
@@ -112,17 +112,17 @@ const HeroSection = () => {
               </a>
             </div>
 
-            {/* Smart Hospital Feature Highlights (Glass Pills on Light Mesh) */}
+            {/* Smart Hospital Feature Highlights (Glass Pills) */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-6 border-t border-sky-200/60 text-xs sm:text-sm">
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sky-150 px-3.5 py-1.5 rounded-full shadow-xs">
+              <div className="flex items-center gap-2 bg-white/85 backdrop-blur-sm border border-sky-150 px-3.5 py-1.5 rounded-full shadow-xs hover:border-sky-300 transition-colors">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                 <span className="font-semibold text-slate-800">Smart Digital Prescriptions</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sky-150 px-3.5 py-1.5 rounded-full shadow-xs">
-                <Activity className="w-4 h-4 text-sky-600 flex-shrink-0" />
+              <div className="flex items-center gap-2 bg-white/85 backdrop-blur-sm border border-sky-150 px-3.5 py-1.5 rounded-full shadow-xs hover:border-sky-300 transition-colors">
+                <Activity className="w-4 h-4 text-sky-600 flex-shrink-0 animate-pulse" />
                 <span className="font-semibold text-slate-800">Live ECG & Patient Vitals</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sky-150 px-3.5 py-1.5 rounded-full shadow-xs">
+              <div className="flex items-center gap-2 bg-white/85 backdrop-blur-sm border border-sky-150 px-3.5 py-1.5 rounded-full shadow-xs hover:border-sky-300 transition-colors">
                 <ShieldCheck className="w-4 h-4 text-blue-600 flex-shrink-0" />
                 <span className="font-semibold text-slate-800">Encrypted Health Vault</span>
               </div>
@@ -130,12 +130,12 @@ const HeroSection = () => {
 
           </div>
 
-          {/* Right Visual Column (Elevated Smart Hospital Canvas) */}
+          {/* Right Visual Column (Elevated Smart Hospital Canvas with Balanced Micro-Animations) */}
           <div className="lg:col-span-5 relative mt-8 lg:mt-0">
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               
-              {/* Outer Glow Halo */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-sky-400 to-cyan-400 rounded-3xl blur-xl opacity-20 transform -rotate-1 scale-102"></div>
+              {/* Outer Ambient Glow Halo */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-sky-400 to-cyan-400 rounded-3xl blur-xl opacity-25 transform -rotate-1 scale-102"></div>
 
               {/* Main Medical Visual Card */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-sky-900/15 border-4 border-white bg-white">
@@ -145,28 +145,28 @@ const HeroSection = () => {
                   className="w-full h-[390px] sm:h-[460px] object-cover object-center transform hover:scale-102 transition-transform duration-700"
                 />
 
-                {/* Bottom Overlay Pill (Cleanly placed at the bottom, zero text obstruction) */}
+                {/* Bottom Overlay Pill (Clean, zero text obstruction) */}
                 <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-slate-100 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-blue-600 text-white flex items-center justify-center shadow-md shadow-sky-500/30">
                       <Stethoscope className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-slate-900 leading-tight">Board-Certified Specialists</h4>
+                      <h4 className="text-xs font-bold text-slate-900 leading-tight font-display">Board-Certified Specialists</h4>
                       <p className="text-[11px] text-slate-500">150+ Renowned Clinicians</p>
                     </div>
                   </div>
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-semibold border border-emerald-200">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-semibold border border-emerald-200">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
                     On-Duty Now
                   </span>
                 </div>
               </div>
 
-              {/* Smart Card 1: Top-Left Floating Smart Telemedicine Widget */}
+              {/* Smart Card 1: Top-Left Floating Smart Telemedicine Widget (With Heartbeat Animation) */}
               <div className="absolute -top-5 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-xl border border-sky-150 animate-float hidden sm:flex items-center gap-3.5">
                 <div className="w-10 h-10 bg-gradient-to-tr from-sky-500 to-cyan-500 rounded-xl flex items-center justify-center text-white shadow-md shadow-sky-500/30">
-                  <Activity className="h-5 w-5" />
+                  <Heart className="h-5 w-5 fill-white animate-heartbeat" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
@@ -178,7 +178,7 @@ const HeroSection = () => {
               </div>
 
               {/* Smart Card 2: Top-Right Pill */}
-              <div className="absolute top-4 -right-4 bg-white/95 backdrop-blur-md rounded-full px-4 py-1.5 shadow-lg border border-sky-150 flex items-center gap-1.5 text-xs font-semibold text-slate-800">
+              <div className="absolute top-4 -right-4 bg-white/95 backdrop-blur-md rounded-full px-4 py-1.5 shadow-lg border border-sky-150 flex items-center gap-1.5 text-xs font-semibold text-slate-800 animate-float" style={{ animationDelay: '1.2s' }}>
                 <ShieldCheck className="w-4 h-4 text-sky-600" />
                 <span>JCI & ISO Certified</span>
               </div>

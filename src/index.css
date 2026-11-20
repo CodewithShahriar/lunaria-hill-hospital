@@ -195,4 +195,48 @@
       transform: translateX(0);
     }
   }
+
+  /* Smart Hospital Medical Animations */
+  @keyframes ecgPulse {
+    0% {
+      stroke-dashoffset: 1400;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .animate-ecg {
+    stroke-dasharray: 1400;
+    animation: ecgPulse 7s linear infinite;
+  }
+
+  @keyframes blobMotion {
+    0%, 100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    50% {
+      transform: translate(20px, -20px) scale(1.06);
+    }
+  }
+
+  .animate-blob-slow {
+    animation: blobMotion 12s ease-in-out infinite;
+  }
+
+  .animate-blob-slow-delay {
+    animation: blobMotion 15s ease-in-out infinite 4s;
+  }
+
+  @keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    12% { transform: scale(1.18); }
+    24% { transform: scale(1); }
+    36% { transform: scale(1.18); }
+    60% { transform: scale(1); }
+  }
+
+  .animate-heartbeat {
+    animation: heartBeat 2.2s ease-in-out infinite;
+  }
 }
