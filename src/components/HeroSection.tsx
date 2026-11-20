@@ -14,28 +14,19 @@ const HeroSection = () => {
   return (
     <section className="relative overflow-hidden min-h-[calc(100vh-80px)] flex items-center pt-14 pb-20 lg:pt-16 lg:pb-24 bg-white">
       
-      {/* 1. Doctors Photo Background (Vibrant, Crystal-Clear & Highlighted on Right) */}
-      <div className="absolute inset-0 select-none overflow-hidden">
+      {/* 1. Doctors Photo Background (Authentic Clean Reference Image) */}
+      <div className="absolute inset-0 select-none overflow-hidden bg-white">
         <img
           src="/hero-doctors.jpg"
           alt="Lunaria Hill Hospital Medical Team & Specialists"
-          className="w-full h-full object-cover object-[70%_top] lg:object-[65%_center] filter contrast-[1.08] brightness-[1.04] saturate-[1.08]"
+          className="w-full h-full object-cover object-[78%_center] lg:object-[72%_center] filter contrast-[1.03] brightness-[1.01]"
         />
 
-        {/* Clean Left-Side Only Gradient: Keeps text 100% readable while leaving the right-side doctors completely bright and unfogged */}
-        <div className="absolute inset-y-0 left-0 w-full lg:w-[54%] bg-gradient-to-r from-white via-white/90 via-55% to-transparent pointer-events-none" />
+        {/* Clean Left-Side Gradient: Ensures 100% Crisp, Pure Background for Text with Zero Ghost Faces */}
+        <div className="absolute inset-y-0 left-0 w-full lg:w-[58%] bg-gradient-to-r from-white via-white/98 via-48% to-transparent pointer-events-none" />
 
         {/* Subtle Bottom Blend into Cards */}
         <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-sky-100/60 to-transparent pointer-events-none" />
-
-        {/* Subtle Medical Plus Grid (Faint on Left) */}
-        <div 
-          className="absolute inset-0 opacity-[0.035] pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 14v12M14 20h12' stroke='%230284c7' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E")`,
-            backgroundSize: '40px 40px'
-          }}
-        />
 
         {/* Live Animated ECG Pulse Wave */}
         <div className="absolute bottom-2 left-0 right-0 opacity-20 hidden md:block pointer-events-none">
@@ -58,11 +49,11 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-12 gap-8 items-center min-h-[68vh]">
 
-          {/* Left Content Column */}
+          {/* Left Content Column (Crisp, High-Contrast & Uncluttered) */}
           <div className="lg:col-span-7 flex flex-col justify-center animate-fade-in pt-2">
             
-            {/* Unique Modern Badge (Replacing generic '// TRUSTED HEALTHCARE') */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/95 border border-sky-200/90 shadow-sm text-sky-900 text-xs font-semibold mb-5 w-fit backdrop-blur-md">
+            {/* Modern Pill Badge */}
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-sky-50 border border-sky-200 shadow-xs text-sky-900 text-xs font-semibold mb-5 w-fit">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
@@ -71,17 +62,17 @@ const HeroSection = () => {
                 Next-Gen Healthcare
               </span>
               <span className="text-slate-300">•</span>
-              <span className="text-sky-600 font-semibold flex items-center gap-1 text-[11px]">
-                <Sparkles className="w-3.5 h-3.5 text-sky-500" />
+              <span className="text-blue-600 font-semibold flex items-center gap-1 text-[11px]">
+                <Sparkles className="w-3.5 h-3.5 text-blue-500" />
                 Digital Clinical Excellence
               </span>
             </div>
 
-            {/* Smart Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12] mb-6 font-display">
+            {/* Smart High-Contrast Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-slate-900 tracking-tight leading-[1.14] mb-6 font-display">
               Quality Healthcare{' '}
               <br />
-              <span className="bg-gradient-to-r from-sky-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-700 via-sky-600 to-blue-600 bg-clip-text text-transparent">
                 Made Simple & Smart
               </span>
             </h1>
@@ -93,7 +84,7 @@ const HeroSection = () => {
             </p>
 
             {/* Action Row: Find Doctor Button + Visiting Hours */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5 sm:gap-6 mb-8">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 mb-8">
               <Button 
                 size="lg" 
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base px-7 py-5 h-auto rounded-lg shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/35 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2.5"
@@ -103,7 +94,7 @@ const HeroSection = () => {
                 <span>Find a Doctor</span>
               </Button>
               
-              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 bg-white/85 backdrop-blur-sm px-4 py-3 rounded-lg border border-sky-100 shadow-xs">
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-lg border border-slate-200 shadow-xs">
                 <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
@@ -115,29 +106,29 @@ const HeroSection = () => {
             </div>
 
             {/* Smart Micro-Highlights */}
-            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-sky-200/50 text-xs text-slate-600">
-              <div className="flex items-center gap-1.5 bg-white/85 backdrop-blur-sm px-3 py-1.5 rounded-full border border-sky-150">
+            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200/80 text-xs text-slate-600">
+              <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-xs">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>150+ Top Specialists</span>
+                <span className="font-medium text-slate-800">150+ Top Specialists</span>
               </div>
-              <div className="flex items-center gap-1.5 bg-white/85 backdrop-blur-sm px-3 py-1.5 rounded-full border border-sky-150">
+              <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-xs">
                 <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
-                <span>JCI & ISO Certified</span>
+                <span className="font-medium text-slate-800">JCI & ISO Certified</span>
               </div>
-              <div className="flex items-center gap-1.5 bg-white/85 backdrop-blur-sm px-3 py-1.5 rounded-full border border-sky-150">
+              <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-xs">
                 <Activity className="w-3.5 h-3.5 text-sky-600 animate-pulse" />
-                <span>Live Tele-Triage</span>
+                <span className="font-medium text-slate-800">Live Tele-Triage</span>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Compact Instant Booking Card (Moved Further Down & Further to the Right) */}
-          <div className="lg:col-span-5 relative mt-8 lg:mt-24 flex justify-center lg:justify-end lg:translate-x-6 lg:translate-y-8">
-            <div className="bg-white/95 backdrop-blur-md p-5 rounded-xl shadow-xl border border-sky-150 max-w-[300px] w-full animate-fade-in">
+          {/* Right Column: Clean Floating Instant Booking Card (Positioned in Lower Right Corner) */}
+          <div className="lg:col-span-5 relative mt-8 lg:mt-28 flex justify-center lg:justify-end">
+            <div className="bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-xl shadow-slate-900/10 border border-slate-200/90 max-w-[285px] w-full animate-fade-in">
               
               {/* Header */}
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-3.5">
                 <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
                 <h3 className="font-bold text-slate-900 text-sm font-display">Instant Booking</h3>
               </div>
