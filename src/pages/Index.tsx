@@ -31,11 +31,11 @@ const Index = () => {
       {/* 2. Hero Section */}
       <HeroSection />
       
-      {/* 2. Quick Info Cards (Hero Sky-Blue Background Extends Exactly to Midpoint of Cards) */}
-      <section className="relative z-20 bg-white pb-16">
+      {/* 2. Quick Info Cards (Card Section Moved Lower & Hero Background Extends to the Marked Line) */}
+      <section className="relative z-20 bg-white pb-20">
         <div className="relative">
-          {/* Top 50% Background: Seamless continuation of Hero sky-blue background */}
-          <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-sky-100/75 via-blue-50/60 to-cyan-50/70 pointer-events-none">
+          {/* Hero background continuation reaching down to the marked line (~68% of the cards, right below Friday) */}
+          <div className="absolute inset-x-0 top-0 bottom-[32%] bg-gradient-to-b from-sky-100/80 via-blue-50/70 to-sky-150/50 pointer-events-none">
             {/* Subtle medical plus grid pattern matching Hero */}
             <div 
               className="absolute inset-0 opacity-[0.06]"
@@ -46,7 +46,7 @@ const Index = () => {
             />
           </div>
 
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-4 relative z-10 pt-4 lg:pt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden shadow-2xl">
             {/* 1. Working Time */}
             <div className="bg-[#169fe6] text-white p-6 lg:p-8 flex flex-col justify-between min-h-[260px]">
