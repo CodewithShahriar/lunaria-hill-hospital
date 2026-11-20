@@ -49,14 +49,14 @@ const HeroSection = () => {
   const slide = slides[currentSlide];
 
   return (
-    <section className="relative overflow-hidden min-h-[calc(100vh-80px)] flex items-center pt-14 pb-20 lg:pt-20 lg:pb-28 bg-white">
+    <section className="relative overflow-hidden min-h-[calc(100vh-80px)] flex items-center pt-16 pb-24 lg:pt-24 lg:pb-32 bg-white">
       
       {/* 1. Doctors Photo Background (Shifted Slightly Up as requested) */}
       <div className="absolute inset-0 select-none overflow-hidden bg-white">
         <img
           src="/hero-doctors.jpg"
           alt="Lunaria Hill Hospital Medical Team & Specialists"
-          className="w-full h-full object-cover object-[78%_48%] lg:object-[72%_47%] filter contrast-[1.03] brightness-[1.01]"
+          className="w-full h-full object-cover object-[78%_36%] lg:object-[72%_32%] filter contrast-[1.03] brightness-[1.01]"
         />
 
         {/* Clean, Natural Left Gradient: Guarantees pure white backdrop for text with zero ghost shapes */}
@@ -86,10 +86,10 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-12 gap-8 items-center min-h-[70vh]">
 
-          {/* Left Content Column (Shifted Down, Pure Black Typography, Title & Subtitle Reveal Simultaneously) */}
-          <div className="lg:col-span-7 flex flex-col justify-center pt-12 sm:pt-16 lg:pt-24 xl:pt-28">
+          {/* Left Content Column (Shifted Further Down as requested) */}
+          <div className="lg:col-span-7 flex flex-col justify-center pt-24 sm:pt-28 lg:pt-36 xl:pt-40">
             
-            {/* Clean Pill Badge (Zero Distractions, No Dots or Sparkles) */}
+            {/* Clean Pill Badge */}
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-100/90 border border-slate-300 shadow-xs text-slate-900 text-xs font-bold mb-5 w-fit">
               <span className="w-2 h-2 rounded-full bg-blue-600"></span>
               <span className="tracking-wide text-[11px] uppercase">
@@ -97,10 +97,10 @@ const HeroSection = () => {
               </span>
             </div>
 
-            {/* Smooth Animated Title & Subtitle Wrapper (Both Reveal Together Simultaneously) */}
+            {/* Smooth Animated Title & Subtitle Wrapper */}
             <div className={`transition-opacity duration-400 ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-black text-black tracking-tight leading-[1.14] font-display select-none">
+              <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-black text-black tracking-tight leading-[1.15] font-sans select-none">
                 
                 {/* Line 1: Word by Word Reveal starting from 0ms */}
                 <span className="block mb-1 sm:mb-1.5">
@@ -130,12 +130,12 @@ const HeroSection = () => {
 
               </h1>
 
-              {/* Subtitle: Entire Subtitle Reveals Word by Word TOGETHER with the Title */}
-              <p className="text-base sm:text-lg text-slate-950 mt-3 sm:mt-4 mb-7 leading-relaxed max-w-xl font-medium select-none">
+              {/* Subtitle */}
+              <p className="text-base sm:text-lg text-slate-800 mt-3 sm:mt-4 mb-7 leading-relaxed max-w-xl font-normal select-none">
                 {slide.subWords.map((word, sIdx) => (
                   <span
                     key={`sub-${currentSlide}-${sIdx}`}
-                    className="animate-sub-word text-slate-950 mr-1.5 inline-block"
+                    className="animate-sub-word text-slate-800 mr-1.5 inline-block"
                     style={{ animationDelay: `${sIdx * 75}ms` }}
                   >
                     {word}
@@ -148,50 +148,50 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 mb-8">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-base px-7 py-5 h-auto rounded-lg shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/35 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2.5"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base px-7 py-3.5 h-auto rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2.5"
                 onClick={() => setAppointmentDialogOpen(true)}
               >
                 <Stethoscope className="h-5 w-5" />
                 <span>Find a Doctor</span>
               </Button>
               
-              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-950 bg-white/95 px-4 py-3 rounded-lg border border-slate-300 shadow-xs">
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-900 bg-white/95 px-4 py-3 rounded-lg border border-slate-300 shadow-xs">
                 <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
                 </span>
                 <span className="leading-snug">
-                  <strong className="font-extrabold text-black">Visiting Hours:</strong> Sunday - Friday: 08:00 AM - 10:00 PM
+                  <strong className="font-bold text-black">Visiting Hours:</strong> Sunday - Friday: 08:00 AM - 10:00 PM
                 </span>
               </div>
             </div>
 
-            {/* Smart Micro-Highlights (Bold Black Contrast) */}
-            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200 text-xs text-slate-950">
+            {/* Smart Micro-Highlights */}
+            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200 text-xs text-slate-900">
               <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-300 shadow-xs">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span className="font-bold text-slate-950">150+ Top Specialists</span>
+                <span className="font-semibold text-slate-900">150+ Top Specialists</span>
               </div>
               <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-300 shadow-xs">
                 <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
-                <span className="font-bold text-slate-950">JCI & ISO Certified</span>
+                <span className="font-semibold text-slate-900">JCI & ISO Certified</span>
               </div>
               <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-300 shadow-xs">
                 <Activity className="w-3.5 h-3.5 text-sky-600 animate-pulse" />
-                <span className="font-bold text-slate-950">Live Tele-Triage</span>
+                <span className="font-semibold text-slate-900">Live Tele-Triage</span>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Clean Instant Appointment Card (Shifted Down) */}
-          <div className="lg:col-span-5 relative mt-12 lg:mt-44 flex justify-center lg:justify-end lg:translate-y-14">
+          {/* Right Column: Clean Instant Appointment Card (Shifted Further Down as requested) */}
+          <div className="lg:col-span-5 relative mt-16 lg:mt-52 flex justify-center lg:justify-end lg:translate-y-24">
             <div className="bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-2xl shadow-slate-900/15 border border-slate-200/90 max-w-[285px] w-full animate-fade-in">
               
               {/* Header: Instant Appointment */}
               <div className="flex items-center gap-2 mb-3.5">
                 <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-                <h3 className="font-bold text-slate-950 text-sm font-display">Instant Appointment</h3>
+                <h3 className="font-bold text-slate-950 text-sm font-sans">Instant Appointment</h3>
               </div>
 
               {/* Compact Booking Fields */}

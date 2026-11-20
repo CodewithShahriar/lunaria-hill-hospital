@@ -135,22 +135,25 @@ const Index = () => {
             
             {/* Image Frame with Floating Experience Card */}
             <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-2xl shadow-sky-500/10 ring-1 ring-slate-100">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-200/90 ring-1 ring-slate-100 bg-slate-100">
                 <img 
-                  src="https://media.licdn.com/dms/image/v2/C4D1BAQHKoycNIXHKYg/company-background_10000/company-background_10000/0/1583639567756/medex_healthcare_co_cover?e=2147483647&v=beta&t=cxhITWOAEuXZ7PO7ZSVwbflxEqE2uBMWpRVzcZI5FpY" 
+                  src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
                   alt="Lunaria Hill Hospital Team and Facilities" 
                   className="w-full h-[400px] sm:h-[460px] object-cover hover:scale-105 transition-transform duration-700"
+                  onError={(e) => {
+                    e.currentTarget.src = "/hero-doctors.jpg";
+                  }}
                 />
               </div>
 
               {/* Floating 15+ Years Badge */}
-              <div className="absolute -bottom-6 -right-4 sm:-right-6 glass-card p-4 sm:p-5 rounded-2xl shadow-xl border border-white/80">
+              <div className="absolute -bottom-6 -right-4 sm:-right-6 glass-card p-4 sm:p-5 rounded-xl shadow-xl border border-white/80">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 bg-gradient-to-tr from-sky-500 to-blue-600 rounded-xl flex items-center justify-center text-white shadow-md shadow-sky-500/30">
+                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white shadow-md shadow-blue-500/30">
                     <Award className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="font-extrabold text-slate-900 text-lg font-display">15+ Years</p>
+                    <p className="font-extrabold text-slate-900 text-lg font-sans">15+ Years</p>
                     <p className="text-xs text-slate-500 font-medium">Healthcare Excellence</p>
                   </div>
                 </div>
@@ -165,14 +168,14 @@ const Index = () => {
             
             {/* Text Information */}
             <div className="animate-fade-in">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-6 font-sans">
                 A Recognized Leader in Exceptional Healthcare
               </h2>
-              <p className="text-gray-600 mb-8 text-base sm:text-lg leading-relaxed">
+              <p className="text-gray-600 mb-8 text-base sm:text-lg leading-relaxed font-sans">
                 At Lunaria Hill Hospital, we combine compassionate care with cutting-edge medical technology. Our approach centers on providing personalized healthcare experiences that address the unique needs of each patient.
               </p>
               
-              <div className="space-y-6 mb-8">
+              <div className="space-y-6 mb-8 font-sans">
                 <div className="flex items-start gap-3.5">
                   <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div>
@@ -200,12 +203,12 @@ const Index = () => {
               
               <div className="flex flex-wrap items-center gap-4">
                 <Link to="/about">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-7 py-3 text-base shadow-sm">
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-7 py-3 text-base shadow-sm">
                     Learn More About Us
                   </Button>
                 </Link>
                 <Link to="/doctors">
-                  <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 font-medium rounded-lg px-7 py-3 text-base flex items-center gap-2">
+                  <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold rounded-lg px-7 py-3 text-base flex items-center gap-2">
                     Our Doctors
                     <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -224,8 +227,8 @@ const Index = () => {
             <div className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
               Our Departments
             </div>
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Choose Department</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-4 font-sans">Choose Department</h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Specialized departments to address all your healthcare needs with expert care
             </p>
           </div>
@@ -239,15 +242,17 @@ const Index = () => {
               { name: "Ophthalmology", icon: Eye, desc: "Eye care" },
               { name: "Orthopedics", icon: Bone, desc: "Bone & joint care" },
             ].map((dept, idx) => (
-              <div key={idx} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all p-6 text-center group">
-                <div className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors">
-                  <dept.icon className="h-8 w-8 text-white" />
+              <div key={idx} className="bg-white rounded-xl border-2 border-slate-200/90 shadow-sm hover:shadow-xl hover:border-blue-500 transition-all p-6 text-center group flex flex-col justify-between">
+                <div>
+                  <div className="bg-blue-600 rounded-xl h-14 w-14 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-700 transition-colors shadow-sm">
+                    <dept.icon className="h-7 w-7 text-white" />
+                  </div>
+                  <h3 className="font-bold text-base text-gray-900 mb-1">{dept.name}</h3>
+                  <p className="text-gray-500 text-xs mb-4 leading-relaxed">{dept.desc}</p>
                 </div>
-                <h3 className="font-bold text-lg mb-1">{dept.name}</h3>
-                <p className="text-gray-500 text-sm mb-4">{dept.desc}</p>
                 <Link to="/departments">
-                  <Button variant="link" className="text-blue-500 p-0 hover:text-blue-700">
-                    Learn More
+                  <Button variant="link" className="text-blue-600 p-0 hover:text-blue-700 font-semibold text-sm">
+                    Learn More →
                   </Button>
                 </Link>
               </div>
@@ -261,33 +266,33 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-6 lg:col-span-5">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-sky-700 text-xs font-semibold uppercase tracking-wider mb-4 border border-sky-100">
-                <Shield className="w-3.5 h-3.5 text-sky-600" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-100">
+                <Shield className="w-3.5 h-3.5 text-blue-600" />
                 Highest Quality Care
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-6 font-display">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-6 font-sans">
                 Advanced Solutions for Complex Medical Needs
               </h2>
-              <p className="text-slate-600 mb-8 leading-relaxed">
+              <p className="text-slate-600 mb-8 leading-relaxed font-sans text-base">
                 Our super-specialists solve complex and rare medical conditions using research-backed protocols, 
                 minimally invasive precision tools, and collaborative multi-specialty tumor boards.
               </p>
               
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4 mb-8 font-sans">
                 <div className="flex items-center gap-3 text-slate-800 text-sm font-medium">
-                  <div className="bg-sky-100 text-sky-700 p-1.5 rounded-full flex-shrink-0">
+                  <div className="bg-blue-100 text-blue-700 p-1.5 rounded-full flex-shrink-0">
                     <CheckCircle2 className="h-4 w-4" />
                   </div>
                   <span>Multidisciplinary medical boards for complex diagnostics</span>
                 </div>
                 <div className="flex items-center gap-3 text-slate-800 text-sm font-medium">
-                  <div className="bg-sky-100 text-sky-700 p-1.5 rounded-full flex-shrink-0">
+                  <div className="bg-blue-100 text-blue-700 p-1.5 rounded-full flex-shrink-0">
                     <CheckCircle2 className="h-4 w-4" />
                   </div>
                   <span>Real-time digital patient monitoring & predictive AI tools</span>
                 </div>
                 <div className="flex items-center gap-3 text-slate-800 text-sm font-medium">
-                  <div className="bg-sky-100 text-sky-700 p-1.5 rounded-full flex-shrink-0">
+                  <div className="bg-blue-100 text-blue-700 p-1.5 rounded-full flex-shrink-0">
                     <CheckCircle2 className="h-4 w-4" />
                   </div>
                   <span>Faster recovery times with minimally invasive robotic surgery</span>
@@ -297,7 +302,7 @@ const Index = () => {
               <div className="flex items-center gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white rounded-full px-6 shadow-md shadow-sky-500/20"
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-7 py-3 text-base shadow-sm"
                   onClick={() => handleBookAppointment()}
                 >
                   Consult a Specialist
@@ -307,16 +312,19 @@ const Index = () => {
             </div>
             
             <div className="md:col-span-6 lg:col-span-7">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 ring-1 ring-slate-100">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-200/90 ring-1 ring-slate-100 bg-slate-100">
                 <img
                   src="/clinic-overview.jpg"
                   alt="Modern Lunaria Hill Hospital Clinic Overview"
                   className="w-full h-[380px] sm:h-[420px] object-cover hover:scale-102 transition-transform duration-700"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
+                  }}
                 />
                 {/* Floating Stat Pill on Image */}
-                <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:max-w-xs glass-card p-4 rounded-2xl shadow-lg border border-white/80">
+                <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:max-w-xs glass-card p-4 rounded-xl shadow-lg border border-white/80">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-sky-500 text-white flex items-center justify-center font-bold">
+                    <div className="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold">
                       99%
                     </div>
                     <div>
@@ -341,9 +349,9 @@ const Index = () => {
             
             {/* Visual with Stat Badge */}
             <div className="hidden lg:block relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-sky-500/20 ring-1 ring-white/10">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 ring-1 ring-white/10 bg-slate-900">
                 <img 
-                  src="https://media.assettype.com/newindianexpress%2F2024-07%2F6cf84595-4d0d-42c3-b6ef-23d97ac0c3b1%2FHealthcare.jpg" 
+                  src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
                   alt="Innovative Healthcare Research and Tech" 
                   className="w-full h-[400px] object-cover"
                 />
@@ -351,13 +359,13 @@ const Index = () => {
               </div>
 
               {/* Floating Counter Card */}
-              <div className="absolute -bottom-6 -left-6 bg-slate-900/90 backdrop-blur-md rounded-2xl p-5 shadow-2xl border border-slate-700/80 w-72">
+              <div className="absolute -bottom-6 -left-6 bg-slate-900/95 backdrop-blur-md rounded-xl p-5 shadow-2xl border border-slate-700/80 w-72">
                 <div className="flex items-center gap-3.5 mb-2">
-                  <div className="bg-sky-500/20 text-sky-400 p-2.5 rounded-xl border border-sky-500/30">
+                  <div className="bg-blue-600/20 text-blue-400 p-2.5 rounded-lg border border-blue-500/30">
                     <Users className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="font-bold text-white text-2xl font-display">8,500+</p>
+                    <p className="font-bold text-white text-2xl font-sans">8,500+</p>
                     <span className="text-[11px] text-emerald-400 font-semibold uppercase tracking-wider">Annual Cases</span>
                   </div>
                 </div>
@@ -373,24 +381,24 @@ const Index = () => {
                 <Zap className="w-3.5 h-3.5 text-sky-400" />
                 Cutting-Edge Protocols
               </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-6 tracking-tight font-display leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight font-sans leading-tight">
                 Pioneering Medical Excellence with Compassionate Touch
               </h2>
-              <p className="text-slate-300 text-base md:text-lg mb-8 leading-relaxed">
+              <p className="text-slate-300 text-base md:text-lg mb-8 leading-relaxed font-sans">
                 We combine traditional compassionate medicine with high-tech diagnostic advancements to ensure precision treatment, minimal recovery times, and superior long-term clinical outcomes.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:border-sky-500/40 transition-colors">
-                  <div className="bg-sky-500/20 text-sky-400 rounded-xl w-10 h-10 flex items-center justify-center mb-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 font-sans">
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 hover:border-blue-500/40 transition-colors">
+                  <div className="bg-blue-600/20 text-blue-400 rounded-lg w-10 h-10 flex items-center justify-center mb-3">
                     <Shield className="h-5 w-5" />
                   </div>
                   <h3 className="text-base font-bold mb-1">Evidence-Based Medicine</h3>
                   <p className="text-slate-400 text-xs leading-relaxed">All procedures and prescriptions are validated by rigorous peer-reviewed clinical research.</p>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:border-sky-500/40 transition-colors">
-                  <div className="bg-sky-500/20 text-sky-400 rounded-xl w-10 h-10 flex items-center justify-center mb-3">
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 hover:border-blue-500/40 transition-colors">
+                  <div className="bg-blue-600/20 text-blue-400 rounded-lg w-10 h-10 flex items-center justify-center mb-3">
                     <Zap className="h-5 w-5" />
                   </div>
                   <h3 className="text-base font-bold mb-1">Advanced Technology</h3>
@@ -400,7 +408,7 @@ const Index = () => {
 
               <Button 
                 size="lg" 
-                className="bg-white text-slate-900 hover:bg-slate-100 font-semibold rounded-full px-7"
+                className="bg-white text-slate-900 hover:bg-slate-100 font-semibold rounded-lg px-7 py-3 text-base shadow-sm"
                 onClick={() => handleBookAppointment()}
               >
                 Schedule a Consultation
@@ -417,8 +425,8 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Heading */}
           <div className="text-center mb-12 px-2">
-            <h2 className="text-4xl font-bold text-gray-800">Total Health Care Solutions</h2>
-            <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-base sm:text-lg">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight font-sans">Total Health Care Solutions</h2>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-base sm:text-lg font-sans">
               Offering personalized and reliable care to support your health and wellness every day.
             </p>
           </div>
@@ -427,7 +435,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-3 gap-6 items-stretch">
             
             {/* Left: Feature Cards Grid with connected borders */}
-            <div className="lg:col-span-2 grid sm:grid-cols-2 rounded-xl overflow-hidden border border-gray-200 bg-gray-200 gap-px shadow-sm">
+            <div className="lg:col-span-2 grid sm:grid-cols-2 rounded-xl overflow-hidden border-2 border-slate-200/90 bg-slate-200 gap-px shadow-sm">
               {[
                 {
                   icon: <Stethoscope className="text-blue-600 w-10 h-10 mb-3" />,
@@ -465,14 +473,14 @@ const Index = () => {
                   className="bg-white p-7 sm:p-8 flex flex-col items-center text-center hover:bg-blue-50/70 transition-colors"
                 >
                   {item.icon}
-                  <h4 className="text-base font-bold text-gray-800 mb-1.5">{item.title}</h4>
-                  <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
+                  <h4 className="text-base font-bold text-gray-800 mb-1.5 font-sans">{item.title}</h4>
+                  <p className="text-xs text-gray-600 leading-relaxed font-sans">{item.desc}</p>
                 </div>
               ))}
             </div>
 
             {/* Right: Opening Hours Box */}
-            <div className="bg-blue-600 text-white p-8 rounded-xl shadow-md flex flex-col justify-between">
+            <div className="bg-blue-600 text-white p-8 rounded-xl shadow-md flex flex-col justify-between font-sans">
               <div>
                 <h3 className="text-lg font-bold mb-3">Opening Hours:</h3>
                 <p className="text-sm mb-6 leading-relaxed text-white/95">
@@ -516,14 +524,14 @@ const Index = () => {
       <section className="py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 text-sky-800 text-xs font-semibold uppercase tracking-wider mb-4">
-              <Stethoscope className="w-3.5 h-3.5 text-sky-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-100">
+              <Stethoscope className="w-3.5 h-3.5 text-blue-600" />
               World-Class Faculty
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight font-display mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight font-sans mb-4">
               Meet Our Medical Specialists
             </h2>
-            <p className="text-slate-600 text-base md:text-lg">
+            <p className="text-slate-600 text-base md:text-lg font-sans">
               Experienced, board-certified clinicians dedicated to providing compassionate, top-tier healthcare.
             </p>
           </div>
@@ -561,16 +569,17 @@ const Index = () => {
             ].map((doctor, idx) => (
               <div 
                 key={idx} 
-                className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300 group flex flex-col justify-between"
+                className="bg-white rounded-2xl overflow-hidden border-2 border-slate-200/90 shadow-sm hover:shadow-xl hover:border-blue-500 transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>
-                  <div className="relative overflow-hidden h-72">
+                  {/* Photo container height and object-top alignment to prevent cutting doctor head & hair */}
+                  <div className="relative overflow-hidden h-80 bg-slate-100">
                     <img
                       src={doctor.image}
                       alt={doctor.name}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-75 group-hover:opacity-85 transition-opacity"></div>
                     
                     {/* Rating Pill */}
                     <div className="absolute top-3 right-3 glass-card px-2.5 py-1 rounded-full text-xs font-bold text-slate-800 flex items-center gap-1 shadow-sm">
@@ -586,11 +595,11 @@ const Index = () => {
                     </div>
                   </div>
 
-                  <div className="p-5 text-center">
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-sky-600 transition-colors">
+                  <div className="p-5 text-center font-sans">
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                       {doctor.name}
                     </h3>
-                    <p className="text-xs font-semibold text-sky-600 mb-3">{doctor.specialty}</p>
+                    <p className="text-xs font-semibold text-blue-600 mb-3">{doctor.specialty}</p>
                     <span className="inline-flex items-center gap-1.5 text-[11px] text-emerald-600 font-medium">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                       Available for Consultation
@@ -600,7 +609,7 @@ const Index = () => {
 
                 <div className="px-5 pb-5">
                   <Button 
-                    className="w-full bg-sky-50 hover:bg-sky-500 text-sky-700 hover:text-white rounded-xl text-xs font-semibold py-2.5 transition-colors"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold py-2.5 shadow-sm transition-all"
                     onClick={() => handleBookAppointment(doctor.name)}
                   >
                     Book with {doctor.name.split(' ')[1]}
@@ -612,7 +621,7 @@ const Index = () => {
 
           <div className="text-center mt-12">
             <Link to="/doctors">
-              <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white rounded-full px-8 shadow-md shadow-sky-600/20">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-3.5 shadow-sm transition-all">
                 View All Medical Specialists
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -626,14 +635,14 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-6 font-sans">
                 Better Technologies for Better Healthcare
               </h2>
-              <p className="text-gray-600 mb-8 text-base sm:text-lg leading-relaxed">
+              <p className="text-gray-600 mb-8 text-base sm:text-lg leading-relaxed font-sans">
                 We've invested in the latest medical technologies to provide you with more accurate diagnoses, less invasive procedures, and faster recovery times.
               </p>
               
-              <div className="space-y-6 mb-8">
+              <div className="space-y-6 mb-8 font-sans">
                 <div className="flex items-start gap-3.5">
                   <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div>
@@ -660,7 +669,7 @@ const Index = () => {
               </div>
               
               <Link to="/services">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-7 py-3 text-base shadow-sm flex items-center gap-2">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-7 py-3 text-base shadow-sm flex items-center gap-2">
                   Explore Our Technology
                   <ArrowRight className="h-4 w-4" />
                 </Button>
@@ -668,16 +677,19 @@ const Index = () => {
             </div>
             
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl border-2 border-slate-200/90 bg-slate-100 min-h-[380px]">
                 <img 
                   src="/medical-technology.jpg" 
                   alt="Modern Medical Technology" 
                   className="w-full h-[400px] object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80";
+                  }}
                 />
               </div>
 
               {/* Floating Stat Badge */}
-              <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-blue-600 text-white p-5 rounded-2xl shadow-xl">
+              <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-blue-600 text-white p-5 rounded-xl shadow-xl font-sans">
                 <div className="flex items-center gap-3.5">
                   <Shield className="h-10 w-10 text-white flex-shrink-0" />
                   <div>
@@ -695,14 +707,14 @@ const Index = () => {
       <section className="py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 text-sky-800 text-xs font-semibold uppercase tracking-wider mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-sky-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-100">
+              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
               Latest Articles & Insights
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight font-display mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight font-sans mb-4">
               Health Insights & Hospital Updates
             </h2>
-            <p className="text-slate-600 text-base md:text-lg">
+            <p className="text-slate-600 text-base md:text-lg font-sans">
               Doctor-reviewed wellness advice, preventive care tips, and recent medical breakthroughs.
             </p>
           </div>
@@ -723,7 +735,7 @@ const Index = () => {
                 date: "June 02, 2024",
                 category: "Pediatrics",
                 readTime: "5 min read",
-                image: "https://healthier.stanfordchildrens.org/wp-content/uploads/2022/06/21_1299711083_iStock-scaled.jpg"
+                image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               },
               {
                 title: "Mental Wellness & Preventive Stress Care in Daily Life",
@@ -731,30 +743,30 @@ const Index = () => {
                 date: "June 24, 2024",
                 category: "Wellness",
                 readTime: "3 min read",
-                image: "https://media.istockphoto.com/id/1470219517/photo/doctor-surgeon-and-neurologist-use-robotic-and-medical-technology-diagnose-and-examine.jpg?s=612x612&w=0&k=20&c=zPmI9WvScFbiM_jzHq3W3uSQD02dnWf2GDs84u1dl7s="
+                image: "https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               }
             ].map((article, idx) => (
               <Card 
                 key={idx} 
-                className="overflow-hidden border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300 flex flex-col justify-between"
+                className="overflow-hidden border-2 border-slate-200/90 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-500 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="relative h-52 overflow-hidden">
+                  <div className="relative h-52 overflow-hidden bg-slate-100">
                     <img 
                       src={article.image} 
                       alt={article.title} 
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-sky-700 shadow-sm">
+                    <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-md text-[11px] font-bold text-blue-700 shadow-sm border border-slate-200">
                       {article.category}
                     </div>
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-6 font-sans">
                     <div className="flex items-center justify-between text-xs text-slate-400 mb-2">
                       <span>{article.date}</span>
                       <span>{article.readTime}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 line-clamp-2 hover:text-sky-600 transition-colors">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 line-clamp-2 hover:text-blue-600 transition-colors">
                       {article.title}
                     </h3>
                     <p className="text-slate-500 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
@@ -765,7 +777,7 @@ const Index = () => {
 
                 <div className="px-6 pb-6 pt-0">
                   <Link to="/blog">
-                    <Button variant="ghost" className="text-sky-600 hover:text-sky-700 hover:bg-sky-50 font-semibold text-xs p-0 flex items-center gap-1">
+                    <Button variant="ghost" className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 font-semibold text-xs p-0 flex items-center gap-1">
                       Read Full Article
                       <ArrowRight className="h-3.5 w-3.5" />
                     </Button>
@@ -777,7 +789,7 @@ const Index = () => {
           
           <div className="text-center mt-12">
             <Link to="/blog">
-              <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white rounded-full px-8 shadow-md shadow-sky-600/20">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-3.5 shadow-sm transition-all">
                 Browse All Health Articles
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -792,19 +804,19 @@ const Index = () => {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{
-            backgroundImage: "url('https://media.istockphoto.com/id/593305618/photo/putting-their-skills-to-good-use.jpg?s=612x612&w=0&k=20&c=_5_-dWH79KXUt0GXHgnzswN_rYQoNM425Ru4fPtE5OE=')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')",
           }}
         />
 
         <div className="relative z-10 container mx-auto px-4 text-center max-w-3xl">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-semibold uppercase tracking-wider mb-6 border border-sky-500/30">
-            <Heart className="h-3.5 w-3.5 fill-sky-400 text-sky-400" />
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-semibold uppercase tracking-wider mb-6 border border-blue-500/30">
+            <Heart className="h-3.5 w-3.5 fill-blue-400 text-blue-400" />
             Your Health Is Our Priority
           </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6 font-display">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight mb-6 font-sans">
             Take the First Step Toward Better Health Today
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+          <p className="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed font-sans">
             Don't delay your medical care. Whether you require a routine checkup or specialized consultation, 
             our renowned specialists are here to guide you with clinical excellence and warmth.
           </p>
@@ -812,21 +824,21 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               size="lg" 
-              className="bg-white text-slate-900 hover:bg-slate-100 font-bold rounded-full px-8 py-6 h-auto shadow-xl text-base"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-4 h-auto shadow-xl text-base transition-all"
               onClick={() => handleBookAppointment()}
             >
-              <Calendar className="mr-2 h-5 w-5 text-sky-600" />
+              <Calendar className="mr-2 h-5 w-5 text-white" />
               Book Instant Appointment
             </Button>
             
             <a 
               href="tel:18001234560"
-              className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-slate-900/80 border border-slate-700 hover:border-slate-500 text-white transition-all"
+              className="inline-flex items-center gap-3 px-6 py-3.5 rounded-lg bg-slate-900/80 border border-slate-700 hover:border-slate-500 text-white transition-all font-sans"
             >
-              <Phone className="h-4 w-4 text-sky-400" />
+              <Phone className="h-4 w-4 text-blue-400" />
               <div className="text-left text-xs">
                 <span className="block text-slate-400">Emergency 24/7 Hotline</span>
-                <span className="font-bold text-sm text-sky-300">1-800-123-4560</span>
+                <span className="font-bold text-sm text-blue-300">1-800-123-4560</span>
               </div>
             </a>
           </div>

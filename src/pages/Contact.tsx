@@ -125,7 +125,7 @@ const Contact = () => {
             <Sparkles className="w-3.5 h-3.5 text-sky-400" />
             Patient Helpdesk & Support
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight font-sans mb-6">
             Contact Lunaria Hill Hospital
           </h1>
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
@@ -311,10 +311,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-
-          </div>
-        </div>
-      </section>
 
           </div>
         </div>
