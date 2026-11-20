@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 450" width="400" height="450" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f9ff" />
+      <stop offset="50%" stop-color="#e0f2fe" />
+      <stop offset="100%" stop-color="#bae6fd" />
+    </linearGradient>
+    <linearGradient id="coatGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="scrubGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="450" fill="url(#bgGrad)" />
+  
+  <!-- Subtle Medical Cross pattern -->
+  <g opacity="0.1" stroke="#0284c7" stroke-width="4" stroke-linecap="round">
+    <path d="M50 70 h30 M65 55 v30" />
+    <path d="M330 90 h30 M345 75 v30" />
+    <path d="M70 350 h30 M85 335 v30" />
+    <path d="M320 360 h30 M335 345 v30" />
+  </g>
+
+  <!-- Doctor Silhouette / Figure -->
+  <g transform="translate(0, 10)">
+    <!-- Shoulders / Body -->
+    <path d="M80 440 C80 320 120 260 200 260 C280 260 320 320 320 440 Z" fill="url(#coatGrad)" stroke="#cbd5e1" stroke-width="2" />
+    
+    <!-- Inner Scrubs V-neck -->
+    <path d="M165 260 L200 325 L235 260 Z" fill="url(#scrubGrad)" />
+    
+    <!-- Neck -->
+    <rect x="175" y="195" width="50" height="70" rx="10" fill="#fed7aa" />
+    
+    <!-- Head / Face -->
+    <ellipse cx="200" cy="150" rx="55" ry="65" fill="#fde68a" />
+    
+    <!-- Hair -->
+    <path d="M142 145 C140 100 160 75 200 75 C240 75 260 100 258 145 C250 110 240 95 200 95 C160 95 150 110 142 145 Z" fill="#334155" />
+
+    <!-- Stethoscope -->
+    <!-- Tubing around neck -->
+    <path d="M155 240 C155 310 180 355 200 355 C220 355 245 310 245 240" fill="none" stroke="#0f172a" stroke-width="6" stroke-linecap="round" />
+    <!-- Chest piece line & bell -->
+    <path d="M200 355 L200 380" fill="none" stroke="#0f172a" stroke-width="6" stroke-linecap="round" />
+    <circle cx="200" cy="385" r="14" fill="#94a3b8" stroke="#475569" stroke-width="3" />
+    <circle cx="200" cy="385" r="6" fill="#cbd5e1" />
+    <!-- Earpieces going up into ears -->
+    <path d="M158 245 C158 220 168 185 168 165" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" />
+    <path d="M242 245 C242 220 232 185 232 165" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" />
+
+    <!-- Doctor Coat Lapels -->
+    <path d="M135 270 L175 390 L200 440 L160 440 L105 350 Z" fill="#f8fafc" />
+    <path d="M265 270 L225 390 L200 440 L240 440 L295 350 Z" fill="#f8fafc" />
+    
+    <!-- ID Badge / Pocket -->
+    <rect x="120" y="320" width="30" height="38" rx="4" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" />
+    <rect x="125" y="325" width="20" height="4" rx="2" fill="#2563eb" />
+  </g>
+
+  <!-- Hospital Verification Badge at Bottom -->
+  <g transform="translate(110, 395)">
+    <rect width="180" height="34" rx="17" fill="#ffffff" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))" />
+    <circle cx="22" cy="17" r="10" fill="#2563eb" />
+    <!-- White plus inside blue circle -->
+    <path d="M18 17 h8 M22 13 v8" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+    <text x="40" y="22" fill="#0f172a" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Lunaria Specialist</text>
+  </g>
+</svg>

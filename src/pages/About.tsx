@@ -185,6 +185,9 @@ const About = () => {
                   src="https://st2.depositphotos.com/1054848/7169/i/950/depositphotos_71691653-stock-photo-smiling-doctor-on-white-background.jpg"
                   alt="Medical Director Dr. Michael Anderson"
                   className="w-56 h-56 rounded-3xl object-cover shadow-lg ring-4 ring-sky-100"
+                  onError={(e) => {
+                    e.currentTarget.src = "/doctors/doctor-1.jpg";
+                  }}
                 />
                 <span className="absolute -bottom-2 -right-2 px-3 py-1 rounded-full bg-emerald-500 text-white text-[11px] font-bold shadow">
                   FACS Certified
@@ -200,9 +203,9 @@ const About = () => {
 
                 <div className="mb-4">
                   <img
-                    src="https://signature.freefire-name.com/img.php?f=2&t=Anderson"
+                    src="/doctor-signature.png"
                     alt="Signature of Dr. Michael Anderson"
-                    className="w-48 h-16 object-contain mx-auto lg:mx-0 opacity-80"
+                    className="w-52 h-20 object-contain mx-auto lg:mx-0 mix-blend-multiply opacity-90"
                   />
                 </div>
 

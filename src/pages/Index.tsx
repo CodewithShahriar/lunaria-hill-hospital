@@ -51,44 +51,44 @@ const Index = () => {
 
   const allDoctors = [
     {
-      name: "Dr. Sarah Johnson",
+      name: "Dr. Emily Johnson",
       department: "Cardiology",
       specialty: "Chief Cardiologist",
-      experience: "15+ Years Exp",
-      rating: 4.9,
-      reviews: "142 reviews",
-      nextSlot: "Today • 11:30 AM",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&auto=format&fit=crop&q=80"
-    },
-    {
-      name: "Dr. Michael Chen",
-      department: "Neurology",
-      specialty: "Senior Neurologist",
       experience: "12+ Years Exp",
       rating: 4.8,
-      reviews: "118 reviews",
-      nextSlot: "Today • 02:15 PM",
-      image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=800&auto=format&fit=crop&q=80"
+      reviews: "98 reviews",
+      nextSlot: "Today • 11:30 AM",
+      image: "/doctors/doctor-2.jpg"
     },
     {
-      name: "Dr. Emily Davis",
+      name: "Dr. Michael Brown",
+      department: "Neurology",
+      specialty: "Senior Neurologist",
+      experience: "10+ Years Exp",
+      rating: 4.7,
+      reviews: "156 reviews",
+      nextSlot: "Today • 02:15 PM",
+      image: "/doctors/doctor-3.jpg"
+    },
+    {
+      name: "Dr. Maria Martinez",
       department: "Pediatrics",
       specialty: "Head Pediatrician",
-      experience: "10+ Years Exp",
+      experience: "12+ Years Exp",
       rating: 4.9,
-      reviews: "165 reviews",
+      reviews: "142 reviews",
       nextSlot: "Tomorrow • 09:00 AM",
-      image: "https://images.unsplash.com/photo-1594824813501-48c5a140f098?w=800&auto=format&fit=crop&q=80"
+      image: "/doctors/doctor-9.jpg"
     },
     {
-      name: "Dr. James Wilson",
+      name: "Dr. Thomas Hall",
       department: "Orthopedics",
       specialty: "Orthopedic Surgeon",
       experience: "14+ Years Exp",
-      rating: 4.9,
-      reviews: "134 reviews",
+      rating: 4.8,
+      reviews: "165 reviews",
       nextSlot: "Tomorrow • 01:30 PM",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&auto=format&fit=crop&q=80"
+      image: "/doctors/doctor-10.jpg"
     }
   ];
 
@@ -802,6 +802,9 @@ const Index = () => {
                       src={doctor.image}
                       alt={doctor.name}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.src = "/doctor-avatar.svg";
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/15 to-transparent"></div>
                     
