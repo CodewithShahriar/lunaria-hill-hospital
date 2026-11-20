@@ -31,116 +31,85 @@ const Index = () => {
       {/* 2. Hero Section */}
       <HeroSection />
       
-      {/* 3. Quick Info Bento Grid (Elevated Over Hero) */}
-      <section className="relative z-20 -mt-10 sm:-mt-16 pb-16">
+      {/* 2. Quick Info Cards (Original 4-Column Bar Placed Below Full-Screen Hero) */}
+      <section className="py-12 lg:py-16 bg-white relative z-10">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            
-            {/* Card 1: Working Hours */}
-            <div className="bg-gradient-to-br from-sky-600 to-sky-700 text-white p-7 rounded-3xl shadow-xl shadow-sky-600/20 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden shadow-2xl">
+            {/* 1. Working Time */}
+            <div className="bg-[#169fe6] text-white p-6 lg:p-8 flex flex-col justify-between min-h-[260px]">
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/15 backdrop-blur-sm flex items-center justify-center">
-                    <Clock className="h-5 w-5 text-white" />
-                  </div>
-                  <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-emerald-400/20 text-emerald-300 border border-emerald-400/30 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse"></span>
-                    Open Today
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold mb-3 font-display">Working Hours</h3>
-                <ul className="space-y-2 text-xs text-white/90">
-                  <li className="flex justify-between border-b border-white/15 pb-1.5">
-                    <span className="text-white/80">Mon – Wed</span>
-                    <span className="font-semibold text-white">8:00 AM – 8:00 PM</span>
+                <h3 className="text-lg font-bold mb-4 font-display">Working Time</h3>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex justify-between border-b border-white/20 pb-1.5">
+                    <span>Mon – Wed</span>
+                    <span className="font-bold">9:00 AM - 7:00 PM</span>
                   </li>
-                  <li className="flex justify-between border-b border-white/15 pb-1.5">
-                    <span className="text-white/80">Thursday</span>
-                    <span className="font-semibold text-white">8:00 AM – 7:30 PM</span>
+                  <li className="flex justify-between border-b border-white/20 pb-1.5">
+                    <span>Thursday</span>
+                    <span className="font-bold">9:00 AM - 6:30 PM</span>
                   </li>
-                  <li className="flex justify-between border-b border-white/15 pb-1.5">
-                    <span className="text-white/80">Friday</span>
-                    <span className="font-semibold text-white">8:00 AM – 6:00 PM</span>
+                  <li className="flex justify-between border-b border-white/20 pb-1.5">
+                    <span>Friday</span>
+                    <span className="font-bold">9:00 AM - 6:00 PM</span>
                   </li>
                   <li className="flex justify-between pt-0.5">
-                    <span className="text-white/80">Emergency Care</span>
-                    <span className="font-bold text-emerald-300">24/7 Available</span>
+                    <span>Sunday</span>
+                    <span className="font-bold">CLOSED</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* Card 2: Doctors Timetable */}
-            <div className="bg-gradient-to-br from-sky-700 to-blue-800 text-white p-7 rounded-3xl shadow-xl shadow-sky-700/20 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+            {/* 2. Doctors Timetable */}
+            <div className="bg-[#0c8fd3] text-white p-6 lg:p-8 flex flex-col justify-between min-h-[260px]">
               <div>
-                <div className="w-10 h-10 rounded-xl bg-white/15 backdrop-blur-sm flex items-center justify-center mb-4">
-                  <Calendar className="h-5 w-5 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2 font-display">Specialist Schedule</h3>
-                <p className="text-xs text-white/80 leading-relaxed mb-6">
-                  Check our weekly doctor roster to plan your visit with ease, avoid clinic wait times, and consult the right specialist.
+                <h3 className="text-lg font-bold mb-3 font-display">Doctors Timetable</h3>
+                <p className="text-sm mb-6 leading-relaxed text-white/95">
+                  Check our weekly timetable to see when each doctor is available. Planning ahead helps you avoid long waits and ensures you meet the right specialist at the right time for your medical needs.
                 </p>
               </div>
-              <Link to="/doctors">
-                <Button 
-                  size="sm" 
-                  className="w-full bg-white text-sky-800 hover:bg-sky-50 font-semibold rounded-xl text-xs py-2.5 h-auto transition-colors"
+              <div>
+                <Link to="/doctors">
+                  <button className="bg-white text-[#0c8fd3] font-semibold text-sm px-4 py-2 rounded hover:bg-slate-50 transition-colors shadow-sm">
+                    View Timetable
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* 3. Appointments */}
+            <div className="bg-[#0c7cc6] text-white p-6 lg:p-8 flex flex-col justify-between min-h-[260px]">
+              <div>
+                <h3 className="text-lg font-bold mb-3 font-display">Appointments</h3>
+                <p className="text-sm mb-6 leading-relaxed text-white/95">
+                  Book your appointment online or by phone at your convenience. We offer flexible scheduling options to fit your routine and reduce waiting times. Secure your spot early for faster, more efficient care.
+                </p>
+              </div>
+              <div>
+                <button 
+                  onClick={() => handleBookAppointment()}
+                  className="bg-white text-[#0c7cc6] font-semibold text-sm px-4 py-2 rounded hover:bg-slate-50 transition-colors shadow-sm"
                 >
-                  View Doctor Timetable
-                  <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
-                </Button>
-              </Link>
+                  Make an Appointment
+                </button>
+              </div>
             </div>
 
-            {/* Card 3: Online Appointments */}
-            <div className="bg-gradient-to-br from-blue-800 to-indigo-900 text-white p-7 rounded-3xl shadow-xl shadow-blue-800/20 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300">
+            {/* 4. Emergency Cases */}
+            <div className="bg-[#0c69b5] text-white p-6 lg:p-8 flex flex-col justify-between min-h-[260px]">
               <div>
-                <div className="w-10 h-10 rounded-xl bg-white/15 backdrop-blur-sm flex items-center justify-center mb-4">
-                  <Stethoscope className="h-5 w-5 text-white" />
+                <h3 className="text-lg font-bold mb-3 font-display">Emergency Cases</h3>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xl">📞</span>
+                  <a href="tel:18001234560" className="text-2xl font-extrabold hover:underline font-display">
+                    1-800-123-4560
+                  </a>
                 </div>
-                <h3 className="text-xl font-bold mb-2 font-display">Instant Booking</h3>
-                <p className="text-xs text-white/80 leading-relaxed mb-6">
-                  Select your preferred department and physician in less than 60 seconds with instant email and SMS confirmation.
+                <p className="text-sm leading-relaxed text-white/95">
+                  For urgent medical assistance, contact our 24/7 emergency line. Our experienced team is ready to help at any time.
                 </p>
               </div>
-              <Button 
-                size="sm" 
-                className="w-full bg-white text-blue-900 hover:bg-blue-50 font-semibold rounded-xl text-xs py-2.5 h-auto transition-colors"
-                onClick={() => handleBookAppointment()}
-              >
-                Make an Appointment
-                <Calendar className="h-3.5 w-3.5 ml-1.5" />
-              </Button>
             </div>
-
-            {/* Card 4: Emergency Cases */}
-            <div className="bg-gradient-to-br from-slate-900 to-slate-950 text-white p-7 rounded-3xl shadow-xl shadow-slate-900/20 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 border border-slate-800">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-red-500/20 border border-red-500/30 flex items-center justify-center">
-                    <Phone className="h-5 w-5 text-red-400 animate-pulse" />
-                  </div>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 border border-red-500/30 uppercase tracking-wider">
-                    Immediate Response
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold mb-1 font-display">Emergency Cases</h3>
-                <p className="text-xs text-slate-400 mb-4">
-                  24/7 direct trauma and cardiac ambulance helpline:
-                </p>
-                <a 
-                  href="tel:18001234560" 
-                  className="block text-2xl font-extrabold text-sky-400 hover:text-sky-300 transition-colors font-display"
-                >
-                  1-800-123-4560
-                </a>
-              </div>
-              <div className="pt-4 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
-                <span>Ambulance Dispatch:</span>
-                <span className="text-emerald-400 font-semibold">&lt; 8 mins avg</span>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
