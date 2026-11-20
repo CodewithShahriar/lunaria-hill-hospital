@@ -19,6 +19,15 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+				display: ['"Outfit"', '"Plus Jakarta Sans"', 'sans-serif'],
+			},
+			boxShadow: {
+				soft: '0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 8px -2px rgba(15, 23, 42, 0.04)',
+				glow: '0 0 25px -5px rgba(14, 165, 233, 0.35)',
+				card: '0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03)',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

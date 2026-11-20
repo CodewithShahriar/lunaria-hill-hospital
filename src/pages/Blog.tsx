@@ -110,9 +110,9 @@ const categories = [
 const BlogPostCard = ({ post }: { post: any }) => (
   <Card className="overflow-hidden hover:shadow-md transition-shadow duration-300">
     <div className="h-48 overflow-hidden">
-      <img 
-        src={post.image} 
-        alt={post.title} 
+      <img
+        src={post.image}
+        alt={post.title}
         className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
       />
     </div>
@@ -160,10 +160,10 @@ const Blog = () => {
   // Filter posts based on search term and category
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.author.toLowerCase().includes(searchTerm.toLowerCase());
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.author.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
-    
+
     return matchesSearch && matchesCategory;
   });
 
@@ -173,13 +173,19 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation onAppointmentClick={handleBookAppointment} />
-      
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-500 to-blue-600 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Health & Wellness Blog</h1>
-          <p className="text-lg max-w-2xl mx-auto opacity-90 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Stay informed with the latest healthcare insights, tips, and research from our medical experts.
+      <section className="bg-gradient-to-b from-slate-950 via-sky-950 to-slate-900 text-white py-20 lg:py-24 relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 text-center max-w-3xl relative z-10">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 text-sky-300 text-xs font-semibold uppercase tracking-wider mb-5 border border-white/10">
+            Insights & Wellness
+          </span>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-display mb-4">
+            Health & Wellness Blog
+          </h1>
+          <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            Stay informed with the latest doctor-reviewed healthcare insights, wellness tips, and medical research.
           </p>
         </div>
       </section>
@@ -193,9 +199,9 @@ const Blog = () => {
               {featuredPosts.map(post => (
                 <Card key={post.id} className="flex flex-col md:flex-row overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="w-full md:w-1/3">
-                    <img 
-                      src={post.image} 
-                      alt={post.title} 
+                    <img
+                      src={post.image}
+                      alt={post.title}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -232,7 +238,7 @@ const Blog = () => {
           </div>
         </section>
       )}
-      
+
       {/* Search and Filters Section */}
       <section className="py-6 sm:py-8 bg-white border-t border-b border-gray-200">
         <div className="container mx-auto px-10">
@@ -246,7 +252,7 @@ const Blog = () => {
                 className="pl-10"
               />
             </div>
-            
+
             {/* Category Filter Buttons */}
             <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
               {categories.map(category => (
@@ -282,7 +288,7 @@ const Blog = () => {
           )}
         </div>
       </section>
-      
+
       {/* Newsletter Section */}
       <section className="py-16 bg-primary-50">
         <div className="container mx-auto px-4">
@@ -291,7 +297,7 @@ const Blog = () => {
             <p className="text-lg text-gray-600 mb-8">
               Subscribe to our newsletter to receive the latest health tips and hospital updates.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
               <Input type="email" placeholder="Enter your email" className="flex-grow" />
               <Button className="bg-primary-500 hover:bg-primary-600 whitespace-nowrap">
@@ -301,13 +307,13 @@ const Blog = () => {
           </div>
         </div>
       </section>
-      
+
       <Footer />
-      
+
       {/* Appointment Dialog */}
-      <AppointmentForm 
-        open={appointmentDialogOpen} 
-        onOpenChange={setAppointmentDialogOpen} 
+      <AppointmentForm
+        open={appointmentDialogOpen}
+        onOpenChange={setAppointmentDialogOpen}
       />
     </div>
   );

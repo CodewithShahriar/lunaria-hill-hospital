@@ -182,11 +182,11 @@ const onSubmit = async (data: FormValues) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px] w-[95vw] max-w-[95vw] sm:w-full max-h-[90vh] overflow-y-auto p-4 sm:p-6">
+      <DialogContent className="sm:max-w-[620px] w-[95vw] max-w-[95vw] sm:w-full max-h-[90vh] overflow-y-auto p-5 sm:p-7 rounded-3xl border border-slate-150 shadow-2xl">
         <DialogHeader>
-          <DialogTitle className="text-xl sm:text-2xl font-bold text-primary-700">Book an Appointment</DialogTitle>
-          <DialogDescription className="text-sm sm:text-base">
-            Fill out the form below to schedule your appointment with our specialists.
+          <DialogTitle className="text-xl sm:text-2xl font-extrabold text-slate-900 font-display">Schedule an Appointment</DialogTitle>
+          <DialogDescription className="text-xs sm:text-sm text-slate-500">
+            Select your preferred specialist and consultation slot. You will receive immediate SMS & email confirmation.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -351,10 +351,10 @@ const onSubmit = async (data: FormValues) => {
             <DialogFooter className="pt-3 sm:pt-4">
               <Button
                 type="submit"
-                className="w-full bg-primary-500 hover:bg-primary-600 text-sm"
+                className="w-full bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white rounded-full py-5 text-sm font-semibold shadow-md shadow-sky-500/20"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Booking..." : "Book Appointment"}
+                {isSubmitting ? "Booking Your Slot..." : "Confirm & Book Appointment"}
               </Button>
             </DialogFooter>
           </form>

@@ -334,23 +334,26 @@ const Careers = () => {
       <Navigation onAppointmentClick={handleBookAppointment} />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-500 to-blue-600 text-white py-16">
-  <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center ">
-    <div className="max-w-3xl">
-      <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Join Our Healthcare Team</h1>
-      <p className="text-lg opacity-90 mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-        Discover rewarding career opportunities at Lunaria Hill Hospital, where we're dedicated to advancing healthcare and improving lives.
-      </p>
-      <Button
-        size="lg"
-        className="bg-white text-primary-700 hover:bg-gray-100 animate-fade-in"
-        style={{ animationDelay: '0.4s' }}
-      >
-        View All Positions
-      </Button>
-    </div>
-  </div>
-</section>
+      <section className="bg-gradient-to-b from-slate-950 via-sky-950 to-slate-900 text-white py-20 lg:py-24 relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center relative z-10">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 text-sky-300 text-xs font-semibold uppercase tracking-wider mb-5 border border-white/10">
+              Work with Us
+            </span>
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight font-display mb-4">Join Our Healthcare Team</h1>
+            <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto mb-6">
+              Discover rewarding career opportunities at Lunaria Hill Hospital, where we're dedicated to advancing healthcare and improving lives.
+            </p>
+            <Button
+              size="lg"
+              className="bg-white text-slate-900 hover:bg-slate-100 font-semibold rounded-full px-8"
+            >
+              View Open Positions
+            </Button>
+          </div>
+        </div>
+      </section>
 
 
       {/* Why Join Us Section */}

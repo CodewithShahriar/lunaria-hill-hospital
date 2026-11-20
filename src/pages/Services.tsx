@@ -1,191 +1,184 @@
-
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { AppointmentForm } from '@/components/AppointmentForm';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
   Stethoscope, Ambulance, Phone, Calendar, 
   Microscope, Pill, Syringe, HeartPulse, Monitor, 
-  ShieldCheck, Clock, Building2
+  ShieldCheck, Clock, Building2, Sparkles, CheckCircle2, ArrowRight
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const servicesList = [
   {
     id: 1,
-    title: "Emergency Services",
-    description: "24/7 emergency care for critical conditions with state-of-the-art equipment and specialized staff.",
+    title: "Emergency & Trauma Services",
+    description: "24/7 level 1 critical emergency care equipped with rapid trauma triage and resus suites.",
     icon: Stethoscope,
     color: "red",
+    badge: "24/7 Active",
     features: [
-      "24/7 Availability",
+      "Round-the-clock availability",
       "Critical Care Specialists",
-      "Trauma Unit",
-      "Fast Response Time"
+      "Immediate CT & Cath Lab",
+      "< 5 min Average Triage"
     ]
   },
   {
     id: 2,
-    title: "Ambulance Service",
-    description: "Rapid response ambulance service with advanced life support equipment and trained paramedics.",
+    title: "Cardiac Life Support Ambulance",
+    description: "Fast-dispatch mobile intensive care ambulances staffed by certified emergency paramedics.",
     icon: Ambulance,
     color: "blue",
+    badge: "GPS Dispatch",
     features: [
-      "GPS Tracking",
-      "Advanced Life Support",
-      "Trained Paramedics",
-      "Quick Dispatch"
+      "Live GPS Fleet Tracking",
+      "Defibrillator & Oxygen onboard",
+      "Experienced Paramedics",
+      "Direct Hospital Handover"
     ]
   },
   {
     id: 3,
-    title: "Telemedicine",
-    description: "Virtual consultations with our specialists from the comfort of your home using secure video conferencing.",
+    title: "Specialist Telemedicine",
+    description: "Encrypted HD virtual consultations with hospital consultants from anywhere in the world.",
     icon: Monitor,
-    color: "purple",
+    color: "emerald",
+    badge: "Virtual Care",
     features: [
-      "24/7 Availability",
-      "Secure Platform",
-      "Prescription Services",
-      "Follow-up Care"
+      "No waiting room delays",
+      "Digital e-Prescriptions",
+      "Follow-up reviews",
+      "Encrypted medical records"
     ]
   },
   {
     id: 4,
-    title: "Pharmacy",
-    description: "In-house pharmacy with a comprehensive range of medications, open 24 hours for patient convenience.",
+    title: "24/7 Digital Pharmacy",
+    description: "Fully stocked hospital pharmacy dispensing genuine medicines, cold-chain biologics, and implants.",
     icon: Pill,
-    color: "green",
+    color: "purple",
+    badge: "24/7 Open",
     features: [
-      "24/7 Service",
-      "Home Delivery",
-      "Medication Counseling",
-      "Prescription Refills"
+      "Licensed Pharmacists",
+      "Doorstep Home Delivery",
+      "Medication counseling",
+      "Automated refills"
     ]
   },
   {
     id: 5,
-    title: "Lab Tests",
-    description: "Comprehensive diagnostic laboratory offering a wide range of tests with quick and accurate results.",
+    title: "Precision Pathology & Lab Tests",
+    description: "Automated high-throughput diagnostic laboratory offering biochemistry, hematology, and genetic tests.",
     icon: Microscope,
-    color: "orange",
+    color: "amber",
+    badge: "Automated Lab",
     features: [
-      "Advanced Equipment",
-      "Quick Results",
-      "Home Sample Collection",
-      "Online Reports"
+      "Same-day digital reports",
+      "Home sample collection",
+      "NABL accredited testing",
+      "Zero-contamination protocols"
     ]
   },
   {
     id: 6,
-    title: "Operation Theater",
-    description: "Modern operation theaters equipped with cutting-edge technology for complex surgical procedures.",
+    title: "Modular Operation Theaters",
+    description: "Ultra-sterile surgical theaters equipped with robotic arms, 4K laparoscopy, and C-arms.",
     icon: Syringe,
     color: "teal",
+    badge: "Robotic Suites",
     features: [
-      "Advanced Equipment",
-      "Specialized Teams",
-      "Minimally Invasive Options",
-      "Post-Op Care"
+      "Laminar flow air filtration",
+      "Minimally invasive tools",
+      "Dedicated anesthesia team",
+      "Modern post-op recovery"
     ]
   },
   {
     id: 7,
-    title: "Health Packages",
-    description: "Comprehensive health check-up packages tailored to different age groups and health concerns.",
+    title: "Executive Health Checkups",
+    description: "Comprehensive preventive checkup packages designed for every age group and lifestyle.",
     icon: HeartPulse,
-    color: "pink",
+    color: "rose",
+    badge: "Preventive Care",
     features: [
-      "Customized Plans",
-      "Preventive Care",
-      "Full Body Assessment",
-      "Doctor Consultation"
+      "Comprehensive blood panels",
+      "Full cardiac stress testing",
+      "One-on-one doctor debrief",
+      "Diet & wellness plans"
     ]
   },
   {
     id: 8,
-    title: "Insurance Services",
-    description: "We work with major insurance providers to ensure smooth processing of health insurance claims.",
+    title: "Cashless Insurance Desk",
+    description: "Seamless on-spot approval and processing with all major domestic and international health insurers.",
     icon: ShieldCheck,
     color: "indigo",
+    badge: "Instant Approval",
     features: [
-      "Cashless Treatment",
-      "Claims Assistance",
-      "Network Hospitals",
-      "Insurance Coordination"
+      "Cashless hospitalization",
+      "Dedicated claims coordinator",
+      "Zero hassle paperwork",
+      "Corporate insurance support"
     ]
   },
   {
     id: 9,
-    title: "Rehabilitation",
-    description: "Comprehensive rehabilitation services including physical, occupational, and speech therapy.",
+    title: "Physical & Neuro Rehabilitation",
+    description: "Tailored physiotherapy, occupational rehabilitation, and speech therapy for restorative recovery.",
     icon: Building2,
-    color: "yellow",
+    color: "sky",
+    badge: "Holistic Rehab",
     features: [
-      "Physical Therapy",
-      "Occupational Therapy",
-      "Speech Therapy",
-      "Specialized Equipment"
+      "Post-stroke motor recovery",
+      "Orthopedic joint rehab",
+      "Ergonomic therapy",
+      "Personalized milestones"
     ]
   }
 ];
 
-// Color mapping function
-const getColorClass = (color: string) => {
-  const colorMap: Record<string, { bg: string, text: string, ring: string }> = {
-    red: { bg: "bg-red-100", text: "text-red-600", ring: "ring-red-600" },
-    blue: { bg: "bg-blue-100", text: "text-blue-600", ring: "ring-blue-600" },
-    green: { bg: "bg-green-100", text: "text-green-600", ring: "ring-green-600" },
-    purple: { bg: "bg-purple-100", text: "text-purple-600", ring: "ring-purple-600" },
-    orange: { bg: "bg-orange-100", text: "text-orange-600", ring: "ring-orange-600" },
-    teal: { bg: "bg-teal-100", text: "text-teal-600", ring: "ring-teal-600" },
-    pink: { bg: "bg-pink-100", text: "text-pink-600", ring: "ring-pink-600" },
-    indigo: { bg: "bg-indigo-100", text: "text-indigo-600", ring: "ring-indigo-600" },
-    yellow: { bg: "bg-yellow-100", text: "text-yellow-600", ring: "ring-yellow-600" }
-  };
-  
-  return colorMap[color] || { bg: "bg-primary-100", text: "text-primary-600", ring: "ring-primary-600" };
-};
-
 const ServiceCard = ({ service, onBookAppointment }: { service: any, onBookAppointment: () => void }) => {
-  const colors = getColorClass(service.color);
   const IconComponent = service.icon;
   
   return (
-    <Card className="overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 duration-300 border border-gray-300">
-      <CardHeader className="pb-3">
-        <div className="flex items-center gap-4">
-          <div className={`${colors.bg} p-3 rounded-lg`}>
-            <IconComponent className={`h-6 w-6 ${colors.text}`} />
+    <div className="bg-white rounded-3xl p-7 border border-slate-100 shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+      <div>
+        <div className="flex items-center justify-between mb-5">
+          <div className="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center group-hover:bg-sky-500 group-hover:text-white transition-colors shadow-inner">
+            <IconComponent className="h-7 w-7" />
           </div>
-          <div>
-            <CardTitle className="text-xl">{service.title}</CardTitle>
-          </div>
+          <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">
+            {service.badge}
+          </span>
         </div>
-      </CardHeader>
-      <CardContent>
-        <CardDescription className="text-gray-600 mb-4">
+
+        <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors font-display">
+          {service.title}
+        </h3>
+        <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">
           {service.description}
-        </CardDescription>
-        <div className="space-y-2 mb-6">
+        </p>
+
+        <div className="space-y-2 mb-6 pt-4 border-t border-slate-100">
           {service.features.map((feature: string, index: number) => (
-            <div key={index} className="flex items-center gap-2">
-              <div className={`h-1.5 w-1.5 rounded-full ${colors.bg} ring-2 ${colors.ring}`}></div>
-              <span className="text-sm text-gray-700">{feature}</span>
+            <div key={index} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
+              <CheckCircle2 className="h-4 w-4 text-emerald-500 flex-shrink-0" />
+              <span>{feature}</span>
             </div>
           ))}
         </div>
-        <Button
-  // onClick={onBookAppointment}
-  className="w-full text-gray-800 bg-white hover:bg-blue-100 border border-gray-200 outline-none "
->
-  <Calendar className="mr-2 h-4 w-4" />
-  View More Details
-</Button>
+      </div>
 
-      </CardContent>
-    </Card>
+      <Button
+        onClick={onBookAppointment}
+        className="w-full bg-sky-50 hover:bg-sky-600 text-sky-700 hover:text-white rounded-xl text-xs font-semibold py-2.5 transition-colors flex items-center justify-center gap-2"
+      >
+        <Calendar className="h-4 w-4" />
+        Book Service / Consultation
+      </Button>
+    </div>
   );
 };
 
@@ -197,52 +190,61 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans">
       <Navigation onAppointmentClick={handleBookAppointment} />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-500 to-blue-600 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Our Services</h1>
-          <p className="text-lg max-w-2xl mx-auto opacity-90 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Comprehensive healthcare services designed to meet all your medical needs under one roof.
+      {/* Hero Header */}
+      <section className="bg-gradient-to-b from-slate-950 via-sky-950 to-slate-900 text-white py-20 lg:py-24 relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-sky-300 text-xs font-semibold uppercase tracking-wider mb-6 border border-white/10">
+            <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+            Comprehensive Clinical Care
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display mb-6">
+            Our Healthcare Services
+          </h1>
+          <p className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
+            Advanced medical services delivered under one roof—from round-the-clock emergency dispatch 
+            to high-precision robotic operations and rehabilitative therapies.
           </p>
         </div>
       </section>
       
-      {/* Emergency Call Banner */}
-      <section className="bg-red-600 text-white py-4">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center mb-3 md:mb-0">
-              <Phone className="h-8 w-8 mr-3 animate-pulse" />
-              <div>
-                <h3 className="font-bold text-xl">Emergency? Call Now</h3>
-                <p className="text-white/90">Our emergency line is open 24/7</p>
-              </div>
+      {/* Emergency Strip */}
+      <section className="bg-gradient-to-r from-red-600 to-rose-600 text-white py-4 shadow-md">
+        <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <div className="flex items-center gap-3">
+            <Phone className="h-5 w-5 animate-bounce" />
+            <div>
+              <span className="font-bold text-sm">Need Emergency Assistance?</span>
+              <span className="text-xs text-white/80 ml-2 hidden sm:inline">24/7 Trauma line active now</span>
             </div>
-           <a href="tel:1234567890">
-                <Button variant="outline" className="text-red-700 border-white hover:bg-white/20 hover:text-white">
-                  <Phone className="mr-2 h-4 w-4" />
-                  Click here to call
-                </Button>
-              </a>
-
           </div>
+          <a 
+            href="tel:18001234560"
+            className="bg-white text-red-600 hover:bg-red-50 font-bold px-4 py-1.5 rounded-full text-xs shadow-sm transition-colors flex items-center gap-1.5"
+          >
+            <span>Dial 1-800-123-4560</span>
+            <ArrowRight className="h-3.5 w-3.5" />
+          </a>
         </div>
       </section>
       
       {/* Services Grid */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Comprehensive Healthcare Services</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Our hospital offers a wide range of services to ensure that all your healthcare needs are met with the highest standards of care and professionalism.
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight font-display mb-4">
+              World-Class Clinical Capabilities
+            </h2>
+            <p className="text-slate-600 text-base md:text-lg">
+              Explore our wide range of outpatient, inpatient, diagnostic, and emergency medical services.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
             {servicesList.map(service => (
               <ServiceCard 
                 key={service.id} 
@@ -255,31 +257,33 @@ const Services = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-primary-100 to-primary-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4 text-gray-800">Need Personalized Healthcare?</h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Our team of specialists is ready to provide you with personalized care tailored to your specific needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg"
-                className="bg-primary-500 hover:bg-primary-600"
-                onClick={handleBookAppointment}
-              >
-                <Calendar className="mr-2 h-5 w-5" />
-                Book an Appointment
-              </Button>
+      <section className="py-20 bg-gradient-to-br from-slate-950 via-sky-950 to-slate-900 text-white relative">
+        <div className="container mx-auto px-4 text-center max-w-3xl">
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 font-display">
+            Need a Tailored Health Package or Consultation?
+          </h2>
+          <p className="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+            Our multi-disciplinary team is ready to provide you with personalized clinical care tailored to your specific condition.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg"
+              className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white rounded-full px-8 font-semibold shadow-lg shadow-sky-500/25"
+              onClick={handleBookAppointment}
+            >
+              <Calendar className="mr-2 h-5 w-5" />
+              Book an Appointment
+            </Button>
+            <Link to="/contact">
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-primary-500 text-primary-500 hover:bg-primary-50"
+                className="rounded-full px-8 border-white/20 text-slate-900 bg-white hover:bg-slate-100 font-semibold"
               >
-                <Phone className="mr-2 h-5 w-5" />
-                Contact Us
+                <Phone className="mr-2 h-5 w-5 text-sky-600" />
+                Contact Helpdesk
               </Button>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
