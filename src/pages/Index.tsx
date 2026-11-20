@@ -31,10 +31,23 @@ const Index = () => {
       {/* 2. Hero Section */}
       <HeroSection />
       
-      {/* 2. Quick Info Cards (Original 4-Column Bar Placed Below Full-Screen Hero) */}
-      <section className="py-12 lg:py-16 bg-white relative z-10">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden shadow-2xl">
+      {/* 2. Quick Info Cards (Hero Sky-Blue Background Extends Exactly to Midpoint of Cards) */}
+      <section className="relative z-20 bg-white pb-16">
+        <div className="relative">
+          {/* Top 50% Background: Seamless continuation of Hero sky-blue background */}
+          <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-sky-100/75 via-blue-50/60 to-cyan-50/70 pointer-events-none">
+            {/* Subtle medical plus grid pattern matching Hero */}
+            <div 
+              className="absolute inset-0 opacity-[0.06]"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 14v12M14 20h12' stroke='%230284c7' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E")`,
+                backgroundSize: '40px 40px'
+              }}
+            />
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden shadow-2xl">
             {/* 1. Working Time */}
             <div className="bg-[#169fe6] text-white p-6 lg:p-8 flex flex-col justify-between min-h-[260px]">
               <div>
@@ -112,7 +125,8 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* 4. About Section - Complete Medical Solutions */}
       <section className="py-20 lg:py-28 bg-white relative">

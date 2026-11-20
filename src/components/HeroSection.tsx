@@ -11,7 +11,7 @@ const HeroSection = () => {
   const [appointmentDialogOpen, setAppointmentDialogOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-sky-100/75 via-blue-50/60 to-cyan-50/70 border-b border-sky-150/40 min-h-[calc(100vh-80px)] flex items-center py-12 lg:py-0">
+    <section className="relative overflow-hidden bg-gradient-to-br from-sky-100/75 via-blue-50/60 to-cyan-50/70 min-h-[calc(100vh-80px)] flex items-center pt-12 pb-12 lg:pt-16 lg:pb-16">
       
       {/* Visual Medical Background Elements with Smooth Subtle Animations */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
