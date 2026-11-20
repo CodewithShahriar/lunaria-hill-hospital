@@ -12,7 +12,7 @@ const TestimonialsSection = () => {
       content: 'The clinical care and empathy I received at Lunaria Hill Hospital was beyond exceptional. From consultation to post-op recovery, every doctor and nurse treated me with world-class dedication.',
       rating: 5,
       date: 'Treated 2 weeks ago',
-      image: 'https://jthemes.net/themes/html/medservices/files/images/review-author-5.jpg'
+      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face'
     },
     {
       name: 'Michael Chen',
@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
       content: 'The telemedicine and appointment portal is incredibly seamless. I consulted with the pediatrician from home, received digital prescriptions in minutes, and experienced zero friction.',
       rating: 5,
       date: 'Treated 3 days ago',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face'
+      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face'
     }
   ];
 
