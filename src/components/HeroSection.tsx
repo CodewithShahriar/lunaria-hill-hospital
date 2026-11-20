@@ -49,14 +49,14 @@ const HeroSection = () => {
   const slide = slides[currentSlide];
 
   return (
-    <section className="relative overflow-hidden min-h-[calc(100vh-80px)] flex items-center pt-10 pb-20 lg:pt-14 lg:pb-28 bg-white">
+    <section className="relative overflow-hidden min-h-[calc(100vh-80px)] flex items-center pt-14 pb-20 lg:pt-20 lg:pb-28 bg-white">
       
-      {/* 1. Doctors Photo Background (Shifted Slightly Up / Cropped Top) */}
+      {/* 1. Doctors Photo Background (Shifted Slightly Up as requested) */}
       <div className="absolute inset-0 select-none overflow-hidden bg-white">
         <img
           src="/hero-doctors.jpg"
           alt="Lunaria Hill Hospital Medical Team & Specialists"
-          className="w-full h-full object-cover object-[78%_38%] lg:object-[72%_38%] filter contrast-[1.03] brightness-[1.01]"
+          className="w-full h-full object-cover object-[78%_48%] lg:object-[72%_47%] filter contrast-[1.03] brightness-[1.01]"
         />
 
         {/* Clean, Natural Left Gradient: Guarantees pure white backdrop for text with zero ghost shapes */}
@@ -86,8 +86,8 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-12 gap-8 items-center min-h-[70vh]">
 
-          {/* Left Content Column (Shifted Slightly Up, Pure Black Typography, Title & Subtitle Reveal Simultaneously) */}
-          <div className="lg:col-span-7 flex flex-col justify-center pt-6 sm:pt-10 lg:pt-12 xl:pt-16">
+          {/* Left Content Column (Shifted Down, Pure Black Typography, Title & Subtitle Reveal Simultaneously) */}
+          <div className="lg:col-span-7 flex flex-col justify-center pt-12 sm:pt-16 lg:pt-24 xl:pt-28">
             
             {/* Clean Pill Badge (Zero Distractions, No Dots or Sparkles) */}
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-100/90 border border-slate-300 shadow-xs text-slate-900 text-xs font-bold mb-5 w-fit">
@@ -184,8 +184,8 @@ const HeroSection = () => {
 
           </div>
 
-          {/* Right Column: Clean Instant Appointment Card (Lower Right Corner) */}
-          <div className="lg:col-span-5 relative mt-8 lg:mt-32 flex justify-center lg:justify-end lg:translate-y-6">
+          {/* Right Column: Clean Instant Appointment Card (Shifted Down) */}
+          <div className="lg:col-span-5 relative mt-12 lg:mt-44 flex justify-center lg:justify-end lg:translate-y-14">
             <div className="bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-2xl shadow-slate-900/15 border border-slate-200/90 max-w-[285px] w-full animate-fade-in">
               
               {/* Header: Instant Appointment */}
