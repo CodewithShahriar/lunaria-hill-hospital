@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { 
   Calendar, Phone, Heart, ShieldCheck, ArrowRight, 
   Sparkles, Activity, Stethoscope, CheckCircle2, 
-  Zap, Clock, FileText, UserCheck 
+  Zap, Clock, FileText, UserCheck, Plus 
 } from 'lucide-react';
 import { AppointmentForm } from '@/components/AppointmentForm';
 
@@ -11,26 +11,45 @@ const HeroSection = () => {
   const [appointmentDialogOpen, setAppointmentDialogOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-sky-50/90 via-slate-50/50 to-white py-16 lg:py-24">
-      {/* Ambient Smart Hospital Lighting & Subtle Cyber Grid */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Soft Glowing Ambient Colors */}
-        <div className="absolute -top-32 -right-20 w-[600px] h-[600px] bg-sky-200/40 rounded-full blur-[140px]" />
-        <div className="absolute top-1/2 -left-28 w-[500px] h-[500px] bg-blue-100/60 rounded-full blur-[130px]" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cyan-100/50 rounded-full blur-[110px]" />
+    <section className="relative overflow-hidden bg-gradient-to-br from-sky-100/70 via-blue-50/60 to-cyan-50/80 py-16 lg:py-24 border-b border-sky-150/50">
+      
+      {/* Visual Medical Background Elements (Not Plain White) */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
         
-        {/* Soft Modern Matrix Grid Pattern */}
+        {/* 1. Vibrant Soft Ambient Glowing Mesh Blobs */}
+        <div className="absolute -top-24 -right-16 w-[550px] h-[550px] bg-gradient-to-br from-sky-300/40 to-blue-400/30 rounded-full blur-[110px]" />
+        <div className="absolute top-1/3 -left-24 w-[480px] h-[480px] bg-gradient-to-tr from-cyan-300/35 to-sky-200/50 rounded-full blur-[100px]" />
+        <div className="absolute -bottom-20 right-1/3 w-[450px] h-[450px] bg-indigo-200/35 rounded-full blur-[90px]" />
+
+        {/* 2. Medical Plus Signs (+) Subtle Pattern */}
         <div 
-          className="absolute inset-0 opacity-[0.035]"
+          className="absolute inset-0 opacity-[0.08]"
           style={{
-            backgroundImage: `radial-gradient(#0284c7 1.5px, transparent 1.5px)`,
-            backgroundSize: '24px 24px'
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 14v12M14 20h12' stroke='%230284c7' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E")`,
+            backgroundSize: '40px 40px'
           }}
         />
 
-        {/* Decorative Modern Ring Accents */}
-        <div className="absolute top-12 right-12 w-64 h-64 border border-sky-200/40 rounded-full pointer-events-none hidden xl:block" />
-        <div className="absolute top-6 right-6 w-80 h-80 border border-sky-100/60 rounded-full pointer-events-none hidden xl:block" />
+        {/* 3. Dynamic ECG Heartbeat Pulse Wave Graphic Running Across Background */}
+        <div className="absolute bottom-6 left-0 right-0 opacity-20 hidden md:block">
+          <svg 
+            viewBox="0 0 1200 120" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-24 stroke-sky-600"
+          >
+            <path 
+              d="M0 60 H300 L320 20 L335 100 L350 40 L365 75 L380 60 H700 L720 15 L735 105 L750 35 L765 75 L780 60 H1200" 
+              strokeWidth="3" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+
+        {/* 4. Concentric Modern Medical Rings */}
+        <div className="absolute -top-10 right-1/4 w-96 h-96 border border-sky-300/30 rounded-full pointer-events-none hidden lg:block" />
+        <div className="absolute -top-20 right-1/4 w-[460px] h-[460px] border border-sky-200/40 rounded-full pointer-events-none hidden lg:block" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -40,16 +59,16 @@ const HeroSection = () => {
           <div className="lg:col-span-7 flex flex-col justify-center animate-fade-in">
             
             {/* Smart Hospital Live Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/90 border border-sky-200/80 shadow-sm shadow-sky-500/10 text-sky-800 text-xs sm:text-sm font-semibold mb-6 w-fit backdrop-blur-md">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/95 border border-sky-300 shadow-md shadow-sky-500/10 text-sky-900 text-xs sm:text-sm font-semibold mb-6 w-fit backdrop-blur-md">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
               <span className="text-slate-900 font-bold">Smart Digital Healthcare</span>
               <span className="text-slate-300">•</span>
-              <span className="text-sky-600 font-medium flex items-center gap-1">
-                <Zap className="w-3.5 h-3.5 text-amber-500" />
-                AI Triage & Virtual OPD Ready
+              <span className="text-sky-700 font-semibold flex items-center gap-1">
+                <Zap className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+                AI Triage & Virtual OPD
               </span>
             </div>
 
@@ -62,16 +81,16 @@ const HeroSection = () => {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg lg:text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl font-normal">
-              Experience modern clinical excellence with digital diagnostics, paperless records, 
-              and world-class specialists available for instant in-person and tele-consultations.
+            <p className="text-base sm:text-lg lg:text-xl text-slate-700 mb-8 leading-relaxed max-w-2xl font-normal">
+              Experience modern clinical excellence with automated digital diagnostics, 
+              paperless health records, and world-class specialists for both in-person and telemedicine care.
             </p>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-9">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold text-base px-8 py-6 h-auto rounded-full shadow-lg shadow-sky-500/25 hover:shadow-xl hover:shadow-sky-500/35 hover:scale-[1.02] active:scale-[0.98] transition-all group flex items-center justify-center gap-2.5"
+                className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold text-base px-8 py-6 h-auto rounded-full shadow-lg shadow-sky-500/30 hover:shadow-xl hover:shadow-sky-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all group flex items-center justify-center gap-2.5"
                 onClick={() => setAppointmentDialogOpen(true)}
               >
                 <Calendar className="h-5 w-5" />
@@ -81,66 +100,63 @@ const HeroSection = () => {
               
               <a 
                 href="tel:18001234560"
-                className="inline-flex items-center justify-center gap-3 border border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 text-slate-800 font-medium text-base px-6 py-4 rounded-full shadow-sm transition-all hover:scale-[1.02]"
+                className="inline-flex items-center justify-center gap-3 border border-sky-200/90 bg-white/95 hover:bg-white hover:border-sky-300 text-slate-800 font-medium text-base px-6 py-4 rounded-full shadow-md shadow-slate-200/50 transition-all hover:scale-[1.02]"
               >
                 <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-500 border border-red-100">
                   <Phone className="h-4 w-4 animate-bounce" />
                 </div>
                 <div className="text-left text-xs leading-tight">
-                  <span className="block text-slate-500 font-normal">Emergency 24/7 Hotline</span>
+                  <span className="block text-slate-500 font-normal">Emergency 24/7 Helpline</span>
                   <span className="font-bold text-slate-900 text-sm">1-800-123-4560</span>
                 </div>
               </a>
             </div>
 
-            {/* Smart Hospital Feature Highlights (Clean Trust Badges) */}
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-6 border-t border-slate-200/70 text-xs sm:text-sm text-slate-600">
-              <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                </div>
-                <span className="font-medium text-slate-700">Digital Smart Prescriptions</span>
+            {/* Smart Hospital Feature Highlights (Glass Pills on Light Mesh) */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-6 border-t border-sky-200/60 text-xs sm:text-sm">
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sky-150 px-3.5 py-1.5 rounded-full shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                <span className="font-semibold text-slate-800">Smart Digital Prescriptions</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center flex-shrink-0">
-                  <Activity className="w-3.5 h-3.5" />
-                </div>
-                <span className="font-medium text-slate-700">Real-Time Patient Vitals</span>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sky-150 px-3.5 py-1.5 rounded-full shadow-xs">
+                <Activity className="w-4 h-4 text-sky-600 flex-shrink-0" />
+                <span className="font-semibold text-slate-800">Live ECG & Patient Vitals</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                </div>
-                <span className="font-medium text-slate-700">Encrypted Health Records</span>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-sky-150 px-3.5 py-1.5 rounded-full shadow-xs">
+                <ShieldCheck className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                <span className="font-semibold text-slate-800">Encrypted Health Vault</span>
               </div>
             </div>
 
           </div>
 
-          {/* Right Visual Column (Modern Smart Hospital Composition) */}
+          {/* Right Visual Column (Elevated Smart Hospital Canvas) */}
           <div className="lg:col-span-5 relative mt-8 lg:mt-0">
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               
-              {/* Main Medical Visual Card with Multi-layer Shadow */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-sky-500/15 border-4 border-white bg-white">
+              {/* Outer Glow Halo */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-sky-400 to-cyan-400 rounded-3xl blur-xl opacity-20 transform -rotate-1 scale-102"></div>
+
+              {/* Main Medical Visual Card */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-sky-900/15 border-4 border-white bg-white">
                 <img
                   src="https://img.freepik.com/premium-photo/doctors-nurses-arms-crossed-portrait-diversity-hospital-about-us-leadership-people-trust-community-support-smile-happy-confident-healthcare-workers-teamwork-collaboration_590464-143114.jpg?semt=ais_hybrid&w=740"
                   alt="Lunaria Hill Hospital Doctors and Specialists"
-                  className="w-full h-[380px] sm:h-[450px] object-cover object-center transform hover:scale-102 transition-transform duration-700"
+                  className="w-full h-[390px] sm:h-[460px] object-cover object-center transform hover:scale-102 transition-transform duration-700"
                 />
 
-                {/* Bottom Overlay Pill (Centered at the very bottom, completely clear of any image text) */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-slate-100/90 flex items-center justify-between">
+                {/* Bottom Overlay Pill (Cleanly placed at the bottom, zero text obstruction) */}
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-slate-100 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-blue-600 text-white flex items-center justify-center shadow-md shadow-sky-500/20">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-blue-600 text-white flex items-center justify-center shadow-md shadow-sky-500/30">
                       <Stethoscope className="w-5 h-5" />
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-slate-900 leading-tight">Board-Certified Specialists</h4>
-                      <p className="text-[11px] text-slate-500">Multidisciplinary Medical Faculty</p>
+                      <p className="text-[11px] text-slate-500">150+ Renowned Clinicians</p>
                     </div>
                   </div>
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-semibold border border-emerald-200/60">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-semibold border border-emerald-200">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     On-Duty Now
                   </span>
@@ -148,8 +164,8 @@ const HeroSection = () => {
               </div>
 
               {/* Smart Card 1: Top-Left Floating Smart Telemedicine Widget */}
-              <div className="absolute -top-5 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-xl border border-sky-100 animate-float hidden sm:flex items-center gap-3.5">
-                <div className="w-10 h-10 bg-gradient-to-tr from-sky-500 to-cyan-500 rounded-xl flex items-center justify-center text-white shadow-md shadow-sky-500/25">
+              <div className="absolute -top-5 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-xl border border-sky-150 animate-float hidden sm:flex items-center gap-3.5">
+                <div className="w-10 h-10 bg-gradient-to-tr from-sky-500 to-cyan-500 rounded-xl flex items-center justify-center text-white shadow-md shadow-sky-500/30">
                   <Activity className="h-5 w-5" />
                 </div>
                 <div>
@@ -162,7 +178,7 @@ const HeroSection = () => {
               </div>
 
               {/* Smart Card 2: Top-Right Pill */}
-              <div className="absolute top-4 -right-4 bg-white/95 backdrop-blur-md rounded-full px-3.5 py-1.5 shadow-lg border border-sky-100 flex items-center gap-1.5 text-xs font-semibold text-slate-800">
+              <div className="absolute top-4 -right-4 bg-white/95 backdrop-blur-md rounded-full px-4 py-1.5 shadow-lg border border-sky-150 flex items-center gap-1.5 text-xs font-semibold text-slate-800">
                 <ShieldCheck className="w-4 h-4 text-sky-600" />
                 <span>JCI & ISO Certified</span>
               </div>
