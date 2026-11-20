@@ -79,8 +79,9 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-8">
             
             {/* Mission */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-100 shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center mb-6 shadow-inner">
+            <div className="bg-white rounded-3xl p-8 sm:p-10 border-2 border-blue-200 shadow-md hover:shadow-xl hover:border-blue-500 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 to-sky-500"></div>
+              <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 shadow-inner border border-blue-100">
                 <Target className="h-7 w-7" />
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 font-display">Our Mission</h2>
@@ -92,8 +93,9 @@ const About = () => {
             </div>
 
             {/* Vision */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-100 shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-6 shadow-inner">
+            <div className="bg-white rounded-3xl p-8 sm:p-10 border-2 border-sky-200 shadow-md hover:shadow-xl hover:border-sky-500 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-sky-500 to-cyan-500"></div>
+              <div className="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center mb-6 shadow-inner border border-sky-100">
                 <Eye className="h-7 w-7" />
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 font-display">Our Vision</h2>
@@ -231,15 +233,15 @@ const About = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300 hover:-translate-y-1.5 text-center group"
+                className="bg-slate-50/60 rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-lg hover:border-blue-400 hover:bg-white transition-all duration-300 hover:-translate-y-1 text-center group"
               >
-                <div className="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-sky-500 transition-colors shadow-inner">
-                  <value.icon className="h-7 w-7 text-sky-600 group-hover:text-white transition-colors" />
+                <div className="w-14 h-14 bg-white border border-slate-200 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors shadow-xs">
+                  <value.icon className="h-7 w-7 text-blue-600 group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors font-display">
                   {value.title}
                 </h3>
-                <p className="text-slate-500 text-xs leading-relaxed">{value.description}</p>
+                <p className="text-slate-600 text-xs leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
@@ -247,47 +249,62 @@ const About = () => {
       </section>
 
       {/* 6. Awards & Recognition Section */}
-      <section className="py-16 bg-slate-50/80 border-t border-slate-150">
+      <section className="py-20 bg-slate-50/90 border-t border-slate-200">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-10 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-semibold uppercase tracking-wider mb-3">
-              <Award className="w-3.5 h-3.5 text-sky-600" />
+          <div className="text-center mb-12 max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-3 border border-blue-200">
+              <Award className="w-3.5 h-3.5 text-blue-600" />
               National & Global Honors
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display mb-2">
+            <h2 className="text-3xl font-extrabold text-slate-900 font-display mb-2">
               Recognized for Clinical Excellence
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500">
-              Accredited by international health organizations for safety and exceptional outcomes.
+            <p className="text-sm text-slate-600">
+              Accredited by premier international healthcare accreditation councils and quality rating agencies.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-85 hover:opacity-100 transition-opacity">
-            <img
-              src="https://www.casacolina.org/images/CMMS-logo_2305_v3_cmyk_6-inch-Height_300dpi.jpg"
-              alt="Casa Colina Logo"
-              className="h-12 sm:h-14 max-w-[130px] object-contain grayscale hover:grayscale-0 transition-all"
-            />
-            <img
-              src="https://d11mkob3ld6ys.cloudfront.net/images/logos/SCH-016_5star-Overall-Quality-Badge_Navy.png"
-              alt="5 Star Quality Badge"
-              className="h-14 sm:h-16 max-w-[130px] object-contain grayscale hover:grayscale-0 transition-all"
-            />
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLYokV7w7M_hRanF5giERDsqSehPOImQmLTQ&s"
-              alt="Dignity Health Awards"
-              className="h-12 sm:h-14 max-w-[130px] object-contain grayscale hover:grayscale-0 transition-all"
-            />
-            <img
-              src="https://newsroom.spectrumhealth.org/wp-content/uploads/2018/02/HG_Americas_50_Best_Award_Image_2015-2018.jpg"
-              alt="HG Americas 50 Best Award"
-              className="h-12 sm:h-14 max-w-[130px] object-contain grayscale hover:grayscale-0 transition-all"
-            />
-            <img
-              src="https://www.kauveryhospital.com/wp-content/uploads/2023/07/Newsweek-small.jpg"
-              alt="Newsweek Ranked Hospital"
-              className="h-12 sm:h-14 max-w-[130px] object-contain grayscale hover:grayscale-0 transition-all"
-            />
+          {/* Clean, Guaranteed Accredited Badges Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-6xl mx-auto">
+            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition-all text-center flex flex-col items-center justify-center group">
+              <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center mb-3 text-amber-600 group-hover:scale-105 transition-transform">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <h4 className="font-bold text-slate-900 text-xs mb-1">JCI Accredited</h4>
+              <p className="text-[11px] text-slate-500">Gold Seal of Healthcare Approval</p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition-all text-center flex flex-col items-center justify-center group">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center mb-3 text-blue-600 group-hover:scale-105 transition-transform">
+                <CheckCircle2 className="h-6 w-6" />
+              </div>
+              <h4 className="font-bold text-slate-900 text-xs mb-1">ISO 9001:2015</h4>
+              <p className="text-[11px] text-slate-500">Certified Quality Management</p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition-all text-center flex flex-col items-center justify-center group">
+              <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center mb-3 text-emerald-600 group-hover:scale-105 transition-transform">
+                <Award className="h-6 w-6" />
+              </div>
+              <h4 className="font-bold text-slate-900 text-xs mb-1">5-Star Safety</h4>
+              <p className="text-[11px] text-slate-500">Zero-Complication Standard</p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition-all text-center flex flex-col items-center justify-center group">
+              <div className="w-12 h-12 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center mb-3 text-sky-600 group-hover:scale-105 transition-transform">
+                <Users className="h-6 w-6" />
+              </div>
+              <h4 className="font-bold text-slate-900 text-xs mb-1">AHA Member</h4>
+              <p className="text-[11px] text-slate-500">American Hospital Association</p>
+            </div>
+
+            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-400 transition-all text-center flex flex-col items-center justify-center group col-span-2 sm:col-span-1">
+              <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center mb-3 text-indigo-600 group-hover:scale-105 transition-transform">
+                <Sparkles className="h-6 w-6" />
+              </div>
+              <h4 className="font-bold text-slate-900 text-xs mb-1">Newsweek 2024</h4>
+              <p className="text-[11px] text-slate-500">Top Rated Specialized Hospital</p>
+            </div>
           </div>
         </div>
       </section>

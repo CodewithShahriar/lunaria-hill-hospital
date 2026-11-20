@@ -143,28 +143,28 @@ const ServiceCard = ({ service, onBookAppointment }: { service: any, onBookAppoi
   const IconComponent = service.icon;
   
   return (
-    <div className="bg-white rounded-3xl p-7 border border-slate-100 shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+    <div className="bg-white rounded-2xl p-7 border-2 border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group">
       <div>
         <div className="flex items-center justify-between mb-5">
-          <div className="w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center group-hover:bg-sky-500 group-hover:text-white transition-colors shadow-inner">
+          <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-xs">
             <IconComponent className="h-7 w-7" />
           </div>
-          <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">
+          <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
             {service.badge}
           </span>
         </div>
 
-        <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-sky-600 transition-colors font-display">
+        <h3 className="text-xl font-extrabold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors font-display">
           {service.title}
         </h3>
-        <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">
+        <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
           {service.description}
         </p>
 
         <div className="space-y-2 mb-6 pt-4 border-t border-slate-100">
           {service.features.map((feature: string, index: number) => (
-            <div key={index} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500 flex-shrink-0" />
+            <div key={index} className="flex items-center gap-2 text-xs text-slate-800 font-medium">
+              <CheckCircle2 className="h-4 w-4 text-emerald-600 flex-shrink-0" />
               <span>{feature}</span>
             </div>
           ))}
@@ -173,7 +173,7 @@ const ServiceCard = ({ service, onBookAppointment }: { service: any, onBookAppoi
 
       <Button
         onClick={onBookAppointment}
-        className="w-full bg-sky-50 hover:bg-sky-600 text-sky-700 hover:text-white rounded-xl text-xs font-semibold py-2.5 transition-colors flex items-center justify-center gap-2"
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold py-2.5 shadow-sm shadow-blue-500/20 transition-all flex items-center justify-center gap-2"
       >
         <Calendar className="h-4 w-4" />
         Book Service / Consultation

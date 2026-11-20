@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { 
   MessageCircle, Award, Shield, Clock, Calendar, Heart, 
   Stethoscope, Phone, ArrowRight, CheckCircle2, Users, 
-  Zap, Brain, Baby, Bone, Microscope, Hospital, 
+  Zap, Brain, Thermometer, Baby, Eye, Bone, Microscope, Hospital, 
   Syringe, MessageCircleHeart, Ambulance, Star, Sparkles, Activity
 } from 'lucide-react';
 import { AppointmentForm } from '@/components/AppointmentForm';
@@ -165,60 +165,49 @@ const Index = () => {
             
             {/* Text Information */}
             <div className="animate-fade-in">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-sky-700 text-xs font-semibold uppercase tracking-wider mb-4 border border-sky-100">
-                <Sparkles className="w-3.5 h-3.5 text-sky-600" />
-                Complete Medical Solutions
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-6 font-display">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-6">
                 A Recognized Leader in Exceptional Healthcare
               </h2>
-              <p className="text-slate-600 mb-8 text-base sm:text-lg leading-relaxed">
-                At Lunaria Hill Hospital, we unite compassionate clinical care with pioneering medical innovation. 
-                Our approach delivers personalized, evidence-driven patient treatments designed for quick recovery and long-term wellness.
+              <p className="text-gray-600 mb-8 text-base sm:text-lg leading-relaxed">
+                At Lunaria Hill Hospital, we combine compassionate care with cutting-edge medical technology. Our approach centers on providing personalized healthcare experiences that address the unique needs of each patient.
               </p>
               
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-slate-50/70 border border-slate-100 hover:bg-sky-50/50 transition-colors">
-                  <div className="bg-sky-500 text-white p-1 rounded-full mt-0.5">
-                    <CheckCircle2 className="h-4 w-4" />
-                  </div>
+              <div className="space-y-6 mb-8">
+                <div className="flex items-start gap-3.5">
+                  <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-bold text-slate-800 text-sm">Board-Certified Medical Specialists</h4>
-                    <p className="text-slate-500 text-xs mt-0.5">Multi-disciplinary team of surgeons, internists, and diagnosticians committed to your recovery.</p>
+                    <h3 className="font-semibold text-gray-900 text-base mb-1">Experienced Medical Professionals</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">Our talented team of doctors and specialists are committed to your health and well-being.</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-slate-50/70 border border-slate-100 hover:bg-sky-50/50 transition-colors">
-                  <div className="bg-sky-500 text-white p-1 rounded-full mt-0.5">
-                    <CheckCircle2 className="h-4 w-4" />
-                  </div>
+                <div className="flex items-start gap-3.5">
+                  <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-bold text-slate-800 text-sm">Next-Generation Diagnostic Equipment</h4>
-                    <p className="text-slate-500 text-xs mt-0.5">High-precision 3T MRI, CT imaging, and automated digital pathology for definitive diagnostics.</p>
+                    <h3 className="font-semibold text-gray-900 text-base mb-1">Advanced Medical Technology</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">We utilize the latest medical equipment and techniques to deliver exceptional care.</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-slate-50/70 border border-slate-100 hover:bg-sky-50/50 transition-colors">
-                  <div className="bg-sky-500 text-white p-1 rounded-full mt-0.5">
-                    <CheckCircle2 className="h-4 w-4" />
-                  </div>
+                <div className="flex items-start gap-3.5">
+                  <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-bold text-slate-800 text-sm">Patient-First Healing Environment</h4>
-                    <p className="text-slate-500 text-xs mt-0.5">Comfortable private recovery suites, empathetic nursing staff, and transparent billing.</p>
+                    <h3 className="font-semibold text-gray-900 text-base mb-1">Patient-Centered Approach</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">Your comfort, dignity, and health are our top priorities throughout your care journey.</p>
                   </div>
                 </div>
               </div>
               
               <div className="flex flex-wrap items-center gap-4">
                 <Link to="/about">
-                  <Button size="lg" className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white rounded-full px-6 shadow-md shadow-sky-500/20">
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-7 py-3 text-base shadow-sm">
                     Learn More About Us
                   </Button>
                 </Link>
                 <Link to="/doctors">
-                  <Button size="lg" variant="outline" className="border-slate-200 text-slate-700 hover:bg-slate-50 rounded-full px-6">
+                  <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 font-medium rounded-lg px-7 py-3 text-base flex items-center gap-2">
                     Our Doctors
-                    <ArrowRight className="ml-1.5 h-4 w-4" />
+                    <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
               </div>
@@ -228,63 +217,41 @@ const Index = () => {
         </div>
       </section>
       
-      {/* 5. Department Cards */}
-      <section className="py-20 lg:py-24 bg-gradient-to-b from-slate-50 to-white relative">
+      {/* 5. Department Cards - Choose Department */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 text-sky-800 text-xs font-semibold uppercase tracking-wider mb-4">
-              <Hospital className="w-3.5 h-3.5 text-sky-600" />
-              Specialized Care
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+              Our Departments
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight font-display mb-4">
-              Explore Our Medical Departments
-            </h2>
-            <p className="text-slate-600 text-base md:text-lg">
-              Comprehensive medical specialties equipped with modern infrastructure and world-class physicians.
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Choose Department</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Specialized departments to address all your healthcare needs with expert care
             </p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
-              { name: "General Medicine", icon: Stethoscope, desc: "Comprehensive adult care & health checks", badge: "24/7 Outpatient" },
-              { name: "Cardiology", icon: Heart, desc: "Heart failure, angioplasty & cardiac ICU", badge: "Cath Lab" },
-              { name: "Neurology", icon: Brain, desc: "Stroke center & neuro-rehab care", badge: "Advanced ICU" },
-              { name: "Gastroenterology", icon: Microscope, desc: "Endoscopy, liver & digestive wellness", badge: "Day Care" },
-              { name: "Pediatrics", icon: Baby, desc: "Neonatal ICU & adolescent care", badge: "Specialist Team" },
-              { name: "Orthopedics", icon: Bone, desc: "Joint replacement & sports trauma", badge: "Robotic Surgery" },
+              { name: "Cardiology", icon: Heart, desc: "Heart care" },
+              { name: "Neurology", icon: Brain, desc: "Brain & nerve care" },
+              { name: "Pulmonology", icon: Thermometer, desc: "Respiratory care" },
+              { name: "Pediatrics", icon: Baby, desc: "Child healthcare" },
+              { name: "Ophthalmology", icon: Eye, desc: "Eye care" },
+              { name: "Orthopedics", icon: Bone, desc: "Bone & joint care" },
             ].map((dept, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl p-6 text-center border border-slate-100 shadow-sm hover:shadow-xl hover:border-sky-300 hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between"
-              >
-                <div>
-                  <div className="bg-gradient-to-tr from-sky-50 to-sky-100 rounded-2xl h-14 w-14 flex items-center justify-center mx-auto mb-4 group-hover:from-sky-500 group-hover:to-blue-600 transition-all duration-300 shadow-inner">
-                    <dept.icon className="h-7 w-7 text-sky-600 group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <h3 className="font-bold text-base text-slate-900 mb-1 group-hover:text-sky-600 transition-colors">{dept.name}</h3>
-                  <p className="text-slate-500 text-xs mb-3 leading-relaxed">{dept.desc}</p>
+              <div key={idx} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all p-6 text-center group">
+                <div className="bg-blue-500 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors">
+                  <dept.icon className="h-8 w-8 text-white" />
                 </div>
-                <div>
-                  <span className="inline-block text-[10px] font-semibold text-sky-700 bg-sky-50 rounded-full px-2.5 py-0.5 mb-3">
-                    {dept.badge}
-                  </span>
-                  <Link to="/departments">
-                    <Button variant="ghost" size="sm" className="text-sky-600 hover:text-sky-700 hover:bg-sky-50 text-xs font-semibold p-0 w-full">
-                      Learn Details →
-                    </Button>
-                  </Link>
-                </div>
+                <h3 className="font-bold text-lg mb-1">{dept.name}</h3>
+                <p className="text-gray-500 text-sm mb-4">{dept.desc}</p>
+                <Link to="/departments">
+                  <Button variant="link" className="text-blue-500 p-0 hover:text-blue-700">
+                    Learn More
+                  </Button>
+                </Link>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link to="/departments">
-              <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white rounded-full px-8 shadow-md shadow-sky-600/20">
-                View All Departments & Facilities
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
@@ -342,7 +309,7 @@ const Index = () => {
             <div className="md:col-span-6 lg:col-span-7">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 ring-1 ring-slate-100">
                 <img
-                  src="https://immigrantinvest.com/_next/image/?url=https%3A%2F%2F9zkkfwp3kz3ung7j.public.blob.vercel-storage.com%2FCI5-S2K-8ZX-FLN%2Fstoryblok.jpeg&w=3840&q=75"
+                  src="/clinic-overview.jpg"
                   alt="Modern Lunaria Hill Hospital Clinic Overview"
                   className="w-full h-[380px] sm:h-[420px] object-cover hover:scale-102 transition-transform duration-700"
                 />
@@ -446,85 +413,98 @@ const Index = () => {
       </section>
 
       {/* 8. Total Healthcare Solutions Section */}
-      <section className="py-20 lg:py-24 bg-slate-50/70">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16 max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight font-display mb-4">
-              Comprehensive Health Care Solutions
-            </h2>
-            <p className="text-slate-600 text-base md:text-lg">
-              Personalized, reliable, and holistic medical services to care for you and your family at every stage of life.
+      <section className="py-20 bg-gray-50 px-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Heading */}
+          <div className="text-center mb-12 px-2">
+            <h2 className="text-4xl font-bold text-gray-800">Total Health Care Solutions</h2>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-base sm:text-lg">
+              Offering personalized and reliable care to support your health and wellness every day.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-8 items-stretch">
-            {/* Feature Cards Grid (8 cols) */}
-            <div className="lg:col-span-8 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {/* Grid Layout */}
+          <div className="grid lg:grid-cols-3 gap-6 items-stretch">
+            
+            {/* Left: Feature Cards Grid with connected borders */}
+            <div className="lg:col-span-2 grid sm:grid-cols-2 rounded-xl overflow-hidden border border-gray-200 bg-gray-200 gap-px shadow-sm">
               {[
-                { icon: Stethoscope, title: "Top-Tier Doctors", desc: "Internationally trained physicians and seasoned medical directors." },
-                { icon: Microscope, title: "Modern Equipment", desc: "Automated labs, 3D imaging, and modern molecular diagnostics." },
-                { icon: Hospital, title: "World-Class Infrastructure", desc: "Ultra-clean surgical suites and private executive recovery rooms." },
-                { icon: Syringe, title: "Outpatient Services", desc: "Same-day procedures, vaccinations, and comprehensive checks." },
-                { icon: MessageCircleHeart, title: "Health Counseling", desc: "Mental health guidance, nutrition, and rehabilitation therapy." },
-                { icon: Ambulance, title: "24/7 Ambulance", desc: "Advanced cardiac life support ambulances on standby around the clock." }
+                {
+                  icon: <Stethoscope className="text-blue-600 w-10 h-10 mb-3" />,
+                  title: "Top Level Doctors",
+                  desc: "Expert physicians offering specialized and primary care."
+                },
+                {
+                  icon: <Microscope className="text-blue-600 w-10 h-10 mb-3" />,
+                  title: "Modern Equipment",
+                  desc: "Advanced diagnostic tools for accurate treatment."
+                },
+                {
+                  icon: <Hospital className="text-blue-600 w-10 h-10 mb-3" />,
+                  title: "Qualified Facilities",
+                  desc: "State-of-the-art infrastructure and hygiene."
+                },
+                {
+                  icon: <Syringe className="text-blue-600 w-10 h-10 mb-3" />,
+                  title: "Professional Services",
+                  desc: "Routine and specialized treatments delivered with care."
+                },
+                {
+                  icon: <MessageCircleHeart className="text-blue-600 w-10 h-10 mb-3" />,
+                  title: "Medical Counseling",
+                  desc: "Personalized mental and physical wellness support."
+                },
+                {
+                  icon: <Ambulance className="text-blue-600 w-10 h-10 mb-3" />,
+                  title: "Emergency Help",
+                  desc: "24/7 medical emergency and ambulance assistance."
+                }
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-sky-300 transition-all flex flex-col items-center text-center group"
+                  className="bg-white p-7 sm:p-8 flex flex-col items-center text-center hover:bg-blue-50/70 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center mb-3 group-hover:bg-sky-500 group-hover:text-white transition-colors">
-                    <item.icon className="w-6 h-6" />
-                  </div>
-                  <h4 className="font-bold text-slate-800 text-sm mb-1.5">{item.title}</h4>
-                  <p className="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
+                  {item.icon}
+                  <h4 className="text-base font-bold text-gray-800 mb-1.5">{item.title}</h4>
+                  <p className="text-xs text-gray-600 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
 
-            {/* Opening Hours & Custom Health Plan (4 cols) */}
-            <div className="lg:col-span-4 bg-gradient-to-br from-sky-600 to-blue-700 text-white p-8 rounded-3xl shadow-xl flex flex-col justify-between">
+            {/* Right: Opening Hours Box */}
+            <div className="bg-blue-600 text-white p-8 rounded-xl shadow-md flex flex-col justify-between">
               <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <Clock className="w-5 h-5 text-sky-200" />
-                  <h3 className="text-lg font-bold font-display">Hospital Service Hours</h3>
-                </div>
-                <p className="text-xs text-white/80 leading-relaxed mb-6">
-                  Committed to delivering compassionate care around the clock. Your health is our highest priority.
+                <h3 className="text-lg font-bold mb-3">Opening Hours:</h3>
+                <p className="text-sm mb-6 leading-relaxed text-white/95">
+                  We Are Committed to Serving You with the Utmost Care and Dedication—Your Health Is Our Priority.
                 </p>
-                <ul className="text-xs space-y-3 border-t border-white/20 pt-4">
+                <ul className="text-sm border-t border-white/20 pt-4 space-y-3">
                   <li className="flex justify-between">
-                    <span className="text-white/80">Monday – Wednesday</span>
-                    <span className="font-bold">8:00 AM – 8:00 PM</span>
+                    <span>Mon – Wed</span>
+                    <span className="font-semibold">9:00 AM - 7:00 PM</span>
                   </li>
                   <li className="flex justify-between">
-                    <span className="text-white/80">Thursday</span>
-                    <span className="font-bold">8:00 AM – 7:30 PM</span>
+                    <span>Thursday</span>
+                    <span className="font-semibold">9:00 AM - 6:30 PM</span>
                   </li>
                   <li className="flex justify-between">
-                    <span className="text-white/80">Friday</span>
-                    <span className="font-bold">8:00 AM – 6:00 PM</span>
+                    <span>Friday</span>
+                    <span className="font-semibold">9:00 AM - 6:00 PM</span>
                   </li>
                   <li className="flex justify-between">
-                    <span className="text-white/80">Weekend Emergency</span>
-                    <span className="font-bold text-emerald-300">24/7 Active</span>
+                    <span>Sun - Sun</span>
+                    <span className="font-semibold">Closed</span>
                   </li>
                 </ul>
               </div>
-
-              <div className="mt-6 pt-5 border-t border-white/20">
-                <h4 className="font-bold text-sm mb-1">Need a Personalized Health Checkup?</h4>
-                <p className="text-xs text-white/80 mb-4">
-                  Get a tailored wellness and diagnostic package for your family or corporate team.
+              <div className="mt-8 border-t border-white/20 pt-4">
+                <h4 className="font-semibold mb-2 text-base">Need a personal health plan?</h4>
+                <p className="text-sm text-white/90 leading-relaxed">
+                  Get a customized health plan tailored to your needs. Our experts are ready to help you achieve your wellness goals.
                 </p>
-                <Button 
-                  size="sm" 
-                  className="w-full bg-white text-sky-800 hover:bg-sky-50 font-bold rounded-xl text-xs py-2.5 h-auto"
-                  onClick={() => handleBookAppointment()}
-                >
-                  Book Executive Package
-                </Button>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -642,80 +622,67 @@ const Index = () => {
       </section>
 
       {/* 11. Modern Medicine & High-Tech Diagnostics */}
-      <section className="py-20 lg:py-24 bg-slate-50/70">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100 text-sky-800 text-xs font-semibold uppercase tracking-wider mb-4">
-                <Microscope className="w-3.5 h-3.5 text-sky-600" />
-                Modern Medicine
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-display mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-6">
                 Better Technologies for Better Healthcare
               </h2>
-              <p className="text-slate-600 mb-8 leading-relaxed text-base sm:text-lg">
-                We continuously invest in leading medical technologies to provide you with faster, 
-                more accurate diagnoses, less invasive treatments, and rapid recovery times.
+              <p className="text-gray-600 mb-8 text-base sm:text-lg leading-relaxed">
+                We've invested in the latest medical technologies to provide you with more accurate diagnoses, less invasive procedures, and faster recovery times.
               </p>
               
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
-                  <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="h-5 w-5" />
-                  </div>
+              <div className="space-y-6 mb-8">
+                <div className="flex items-start gap-3.5">
+                  <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-bold text-base text-slate-900">Advanced 3T MRI & Dual-Source CT</h3>
-                    <p className="text-slate-500 text-xs mt-0.5">Sub-millimeter resolution for early, definitive detection of vascular and soft-tissue conditions.</p>
+                    <h3 className="font-semibold text-gray-900 text-base mb-1">Advanced Imaging</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">High-resolution imaging for precise diagnosis</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
-                  <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="h-5 w-5" />
-                  </div>
+                <div className="flex items-start gap-3.5">
+                  <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-bold text-base text-slate-900">Robotic Minimally Invasive Surgery</h3>
-                    <p className="text-slate-500 text-xs mt-0.5">High dexterity instruments resulting in smaller incisions, reduced blood loss, and faster discharge.</p>
+                    <h3 className="font-semibold text-gray-900 text-base mb-1">Robotic Surgery</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">Minimally invasive procedures with faster recovery</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
-                  <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="h-5 w-5" />
-                  </div>
+                <div className="flex items-start gap-3.5">
+                  <CheckCircle2 className="h-6 w-6 text-blue-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-bold text-base text-slate-900">Connected Electronic Health Records (EHR)</h3>
-                    <p className="text-slate-500 text-xs mt-0.5">Instant coordination between labs, pharmacy, and physicians with encrypted digital reports.</p>
+                    <h3 className="font-semibold text-gray-900 text-base mb-1">Digital Records</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">Secure electronic health records for better coordination</p>
                   </div>
                 </div>
               </div>
               
               <Link to="/services">
-                <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white rounded-full px-6 shadow-md shadow-sky-600/20">
-                  Explore Diagnostic Facilities
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-7 py-3 text-base shadow-sm flex items-center gap-2">
+                  Explore Our Technology
+                  <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
             </div>
             
             <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-sky-500/10 ring-1 ring-slate-100">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
                 <img 
-                  src="https://almadinadiagnostic.com/assets/img/department/Pathology-Lab-Management-Software.jpg" 
-                  alt="Modern Lunaria Hill Pathology Lab Technology" 
-                  className="w-full h-[420px] object-cover"
+                  src="/medical-technology.jpg" 
+                  alt="Modern Medical Technology" 
+                  className="w-full h-[400px] object-cover"
                 />
               </div>
 
-              {/* Stat Card Over Image */}
-              <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-gradient-to-tr from-sky-600 to-blue-700 text-white p-6 rounded-3xl shadow-xl max-w-xs">
+              {/* Floating Stat Badge */}
+              <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-blue-600 text-white p-5 rounded-2xl shadow-xl">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
-                    <Shield className="h-6 w-6 text-white" />
-                  </div>
+                  <Shield className="h-10 w-10 text-white flex-shrink-0" />
                   <div>
-                    <p className="font-extrabold text-2xl font-display">99.7%</p>
-                    <p className="text-xs text-white/90">Diagnostic Accuracy Score</p>
+                    <p className="font-extrabold text-2xl leading-none mb-1">99.7%</p>
+                    <p className="text-xs text-white/90 font-medium">Diagnostic Accuracy</p>
                   </div>
                 </div>
               </div>

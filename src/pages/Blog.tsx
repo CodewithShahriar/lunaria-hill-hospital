@@ -15,7 +15,7 @@ const blogPosts = [
     title: "Understanding Heart Health: Tips for a Stronger Heart",
     excerpt: "Learn about the essential practices to maintain optimal heart health and prevent cardiovascular diseases.",
     category: "Cardiology",
-    image: "https://famurgentcare.com/wp-content/uploads/2022/12/2286836-min-1.jpg",
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80",
     author: "Dr. John Smith",
     date: "May 15, 2023",
     readTime: "5 min read",
@@ -26,7 +26,7 @@ const blogPosts = [
     title: "The Importance of Mental Health in Overall Wellness",
     excerpt: "Discover why mental health is just as important as physical health and tips to maintain good mental well-being.",
     category: "Mental Health",
-    image: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1493894473891-10fc1e5dbd22?auto=format&fit=crop&w=600&q=80",
     author: "Dr. Emily Johnson",
     date: "April 28, 2023",
     readTime: "7 min read",
@@ -37,7 +37,7 @@ const blogPosts = [
     title: "Nutrition 101: Building a Balanced Diet",
     excerpt: "A comprehensive guide to understanding nutrient requirements and creating a balanced meal plan for optimal health.",
     category: "Nutrition",
-    image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&q=80",
     author: "Dr. Michael Brown",
     date: "April 10, 2023",
     readTime: "6 min read"
@@ -47,7 +47,7 @@ const blogPosts = [
     title: "Childhood Vaccinations: What Parents Need to Know",
     excerpt: "Essential information about childhood vaccines, their importance, schedule, and common misconceptions.",
     category: "Pediatrics",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqy0M_iDuPnu3v9tquyVSBTFk4GXW0yAhgxw&s",
+    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80",
     author: "Dr. Sarah Davis",
     date: "March 22, 2023",
     readTime: "8 min read"
@@ -57,7 +57,7 @@ const blogPosts = [
     title: "Managing Chronic Pain: Modern Approaches",
     excerpt: "An overview of contemporary methods for managing chronic pain, from medication to alternative therapies.",
     category: "Pain Management",
-    image: "https://www.nystromcounseling.com/wp-content/uploads/Long-Term-Effects-of-Chronic-Pain-Medical-Issues-scaled.jpg",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80",
     author: "Dr. Robert Wilson",
     date: "March 5, 2023",
     readTime: "6 min read"
@@ -67,7 +67,7 @@ const blogPosts = [
     title: "Skin Care Essentials for Every Age",
     excerpt: "Tailored skin care advice for different age groups to maintain healthy, glowing skin throughout your life.",
     category: "Dermatology",
-    image: "https://www.theskinclinic.org.in/wp-content/uploads/2017/09/all-ages.jpg",
+    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80",
     author: "Dr. Jennifer Taylor",
     date: "February 19, 2023",
     readTime: "5 min read"
@@ -77,7 +77,7 @@ const blogPosts = [
     title: "Eye Health in the Digital Age",
     excerpt: "How to protect your vision and maintain eye health while spending long hours on digital devices.",
     category: "Ophthalmology",
-    image: "https://www.visionspecialists.com/wp-content/uploads/2020/02/Vision-Specialists-Your-Eye-Care-and-the-Digital-Age-copy.jpg",
+    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80",
     author: "Dr. David Anderson",
     date: "February 3, 2023",
     readTime: "7 min read"
@@ -87,7 +87,7 @@ const blogPosts = [
     title: "Understanding Common Sleep Disorders",
     excerpt: "An exploration of common sleep disorders, their symptoms, and treatment options for better rest.",
     category: "Sleep Medicine",
-    image: "https://images.unsplash.com/photo-1520206183501-b80df61043c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80",
     author: "Dr. Lisa Thomas",
     date: "January 25, 2023",
     readTime: "9 min read"
@@ -108,43 +108,44 @@ const categories = [
 ];
 
 const BlogPostCard = ({ post }: { post: any }) => (
-  <Card className="overflow-hidden hover:shadow-md transition-shadow duration-300">
-    <div className="h-48 overflow-hidden">
+  <Card className="overflow-hidden rounded-2xl border-2 border-slate-200 bg-white hover:shadow-xl hover:border-blue-500 transition-all duration-300 flex flex-col justify-between group">
+    <div className="h-52 overflow-hidden bg-slate-100">
       <img
         src={post.image}
         alt={post.title}
-        className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+        className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
       />
     </div>
-    <CardHeader>
-      <div className="flex justify-between items-center mb-1">
-        <span className="inline-block py-1 px-2 rounded bg-primary-100 text-primary-700 text-xs font-medium">
-          {post.category}
-        </span>
-        <div className="flex items-center text-gray-500 text-xs">
-          <Clock className="h-3 w-3 mr-1" />
-          {post.readTime}
+    <div className="p-5 flex-1 flex flex-col justify-between">
+      <div>
+        <div className="flex justify-between items-center mb-2">
+          <span className="inline-block py-0.5 px-2.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold">
+            {post.category}
+          </span>
+          <div className="flex items-center text-slate-500 text-xs font-medium">
+            <Clock className="h-3 w-3 mr-1 text-slate-400" />
+            {post.readTime}
+          </div>
+        </div>
+        <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 mb-2 font-display">
+          {post.title}
+        </h3>
+        <p className="text-slate-600 text-xs line-clamp-3 leading-relaxed mb-4">
+          {post.excerpt}
+        </p>
+      </div>
+
+      <div className="flex justify-between items-center border-t border-slate-100 pt-3 text-xs text-slate-500">
+        <div className="flex items-center font-medium text-slate-700">
+          <User className="h-3 w-3 mr-1.5 text-blue-500" />
+          {post.author}
+        </div>
+        <div className="flex items-center text-slate-400">
+          <Calendar className="h-3 w-3 mr-1" />
+          {post.date}
         </div>
       </div>
-      <CardTitle className="text-lg font-semibold hover:text-primary-600 transition-colors">
-        {post.title}
-      </CardTitle>
-    </CardHeader>
-    <CardContent>
-      <CardDescription className="text-gray-600">
-        {post.excerpt}
-      </CardDescription>
-    </CardContent>
-    <CardFooter className="flex justify-between border-t border-gray-100 pt-4">
-      <div className="flex items-center text-sm text-gray-600">
-        <User className="h-3 w-3 mr-1" />
-        {post.author}
-      </div>
-      <div className="flex items-center text-sm text-gray-400">
-        <Calendar className="h-3 w-3 mr-1" />
-        {post.date}
-      </div>
-    </CardFooter>
+    </div>
   </Card>
 );
 
@@ -197,36 +198,39 @@ const Blog = () => {
             <h2 className="text-2xl font-bold mb-6 text-gray-800">Featured Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {featuredPosts.map(post => (
-                <Card key={post.id} className="flex flex-col md:flex-row overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="w-full md:w-1/3">
+                <Card key={post.id} className="flex flex-col md:flex-row overflow-hidden rounded-2xl border-2 border-slate-200 bg-white hover:shadow-xl hover:border-blue-500 transition-all duration-300 group">
+                  <div className="w-full md:w-5/12 h-56 md:h-auto overflow-hidden bg-slate-100">
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="w-full md:w-2/3 p-6">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="inline-block py-1 px-2 rounded bg-primary-100 text-primary-700 text-xs font-medium">
-                        {post.category}
-                      </span>
-                      <div className="flex items-center text-gray-500 text-xs">
-                        <Clock className="h-3 w-3 mr-1" />
-                        {post.readTime}
+                  <div className="w-full md:w-7/12 p-6 flex flex-col justify-between">
+                    <div>
+                      <div className="flex justify-between items-center mb-2.5">
+                        <span className="inline-block py-0.5 px-2.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold">
+                          {post.category}
+                        </span>
+                        <div className="flex items-center text-slate-500 text-xs font-medium">
+                          <Clock className="h-3 w-3 mr-1 text-slate-400" />
+                          {post.readTime}
+                        </div>
                       </div>
+                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 font-display leading-snug">
+                        {post.title}
+                      </h3>
+                      <p className="text-slate-600 text-xs sm:text-sm mb-4 leading-relaxed line-clamp-3">
+                        {post.excerpt}
+                      </p>
                     </div>
-                    <h3 className="text-xl font-bold mb-2 hover:text-primary-600 transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex justify-between mt-auto">
-                      <div className="flex items-center text-sm text-gray-600">
-                        <User className="h-3 w-3 mr-1" />
+
+                    <div className="flex justify-between items-center border-t border-slate-100 pt-3 text-xs text-slate-500 mt-auto">
+                      <div className="flex items-center font-medium text-slate-700">
+                        <User className="h-3 w-3 mr-1.5 text-blue-500" />
                         {post.author}
                       </div>
-                      <div className="flex items-center text-sm text-gray-400">
+                      <div className="flex items-center text-slate-400">
                         <Calendar className="h-3 w-3 mr-1" />
                         {post.date}
                       </div>

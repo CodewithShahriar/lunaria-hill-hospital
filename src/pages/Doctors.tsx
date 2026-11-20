@@ -157,35 +157,35 @@ const specialties = [
 ];
 
 const ScheduleTag = ({ day }: { day: string }) => (
-  <span className="bg-sky-50 text-sky-700 border border-sky-100 text-[11px] font-semibold mr-1 px-2 py-0.5 rounded-md">
+  <span className="bg-blue-50 text-blue-700 border border-blue-200 text-[11px] font-semibold mr-1 px-2 py-0.5 rounded-md">
     {day}
   </span>
 );
 
 const DoctorCard = ({ doctor, onBookAppointment }: { doctor: any, onBookAppointment: (name: string) => void }) => (
-  <div className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300 group flex flex-col justify-between">
+  <div className="bg-white rounded-2xl overflow-hidden border-2 border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-500 transition-all duration-300 group flex flex-col justify-between">
     <div>
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-72 overflow-hidden bg-slate-100">
         <img 
           src={doctor.image} 
           alt={doctor.name}
-          className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+          className="w-full h-full object-cover object-top transition-transform group-hover:scale-105 duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-75 group-hover:opacity-85 transition-opacity"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 
         {/* Rating Pill */}
-        <div className="absolute top-3 right-3 glass-card px-2.5 py-1 rounded-full text-xs font-bold text-slate-800 flex items-center gap-1 shadow-sm">
+        <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-xs font-bold text-slate-900 flex items-center gap-1 shadow-sm border border-slate-200">
           <Star className="fill-amber-400 text-amber-400 h-3.5 w-3.5" />
           <span>{doctor.rating}</span>
-          <span className="text-[10px] text-slate-400 font-normal">({doctor.reviews})</span>
+          <span className="text-[10px] text-slate-500 font-normal">({doctor.reviews})</span>
         </div>
 
         {/* Specialty & Exp badge */}
         <div className="absolute bottom-3 left-3 right-3 text-white">
-          <span className="inline-block px-2.5 py-0.5 rounded-full bg-sky-500/90 text-white font-semibold text-[11px] mb-1">
+          <span className="inline-block px-2.5 py-0.5 rounded-full bg-blue-600 text-white font-bold text-[11px] mb-1 shadow-xs">
             {doctor.specialty}
           </span>
-          <h3 className="font-bold text-lg text-white font-display leading-tight">
+          <h3 className="font-extrabold text-lg text-white font-display leading-tight drop-shadow-sm">
             {doctor.name}
           </h3>
         </div>
@@ -194,10 +194,10 @@ const DoctorCard = ({ doctor, onBookAppointment }: { doctor: any, onBookAppointm
       <div className="p-5 space-y-3">
         {/* Degrees */}
         <div>
-          <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1">Qualifications</span>
+          <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block mb-1">Qualifications</span>
           <div className="flex flex-wrap gap-1">
             {doctor.degrees.map((deg: string, index: number) => (
-              <span key={index} className="bg-slate-50 border border-slate-100 px-2 py-0.5 rounded-md text-[11px] font-medium text-slate-700">
+              <span key={index} className="bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-md text-[11px] font-semibold text-slate-800">
                 {deg}
               </span>
             ))}
@@ -207,8 +207,8 @@ const DoctorCard = ({ doctor, onBookAppointment }: { doctor: any, onBookAppointm
         {/* Weekly Schedule */}
         <div>
           <div className="flex items-center justify-between text-xs text-slate-500 mb-1">
-            <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Weekly Clinics</span>
-            <span className="text-emerald-600 font-medium text-[11px] flex items-center gap-1">
+            <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Weekly Clinics</span>
+            <span className="text-emerald-700 font-bold text-[11px] flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
               {doctor.experience}
             </span>
@@ -224,7 +224,7 @@ const DoctorCard = ({ doctor, onBookAppointment }: { doctor: any, onBookAppointm
 
     <div className="p-5 pt-0">
       <Button 
-        className="w-full bg-sky-50 hover:bg-sky-600 text-sky-700 hover:text-white rounded-xl text-xs font-semibold py-2.5 transition-colors flex items-center justify-center gap-1.5"
+        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs py-2.5 shadow-sm shadow-blue-500/20 transition-all flex items-center justify-center gap-1.5"
         onClick={() => onBookAppointment(doctor.name)}
       >
         <Calendar className="h-3.5 w-3.5" />

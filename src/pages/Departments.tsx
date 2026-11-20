@@ -36,7 +36,7 @@ const Departments = () => {
       description: 'Comprehensive internal medicine for acute and chronic conditions with personalized care plans.',
       services: ['Diabetes Management', 'Hypertension Treatment', 'Infectious Diseases', 'Preventive Care'],
       doctors: 11,
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGEnKy-PhWWIHskO7yt-4m6Siq_p_qJ0vUlnRkbRYM0kFcx_vx95-KtUVAP-A1OPGP2BY&usqp=CAU'
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80'
     },
     {
       icon: Heart,
@@ -44,7 +44,7 @@ const Departments = () => {
       description: 'Advanced heart care with state-of-the-art cardiac catheterization lab and interventional therapies.',
       services: ['Cardiac Surgery', 'Angioplasty & Stenting', 'Pacemaker Implantation', 'Heart Failure Program'],
       doctors: 8,
-      image: 'https://smclife.in/wp-content/uploads/2024/03/cardiology1.jpg'
+      image: 'https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?auto=format&fit=crop&w=600&q=80'
     },
     {
       icon: Brain,
@@ -52,7 +52,7 @@ const Departments = () => {
       description: 'Comprehensive neurological diagnostic and surgical care for complex brain and nervous system disorders.',
       services: ['Stroke Center', 'Epilepsy Monitoring', 'Spine & Neuro Surgery', 'Neuro-Rehab'],
       doctors: 6,
-      image: 'https://www.amnhealthcare.com/siteassets/candidate-blog/physician/perm/neurologist-salary-report-2024.jpg'
+      image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=600&q=80'
     },
     {
       icon: Syringe, 
@@ -60,7 +60,7 @@ const Departments = () => {
       description: 'Expert diagnostics and therapeutics for digestive tract, liver, pancreas, and biliary diseases.',
       services: ['Advanced Endoscopy', 'Liver Disease Clinic', 'IBD Comprehensive Care', 'Colonoscopy'],
       doctors: 7,
-      image: 'https://bighospitals.in/assets/img/service/medical-gastroenterology-img.jpg'
+      image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80'
     },
     {
       icon: Baby,
@@ -68,7 +68,7 @@ const Departments = () => {
       description: 'Compassionate medical, surgical, and developmental care for infants, children, and adolescents.',
       services: ['Neonatal ICU (NICU)', 'Immunization Clinic', 'Pediatric Surgery', 'Child Development'],
       doctors: 10,
-      image: 'https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/cimgpeds.com/wp-content/uploads/2022/09/pediatrician-pediatric-clinic.jpg'
+      image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80'
     },
     {
       icon: Bone,
@@ -76,7 +76,7 @@ const Departments = () => {
       description: 'Pioneering orthopedic care for joints, bones, sports injuries, and spine reconstruction.',
       services: ['Robotic Joint Replacement', 'Sports Medicine & Arthroscopy', 'Spine Center', 'Complex Trauma'],
       doctors: 9,
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Hl-F8mK8gmlFuPRwKWQW_ATrVJKIzlBcgw&s'
+      image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80'
     },
     {
       icon: Activity,
@@ -84,7 +84,7 @@ const Departments = () => {
       description: 'Advanced surgical suites performing minimally invasive laparoscopic and robotic-assisted surgeries.',
       services: ['Minimally Invasive Surgery', 'Oncological Surgery', 'Emergency Trauma Surgery', 'Day-Care Surgery'],
       doctors: 12,
-      image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=600&q=80'
     },
     {
       icon: Users,
@@ -92,7 +92,7 @@ const Departments = () => {
       description: "Dedicated women's health center spanning obstetrics, prenatal care, and gynecologic oncology.",
       services: ['Maternity & High-Risk Births', 'Laparoscopic Gyn-Surgery', 'Fertility Solutions', 'Prenatal Screening'],
       doctors: 7,
-      image: 'https://www.renaimedicity.org/wp-content/uploads/2021/03/obstetrics-gynaecology-inn.jpg'
+      image: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=600&q=80'
     }
   ];
 
@@ -142,48 +142,48 @@ const Departments = () => {
             {departments.map((dept, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300 overflow-hidden group flex flex-col md:flex-row"
+                className="bg-white rounded-2xl border-2 border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-500 transition-all duration-300 overflow-hidden group flex flex-col md:flex-row"
               >
                 {/* Department Image */}
-                <div className="md:w-5/12 relative h-56 md:h-auto overflow-hidden">
+                <div className="md:w-5/12 relative h-56 md:h-auto overflow-hidden bg-slate-100">
                   <img
                     src={dept.image}
                     alt={dept.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-950/60 via-transparent to-transparent md:opacity-60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-950/70 via-transparent to-transparent md:opacity-60"></div>
                   
                   {/* Doctor count badge over image */}
-                  <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-800 shadow-sm flex items-center gap-1.5">
-                    <Stethoscope className="w-3.5 h-3.5 text-sky-600" />
+                  <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-900 shadow-sm border border-slate-200 flex items-center gap-1.5">
+                    <Stethoscope className="w-3.5 h-3.5 text-blue-600" />
                     <span>{dept.doctors} Specialists</span>
                   </div>
                 </div>
                 
                 {/* Department Content */}
-                <div className="md:w-7/12 p-6 sm:p-7 flex flex-col justify-between">
+                <div className="md:w-7/12 p-6 sm:p-7 flex flex-col justify-between bg-white">
                   <div>
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-11 h-11 bg-sky-50 rounded-xl flex items-center justify-center text-sky-600 group-hover:bg-sky-500 group-hover:text-white transition-colors shadow-inner">
+                      <div className="w-11 h-11 bg-blue-50 border border-blue-100 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-xs">
                         <dept.icon className="h-5 w-5" />
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 group-hover:text-sky-600 transition-colors font-display">
+                      <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
                         {dept.name}
                       </h3>
                     </div>
                     
-                    <p className="text-slate-500 text-xs sm:text-sm mb-4 leading-relaxed">
+                    <p className="text-slate-600 text-xs sm:text-sm mb-4 leading-relaxed">
                       {dept.description}
                     </p>
                     
                     <div className="mb-6">
-                      <h4 className="font-bold text-xs uppercase tracking-wider text-slate-400 mb-2.5">
+                      <h4 className="font-bold text-[11px] uppercase tracking-wider text-slate-500 mb-2">
                         Key Clinical Services:
                       </h4>
                       <div className="grid grid-cols-2 gap-1.5">
                         {dept.services.map((service, idx) => (
-                          <div key={idx} className="text-xs text-slate-700 flex items-center gap-1.5 font-medium">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-sky-500 flex-shrink-0" />
+                          <div key={idx} className="bg-slate-50 border border-slate-200/80 px-2 py-1 rounded-md text-xs text-slate-800 flex items-center gap-1.5 font-medium">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
                             <span className="truncate">{service}</span>
                           </div>
                         ))}
@@ -194,11 +194,11 @@ const Departments = () => {
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                     <Button 
                       size="sm" 
-                      className="bg-sky-50 hover:bg-sky-500 text-sky-700 hover:text-white font-semibold rounded-xl text-xs py-2 px-4 transition-colors w-full justify-between"
+                      className="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-xs py-2.5 px-4 shadow-sm shadow-blue-500/20 transition-all w-full justify-between"
                       onClick={() => handleFindDoctors(dept.name)}
                     >
                       <span>Consult {dept.name} Doctors</span>
-                      <ArrowRight className="h-3.5 w-3.5" />
+                      <ArrowRight className="h-4 w-4" />
                     </Button>
                   </div>
                 </div>

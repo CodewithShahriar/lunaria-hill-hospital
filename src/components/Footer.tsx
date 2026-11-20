@@ -9,7 +9,6 @@ import {
   Instagram, 
   Linkedin,
   Clock,
-  Heart,
   ArrowRight,
   ShieldCheck,
   Award
@@ -211,14 +210,6 @@ const Footer = () => {
               <Link to="/about" className="hover:text-slate-200 transition-colors">Privacy Policy</Link>
               <Link to="/about" className="hover:text-slate-200 transition-colors">Terms of Service</Link>
               <Link to="/contact" className="hover:text-slate-200 transition-colors">Contact Support</Link>
-            </div>
-
-            {/* Developer Portfolio Highlight */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-slate-300">
-              <span>Developed with</span>
-              <Heart className="h-3.5 w-3.5 text-rose-500 fill-rose-500" />
-              <span>by</span>
-              <span className="font-semibold text-sky-400">Abid Shahriar</span>
             </div>
           </div>
         </div>
