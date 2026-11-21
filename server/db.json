@@ -51,7 +51,7 @@
     }
   ],
   "hospitalStats": {
-    "totalPatients": 3840,
+    "totalPatients": 3841,
     "totalDoctors": 64,
     "todayAppointments": 142,
     "totalBeds": 450,
@@ -62,19 +62,107 @@
     "revenueGrowth": "+14.8%"
   },
   "departments": [
-    { "id": "dept-1", "name": "Cardiology & Vascular", "head": "Dr. Sarah Jenkins", "doctorsCount": 12, "beds": 60, "occupancy": 88, "status": "Active" },
-    { "id": "dept-2", "name": "Neurology & Brain Center", "head": "Dr. Aris Thorne", "doctorsCount": 8, "beds": 45, "occupancy": 76, "status": "Active" },
-    { "id": "dept-3", "name": "Pediatrics & Neonatal", "head": "Dr. Maya Patel", "doctorsCount": 10, "beds": 50, "occupancy": 82, "status": "Active" },
-    { "id": "dept-4", "name": "Orthopedics & Joint Clinic", "head": "Dr. Marcus Brody", "doctorsCount": 9, "beds": 55, "occupancy": 91, "status": "Active" },
-    { "id": "dept-5", "name": "Emergency & Trauma 24/7", "head": "Dr. James Wilson", "doctorsCount": 15, "beds": 40, "occupancy": 95, "status": "Critical Demand" },
-    { "id": "dept-6", "name": "Oncology & Chemotherapy", "head": "Dr. Elena Rostova", "doctorsCount": 7, "beds": 35, "occupancy": 71, "status": "Active" }
+    {
+      "id": "dept-1",
+      "name": "Cardiology & Vascular",
+      "head": "Dr. Sarah Jenkins",
+      "doctorsCount": 12,
+      "beds": 60,
+      "occupancy": 88,
+      "status": "Active"
+    },
+    {
+      "id": "dept-2",
+      "name": "Neurology & Brain Center",
+      "head": "Dr. Aris Thorne",
+      "doctorsCount": 8,
+      "beds": 45,
+      "occupancy": 76,
+      "status": "Active"
+    },
+    {
+      "id": "dept-3",
+      "name": "Pediatrics & Neonatal",
+      "head": "Dr. Maya Patel",
+      "doctorsCount": 10,
+      "beds": 50,
+      "occupancy": 82,
+      "status": "Active"
+    },
+    {
+      "id": "dept-4",
+      "name": "Orthopedics & Joint Clinic",
+      "head": "Dr. Marcus Brody",
+      "doctorsCount": 9,
+      "beds": 55,
+      "occupancy": 91,
+      "status": "Active"
+    },
+    {
+      "id": "dept-5",
+      "name": "Emergency & Trauma 24/7",
+      "head": "Dr. James Wilson",
+      "doctorsCount": 15,
+      "beds": 40,
+      "occupancy": 95,
+      "status": "Critical Demand"
+    },
+    {
+      "id": "dept-6",
+      "name": "Oncology & Chemotherapy",
+      "head": "Dr. Elena Rostova",
+      "doctorsCount": 7,
+      "beds": 35,
+      "occupancy": 71,
+      "status": "Active"
+    }
   ],
   "staff": [
-    { "id": "st-1", "name": "Dr. Sarah Jenkins", "role": "Doctor", "department": "Cardiology", "status": "On Duty", "shift": "Morning (8 AM - 4 PM)", "email": "doctor.sarah@lunariahill.com" },
-    { "id": "st-2", "name": "Dr. Aris Thorne", "role": "Doctor", "department": "Neurology", "status": "In Surgery", "shift": "Day (10 AM - 6 PM)", "email": "dr.thorne@lunariahill.com" },
-    { "id": "st-3", "name": "Nurse Claire Bennett", "role": "Head Nurse", "department": "ICU", "status": "On Duty", "shift": "Night (8 PM - 8 AM)", "email": "c.bennett@lunariahill.com" },
-    { "id": "st-4", "name": "Marcus Sterling", "role": "Receptionist", "department": "Front Desk", "status": "On Duty", "shift": "Morning (7 AM - 3 PM)", "email": "reception@lunariahill.com" },
-    { "id": "st-5", "name": "Emily Watson", "role": "Lab Technician", "department": "Pathology", "status": "On Duty", "shift": "General (9 AM - 5 PM)", "email": "e.watson@lunariahill.com" }
+    {
+      "id": "st-1",
+      "name": "Dr. Sarah Jenkins",
+      "role": "Doctor",
+      "department": "Cardiology",
+      "status": "On Duty",
+      "shift": "Morning (8 AM - 4 PM)",
+      "email": "doctor.sarah@lunariahill.com"
+    },
+    {
+      "id": "st-2",
+      "name": "Dr. Aris Thorne",
+      "role": "Doctor",
+      "department": "Neurology",
+      "status": "In Surgery",
+      "shift": "Day (10 AM - 6 PM)",
+      "email": "dr.thorne@lunariahill.com"
+    },
+    {
+      "id": "st-3",
+      "name": "Nurse Claire Bennett",
+      "role": "Head Nurse",
+      "department": "ICU",
+      "status": "On Duty",
+      "shift": "Night (8 PM - 8 AM)",
+      "email": "c.bennett@lunariahill.com"
+    },
+    {
+      "id": "st-4",
+      "name": "Marcus Sterling",
+      "role": "Receptionist",
+      "department": "Front Desk",
+      "status": "On Duty",
+      "shift": "Morning (7 AM - 3 PM)",
+      "email": "reception@lunariahill.com"
+    },
+    {
+      "id": "st-5",
+      "name": "Emily Watson",
+      "role": "Lab Technician",
+      "department": "Pathology",
+      "status": "On Duty",
+      "shift": "General (9 AM - 5 PM)",
+      "email": "e.watson@lunariahill.com"
+    }
   ],
   "appointments": [
     {
@@ -101,7 +189,7 @@
       "time": "11:15 AM",
       "room": "OPD-304",
       "type": "Consultation",
-      "status": "Waiting",
+      "status": "In Consultation",
       "fee": 120,
       "symptoms": "Routine cardiovascular checkup post angioplasty"
     },
@@ -157,8 +245,13 @@
       "bloodGroup": "O+",
       "phone": "+1 (555) 382-9901",
       "email": "patient@lunariahill.com",
-      "allergies": ["Penicillin", "Dust Mites"],
-      "chronic": ["Mild Hypertension"],
+      "allergies": [
+        "Penicillin",
+        "Dust Mites"
+      ],
+      "chronic": [
+        "Mild Hypertension"
+      ],
       "lastVisit": "2026-10-18",
       "totalVisits": 6
     },
@@ -170,8 +263,12 @@
       "bloodGroup": "A+",
       "phone": "+1 (555) 492-1102",
       "email": "e.thompson@gmail.com",
-      "allergies": ["None"],
-      "chronic": ["Coronary Artery Disease"],
+      "allergies": [
+        "None"
+      ],
+      "chronic": [
+        "Coronary Artery Disease"
+      ],
       "lastVisit": "2026-11-04",
       "totalVisits": 14
     },
@@ -183,8 +280,12 @@
       "bloodGroup": "B+",
       "phone": "+1 (555) 673-4019",
       "email": "m.chang@yahoo.com",
-      "allergies": ["Sulfa Drugs"],
-      "chronic": ["Arrhythmia"],
+      "allergies": [
+        "Sulfa Drugs"
+      ],
+      "chronic": [
+        "Arrhythmia"
+      ],
       "lastVisit": "2026-11-12",
       "totalVisits": 4
     },
@@ -196,18 +297,89 @@
       "bloodGroup": "AB-",
       "phone": "+1 (555) 882-7714",
       "email": "sophia.r@techcorp.io",
-      "allergies": ["Aspirin"],
-      "chronic": ["Chronic Migraine"],
+      "allergies": [
+        "Aspirin"
+      ],
+      "chronic": [
+        "Chronic Migraine"
+      ],
       "lastVisit": "2026-11-21",
       "totalVisits": 8
+    },
+    {
+      "id": "P-65803",
+      "lastVisit": "2026-11-21",
+      "totalVisits": 1,
+      "name": "Alan",
+      "age": "23",
+      "gender": "Male",
+      "phone": "32453253425",
+      "assignedDoctor": "Dr. Aris Thorne (Neurology)",
+      "assignedRoom": "OPD-210",
+      "priority": "Emergency"
     }
   ],
   "queue": [
-    { "token": "T-101", "patientName": "Johnathan Doe", "patientId": "P-10023", "doctorName": "Dr. Sarah Jenkins", "room": "OPD-304", "status": "With Doctor", "checkInTime": "10:15 AM", "priority": "Normal" },
-    { "token": "T-102", "patientName": "Emma Thompson", "patientId": "P-10045", "doctorName": "Dr. Sarah Jenkins", "room": "OPD-304", "status": "Waiting", "checkInTime": "10:48 AM", "priority": "Normal" },
-    { "token": "T-103", "patientName": "David Miller", "patientId": "P-10140", "doctorName": "Dr. James Wilson", "room": "ER-Triage", "status": "With Doctor", "checkInTime": "10:55 AM", "priority": "Emergency" },
-    { "token": "T-104", "patientName": "Sophia Ramirez", "patientId": "P-10102", "doctorName": "Dr. Aris Thorne", "room": "OPD-210", "status": "Completed", "checkInTime": "08:45 AM", "priority": "Normal" },
-    { "token": "T-105", "patientName": "Liam Johnson", "patientId": "P-10115", "doctorName": "Dr. Maya Patel", "room": "OPD-105", "status": "Waiting", "checkInTime": "11:05 AM", "priority": "Normal" }
+    {
+      "token": "T-101",
+      "patientName": "Johnathan Doe",
+      "patientId": "P-10023",
+      "doctorName": "Dr. Sarah Jenkins",
+      "room": "OPD-304",
+      "status": "With Doctor",
+      "checkInTime": "10:15 AM",
+      "priority": "Normal"
+    },
+    {
+      "token": "T-102",
+      "patientName": "Emma Thompson",
+      "patientId": "P-10045",
+      "doctorName": "Dr. Sarah Jenkins",
+      "room": "OPD-304",
+      "status": "Waiting",
+      "checkInTime": "10:48 AM",
+      "priority": "Normal"
+    },
+    {
+      "token": "T-103",
+      "patientName": "David Miller",
+      "patientId": "P-10140",
+      "doctorName": "Dr. James Wilson",
+      "room": "ER-Triage",
+      "status": "With Doctor",
+      "checkInTime": "10:55 AM",
+      "priority": "Emergency"
+    },
+    {
+      "token": "T-104",
+      "patientName": "Sophia Ramirez",
+      "patientId": "P-10102",
+      "doctorName": "Dr. Aris Thorne",
+      "room": "OPD-210",
+      "status": "Completed",
+      "checkInTime": "08:45 AM",
+      "priority": "Normal"
+    },
+    {
+      "token": "T-105",
+      "patientName": "Liam Johnson",
+      "patientId": "P-10115",
+      "doctorName": "Dr. Maya Patel",
+      "room": "OPD-105",
+      "status": "Waiting",
+      "checkInTime": "11:05 AM",
+      "priority": "Normal"
+    },
+    {
+      "token": "T-106",
+      "patientName": "Alan",
+      "patientId": "P-65803",
+      "doctorName": "Dr. Aris Thorne (Neurology)",
+      "room": "OPD-210",
+      "status": "Waiting",
+      "checkInTime": "03:22 PM",
+      "priority": "Emergency"
+    }
   ],
   "prescriptions": [
     {
@@ -218,9 +390,24 @@
       "date": "2026-11-21",
       "diagnosis": "Stage-1 Essential Hypertension, Sinus Tachycardia",
       "medicines": [
-        { "name": "Amlodipine Besylate", "dosage": "5 mg", "frequency": "Once daily (Morning)", "duration": "30 Days" },
-        { "name": "Atorvastatin Calcium", "dosage": "10 mg", "frequency": "Once daily (Night)", "duration": "30 Days" },
-        { "name": "Coenzyme Q10", "dosage": "100 mg", "frequency": "Once daily after meals", "duration": "60 Days" }
+        {
+          "name": "Amlodipine Besylate",
+          "dosage": "5 mg",
+          "frequency": "Once daily (Morning)",
+          "duration": "30 Days"
+        },
+        {
+          "name": "Atorvastatin Calcium",
+          "dosage": "10 mg",
+          "frequency": "Once daily (Night)",
+          "duration": "30 Days"
+        },
+        {
+          "name": "Coenzyme Q10",
+          "dosage": "100 mg",
+          "frequency": "Once daily after meals",
+          "duration": "60 Days"
+        }
       ],
       "advice": "Low sodium diet (<2.3g/day), 30 minutes brisk walking daily, follow up in 4 weeks with lipid profile report."
     },
@@ -232,8 +419,18 @@
       "date": "2026-11-21",
       "diagnosis": "Episodic Migraine without Aura",
       "medicines": [
-        { "name": "Zolmitriptan", "dosage": "2.5 mg", "frequency": "At onset of headache attack", "duration": "As needed (Max 2/day)" },
-        { "name": "Magnesium Glycinate", "dosage": "400 mg", "frequency": "Nightly before sleep", "duration": "90 Days" }
+        {
+          "name": "Zolmitriptan",
+          "dosage": "2.5 mg",
+          "frequency": "At onset of headache attack",
+          "duration": "As needed (Max 2/day)"
+        },
+        {
+          "name": "Magnesium Glycinate",
+          "dosage": "400 mg",
+          "frequency": "Nightly before sleep",
+          "duration": "90 Days"
+        }
       ],
       "advice": "Maintain hydration, keep sleep wake cycle regular, avoid blue screen light after 10 PM."
     }
@@ -274,9 +471,40 @@
     }
   ],
   "auditLogs": [
-    { "id": "log-1", "timestamp": "2026-11-21 10:15:32", "user": "Marcus Sterling", "role": "Receptionist", "action": "Checked in patient Johnathan Doe (T-101) to OPD-304" },
-    { "id": "log-2", "timestamp": "2026-11-21 10:02:14", "user": "Dr. Sarah Jenkins", "role": "Doctor", "action": "Prescribed medication for patient Sophia Ramirez (rx-789)" },
-    { "id": "log-3", "timestamp": "2026-11-21 09:40:55", "user": "Dr. Eleanor Vance", "role": "Admin", "action": "Updated Emergency bed capacity to 40 units" },
-    { "id": "log-4", "timestamp": "2026-11-21 09:12:10", "user": "System Auto-Sync", "role": "System", "action": "Automated night database backup completed successfully" }
+    {
+      "id": "log-1795252984322",
+      "timestamp": "2026-11-21 09:23:04",
+      "user": "Dr. Sarah Jenkins",
+      "role": "Doctor",
+      "action": "Updated appointment apt-102 status to In Consultation"
+    },
+    {
+      "id": "log-1",
+      "timestamp": "2026-11-21 10:15:32",
+      "user": "Marcus Sterling",
+      "role": "Receptionist",
+      "action": "Checked in patient Johnathan Doe (T-101) to OPD-304"
+    },
+    {
+      "id": "log-2",
+      "timestamp": "2026-11-21 10:02:14",
+      "user": "Dr. Sarah Jenkins",
+      "role": "Doctor",
+      "action": "Prescribed medication for patient Sophia Ramirez (rx-789)"
+    },
+    {
+      "id": "log-3",
+      "timestamp": "2026-11-21 09:40:55",
+      "user": "Dr. Eleanor Vance",
+      "role": "Admin",
+      "action": "Updated Emergency bed capacity to 40 units"
+    },
+    {
+      "id": "log-4",
+      "timestamp": "2026-11-21 09:12:10",
+      "user": "System Auto-Sync",
+      "role": "System",
+      "action": "Automated night database backup completed successfully"
+    }
   ]
 }

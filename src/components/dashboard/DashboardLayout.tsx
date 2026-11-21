@@ -138,32 +138,6 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             </div>
           </div>
 
-          {/* Quick Universal Role Switcher (Visible on desktop for instant demo evaluation) */}
-          <div className="hidden xl:flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200/80">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-2.5 flex items-center gap-1">
-              <Sparkles className="w-3 h-3 text-amber-500" /> Switch Role:
-            </span>
-            {(['admin', 'doctor', 'patient', 'receptionist'] as UserRole[]).map((r) => {
-              const active = currentRole === r;
-              return (
-                <button
-                  key={r}
-                  onClick={() => {
-                    switchRole(r);
-                    onTabChange(r === 'doctor' ? 'appointments' : r === 'receptionist' ? 'queue' : 'overview');
-                  }}
-                  className={`text-xs font-semibold px-3 py-1.5 rounded-lg transition-all capitalize ${
-                    active
-                      ? 'bg-white text-slate-900 shadow-xs border border-slate-200'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  {r}
-                </button>
-              );
-            })}
-          </div>
-
           {/* Right User Bar */}
           <div className="flex items-center gap-3">
             {/* Notifications Button */}
@@ -272,29 +246,18 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             </nav>
           </div>
 
-          {/* Quick Role Switcher in Sidebar footer */}
-          <div className="pt-4 border-t border-slate-100">
-            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-              Fast Demo Switcher
-            </p>
-            <div className="grid grid-cols-2 gap-1.5">
-              {(['admin', 'doctor', 'patient', 'receptionist'] as UserRole[]).map((r) => (
-                <button
-                  key={r}
-                  onClick={() => {
-                    switchRole(r);
-                    onTabChange(r === 'doctor' ? 'appointments' : r === 'receptionist' ? 'queue' : 'overview');
-                  }}
-                  className={`text-[11px] py-1.5 px-2 rounded-lg font-semibold text-center border capitalize transition-colors ${
-                    currentRole === r
-                      ? 'bg-primary text-white border-primary shadow-xs'
-                      : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
-                  }`}
-                >
-                  {r}
-                </button>
-              ))}
+          {/* Professional Hospital System Footer */}
+          <div className="pt-4 border-t border-slate-100 space-y-2">
+            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70 text-[11px] text-slate-500 flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>HIPAA & NABH Accredited Enterprise System</span>
             </div>
+            <button
+              onClick={() => navigate('/')}
+              className="w-full text-center text-xs font-semibold text-slate-500 hover:text-primary py-1.5 transition-colors block"
+            >
+              &larr; Back to Hospital Website
+            </button>
           </div>
         </aside>
 
