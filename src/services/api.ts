@@ -12,7 +12,7 @@ import {
   AuditLog
 } from '@/types/dashboard';
 
-// Seed Fallback Data (Ensures smooth experience if backend is offline)
+// Seed Initial Data
 const SEED_USERS: User[] = [
   {
     id: "usr-admin",
@@ -299,8 +299,54 @@ const SEED_LOGS: AuditLog[] = [
   { id: "log-4", timestamp: "2026-11-21 09:12:10", user: "System Auto-Sync", role: "System", action: "Automated night database backup completed successfully" }
 ];
 
+// --- PERSISTENT CLIENT-SIDE DATA STORE ---
+interface LocalHospitalDB {
+  stats: HospitalStats;
+  departments: Department[];
+  staff: Staff[];
+  appointments: Appointment[];
+  patients: Patient[];
+  queue: QueueItem[];
+  prescriptions: Prescription[];
+  invoices: Invoice[];
+  logs: AuditLog[];
+}
+
+const STORAGE_KEY = 'lunaria_hospital_live_db';
+
+const getPersistentDB = (): LocalHospitalDB => {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      return JSON.parse(raw);
+    }
+  } catch (e) {}
+
+  const initialDB: LocalHospitalDB = {
+    stats: SEED_STATS,
+    departments: SEED_DEPARTMENTS,
+    staff: SEED_STAFF,
+    appointments: SEED_APPOINTMENTS,
+    patients: SEED_PATIENTS,
+    queue: SEED_QUEUE,
+    prescriptions: SEED_PRESCRIPTIONS,
+    invoices: SEED_INVOICES,
+    logs: SEED_LOGS,
+  };
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(initialDB));
+  } catch (e) {}
+  return initialDB;
+};
+
+const savePersistentDB = (db: LocalHospitalDB) => {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+  } catch (e) {}
+};
+
 // Helper to fetch with timeout and fallback
-async function fetchWithFallback<T>(url: string, options?: RequestInit, fallbackData?: T): Promise<T> {
+async function fetchWithFallback<T>(url: string, options?: RequestInit, fallbackData?: () => T): Promise<T> {
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 2000);
@@ -309,10 +355,8 @@ async function fetchWithFallback<T>(url: string, options?: RequestInit, fallback
     if (res.ok) {
       return await res.json();
     }
-  } catch (err) {
-    // Backend server might not be active, use fallback
-  }
-  return fallbackData as T;
+  } catch (err) {}
+  return fallbackData ? fallbackData() : (undefined as unknown as T);
 }
 
 export const hospitalApi = {
@@ -340,16 +384,19 @@ export const hospitalApi = {
 
   // Admin
   async getAdminOverview() {
-    return fetchWithFallback('/api/admin/overview', undefined, {
-      stats: SEED_STATS,
-      departments: SEED_DEPARTMENTS,
-      recentAppointments: SEED_APPOINTMENTS.slice(0, 5),
-      recentLogs: SEED_LOGS
+    return fetchWithFallback('/api/admin/overview', undefined, () => {
+      const db = getPersistentDB();
+      return {
+        stats: db.stats,
+        departments: db.departments,
+        recentAppointments: db.appointments.slice(0, 5),
+        recentLogs: db.logs
+      };
     });
   },
 
   async getDepartments(): Promise<Department[]> {
-    return fetchWithFallback('/api/admin/departments', undefined, SEED_DEPARTMENTS);
+    return fetchWithFallback('/api/admin/departments', undefined, () => getPersistentDB().departments);
   },
 
   async addDepartment(dept: Partial<Department>): Promise<Department> {
@@ -366,11 +413,16 @@ export const hospitalApi = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newDept)
-    }, newDept);
+    }, () => {
+      const db = getPersistentDB();
+      db.departments.push(newDept);
+      savePersistentDB(db);
+      return newDept;
+    });
   },
 
   async getStaff(): Promise<Staff[]> {
-    return fetchWithFallback('/api/admin/staff', undefined, SEED_STAFF);
+    return fetchWithFallback('/api/admin/staff', undefined, () => getPersistentDB().staff);
   },
 
   async addStaff(staff: Partial<Staff>): Promise<Staff> {
@@ -387,16 +439,21 @@ export const hospitalApi = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newStaff)
-    }, newStaff);
+    }, () => {
+      const db = getPersistentDB();
+      db.staff.push(newStaff);
+      savePersistentDB(db);
+      return newStaff;
+    });
   },
 
   async getAuditLogs(): Promise<AuditLog[]> {
-    return fetchWithFallback('/api/admin/audit-logs', undefined, SEED_LOGS);
+    return fetchWithFallback('/api/admin/audit-logs', undefined, () => getPersistentDB().logs);
   },
 
   // Doctor
   async getDoctorAppointments(): Promise<Appointment[]> {
-    return fetchWithFallback('/api/doctor/appointments', undefined, SEED_APPOINTMENTS);
+    return fetchWithFallback('/api/doctor/appointments', undefined, () => getPersistentDB().appointments);
   },
 
   async updateAppointmentStatus(id: string, status: Appointment['status']) {
@@ -404,11 +461,33 @@ export const hospitalApi = {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status })
-    }, { success: true, id, status });
+    }, () => {
+      const db = getPersistentDB();
+      const apt = db.appointments.find(a => a.id === id);
+      if (apt) {
+        apt.status = status;
+        // Synchronize corresponding queue item if exists
+        const qItem = db.queue.find(q => q.patientId === apt.patientId || q.patientName === apt.patientName);
+        if (qItem) {
+          if (status === 'In Consultation') qItem.status = 'With Doctor';
+          if (status === 'Completed') qItem.status = 'Completed';
+          if (status === 'Waiting') qItem.status = 'Waiting';
+        }
+        db.logs.unshift({
+          id: `log-${Date.now()}`,
+          timestamp: new Date().toISOString().replace('T', ' ').slice(0, 19),
+          user: 'Dr. Sarah Jenkins',
+          role: 'Doctor',
+          action: `Consultation status for ${apt.patientName} updated to ${status}`
+        });
+        savePersistentDB(db);
+      }
+      return { success: true, id, status };
+    });
   },
 
   async getPatients(): Promise<Patient[]> {
-    return fetchWithFallback('/api/doctor/patients', undefined, SEED_PATIENTS);
+    return fetchWithFallback('/api/doctor/patients', undefined, () => getPersistentDB().patients);
   },
 
   async createPrescription(prescription: Partial<Prescription>): Promise<Prescription> {
@@ -426,12 +505,27 @@ export const hospitalApi = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newRx)
-    }, newRx);
+    }, () => {
+      const db = getPersistentDB();
+      db.prescriptions.unshift(newRx);
+      db.logs.unshift({
+        id: `log-${Date.now()}`,
+        timestamp: new Date().toISOString().replace('T', ' ').slice(0, 19),
+        user: newRx.doctorName,
+        role: 'Doctor',
+        action: `Issued digital Rx #${newRx.id} for ${newRx.patientName}`
+      });
+      savePersistentDB(db);
+      return newRx;
+    });
   },
 
   // Patient
   async getPatientAppointments(): Promise<Appointment[]> {
-    return fetchWithFallback('/api/patient/appointments', undefined, SEED_APPOINTMENTS.filter(a => a.patientName === 'Johnathan Doe'));
+    return fetchWithFallback('/api/patient/appointments', undefined, () => {
+      const db = getPersistentDB();
+      return db.appointments.filter(a => a.patientName === 'Johnathan Doe');
+    });
   },
 
   async bookAppointment(appointment: Partial<Appointment>): Promise<Appointment> {
@@ -453,15 +547,21 @@ export const hospitalApi = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newApt)
-    }, newApt);
+    }, () => {
+      const db = getPersistentDB();
+      db.appointments.unshift(newApt);
+      db.stats.todayAppointments += 1;
+      savePersistentDB(db);
+      return newApt;
+    });
   },
 
   async getPrescriptions(): Promise<Prescription[]> {
-    return fetchWithFallback('/api/patient/prescriptions', undefined, SEED_PRESCRIPTIONS);
+    return fetchWithFallback('/api/patient/prescriptions', undefined, () => getPersistentDB().prescriptions);
   },
 
   async getInvoices(): Promise<Invoice[]> {
-    return fetchWithFallback('/api/patient/bills', undefined, SEED_INVOICES);
+    return fetchWithFallback('/api/patient/bills', undefined, () => getPersistentDB().invoices);
   },
 
   async payInvoice(id: string, method: string) {
@@ -469,12 +569,22 @@ export const hospitalApi = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ method })
-    }, { success: true, id, status: 'Paid' });
+    }, () => {
+      const db = getPersistentDB();
+      const inv = db.invoices.find(i => i.id === id);
+      if (inv) {
+        inv.status = 'Paid';
+        inv.paid = inv.amount;
+        inv.method = method || 'Online Payment';
+        savePersistentDB(db);
+      }
+      return { success: true, id, status: 'Paid' };
+    });
   },
 
   // Receptionist
   async getQueue(): Promise<QueueItem[]> {
-    return fetchWithFallback('/api/reception/queue', undefined, SEED_QUEUE);
+    return fetchWithFallback('/api/reception/queue', undefined, () => getPersistentDB().queue);
   },
 
   async updateQueueStatus(token: string, status: QueueItem['status']) {
@@ -482,12 +592,35 @@ export const hospitalApi = {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status })
-    }, { success: true, token, status });
+    }, () => {
+      const db = getPersistentDB();
+      const item = db.queue.find(q => q.token === token);
+      if (item) {
+        item.status = status;
+        // Synchronize corresponding appointment status
+        const apt = db.appointments.find(a => a.patientId === item.patientId || a.patientName === item.patientName);
+        if (apt) {
+          if (status === 'With Doctor') apt.status = 'In Consultation';
+          if (status === 'Completed') apt.status = 'Completed';
+          if (status === 'Waiting') apt.status = 'Waiting';
+        }
+        db.logs.unshift({
+          id: `log-${Date.now()}`,
+          timestamp: new Date().toISOString().replace('T', ' ').slice(0, 19),
+          user: 'Marcus Sterling',
+          role: 'Receptionist',
+          action: `Queue Token ${token} (${item.patientName}) updated to ${status}`
+        });
+        savePersistentDB(db);
+      }
+      return { success: true, token, status };
+    });
   },
 
   async registerPatient(data: any): Promise<{ patient: Patient; queue: QueueItem }> {
+    const patientId = `P-${Date.now().toString().slice(-5)}`;
     const patient: Patient = {
-      id: `P-${Date.now().toString().slice(-5)}`,
+      id: patientId,
       name: data.name,
       age: Number(data.age) || 30,
       gender: data.gender || 'Other',
@@ -499,21 +632,58 @@ export const hospitalApi = {
       lastVisit: new Date().toISOString().slice(0, 10),
       totalVisits: 1
     };
+
+    const cleanDocName = (data.assignedDoctor || 'Dr. Sarah Jenkins').split(' (')[0];
+    const cleanDept = (data.assignedDoctor || 'Cardiology').split('(')[1]?.replace(')', '') || 'Cardiology';
+
     const queue: QueueItem = {
       token: `T-${Math.floor(Math.random() * 800 + 100)}`,
       patientName: patient.name,
       patientId: patient.id,
-      doctorName: data.assignedDoctor || 'Dr. Sarah Jenkins',
-      room: data.assignedRoom || 'OPD-304',
+      doctorName: cleanDocName,
+      room: data.assignedRoom || (cleanDocName.includes('Sarah') ? 'OPD-304' : 'OPD-210'),
       status: 'Waiting',
       checkInTime: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       priority: data.priority || 'Normal'
     };
+
+    // Also automatically create an appointment for the assigned Doctor!
+    const newAppointment: Appointment = {
+      id: `apt-${Date.now().toString().slice(-4)}`,
+      patientName: patient.name,
+      patientId: patient.id,
+      doctorName: cleanDocName,
+      department: cleanDept,
+      date: new Date().toISOString().slice(0, 10),
+      time: queue.checkInTime,
+      room: queue.room,
+      type: 'Walk-in Consultation',
+      status: 'Waiting',
+      fee: 120,
+      symptoms: data.priority === 'Emergency' ? 'Emergency walk-in patient' : 'Walk-in OPD patient consultation'
+    };
+
     return fetchWithFallback('/api/reception/register-patient', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
-    }, { patient, queue });
+    }, () => {
+      const db = getPersistentDB();
+      db.patients.unshift(patient);
+      db.queue.unshift(queue);
+      db.appointments.unshift(newAppointment);
+      db.stats.totalPatients += 1;
+      db.stats.todayAppointments += 1;
+      db.logs.unshift({
+        id: `log-${Date.now()}`,
+        timestamp: new Date().toISOString().replace('T', ' ').slice(0, 19),
+        user: 'Marcus Sterling',
+        role: 'Receptionist',
+        action: `Registered walk-in patient ${patient.name} (${queue.token}) assigned to ${cleanDocName}`
+      });
+      savePersistentDB(db);
+      return { patient, queue };
+    });
   },
 
   async createInvoice(invoice: Partial<Invoice>): Promise<Invoice> {
@@ -532,6 +702,11 @@ export const hospitalApi = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newInv)
-    }, newInv);
+    }, () => {
+      const db = getPersistentDB();
+      db.invoices.unshift(newInv);
+      savePersistentDB(db);
+      return newInv;
+    });
   }
 };

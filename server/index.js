@@ -259,17 +259,36 @@ app.post('/api/reception/register-patient', (req, res) => {
 
   // Add to queue automatically
   const token = `T-${100 + db.queue.length + 1}`;
+  const cleanDoc = (req.body.assignedDoctor || 'Dr. Sarah Jenkins').split(' (')[0];
+  const cleanDept = (req.body.assignedDoctor || 'Cardiology').split('(')[1]?.replace(')', '') || 'Cardiology';
   const queueEntry = {
     token,
     patientName: newPatient.name,
     patientId: newPatient.id,
-    doctorName: req.body.assignedDoctor || 'Dr. Sarah Jenkins',
+    doctorName: cleanDoc,
     room: req.body.assignedRoom || 'OPD-304',
     status: 'Waiting',
     checkInTime: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     priority: req.body.priority || 'Normal'
   };
   db.queue.push(queueEntry);
+
+  // Also add appointment for the doctor
+  const newAppointment = {
+    id: `apt-${Date.now().toString().slice(-4)}`,
+    patientName: newPatient.name,
+    patientId: newPatient.id,
+    doctorName: cleanDoc,
+    department: cleanDept,
+    date: new Date().toISOString().slice(0, 10),
+    time: queueEntry.checkInTime,
+    room: queueEntry.room,
+    type: 'Walk-in Consultation',
+    status: 'Waiting',
+    fee: 120,
+    symptoms: req.body.priority === 'Emergency' ? 'Emergency walk-in' : 'Walk-in OPD patient'
+  };
+  db.appointments.unshift(newAppointment);
 
   writeDB(db);
   res.status(201).json({ patient: newPatient, queue: queueEntry });
