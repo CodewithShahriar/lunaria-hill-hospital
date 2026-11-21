@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { AppointmentForm } from '@/components/AppointmentForm';
 import { Card, CardContent } from '@/components/ui/card';
+import { ScrollReveal, ScrollTextReveal } from '@/components/ScrollReveal';
 
 const Index = () => {
   const [appointmentDialogOpen, setAppointmentDialogOpen] = useState(false);
@@ -121,85 +122,93 @@ const Index = () => {
 
           <div className="container mx-auto px-4 relative z-10 pt-4 lg:pt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden shadow-2xl">
-            {/* 1. Working Time */}
-            <div className="bg-[#169fe6] text-white p-6 lg:p-8 flex flex-col justify-between min-h-[260px]">
-              <div>
-                <h3 className="text-lg font-bold mb-4 font-display">Working Time</h3>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex justify-between border-b border-white/20 pb-1.5">
-                    <span>Mon – Wed</span>
-                    <span className="font-bold">9:00 AM - 7:00 PM</span>
-                  </li>
-                  <li className="flex justify-between border-b border-white/20 pb-1.5">
-                    <span>Thursday</span>
-                    <span className="font-bold">9:00 AM - 6:30 PM</span>
-                  </li>
-                  <li className="flex justify-between border-b border-white/20 pb-1.5">
-                    <span>Friday</span>
-                    <span className="font-bold">9:00 AM - 6:00 PM</span>
-                  </li>
-                  <li className="flex justify-between pt-0.5">
-                    <span>Sunday</span>
-                    <span className="font-bold">CLOSED</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* 2. Doctors Timetable */}
-            <div className="bg-[#0c8fd3] text-white p-6 lg:p-8 flex flex-col justify-between min-h-[260px]">
-              <div>
-                <h3 className="text-lg font-bold mb-3 font-display">Doctors Timetable</h3>
-                <p className="text-sm mb-6 leading-relaxed text-white/95">
-                  Check our weekly timetable to see when each doctor is available. Planning ahead helps you avoid long waits and ensures you meet the right specialist at the right time for your medical needs.
-                </p>
-              </div>
-              <div>
-                <Link to="/doctors">
-                  <button className="bg-white text-[#0c8fd3] font-semibold text-sm px-4 py-2 rounded hover:bg-slate-50 transition-colors shadow-sm">
-                    View Timetable
-                  </button>
-                </Link>
-              </div>
-            </div>
-
-            {/* 3. Appointments */}
-            <div className="bg-[#0c7cc6] text-white p-6 lg:p-8 flex flex-col justify-between min-h-[260px]">
-              <div>
-                <h3 className="text-lg font-bold mb-3 font-display">Appointments</h3>
-                <p className="text-sm mb-6 leading-relaxed text-white/95">
-                  Book your appointment online or by phone at your convenience. We offer flexible scheduling options to fit your routine and reduce waiting times. Secure your spot early for faster, more efficient care.
-                </p>
-              </div>
-              <div>
-                <button 
-                  onClick={() => handleBookAppointment()}
-                  className="bg-white text-[#0c7cc6] font-semibold text-sm px-4 py-2 rounded hover:bg-slate-50 transition-colors shadow-sm"
-                >
-                  Make an Appointment
-                </button>
-              </div>
-            </div>
-
-            {/* 4. Emergency Cases */}
-            <div className="bg-[#0c69b5] text-white p-6 lg:p-8 flex flex-col justify-between min-h-[260px]">
-              <div>
-                <h3 className="text-lg font-bold mb-3 font-display">Emergency Cases</h3>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xl">📞</span>
-                  <a href="tel:18001234560" className="text-2xl font-extrabold hover:underline font-display">
-                    1-800-123-4560
-                  </a>
+              {/* 1. Working Time (Reveals from Left) */}
+              <ScrollReveal direction="left" delay={0} className="h-full">
+                <div className="bg-[#169fe6] text-white p-6 lg:p-8 flex flex-col justify-between h-full min-h-[260px]">
+                  <div>
+                    <h3 className="text-lg font-bold mb-4 font-display">Working Time</h3>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex justify-between border-b border-white/20 pb-1.5">
+                        <span>Mon – Wed</span>
+                        <span className="font-bold">9:00 AM - 7:00 PM</span>
+                      </li>
+                      <li className="flex justify-between border-b border-white/20 pb-1.5">
+                        <span>Thursday</span>
+                        <span className="font-bold">9:00 AM - 6:30 PM</span>
+                      </li>
+                      <li className="flex justify-between border-b border-white/20 pb-1.5">
+                        <span>Friday</span>
+                        <span className="font-bold">9:00 AM - 6:00 PM</span>
+                      </li>
+                      <li className="flex justify-between pt-0.5">
+                        <span>Sunday</span>
+                        <span className="font-bold">CLOSED</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <p className="text-sm leading-relaxed text-white/95">
-                  For urgent medical assistance, contact our 24/7 emergency line. Our experienced team is ready to help at any time.
-                </p>
-              </div>
+              </ScrollReveal>
+
+              {/* 2. Doctors Timetable (Reveals from Left) */}
+              <ScrollReveal direction="left" delay={120} className="h-full">
+                <div className="bg-[#0c8fd3] text-white p-6 lg:p-8 flex flex-col justify-between h-full min-h-[260px]">
+                  <div>
+                    <h3 className="text-lg font-bold mb-3 font-display">Doctors Timetable</h3>
+                    <p className="text-sm mb-6 leading-relaxed text-white/95">
+                      Check our weekly timetable to see when each doctor is available. Planning ahead helps you avoid long waits and ensures you meet the right specialist at the right time for your medical needs.
+                    </p>
+                  </div>
+                  <div>
+                    <Link to="/doctors">
+                      <button className="bg-white text-[#0c8fd3] font-semibold text-sm px-4 py-2 rounded hover:bg-slate-50 transition-colors shadow-sm">
+                        View Timetable
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* 3. Appointments (Reveals from Right) */}
+              <ScrollReveal direction="right" delay={120} className="h-full">
+                <div className="bg-[#0c7cc6] text-white p-6 lg:p-8 flex flex-col justify-between h-full min-h-[260px]">
+                  <div>
+                    <h3 className="text-lg font-bold mb-3 font-display">Appointments</h3>
+                    <p className="text-sm mb-6 leading-relaxed text-white/95">
+                      Book your appointment online or by phone at your convenience. We offer flexible scheduling options to fit your routine and reduce waiting times. Secure your spot early for faster, more efficient care.
+                    </p>
+                  </div>
+                  <div>
+                    <button 
+                      onClick={() => handleBookAppointment()}
+                      className="bg-white text-[#0c7cc6] font-semibold text-sm px-4 py-2 rounded hover:bg-slate-50 transition-colors shadow-sm"
+                    >
+                      Make an Appointment
+                    </button>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* 4. Emergency Cases (Reveals from Right) */}
+              <ScrollReveal direction="right" delay={0} className="h-full">
+                <div className="bg-[#0c69b5] text-white p-6 lg:p-8 flex flex-col justify-between h-full min-h-[260px]">
+                  <div>
+                    <h3 className="text-lg font-bold mb-3 font-display">Emergency Cases</h3>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xl">📞</span>
+                      <a href="tel:18001234560" className="text-2xl font-extrabold hover:underline font-display">
+                        1-800-123-4560
+                      </a>
+                    </div>
+                    <p className="text-sm leading-relaxed text-white/95">
+                      For urgent medical assistance, contact our 24/7 emergency line. Our experienced team is ready to help at any time.
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* 4. About Section - Complete Medical Solutions */}
       <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
@@ -212,8 +221,8 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
             
-            {/* Image Frame with Floating Experience Card */}
-            <div className="relative">
+            {/* Image Frame with Floating Experience Card (Reveals slowly from Left) */}
+            <ScrollReveal direction="left" className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-200/90 ring-1 ring-slate-100 bg-slate-100 group">
                 <img 
                   src="/clinical-heritage.jpg" 
@@ -248,20 +257,30 @@ const Index = () => {
                 <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                 <span>Zero Complication Records</span>
               </div>
-            </div>
+            </ScrollReveal>
             
-            {/* Text Information */}
-            <div className="animate-fade-in">
+            {/* Text Information (Reveals from Right with Word by Word Title) */}
+            <ScrollReveal direction="right">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-3.5 border border-primary/20">
                 <Sparkles className="w-3.5 h-3.5 text-primary" />
                 Trusted Clinical Heritage
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-4 font-sans">
-                A Recognized Leader in Exceptional Healthcare
-              </h2>
-              <p className="text-gray-600 mb-6 text-base sm:text-lg leading-relaxed font-sans">
-                At Lunaria Hill Hospital, we combine compassionate care with cutting-edge medical technology. Our approach centers on providing personalized healthcare experiences that address the unique needs of each patient.
-              </p>
+
+              <ScrollTextReveal 
+                text="A Recognized Leader in Exceptional Healthcare" 
+                direction="right" 
+                as="h2" 
+                className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-4 font-sans" 
+              />
+
+              <ScrollTextReveal 
+                text="At Lunaria Hill Hospital, we combine compassionate care with cutting-edge medical technology. Our approach centers on providing personalized healthcare experiences that address the unique needs of each patient." 
+                direction="right" 
+                as="p" 
+                className="text-gray-600 mb-6 text-base sm:text-lg leading-relaxed font-sans" 
+                staggerMs={20} 
+                baseDelayMs={200} 
+              />
               
               <div className="space-y-1.5 mb-6 font-sans">
                 <div className="flex items-start gap-3 py-1.5 px-2 rounded-xl hover:bg-slate-50/80 transition-colors">
@@ -302,14 +321,14 @@ const Index = () => {
                   </Button>
                 </Link>
               </div>
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>
       </section>
       
       {/* 5. Department Cards - Choose Department (Icon-Centric Specialized Cards) */}
-      <section className="py-20 bg-gray-50/80">
+      <section className="py-20 bg-gray-50/80 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
             <div className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-semibold tracking-wider uppercase mb-3">
@@ -360,63 +379,80 @@ const Index = () => {
                 specialists: "12 Doctors",
               },
             ].map((dept, idx) => (
-              <div 
-                key={idx} 
-                className="relative bg-gradient-to-b from-[#02316B]/[0.06] via-[#02316B]/[0.025] to-white rounded-2xl border border-[#02316B]/15 shadow-xs hover:shadow-xl hover:border-primary/50 hover:-translate-y-1.5 transition-all duration-300 p-5 group flex flex-col justify-between overflow-hidden"
+              <ScrollReveal
+                key={idx}
+                direction={idx < 3 ? 'left' : 'right'}
+                delay={idx < 3 ? idx * 140 : (idx - 3) * 140}
+                className="h-full"
               >
-                {/* Subtle top primary highlight on hover */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div 
+                  className="h-full relative bg-gradient-to-br from-[#02316B]/12 via-[#005C72]/10 to-sky-100/40 rounded-2xl border-2 border-[#02316B]/25 shadow-sm hover:shadow-2xl hover:border-primary hover:from-[#02316B]/20 hover:via-[#005C72]/15 hover:to-sky-100/70 hover:-translate-y-2 transition-all duration-300 p-5 group flex flex-col justify-between overflow-hidden"
+                >
+                  {/* Subtle top primary highlight on hover */}
+                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-secondary to-sky-400 opacity-90 group-hover:h-2 transition-all" />
 
-                <div>
-                  {/* Department Icon Header & Specialist Badge */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-white shadow-xs border border-[#02316B]/15 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
-                      <dept.icon className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
+                  <div>
+                    {/* Department Icon Header & Specialist Badge */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#02316B] to-[#005C72] text-white shadow-md flex items-center justify-center group-hover:scale-110 group-hover:shadow-primary/40 transition-all duration-300">
+                        <dept.icon className="h-6 w-6" />
+                      </div>
+                      <span className="text-[11px] font-bold text-white bg-gradient-to-r from-[#02316B] to-[#005C72] px-2.5 py-1 rounded-full shadow-xs border border-white/20">
+                        {dept.specialists}
+                      </span>
                     </div>
-                    <span className="text-[11px] font-semibold text-primary bg-white/90 border border-[#02316B]/15 group-hover:bg-primary group-hover:text-white transition-colors px-2.5 py-1 rounded-full shadow-2xs">
-                      {dept.specialists}
-                    </span>
+
+                    <div className="text-left">
+                      <h3 className="font-bold text-base text-gray-900 group-hover:text-primary transition-colors mb-1.5 font-sans">
+                        {dept.name}
+                      </h3>
+                      <p className="text-slate-700 text-xs leading-relaxed font-sans line-clamp-3">
+                        {dept.desc}
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="text-left">
-                    <h3 className="font-bold text-base text-gray-900 group-hover:text-primary transition-colors mb-1.5 font-sans">
-                      {dept.name}
-                    </h3>
-                    <p className="text-slate-600 text-xs leading-relaxed font-sans line-clamp-3">
-                      {dept.desc}
-                    </p>
+                  <div className="pt-3.5 mt-4 border-t border-[#02316B]/20">
+                    <Link to={`/doctors?department=${encodeURIComponent(dept.name)}`}>
+                      <span className="text-xs font-bold text-[#02316B] group-hover:text-[#005C72] inline-flex items-center gap-1 group-hover:translate-x-1.5 transition-all">
+                        Explore Doctors <ArrowRight className="h-3 w-3" />
+                      </span>
+                    </Link>
                   </div>
                 </div>
-
-                <div className="pt-3.5 mt-4 border-t border-[#02316B]/10">
-                  <Link to={`/doctors?department=${encodeURIComponent(dept.name)}`}>
-                    <span className="text-xs font-semibold text-primary hover:text-secondary inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                      Explore Doctors <ArrowRight className="h-3 w-3" />
-                    </span>
-                  </Link>
-                </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* 6. Highest Quality Care Section (Upgraded with Surgical Theater Image & Live Telemetry) */}
-      <section className="py-20 lg:py-24 bg-white">
+      <section className="py-20 lg:py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-12 gap-12 items-center">
-            <div className="md:col-span-6 lg:col-span-5">
+            
+            {/* Text on Left (Reveals from Left) */}
+            <ScrollReveal direction="left" className="md:col-span-6 lg:col-span-5">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-3.5 border border-primary/20">
                 <Shield className="w-3.5 h-3.5 text-primary" />
                 Highest Quality Care
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-3.5 font-sans">
-                Advanced Solutions for Complex Medical Needs
-              </h2>
-              <p className="text-slate-600 mb-5 leading-relaxed font-sans text-base">
-                Our super-specialists solve complex and rare medical conditions using research-backed protocols, 
-                minimally invasive precision tools, and collaborative multi-specialty tumor boards.
-              </p>
+
+              <ScrollTextReveal 
+                text="Advanced Solutions for Complex Medical Needs" 
+                direction="left" 
+                as="h2" 
+                className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-3.5 font-sans" 
+              />
+
+              <ScrollTextReveal 
+                text="Our super-specialists solve complex and rare medical conditions using research-backed protocols, minimally invasive precision tools, and collaborative multi-specialty tumor boards." 
+                direction="left" 
+                as="p" 
+                className="text-slate-600 mb-5 leading-relaxed font-sans text-base" 
+                staggerMs={20} 
+                baseDelayMs={200} 
+              />
               
               <div className="space-y-2 mb-6 font-sans">
                 <div className="flex items-center gap-3 text-slate-800 text-sm font-medium py-1.5 px-2 rounded-lg hover:bg-slate-50 transition-colors">
@@ -449,9 +485,10 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
-            </div>
+            </ScrollReveal>
             
-            <div className="md:col-span-6 lg:col-span-7">
+            {/* Image on Right (Reveals slowly from Right) */}
+            <ScrollReveal direction="right" className="md:col-span-6 lg:col-span-7">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-200/90 ring-1 ring-slate-100 bg-slate-100 group">
                 <img
                   src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
@@ -481,7 +518,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -494,8 +531,8 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             
-            {/* Visual with Stat Badge */}
-            <div className="hidden lg:block relative">
+            {/* Visual with Stat Badge (Reveals slowly from Left) */}
+            <ScrollReveal direction="left" className="hidden lg:block relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 ring-1 ring-white/10 bg-slate-900">
                 <img 
                   src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
@@ -508,7 +545,7 @@ const Index = () => {
               {/* Floating Counter Card */}
               <div className="absolute -bottom-6 -left-6 bg-slate-900/95 backdrop-blur-md rounded-xl p-5 shadow-2xl border border-slate-700/80 w-72">
                 <div className="flex items-center gap-3.5 mb-2">
-                  <div className="bg-blue-600/20 text-blue-400 p-2.5 rounded-lg border border-blue-500/30">
+                  <div className="bg-primary/30 text-sky-400 p-2.5 rounded-lg border border-primary/40">
                     <Users className="h-6 w-6" />
                   </div>
                   <div>
@@ -520,32 +557,42 @@ const Index = () => {
                   Patients successfully treated each year with innovative clinical therapies.
                 </p>
               </div>
-            </div>
+            </ScrollReveal>
 
-            {/* Content Text */}
-            <div>
+            {/* Content Text (Reveals from Right with Word by Word) */}
+            <ScrollReveal direction="right">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-sky-300 text-xs font-semibold uppercase tracking-wider mb-4 border border-white/10">
                 <Zap className="w-3.5 h-3.5 text-sky-400" />
                 Cutting-Edge Protocols
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight font-sans leading-tight">
-                Pioneering Medical Excellence with Compassionate Touch
-              </h2>
-              <p className="text-slate-300 text-base md:text-lg mb-8 leading-relaxed font-sans">
-                We combine traditional compassionate medicine with high-tech diagnostic advancements to ensure precision treatment, minimal recovery times, and superior long-term clinical outcomes.
-              </p>
+
+              <ScrollTextReveal 
+                text="Pioneering Medical Excellence with Compassionate Touch" 
+                direction="right" 
+                as="h2" 
+                className="text-3xl md:text-4xl font-bold mb-6 tracking-tight font-sans leading-tight" 
+              />
+
+              <ScrollTextReveal 
+                text="We combine traditional compassionate medicine with high-tech diagnostic advancements to ensure precision treatment, minimal recovery times, and superior long-term clinical outcomes." 
+                direction="right" 
+                as="p" 
+                className="text-slate-300 text-base md:text-lg mb-8 leading-relaxed font-sans" 
+                staggerMs={20} 
+                baseDelayMs={200} 
+              />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 font-sans">
-                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 hover:border-blue-500/40 transition-colors">
-                  <div className="bg-blue-600/20 text-blue-400 rounded-lg w-10 h-10 flex items-center justify-center mb-3">
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 hover:border-primary/40 transition-colors">
+                  <div className="bg-primary/30 text-sky-400 rounded-lg w-10 h-10 flex items-center justify-center mb-3">
                     <Shield className="h-5 w-5" />
                   </div>
                   <h3 className="text-base font-bold mb-1">Evidence-Based Medicine</h3>
-                  <p className="text-slate-400 text-xs leading-relaxed">All procedures and prescriptions are validated by rigorous peer-reviewed clinical research.</p>
+                  <p className="text-slate-400 text-xs leading-relaxed">All procedures and prescriptions are validated by rigorous clinical research.</p>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 hover:border-blue-500/40 transition-colors">
-                  <div className="bg-blue-600/20 text-blue-400 rounded-lg w-10 h-10 flex items-center justify-center mb-3">
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 hover:border-primary/40 transition-colors">
+                  <div className="bg-primary/30 text-sky-400 rounded-lg w-10 h-10 flex items-center justify-center mb-3">
                     <Zap className="h-5 w-5" />
                   </div>
                   <h3 className="text-base font-bold mb-1">Advanced Technology</h3>
@@ -561,7 +608,7 @@ const Index = () => {
                 Schedule a Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>
@@ -580,12 +627,20 @@ const Index = () => {
               <Sparkles className="w-3.5 h-3.5 text-primary" />
               Comprehensive Clinical Ecosystem
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight font-sans mb-3">
-              Total Health Care Solutions
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg font-sans leading-relaxed">
-              Integrated specialty care, advanced diagnostics, and dedicated patient services engineered for clinical excellence.
-            </p>
+            <ScrollTextReveal
+              text="Total Health Care Solutions"
+              direction="left"
+              as="h2"
+              className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight font-sans mb-3"
+            />
+            <ScrollTextReveal
+              text="Integrated specialty care, advanced diagnostics, and dedicated patient services engineered for clinical excellence."
+              direction="left"
+              as="p"
+              className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg font-sans leading-relaxed"
+              staggerMs={20}
+              baseDelayMs={180}
+            />
           </div>
 
           {/* Grid Layout */}
@@ -597,152 +652,160 @@ const Index = () => {
                 {
                   icon: Stethoscope,
                   title: "Board-Certified Faculty",
-                  desc: "Over 150+ internationally trained department heads, super-specialists, and diagnostic clinicians providing multidisciplinary care.",
+                  desc: "Over 150+ internationally trained specialists providing multidisciplinary diagnostic care.",
                   badge: "150+ Specialists",
                   highlight: "Multidisciplinary Care"
                 },
                 {
                   icon: Microscope,
                   title: "High-Precision Diagnostics",
-                  desc: "Ultra-high-definition 3T MRI, low-dose dual-source CT scans, and fully automated molecular pathology laboratories.",
+                  desc: "Ultra-high-definition 3T MRI, low-dose CT scans, and automated molecular pathology labs.",
                   badge: "3T MRI & AI Labs",
                   highlight: "Same-Day Lab Reports"
                 },
                 {
                   icon: Hospital,
                   title: "Robotic Operating Suites",
-                  desc: "Class-100 laminar airflow theaters with AI-guided laparoscopic arms, ensuring micro-precision and zero-infection standards.",
+                  desc: "Class-100 sterile laminar airflow theaters with AI-guided robotic surgical arms.",
                   badge: "JCI & NABH Gold",
                   highlight: "Zero-Infection Protocol"
                 },
                 {
                   icon: Syringe,
                   title: "Specialized Clinical Wings",
-                  desc: "Over 40 focused sub-specialty clinics from interventional cardiology to orthopedic reconstructive medicine.",
+                  desc: "Over 40 focused sub-specialty clinics from cardiology to reconstructive orthopedics.",
                   badge: "40+ Clinical Wings",
                   highlight: "Comprehensive OPD"
                 },
                 {
                   icon: MessageCircleHeart,
                   title: "Patient Concierge & Care",
-                  desc: "Personalized post-operative recovery coaching, confidential counseling, and transparent family health roadmaps.",
+                  desc: "Personalized recovery coaching, dedicated attendants, and transparent family health plans.",
                   badge: "100% Confidential",
                   highlight: "Dedicated Attendant"
                 },
                 {
                   icon: Ambulance,
                   title: "Emergency & Trauma Triage",
-                  desc: "Level-1 emergency department with mobile ICU ambulances and sub-3-minute acute trauma response 24 hours a day.",
+                  desc: "Level-1 emergency department with mobile ICU ambulances and sub-3-minute rapid response.",
                   badge: "24/7 Rapid Triage",
                   highlight: "Sub-3-Min Response"
                 }
               ].map((item, index) => {
                 const IconComp = item.icon;
                 return (
-                  <div
+                  <ScrollReveal
                     key={index}
-                    className="relative bg-white p-6 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group overflow-hidden"
+                    direction={index % 2 === 0 ? 'left' : 'right'}
+                    delay={Math.floor(index / 2) * 120}
+                    className="h-full"
                   >
-                    {/* Top gradient highlight on hover */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div
+                      className="h-full relative bg-white p-5 rounded-2xl border-2 border-primary/30 shadow-sm hover:shadow-xl hover:border-primary hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group overflow-hidden"
+                    >
+                      {/* Top gradient highlight on hover */}
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                    <div>
-                      <div className="flex items-center justify-between gap-3 mb-4">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/15 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-xs">
-                          <IconComp className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
+                      <div>
+                        <div className="flex items-center justify-between gap-3 mb-3.5">
+                          <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-[#02316B] to-[#005C72] text-white shadow-md flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <IconComp className="w-5 h-5" />
+                          </div>
+                          <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 group-hover:bg-primary/10 group-hover:text-primary transition-colors border border-slate-200/70">
+                            {item.badge}
+                          </span>
                         </div>
-                        <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 group-hover:bg-primary/10 group-hover:text-primary transition-colors border border-slate-200/70">
-                          {item.badge}
-                        </span>
+                        <h3 className="text-base font-bold text-gray-900 mb-1.5 font-sans group-hover:text-primary transition-colors">
+                          {item.title}
+                        </h3>
+                        <p className="text-xs text-gray-600 leading-relaxed font-sans line-clamp-2">
+                          {item.desc}
+                        </p>
                       </div>
-                      <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 font-sans group-hover:text-primary transition-colors">
-                        {item.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-sans line-clamp-3">
-                        {item.desc}
-                      </p>
-                    </div>
 
-                    <div className="pt-3.5 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-primary group-hover:text-secondary transition-colors">
-                      <span className="inline-flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                        {item.highlight}
-                      </span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      <div className="pt-3 mt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-primary group-hover:text-secondary transition-colors">
+                        <span className="inline-flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+                          {item.highlight}
+                        </span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
-                  </div>
+                  </ScrollReveal>
                 );
               })}
             </div>
 
             {/* Right: Master Schedule & Live Opening Hours Card */}
-            <div className="bg-gradient-to-br from-[#02316B] via-[#012552] to-[#005C72] text-white p-7 sm:p-8 rounded-2xl shadow-xl flex flex-col justify-between border border-white/10 relative overflow-hidden">
-              {/* Background ambient accents */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-2xl pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary/20 rounded-full blur-2xl pointer-events-none" />
+            <ScrollReveal direction="right" delay={150} className="h-full">
+              <div className="h-full bg-gradient-to-br from-[#02316B] via-[#012552] to-[#005C72] text-white p-7 sm:p-8 rounded-2xl shadow-xl flex flex-col justify-between border border-white/10 relative overflow-hidden">
+                {/* Background ambient accents */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary/20 rounded-full blur-2xl pointer-events-none" />
 
-              <div className="relative z-10">
-                {/* Live Open Status Pill */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-400/30 mb-5">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-                  </span>
-                  <span>Currently Open • Walk-ins Welcome</span>
-                </div>
+                <div className="relative z-10">
+                  {/* Live Open Status Pill */}
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-400/30 mb-5">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                    </span>
+                    <span>Currently Open • Walk-ins Welcome</span>
+                  </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold mb-2 font-sans">Hospital Clinical Hours</h3>
-                <p className="text-xs sm:text-sm mb-6 leading-relaxed text-blue-100 font-sans">
-                  Outpatient consultations, routine diagnostic tests, and specialist clinic timings.
-                </p>
-
-                {/* Timetable Rows */}
-                <div className="space-y-2 text-xs sm:text-sm border-t border-white/20 pt-4">
-                  <div className="flex justify-between items-center py-2 px-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    <span className="text-blue-100 font-medium">Mon – Wed</span>
-                    <span className="font-bold text-white">9:00 AM – 7:00 PM</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 px-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    <span className="text-blue-100 font-medium">Thursday</span>
-                    <span className="font-bold text-white">9:00 AM – 6:30 PM</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 px-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    <span className="text-blue-100 font-medium">Friday</span>
-                    <span className="font-bold text-white">9:00 AM – 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 px-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
-                    <span className="text-blue-100 font-medium">Saturday</span>
-                    <span className="font-bold text-white">9:00 AM – 4:00 PM</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 px-3 rounded-xl bg-emerald-500/20 border border-emerald-400/30">
-                    <span className="text-emerald-200 font-semibold">Sunday & Holidays</span>
-                    <span className="font-bold text-emerald-300">24/7 Emergency & ICU</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Card Action: Personalized Health Plan */}
-              <div className="relative z-10 mt-7 pt-5 border-t border-white/20">
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-3.5 border border-white/15 mb-4">
-                  <h4 className="font-bold mb-1 text-xs sm:text-sm font-sans text-white flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-amber-300" />
-                    Personal Health Consultation
-                  </h4>
-                  <p className="text-xs text-blue-100 leading-relaxed font-sans">
-                    Get customized wellness packages tailored to your age, clinical history, and preventive goals.
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2 font-sans">Hospital Clinical Hours</h3>
+                  <p className="text-xs sm:text-sm mb-6 leading-relaxed text-blue-100 font-sans">
+                    Outpatient consultations, routine diagnostic tests, and specialist clinic timings.
                   </p>
+
+                  {/* Timetable Rows */}
+                  <div className="space-y-2 text-xs sm:text-sm border-t border-white/20 pt-4">
+                    <div className="flex justify-between items-center py-2 px-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                      <span className="text-blue-100 font-medium">Mon – Wed</span>
+                      <span className="font-bold text-white">9:00 AM – 7:00 PM</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 px-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                      <span className="text-blue-100 font-medium">Thursday</span>
+                      <span className="font-bold text-white">9:00 AM – 6:30 PM</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 px-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                      <span className="text-blue-100 font-medium">Friday</span>
+                      <span className="font-bold text-white">9:00 AM – 6:00 PM</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 px-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                      <span className="text-blue-100 font-medium">Saturday</span>
+                      <span className="font-bold text-white">9:00 AM – 4:00 PM</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2 px-3 rounded-xl bg-emerald-500/20 border border-emerald-400/30">
+                      <span className="text-emerald-200 font-semibold">Sunday & Holidays</span>
+                      <span className="font-bold text-emerald-300">24/7 Emergency & ICU</span>
+                    </div>
+                  </div>
                 </div>
 
-                <Button 
-                  onClick={() => handleBookAppointment()}
-                  className="w-full bg-white text-[#02316B] hover:bg-slate-100 font-bold py-3 rounded-xl shadow-lg text-xs sm:text-sm flex items-center justify-center gap-2 transition-all hover:shadow-xl hover:scale-[1.01]"
-                >
-                  <Calendar className="w-4 h-4 text-[#02316B]" />
-                  <span>Book Consultation Plan</span>
-                  <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                </Button>
+                {/* Bottom Card Action: Personalized Health Plan */}
+                <div className="relative z-10 mt-7 pt-5 border-t border-white/20">
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-3.5 border border-white/15 mb-4">
+                    <h4 className="font-bold mb-1 text-xs sm:text-sm font-sans text-white flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-amber-300" />
+                      Personal Health Consultation
+                    </h4>
+                    <p className="text-xs text-blue-100 leading-relaxed font-sans">
+                      Get customized wellness packages tailored to your age, clinical history, and preventive goals.
+                    </p>
+                  </div>
+
+                  <Button 
+                    onClick={() => handleBookAppointment()}
+                    className="w-full bg-white text-[#02316B] hover:bg-slate-100 font-bold py-3 rounded-xl shadow-lg text-xs sm:text-sm flex items-center justify-center gap-2 transition-all hover:shadow-xl hover:scale-[1.01]"
+                  >
+                    <Calendar className="w-4 h-4 text-[#02316B]" />
+                    <span>Book Consultation Plan</span>
+                    <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                  </Button>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>
@@ -752,19 +815,27 @@ const Index = () => {
       <TestimonialsSection />
 
       {/* 10. Qualified Doctors & Medical Specialists (Dynamic Specialty Filter + Real Medical Portraits) */}
-      <section className="py-20 lg:py-24 bg-white">
+      <section className="py-20 lg:py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-100">
-              <Stethoscope className="w-3.5 h-3.5 text-blue-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-4 border border-primary/20">
+              <Stethoscope className="w-3.5 h-3.5 text-primary" />
               World-Class Faculty
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight font-sans mb-4">
-              Meet Our Medical Specialists
-            </h2>
-            <p className="text-slate-600 text-base md:text-lg font-sans">
-              Experienced, board-certified clinicians dedicated to providing compassionate, top-tier healthcare.
-            </p>
+            <ScrollTextReveal
+              text="Meet Our Medical Specialists"
+              direction="left"
+              as="h2"
+              className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight font-sans mb-4"
+            />
+            <ScrollTextReveal
+              text="Experienced, board-certified clinicians dedicated to providing compassionate, top-tier healthcare."
+              direction="left"
+              as="p"
+              className="text-slate-600 text-base md:text-lg font-sans"
+              staggerMs={20}
+              baseDelayMs={180}
+            />
           </div>
 
           {/* Dynamic Specialty Filter Tabs */}
@@ -775,7 +846,7 @@ const Index = () => {
                 onClick={() => setSelectedSpecialtyTab(tab)}
                 className={`px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 ${
                   selectedSpecialtyTab === tab
-                    ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20'
+                    ? 'bg-primary text-white shadow-md shadow-primary/20'
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200/80'
                 }`}
               >
@@ -786,76 +857,82 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredDoctors.map((doctor, idx) => (
-              <div 
-                key={idx} 
-                className="bg-white rounded-2xl overflow-hidden border-2 border-slate-200/90 shadow-sm hover:shadow-xl hover:border-blue-500 transition-all duration-300 group flex flex-col justify-between"
+              <ScrollReveal
+                key={idx}
+                direction={idx < 2 ? 'left' : 'right'}
+                delay={idx < 2 ? idx * 140 : (idx - 2) * 140}
+                className="h-full"
               >
-                <div>
-                  {/* Photo container height and object-top alignment for full head and hair visibility */}
-                  <div className="relative overflow-hidden h-80 bg-slate-100">
-                    <img
-                      src={doctor.image}
-                      alt={doctor.name}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                      onError={(e) => {
-                        e.currentTarget.src = "/doctor-avatar.svg";
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/15 to-transparent"></div>
-                    
-                    {/* Rating Pill */}
-                    <div className="absolute top-3 right-3 glass-card px-2.5 py-1 rounded-full text-xs font-bold text-slate-800 flex items-center gap-1 shadow-sm">
-                      <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                      <span>{doctor.rating}</span>
-                    </div>
+                <div 
+                  className="h-full bg-white rounded-2xl overflow-hidden border-2 border-slate-200/90 shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-300 group flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Photo container height and object-top alignment for full head and hair visibility */}
+                    <div className="relative overflow-hidden h-80 bg-slate-100">
+                      <img
+                        src={doctor.image}
+                        alt={doctor.name}
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          e.currentTarget.src = "/doctor-avatar.svg";
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/15 to-transparent"></div>
+                      
+                      {/* Rating Pill */}
+                      <div className="absolute top-3 right-3 glass-card px-2.5 py-1 rounded-full text-xs font-bold text-slate-800 flex items-center gap-1 shadow-sm">
+                        <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+                        <span>{doctor.rating}</span>
+                      </div>
 
-                    {/* Department Tag */}
-                    <div className="absolute top-3 left-3">
-                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-blue-600/90 text-white backdrop-blur-sm shadow-xs">
-                        {doctor.department}
-                      </span>
-                    </div>
-
-                    {/* Next Available Slot Pill */}
-                    <div className="absolute bottom-3 left-3 right-3 text-white">
-                      <div className="flex items-center justify-between text-[11px] bg-slate-950/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10">
-                        <span className="text-slate-300 flex items-center gap-1">
-                          <Clock className="w-3 h-3 text-emerald-400" />
-                          Next Slot:
+                      {/* Department Tag */}
+                      <div className="absolute top-3 left-3">
+                        <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-primary/90 text-white backdrop-blur-sm shadow-xs">
+                          {doctor.department}
                         </span>
-                        <span className="font-semibold text-emerald-400">{doctor.nextSlot}</span>
+                      </div>
+
+                      {/* Next Available Slot Pill */}
+                      <div className="absolute bottom-3 left-3 right-3 text-white">
+                        <div className="flex items-center justify-between text-[11px] bg-slate-950/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10">
+                          <span className="text-slate-300 flex items-center gap-1">
+                            <Clock className="w-3 h-3 text-emerald-400" />
+                            Next Slot:
+                          </span>
+                          <span className="font-semibold text-emerald-400">{doctor.nextSlot}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="p-5 text-center font-sans">
+                      <h3 className="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
+                        {doctor.name}
+                      </h3>
+                      <p className="text-xs font-semibold text-primary mb-2">{doctor.specialty}</p>
+                      <div className="flex items-center justify-center gap-2 text-[11px] text-slate-500">
+                        <span>{doctor.experience}</span>
+                        <span>•</span>
+                        <span>{doctor.reviews}</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-5 text-center font-sans">
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                      {doctor.name}
-                    </h3>
-                    <p className="text-xs font-semibold text-blue-600 mb-2">{doctor.specialty}</p>
-                    <div className="flex items-center justify-center gap-2 text-[11px] text-slate-500">
-                      <span>{doctor.experience}</span>
-                      <span>•</span>
-                      <span>{doctor.reviews}</span>
-                    </div>
+                  <div className="px-5 pb-5">
+                    <Button 
+                      className="w-full bg-primary hover:bg-primary/90 text-white rounded-lg text-sm font-semibold py-2.5 shadow-sm transition-all"
+                      onClick={() => handleBookAppointment(doctor.name)}
+                    >
+                      Book with {doctor.name.split(' ')[1]}
+                    </Button>
                   </div>
                 </div>
-
-                <div className="px-5 pb-5">
-                  <Button 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold py-2.5 shadow-sm transition-all"
-                    onClick={() => handleBookAppointment(doctor.name)}
-                  >
-                    Book with {doctor.name.split(' ')[1]}
-                  </Button>
-                </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
           <div className="text-center mt-12">
             <Link to="/doctors">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-3.5 shadow-sm transition-all hover:shadow-md">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg px-8 py-3.5 shadow-sm transition-all hover:shadow-md">
                 View All Medical Specialists
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -865,23 +942,35 @@ const Index = () => {
       </section>
 
       {/* 11. Modern Medicine & High-Tech Diagnostics (Dynamic Interactive Tech Tabs) */}
-      <section className="py-20 bg-gray-50/80">
+      <section className="py-20 bg-gray-50/80 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-100">
-                <Microscope className="w-3.5 h-3.5 text-blue-600" />
+            
+            {/* Text & Tabs on Left (Reveals from Left) */}
+            <ScrollReveal direction="left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-4 border border-primary/20">
+                <Microscope className="w-3.5 h-3.5 text-primary" />
                 Medical Innovation
               </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-4 font-sans">
-                Better Technologies for Better Healthcare
-              </h2>
-              <p className="text-gray-600 mb-8 text-base sm:text-lg leading-relaxed font-sans">
-                We've invested in the latest medical technologies to provide you with more accurate diagnoses, less invasive procedures, and faster recovery times.
-              </p>
+
+              <ScrollTextReveal 
+                text="Better Technologies for Better Healthcare" 
+                direction="left" 
+                as="h2" 
+                className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-4 font-sans" 
+              />
+
+              <ScrollTextReveal 
+                text="We have invested in the latest medical technologies to provide you with more accurate diagnoses, less invasive procedures, and faster recovery times." 
+                direction="left" 
+                as="p" 
+                className="text-gray-600 mb-8 text-base sm:text-lg leading-relaxed font-sans" 
+                staggerMs={20} 
+                baseDelayMs={200} 
+              />
               
               {/* Interactive Technology Selection Cards */}
-              <div className="space-y-4 mb-8 font-sans">
+              <div className="space-y-3.5 mb-8 font-sans">
                 {[
                   {
                     key: 'imaging' as const,
@@ -904,16 +993,16 @@ const Index = () => {
                     onClick={() => setActiveTechTab(item.key)}
                     className={`cursor-pointer p-4 rounded-xl border-2 transition-all duration-200 flex items-start gap-3.5 ${
                       activeTechTab === item.key
-                        ? 'bg-white border-blue-600 shadow-md ring-2 ring-blue-500/10'
-                        : 'bg-white/60 border-slate-200/90 hover:bg-white hover:border-slate-300'
+                        ? 'bg-white border-primary shadow-md ring-2 ring-primary/10'
+                        : 'bg-white/70 border-slate-200/90 hover:bg-white hover:border-slate-300'
                     }`}
                   >
                     <CheckCircle2 className={`h-6 w-6 flex-shrink-0 mt-0.5 ${
-                      activeTechTab === item.key ? 'text-blue-600' : 'text-slate-400'
+                      activeTechTab === item.key ? 'text-primary' : 'text-slate-400'
                     }`} />
                     <div>
                       <h3 className={`font-semibold text-base mb-1 ${
-                        activeTechTab === item.key ? 'text-blue-700' : 'text-gray-900'
+                        activeTechTab === item.key ? 'text-primary' : 'text-gray-900'
                       }`}>
                         {item.title}
                       </h3>
@@ -924,15 +1013,15 @@ const Index = () => {
               </div>
               
               <Link to="/services">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-7 py-3 text-base shadow-sm flex items-center gap-2 hover:shadow-md transition-all">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg px-7 py-3 text-base shadow-sm flex items-center gap-2 hover:shadow-md transition-all">
                   Explore Our Technology
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
-            </div>
+            </ScrollReveal>
             
-            {/* Dynamic Technology Image Display */}
-            <div className="relative">
+            {/* Dynamic Technology Image Display (Reveals slowly from Right) */}
+            <ScrollReveal direction="right" className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-200/90 bg-slate-100 min-h-[420px] group">
                 <img 
                   src={techDetails[activeTechTab].image} 
@@ -946,13 +1035,13 @@ const Index = () => {
                 
                 {/* Dynamic Content Overlay */}
                 <div className="absolute top-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-white/80 shadow-md">
-                  <p className="text-xs font-bold text-blue-700 uppercase tracking-wider mb-0.5">Active Protocol</p>
+                  <p className="text-xs font-bold text-primary uppercase tracking-wider mb-0.5">Active Protocol</p>
                   <p className="text-sm font-extrabold text-slate-900">{techDetails[activeTechTab].title}</p>
                 </div>
               </div>
 
               {/* Floating Stat Badge */}
-              <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-blue-600 text-white p-5 rounded-xl shadow-xl font-sans animate-fade-in">
+              <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-primary text-white p-5 rounded-xl shadow-xl font-sans animate-fade-in">
                 <div className="flex items-center gap-3.5">
                   <Shield className="h-10 w-10 text-white flex-shrink-0" />
                   <div>
@@ -961,25 +1050,33 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
       
       {/* 12. News & Health Blog Section (With Eye-Catching Context-Accurate Photography) */}
-      <section className="py-20 lg:py-24 bg-white">
+      <section className="py-20 lg:py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-4 border border-blue-100">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-4 border border-primary/20">
+              <Sparkles className="w-3.5 h-3.5 text-primary" />
               Latest Articles & Insights
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight font-sans mb-4">
-              Health Insights & Hospital Updates
-            </h2>
-            <p className="text-slate-600 text-base md:text-lg font-sans">
-              Doctor-reviewed wellness advice, preventive care tips, and recent medical breakthroughs.
-            </p>
+            <ScrollTextReveal
+              text="Health Insights & Hospital Updates"
+              direction="left"
+              as="h2"
+              className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight font-sans mb-4"
+            />
+            <ScrollTextReveal
+              text="Doctor-reviewed wellness advice, preventive care tips, and recent medical breakthroughs."
+              direction="left"
+              as="p"
+              className="text-slate-600 text-base md:text-lg font-sans"
+              staggerMs={20}
+              baseDelayMs={180}
+            />
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1009,50 +1106,53 @@ const Index = () => {
                 image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               }
             ].map((article, idx) => (
-              <Card 
-                key={idx} 
-                className="overflow-hidden border-2 border-slate-200/90 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-500 transition-all duration-300 flex flex-col justify-between group"
+              <ScrollReveal
+                key={idx}
+                direction={idx < 2 ? 'left' : 'right'}
+                delay={idx * 140}
+                className="h-full"
               >
-                <div>
-                  <div className="relative h-56 overflow-hidden bg-slate-100">
-                    <img 
-                      src={article.image} 
-                      alt={article.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-md text-[11px] font-bold text-blue-700 shadow-sm border border-slate-200">
-                      {article.category}
+                <Card 
+                  className="h-full overflow-hidden border-2 border-slate-200/90 rounded-2xl shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-300 flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="relative h-56 overflow-hidden bg-slate-100">
+                      <img 
+                        src={article.image} 
+                        alt={article.title} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-md text-[11px] font-bold text-primary shadow-sm border border-slate-200">
+                        {article.category}
+                      </div>
                     </div>
+                    <CardContent className="p-6 font-sans">
+                      <div className="flex items-center justify-between text-xs text-slate-400 mb-2">
+                        <span>{article.date}</span>
+                        <span>{article.readTime}</span>
+                      </div>
+                      <h3 className="text-lg font-bold text-slate-900 mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                        {article.title}
+                      </h3>
+                      <p className="text-slate-500 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
+                        {article.excerpt}
+                      </p>
+                    </CardContent>
                   </div>
-                  <CardContent className="p-6 font-sans">
-                    <div className="flex items-center justify-between text-xs text-slate-400 mb-2">
-                      <span>{article.date}</span>
-                      <span>{article.readTime}</span>
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 line-clamp-2 hover:text-blue-600 transition-colors">
-                      {article.title}
-                    </h3>
-                    <p className="text-slate-500 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
-                      {article.excerpt}
-                    </p>
-                  </CardContent>
-                </div>
 
-                <div className="px-6 pb-6 pt-0">
-                  <Link to="/blog">
-                    <Button variant="ghost" className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 font-semibold text-xs p-0 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                      Read Full Article
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Button>
-                  </Link>
-                </div>
-              </Card>
+                  <div className="p-6 pt-0 mt-auto">
+                    <span className="text-xs font-bold text-primary group-hover:text-secondary inline-flex items-center gap-1 group-hover:translate-x-1.5 transition-all">
+                      Read Full Clinical Article <ArrowRight className="h-3 w-3" />
+                    </span>
+                  </div>
+                </Card>
+              </ScrollReveal>
             ))}
           </div>
           
           <div className="text-center mt-12">
             <Link to="/blog">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg px-8 py-3.5 shadow-sm transition-all hover:shadow-md">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg px-8 py-3.5 shadow-sm transition-all hover:shadow-md">
                 Browse All Health Articles
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>

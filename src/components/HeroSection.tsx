@@ -85,13 +85,13 @@ const HeroSection = () => {
             {/* Title & Subtitle with Single Word-by-Word Sequential Reveal */}
             <div className={`transition-opacity duration-400 ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] font-sans select-none mb-5">
-                {/* Line 1: Single Word by Word */}
-                <span className="block text-slate-900 mb-1">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[52px] font-black tracking-tight leading-[1.14] font-sans select-none mb-5">
+                {/* Line 1: Single Word by Word - Protected from awkward wrapping */}
+                <span className="block text-slate-900 mb-1 whitespace-normal sm:whitespace-nowrap">
                   {slide.line1Words.map((word, idx) => (
                     <span
                       key={`l1-${currentSlide}-${idx}`}
-                      className="animate-word-reveal mr-3 inline-block"
+                      className="animate-word-reveal mr-2.5 sm:mr-3 inline-block"
                       style={{ animationDelay: `${idx * 150}ms` }}
                     >
                       {word}
@@ -100,11 +100,11 @@ const HeroSection = () => {
                 </span>
 
                 {/* Line 2: Single Word by Word continuing from Line 1 */}
-                <span className="block text-[#005C72] drop-shadow-xs">
+                <span className="block text-[#005C72] drop-shadow-xs whitespace-normal sm:whitespace-nowrap">
                   {slide.line2Words.map((word, idx) => (
                     <span
                       key={`l2-${currentSlide}-${idx}`}
-                      className="animate-word-reveal mr-3 inline-block"
+                      className="animate-word-reveal mr-2.5 sm:mr-3 inline-block"
                       style={{ animationDelay: `${(slide.line1Words.length * 150) + (idx * 150)}ms` }}
                     >
                       {word}
