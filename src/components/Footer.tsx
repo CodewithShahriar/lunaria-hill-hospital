@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { LunariaLogo } from '@/components/LunariaLogo';
 import { 
   Stethoscope, 
   Phone, 
@@ -29,13 +30,13 @@ const Footer = () => {
           
           {/* Brand Info */}
           <div className="lg:col-span-4">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="bg-gradient-to-tr from-sky-500 to-cyan-400 p-2.5 rounded-xl text-white shadow-lg shadow-sky-500/20">
-                <Stethoscope className="h-6 w-6" />
+            <div className="flex items-center space-x-3.5 mb-6">
+              <div className="w-12 h-12 flex items-center justify-center p-1 rounded-xl bg-white/5 border border-white/10 shadow-lg">
+                <LunariaLogo className="w-10 h-10" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white tracking-tight font-display">Lunaria Hill</h3>
-                <p className="text-xs uppercase tracking-wider text-sky-400 font-semibold">Hospital & Research Center</p>
+                <p className="text-xs uppercase tracking-wider text-[#005C72] font-semibold">Hospital & Research Center</p>
               </div>
             </div>
             

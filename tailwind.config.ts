@@ -35,22 +35,38 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#0ea5e9', // sky-500
+					DEFAULT: '#02316B', // Hospital Primary Color
 					foreground: '#ffffff',
-					50: '#f0f9ff',
-					100: '#e0f2fe',
-					200: '#bae6fd',
-					300: '#7dd3fc',
-					400: '#38bdf8',
-					500: '#0ea5e9',
-					600: '#0284c7',
-					700: '#0369a1',
-					800: '#075985',
-					900: '#0c4a6e'
+					50: '#f0f5fc',
+					100: '#e0ecf9',
+					200: '#b8d6f3',
+					300: '#85b9ea',
+					400: '#4c96de',
+					500: '#03418e',
+					600: '#02316B',
+					700: '#012450',
+					800: '#011836',
+					900: '#000e20'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#005C72', // Hospital Secondary Color
+					foreground: '#ffffff'
+				},
+				hospital: {
+					primary: '#02316B',
+					secondary: '#005C72'
+				},
+				blue: {
+					50: '#f0f5fc',
+					100: '#e0ecf9',
+					200: '#b8d6f3',
+					300: '#85b9ea',
+					400: '#4c96de',
+					500: '#03418e',
+					600: '#02316B', // Replaced default #2563EB with Hospital Primary #02316B
+					700: '#012450',
+					800: '#011836',
+					900: '#000e20'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',

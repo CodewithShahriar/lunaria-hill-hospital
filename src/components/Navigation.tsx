@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { LunariaLogo } from '@/components/LunariaLogo';
 import {
   Menu, X, Phone, Calendar,
   Stethoscope, Search, Mail, Clock,
@@ -89,20 +90,17 @@ const Navigation = ({ onAppointmentClick }: NavigationProps) => {
           <div className="flex justify-between items-center h-20">
             
             {/* Brand Logo */}
-            <Link to="/" className="flex items-center space-x-2.5 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-sky-500 text-white flex items-center justify-center shadow-md shadow-blue-500/25 group-hover:scale-105 transition-transform">
-                <div className="relative">
-                  <Stethoscope className="h-5 w-5" />
-                  <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-emerald-400"></span>
-                </div>
+            <Link to="/" className="flex items-center space-x-3 group">
+              <div className="w-11 h-11 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <LunariaLogo className="w-11 h-11" />
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-1">
-                  <span className="text-xl font-extrabold tracking-tight text-slate-900 font-display">
-                    Lunaria<span className="text-blue-600">Hill</span>
+                  <span className="text-xl font-extrabold tracking-tight text-[#02316B] font-display">
+                    Lunaria<span className="text-[#005C72]">Hill</span>
                   </span>
                 </div>
-                <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 -mt-0.5">
+                <span className="text-[10px] uppercase tracking-wider font-semibold text-slate-500 -mt-0.5">
                   Hospital & Care
                 </span>
               </div>

@@ -265,4 +265,41 @@
     will-change: transform, opacity;
     animation: wordRevealLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
+
+  /* Ambient Moving Fade Bubbles */
+  @keyframes floatBubble {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.45;
+    }
+    33% {
+      transform: translate(30px, -20px) scale(1.08);
+      opacity: 0.7;
+    }
+    66% {
+      transform: translate(-25px, 25px) scale(0.94);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes floatBubbleSlow {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.4;
+    }
+    50% {
+      transform: translate(-35px, -30px) scale(1.12);
+      opacity: 0.65;
+    }
+  }
+
+  .animate-bubble-1 {
+    animation: floatBubble 14s ease-in-out infinite;
+  }
+  .animate-bubble-2 {
+    animation: floatBubbleSlow 18s ease-in-out infinite 2s;
+  }
+  .animate-bubble-3 {
+    animation: floatBubble 22s ease-in-out infinite 5s;
+  }
 }
