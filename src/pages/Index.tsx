@@ -859,8 +859,8 @@ const Index = () => {
             {filteredDoctors.map((doctor, idx) => (
               <ScrollReveal
                 key={idx}
-                direction={idx < 2 ? 'left' : 'right'}
-                delay={idx < 2 ? idx * 140 : (idx - 2) * 140}
+                direction="right"
+                delay={idx * 120}
                 className="h-full"
               >
                 <div 
