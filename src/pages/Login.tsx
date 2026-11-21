@@ -1,56 +1,26 @@
 import LoginForm from '@/components/auth/LoginForm';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Stethoscope } from 'lucide-react';
+import { ArrowLeft, Stethoscope, ShieldCheck } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext';
+import { UserRole } from '@/types/dashboard';
 
 const Login = () => {
   const navigate = useNavigate();
+  const { login, loginDemo } = useAuth();
 
-  const handleLogin = (email: string, password: string) => {
-    // Check demo credentials first
-    const validCredentials = {
-      email: 'admin@lunariahill.com',
-      password: 'testuser123'
-    };
-
-    if (email === validCredentials.email && password === validCredentials.password) {
-      localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('patientData', JSON.stringify({
-        firstName: 'John',
-        lastName: 'Doe',
-        email: email,
-        phone: '+1 (555) 123-4567',
-        dateOfBirth: '1990-05-15',
-        gender: 'male',
-        id: 'P12345',
-        photo: null
-      }));
-      
-      navigate('/dashboard');
-      return;
-    }
-
-    // Check registered users in localStorage
-    const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
-    const user = registeredUsers.find((u: any) => u.email === email && u.password === password);
-
-    if (user) {
-      localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('patientData', JSON.stringify({
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        phone: user.phone,
-        dateOfBirth: user.dateOfBirth,
-        gender: user.gender,
-        id: `P${Date.now().toString().slice(-5)}`,
-        photo: null
-      }));
-      
+  const handleLogin = async (email: string, password: string) => {
+    const success = await login(email, password);
+    if (success) {
       navigate('/dashboard');
     } else {
-      alert('Invalid credentials. Please check your email and password');
+      alert('Invalid credentials. You can use the One-Click Demo buttons above to enter instantly!');
     }
+  };
+
+  const handleDemoLogin = async (role: UserRole) => {
+    await loginDemo(role);
+    navigate('/dashboard');
   };
 
   const handleSwitchToRegister = () => {
@@ -79,16 +49,20 @@ const Login = () => {
         </Button>
 
         <div className="flex items-center gap-2">
-          <div className="bg-sky-600 p-1.5 rounded-lg text-white">
+          <div className="bg-[#02316B] p-2 rounded-xl text-white shadow-sm">
             <Stethoscope className="h-4 w-4" />
           </div>
-          <span className="font-bold text-slate-900 text-sm font-display">Lunaria Hill Hospital</span>
+          <span className="font-bold text-slate-900 text-sm font-display tracking-tight">Lunaria Hill Hospital</span>
         </div>
       </div>
 
       {/* Login Form */}
       <div className="flex-1 flex items-center justify-center px-4 pb-12 relative z-10">
-        <LoginForm onLogin={handleLogin} onSwitchToRegister={handleSwitchToRegister} />
+        <LoginForm
+          onLogin={handleLogin}
+          onDemoLogin={handleDemoLogin}
+          onSwitchToRegister={handleSwitchToRegister}
+        />
       </div>
     </div>
   );
